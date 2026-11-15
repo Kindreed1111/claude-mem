@@ -48,10 +48,49 @@ Sois sévère : une question retirée vaut mieux qu'une erreur.
 ${cand.map((q, i) => (i + 1) + '. ' + q.q + '\n' + q.opts.map((o, k) => '   ' + 'ABCD'[k] + ') ' + o).join('\n')).join('\n\n')}`;
 }
 
+const API = 'https://generativelanguage.googleapis.com/v1beta/';
+let working = null;      // model that last answered with search results (kept while the function stays warm)
+let listed = null;       // candidate models read from the key's own model list
+
+// Without GEMINI_MODEL, ask the API which models this key can use and prefer recent Flash models, then Pro.
+async function candidates(key) {
+  if (process.env.GEMINI_MODEL) return [process.env.GEMINI_MODEL];
+  if (!listed) {
+    const r = await fetch(API + 'models?pageSize=200', { headers: { 'x-goog-api-key': key } });
+    const d = await r.json().catch(() => ({}));
+    if (!r.ok) throw Object.assign(new Error('models'), { status: r.status, detail: d && d.error && d.error.message });
+    const ver = n => parseFloat((n.match(/gemini-(\d+(?:\.\d+)?)/) || [])[1] || '0');
+    const ok = (d.models || [])
+      .filter(m => (m.supportedGenerationMethods || []).includes('generateContent'))
+      .map(m => String(m.name || '').replace(/^models\//, ''))
+      .filter(n => /^gemini-/.test(n) && !/lite|image|tts|audio|live|embed|vision|exp|preview|learn|robot|computer/i.test(n));
+    const rank = n => (/flash/.test(n) ? 0 : 1000) - ver(n) * 10 + (/latest|-\d{3}$/.test(n) ? 1 : 0);
+    listed = ok.sort((a, b) => rank(a) - rank(b)).slice(0, 4);
+  }
+  return working ? [working, ...listed.filter(m => m !== working)] : listed;
+}
+
+async function ask(key, model, prompt) {
+  const r = await fetch(API + 'models/' + encodeURIComponent(model) + ':generateContent', {
+    method: 'POST',
+    headers: { 'x-goog-api-key': key, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], tools: [{ google_search: {} }] })
+  });
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) return { status: r.status, message: clip(d && d.error && d.error.message, 300) };
+  const c = (d.candidates || [])[0] || {};
+  const text = ((c.content && c.content.parts) || []).map(p => p.text || '').join('');
+  const chunks = (c.groundingMetadata && c.groundingMetadata.groundingChunks) || [];
+  const sources = chunks.map(g => g.web && { uri: g.web.uri, title: g.web.title }).filter(Boolean).slice(0, 12);
+  // A reply that did not actually search is not trusted.
+  if (!sources.length || !text) return { status: 200, message: 'answered without search results' };
+  return { text, sources };
+}
+
 module.exports = async (req, res) => {
   if (req.method !== 'POST') { res.status(405).json({ error: 'method' }); return; }
-  const key = process.env.GEMINI_API_KEY, model = process.env.GEMINI_MODEL;
-  if (!key || !model) { res.status(500).json({ error: 'GEMINI_API_KEY and GEMINI_MODEL must be set' }); return; }
+  const key = process.env.GEMINI_API_KEY;
+  if (!key) { res.status(500).json({ error: 'GEMINI_API_KEY must be set' }); return; }
 
   let b = req.body;
   if (typeof b === 'string') { try { b = JSON.parse(b); } catch (e) { b = null; } }
@@ -72,27 +111,24 @@ module.exports = async (req, res) => {
   } else { res.status(400).json({ error: 'kind' }); return; }
 
   try {
-    const r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/' + encodeURIComponent(model) + ':generateContent', {
-      method: 'POST',
-      headers: { 'x-goog-api-key': key, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], tools: [{ google_search: {} }] })
-    });
-    const d = await r.json().catch(() => ({}));
-    if (!r.ok) {
-      console.error('gemini', r.status, JSON.stringify(d).slice(0, 600));
-      res.status(r.status === 429 ? 429 : 502).json({ error: 'gemini', status: r.status, message: clip(d && d.error && d.error.message, 300) });
-      return;
+    const models = await candidates(key);
+    if (!models.length) { res.status(502).json({ error: 'no-model', message: 'no usable Gemini model for this key' }); return; }
+    let last = null;
+    for (const model of models) {
+      const out = await ask(key, model, prompt);
+      if (out.text) {
+        working = model;
+        res.setHeader('Cache-Control', 'no-store');
+        res.status(200).json({ text: out.text, sources: out.sources, model });
+        return;
+      }
+      last = { model, ...out };
+      console.error('gemini', JSON.stringify(last));
+      if (working === model) working = null;
     }
-    const c = (d.candidates || [])[0] || {};
-    const text = ((c.content && c.content.parts) || []).map(p => p.text || '').join('');
-    const chunks = (c.groundingMetadata && c.groundingMetadata.groundingChunks) || [];
-    const sources = chunks.map(g => g.web && { uri: g.web.uri, title: g.web.title }).filter(Boolean).slice(0, 12);
-    // A reply that did not actually search is not trusted: the game treats it as no questions.
-    if (!sources.length) { res.status(502).json({ error: 'ungrounded', message: 'Gemini answered without search results' }); return; }
-    res.setHeader('Cache-Control', 'no-store');
-    res.status(200).json({ text, sources });
+    res.status(last && last.status === 429 ? 429 : 502).json({ error: 'gemini', ...last });
   } catch (e) {
-    console.error('questions', e);
-    res.status(502).json({ error: 'network' });
+    console.error('questions', e && e.status, e && e.detail, e);
+    res.status(502).json({ error: 'network', status: e && e.status, message: clip(e && e.detail, 300) });
   }
 };

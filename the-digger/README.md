@@ -19,8 +19,8 @@ Jeu de quiz : le joueur tape un sujet, le mineur creuse à chaque bonne réponse
 1. Sur vercel.com, créer un projet en important ce dépôt GitHub.
 2. Régler « Root Directory » sur `the-digger`.
 3. Dans Settings → Environment Variables, ajouter :
-   - `GEMINI_API_KEY` : la clé API Gemini.
-   - `GEMINI_MODEL` : l'identifiant d'un modèle Gemini compatible avec la recherche Google (liste sur ai.google.dev, page « Models »).
+   - `GEMINI_API_KEY` : la clé API Gemini. C'est la seule valeur obligatoire.
+   - `GEMINI_MODEL` (facultatif) : pour imposer un modèle. Sans elle, le serveur lit la liste des modèles accessibles à la clé et essaie les modèles Flash les plus récents, puis Pro, jusqu'à obtenir une réponse appuyée sur la recherche Google.
 4. Déployer. La branche à déployer se choisit dans Settings → Git.
 
 ## Limites connues
