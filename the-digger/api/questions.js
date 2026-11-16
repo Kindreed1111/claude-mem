@@ -43,8 +43,9 @@ async function collect(topic, label, useTavily) {
   const k = topic.toLowerCase(), hit = pool.get(k);
   if (hit && Date.now() - hit.t < 9e5) return hit;
   const q = label || topic, via = { wiki: false, tavily: false };
-  const soft = (name, p) => p.catch(e => { console.error(name, e && e.status, e && e.message); return []; });
-  const [w, t] = await Promise.all([soft('wikipedia', wiki(q)), useTavily && process.env.TAVILY_API_KEY ? soft('tavily', tavily(q)) : []]);
+  const soft = (name, p) => p.catch(e => { via[name + 'Error'] = (e && e.status) || 'network'; console.error(name, e && e.status, e && e.message); return []; });
+  if (useTavily && !process.env.TAVILY_API_KEY) via.tavilyError = 'no-key';
+  const [w, t] = await Promise.all([soft('wiki', wiki(q)), useTavily && process.env.TAVILY_API_KEY ? soft('tavily', tavily(q)) : []]);
   via.wiki = w.length > 0; via.tavily = t.length > 0;
   const bare = u => u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''), had = new Set();
   const out = { t: Date.now(), docs: [...w, ...t].filter(x => !had.has(bare(x.url)) && had.add(bare(x.url))), via };
