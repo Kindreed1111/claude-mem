@@ -1,0 +1,12 @@
+{
+  "name": "the-digger",
+  "private": true,
+  "version": "1.0.0",
+  "type": "commonjs",
+  "devDependencies": {
+    "@google/genai": "^3.3.0"
+  },
+  "scripts": {
+    "generate": "node scripts/generate-questions.mjs"
+  }
+}
