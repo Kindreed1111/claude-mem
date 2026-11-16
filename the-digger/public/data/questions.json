@@ -4783,5 +4783,110 @@
   "anecdote": "Pendant le Play Tour, elle devient la première participante d'Operación Triunfo à remplir le Palau Sant Jordi.",
   "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
   "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-6436300807",
+  "question": "Quel album commun Ptite Sœur et neophron sortent-ils en 2023 ?",
+  "options": [
+   "ANCIEN RÉGIME",
+   "NOUVELLE ÉCONOMIE",
+   "GRANDE ILLUSION",
+   "DERNIÈRE CHANCE"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "En 2023, Ptite Soeur publie l'EP REDSUN et l'album NOUVELLE ÉCONOMIE avec le producteur neophron.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ptite_Soeur",
+  "theme": "Ptite Sœur"
+ },
+ {
+  "id": "q-2822a656d5",
+  "question": "Quel album de 2025 réunit Ptite Sœur, Femtogo et neophron ?",
+  "options": [
+   "PRETTY DOLLCORPSE",
+   "CAPGRAS DELUSION",
+   "KAYFABE CHIMERA",
+   "NOUVELLE ÉCONOMIE"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "PRETTY DOLLCORPSE, paru en octobre 2025, mêle rap, rock et musique industrielle.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ptite_Soeur",
+  "theme": "Ptite Sœur"
+ },
+ {
+  "id": "q-8583908e11",
+  "question": "Quel EP Ptite Sœur a-t-elle publié en 2022 ?",
+  "options": [
+   "KAYFABE CHIMERA",
+   "NOUVELLE ÉCONOMIE",
+   "CAPGRAS DELUSION",
+   "PRETTY DOLLCORPSE"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Après ses débuts sous le nom prxpvne, Ptite Soeur publie l'EP CAPGRAS DELUSION en 2022.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ptite_Soeur",
+  "theme": "Ptite Sœur"
+ },
+ {
+  "id": "q-b5983aa30a",
+  "question": "Avec quel artiste Ptite Sœur sort-elle l'EP KAYFABE CHIMERA ?",
+  "options": [
+   "Femtogo",
+   "Thanas",
+   "Gemroz",
+   "kolya44"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "En juin 2024, elle s'associe au rappeur Gemroz sur l'EP KAYFABE CHIMERA.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ptite_Soeur",
+  "theme": "Ptite Sœur"
+ },
+ {
+  "id": "q-52b7b8d89b",
+  "question": "Quel album de 16 titres Ptite Sœur sort-elle en septembre 2026 ?",
+  "options": [
+   "REDSUN : la nuit et les ombres",
+   "ZALGO : le code et la machine",
+   "KAYFABE : le masque et le jeu",
+   "NODA : le monde et les humains"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Le 30 septembre 2026, Ptite Soeur et neophron publient NODA, qui aborde l'espoir, l'amour et le désir de vivre.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ptite_Soeur",
+  "theme": "Ptite Sœur"
+ },
+ {
+  "id": "q-6937c9c020",
+  "question": "À quelle place PRETTY DOLLCORPSE s'est-il classé en France ?",
+  "options": [
+   "Première",
+   "Vingt-cinquième",
+   "Quarante-deuxième",
+   "Dixième"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "PRETTY DOLLCORPSE atteint la dixième place du classement français des albums.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ptite_Soeur",
+  "theme": "Ptite Sœur"
+ },
+ {
+  "id": "q-bc9d9d2343",
+  "question": "Que signifient les initiales de l'EP (VM)VM sorti en 2021 ?",
+  "options": [
+   "voire mauvais",
+   "vieux monde",
+   "vide mental",
+   "vraiment moyen"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Ptite Soeur lance son projet en 2021 avec (VM)VM [vraiment moyen] et VM(VM) [voire mauvais], aujourd'hui supprimés.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ptite_Soeur",
+  "theme": "Ptite Sœur"
  }
 ]

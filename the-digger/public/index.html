@@ -705,7 +705,7 @@ function resetWorld(){
 }
 
 /* ================= questions ================= */
-const norm=s=>String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
+const norm=s=>String(s).toLowerCase().replace(/œ/g,'oe').replace(/æ/g,'ae').normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
 const str=v=>typeof v==='string'?v.replace(/\s+/g,' ').trim():typeof v==='number'?String(v):'';
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a}
 const PROSPECT=['« {t} »… Voyons ce que ce filon a dans le ventre.','« {t} » ? Je tâte le terrain, bouge pas.','Je sonde « {t} ». Ça sonne creux… ou plein ?'];

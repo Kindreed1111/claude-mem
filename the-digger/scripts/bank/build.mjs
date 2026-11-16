@@ -7,7 +7,7 @@ import { createHash } from 'node:crypto';
 const here = new URL('.', import.meta.url).pathname;
 const OUT = new URL('../../public/data/questions.json', import.meta.url).pathname;
 const MAX_Q = 95, MAX_OPT = 35, MAX_ANECDOTE = 170, DIFF = { f: 'facile', m: 'moyen', d: 'difficile' };
-const norm = s => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+const norm = s => String(s).toLowerCase().replace(/œ/g,'oe').replace(/æ/g,'ae').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
 const clean = s => String(s == null ? '' : s).replace(/\s+/g, ' ').trim();
 const sources = JSON.parse(readFileSync(here + 'sources.json', 'utf8'));
 const bank = JSON.parse(readFileSync(OUT, 'utf8'));
