@@ -302,7 +302,7 @@ function depthM(n){n=Math.max(0,n);const L=MT.length-1;if(n>=L)return MT[L]+base
 const TIER=[{n:'Friche',d:'Facile',air:15},{n:'Galerie',d:'Moyen',air:12},{n:'Abysse',d:'Difficile',air:9},{n:'Noyau',d:'Expert',air:7}];
 const tierAt=m=>m<25?0:m<70?1:m<150?2:3;
 /* tools earned with the metres dug over all games */
-const TOOLS=[{k:'pelle',n:'Pelle de chantier',m:0,b:'L’outil de base.'},{k:'pioche',n:'Pioche en acier',m:250,b:'+2 m à chaque bonne réponse.'},{k:'marteau',n:'Marteau-piqueur',m:750,b:'+2 s d’air sur chaque question.'},{k:'foreuse',n:'Foreuse thermique',m:1500,b:'Répare 1 casque tous les 100 m.'}];
+const TOOLS=[{k:'pelle',n:'Pelle de chantier',m:0,b:'L’outil de base.'},{k:'pioche',n:'Pioche en acier',m:100,b:'+2 m à chaque bonne réponse.'},{k:'marteau',n:'Marteau-piqueur',m:250,b:'+2 s d’air sur chaque question.'},{k:'foreuse',n:'Foreuse thermique',m:500,b:'Répare 1 casque tous les 100 m.'}];
 const toolOf=t=>{let i=0;while(i<TOOLS.length-1&&t>=TOOLS[i+1].m)i++;return i};
 let total=0;try{total=+localStorage.getItem('digger-total')||0}catch(e){}
 /* geological strata by depth in metres: a = earth, b = its alternate band, pit/pit2 = the dug shaft, mote = ambient particles */

@@ -39,7 +39,7 @@ Règle des noms de thème (vérifiée par `build.mjs`) : le jeu reconnaît un th
 - Difficulté selon la profondeur : Friche (0 à 25 m) facile, Galerie (25 à 70 m) moyen, Abysse (70 à 150 m) difficile, Noyau (150 m et plus) expert (mètres creusés ×2), affichée sous le panneau de profondeur. Une autre difficulté n'est jamais servie : quand toutes les questions d'une difficulté ont été vues, seuls leurs identifiants sont oubliés. Les réponses sont remélangées à chaque affichage.
 - Mètres : une bonne réponse fait creuser 5, 7, 9… m ; une question difficile rapporte 25 % de plus (prime de risque).
 - Jauge d'air : 15 s (Friche), 12 s (Galerie), 9 s (Abysse), 7 s (Noyau). À zéro, éboulement : une erreur.
-- Outils, gagnés avec les mètres cumulés sur toutes les parties (ligne « Pelle » de l'écran de fin) : Pelle de chantier (0 m), Pioche en acier (250 m : +2 m par bonne réponse), Marteau-piqueur (750 m : +2 s d'air), Foreuse thermique (1 500 m : un casque réparé tous les 100 m d'une même descente). Les bonus se cumulent ; l'outil équipé est dessiné dans les mains du mineur.
+- Outils, gagnés avec les mètres cumulés sur toutes les parties (ligne « Pelle » de l'écran de fin) : Pelle de chantier (0 m), Pioche en acier (100 m : +2 m par bonne réponse), Marteau-piqueur (250 m : +2 s d'air), Foreuse thermique (500 m : un casque réparé tous les 100 m d'une même descente). Les bonus se cumulent ; l'outil équipé est dessiné dans les mains du mineur.
 - Strates : Terre & Argile (0 m), Roche & Charbon (50 m), Galerie de Cristal (150 m), Filon d'Or (300 m), Noyau Magmatique (500 m). La strate atteinte est la ligne « Filon » de l'écran de fin.
 - Sans réseau, 16 questions intégrées servent de secours.
 
