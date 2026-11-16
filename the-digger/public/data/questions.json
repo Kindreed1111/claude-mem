@@ -4888,5 +4888,350 @@
   "anecdote": "Ptite Soeur lance son projet en 2021 avec (VM)VM [vraiment moyen] et VM(VM) [voire mauvais], aujourd'hui supprimés.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Ptite_Soeur",
   "theme": "Ptite Sœur"
+ },
+ {
+  "id": "ug-wastingshit-01",
+  "question": "Comment s'appelle la série de projets phare de wasting shit ?",
+  "options": [
+   "was+e +ape",
+   "trash +ape",
+   "broken +ape",
+   "zero +ape"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Lancée en 2021 avec le volume 1, la série was+e +ape compte notamment un volume 3 en 2023.",
+  "sourceUrl": "https://www.shazam.com/en-gb/artist/wasting-shit/1560111989/releases",
+  "theme": "Wasting Shit"
+ },
+ {
+  "id": "ug-wastingshit-02",
+  "question": "Quel projet wasting shit sort-il en 2026 après tw: ZERO ?",
+  "options": [
+   "top waster 1",
+   "waste king 1",
+   "zero hour 1",
+   "bob glocc 1"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "top waster 1 est sorti en 2026 avec des titres comme grand magasin.",
+  "sourceUrl": "https://www.deezer.com/track/4051166361",
+  "theme": "Wasting Shit"
+ },
+ {
+  "id": "ug-wastingshit-03",
+  "question": "Avec quel beatmaker wasting shit sort-il l'EP mercuriales_ ?",
+  "options": [
+   "abel31",
+   "neophron",
+   "kosei",
+   "pyroman"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Sorti en 2023, mercuriales_ est un projet commun entre abel31 et wasting shit.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Tours_Mercuriales",
+  "theme": "Wasting Shit"
+ },
+ {
+  "id": "ug-wastingshit-04",
+  "question": "Quel rappeur accompagne wasting shit sur Terrorisme de proximité ?",
+  "options": [
+   "tommy moisi",
+   "h jeunecrack",
+   "winnterzuko",
+   "jeune morty"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Paru en 2021, Terrorisme de proximité (feat. tommy moisi) est l'un de ses titres cultes.",
+  "sourceUrl": "https://www.shazam.com/en-gb/artist/wasting-shit/1560111989/releases",
+  "theme": "Wasting Shit"
+ },
+ {
+  "id": "ug-wastingshit-05",
+  "question": "Avec quel artiste wasting shit sort-il l'EP GLOCC26 en 2026 ?",
+  "options": [
+   "Riski",
+   "Femtogo",
+   "Luther",
+   "Zamdane"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "GLOCC26 fait suite à son premier EP G.L.O.CC sorti en 2023.",
+  "sourceUrl": "https://www.shazam.com/en-gb/artist/wasting-shit/1560111989/releases",
+  "theme": "Wasting Shit"
+ },
+ {
+  "id": "ug-wastingshit-06",
+  "question": "Quel titre commun wasting shit et Ptite Sœur sortent-ils en 2022 ?",
+  "options": [
+   "PoH freestyle",
+   "JAPD freestyle",
+   "BOB freestyle",
+   "GTR freestyle"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "PoH freestyle est paru le 15 octobre 2022, scellant leur collaboration régulière.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ptite_Soeur",
+  "theme": "Wasting Shit"
+ },
+ {
+  "id": "ug-wastingshit-07",
+  "question": "Quel producteur signe l'instrumentale de tamagotchi ?",
+  "options": [
+   "sim01",
+   "abel31",
+   "kosei",
+   "luther"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "tamagotchi est produit par sim01, beatmaker clé de la même scène.",
+  "sourceUrl": "https://www.youtube.com/watch?v=EoN1KUOrt78",
+  "theme": "Wasting Shit"
+ },
+ {
+  "id": "ug-wastingshit-08",
+  "question": "Quel single de 2024 fait référence au million chez wasting shit ?",
+  "options": [
+   "1M NE SE GASPILLE PAS TT SEUL",
+   "1M DANS LE SAC DE SPORT NOIR",
+   "1M SANS JAMAIS REGARDER L'HEURE",
+   "1M SUR LE COMPTE EN BANQUE VIDE"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Sorti en 2024, ce single joue directement sur la traduction française de son pseudo.",
+  "sourceUrl": "https://www.shazam.com/en-gb/artist/wasting-shit/1560111989/releases",
+  "theme": "Wasting Shit"
+ },
+ {
+  "id": "ug-wastingshit-09",
+  "question": "À quel monument de Bagnolet renvoie l'EP mercuriales_ de 2023 ?",
+  "options": [
+   "Les tours Mercuriales",
+   "La tour Eiffel",
+   "La tour Montparnasse",
+   "Les tours Duo"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Le titre rend hommage aux deux tours jumelles de bureaux situées à Bagnolet (93).",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Tours_Mercuriales",
+  "theme": "Wasting Shit"
+ },
+ {
+  "id": "ug-wastingshit-10",
+  "question": "Quel titre de wasting shit feat. Ptite Sœur sort en mai 2026 ?",
+  "options": [
+   "PURSUIT FORCE",
+   "GRAND MAGASIN",
+   "L'AVANT-DERNIER",
+   "BOBBIN GLEEF"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "PURSUIT FORCE porte le nom d'un jeu d'action sorti sur PlayStation Portable (PSP).",
+  "sourceUrl": "https://www.youtube.com/watch?v=zivkZQiNZSc",
+  "theme": "Wasting Shit"
+ },
+ {
+  "id": "ug-ptitesoeur-02",
+  "question": "Comment s'intitule le freestyle Grünt de Ptite Sœur en 2025 ?",
+  "options": [
+   "TERREURGRÜNT",
+   "HORREURGRÜNT",
+   "CHAOSGRÜNT",
+   "OMBREGRÜNT"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Diffusé fin septembre 2025, TERREURGRÜNT a cumulé près d'un million de vues.",
+  "sourceUrl": "https://www.youtube.com/watch?v=Ak3zS4u-ftY",
+  "theme": "Ptite Sœur"
+ },
+ {
+  "id": "ug-ptitesoeur-08",
+  "question": "Avec quel producteur Ptite Sœur sort-elle #CUT4ZALGO en 2025 ?",
+  "options": [
+   "sim01",
+   "neophron",
+   "Gemroz",
+   "esone"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "#CUT4ZALGO est sorti le 1er avril 2025 en collaboration avec sim01.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ptite_Soeur",
+  "theme": "Ptite Sœur"
+ },
+ {
+  "id": "ug-ptitesoeur-10",
+  "question": "Quel duo produit le single ADN de Ptite Sœur en mars 2025 ?",
+  "options": [
+   "rosaliedu38 et esone",
+   "neophron et prxpvne",
+   "sim01 et wasting shit",
+   "Gemroz et kolya44"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "rosaliedu38 et esone avaient déjà collaboré avec elle sur karma en 2023.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ptite_Soeur",
+  "theme": "Ptite Sœur"
+ },
+ {
+  "id": "ug-jeunemorty-01",
+  "question": "De quelle ville du Val-de-Marne Jeune Morty est-il originaire ?",
+  "options": [
+   "Choisy-le-Roi",
+   "Vitry-sur-Seine",
+   "Ivry-sur-Seine",
+   "Créteil"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Jeune Morty a grandi à Choisy-le-Roi dans le 94.",
+  "sourceUrl": "https://miniwax.club/products/jeune-morty-jeune-morty-vol-1",
+  "theme": "Jeune Morty"
+ },
+ {
+  "id": "ug-jeunemorty-02",
+  "question": "Comment s'appelle le propre label fondé par Jeune Morty ?",
+  "options": [
+   "JetSetFarot",
+   "Subliminal",
+   "Rec. 118",
+   "92i"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Il publie ses projets sous sa structure JetSetFarot (en licence chez AHP).",
+  "sourceUrl": "https://www.discogs.com/fr/artist/11209697-Jeune-Morty",
+  "theme": "Jeune Morty"
+ },
+ {
+  "id": "ug-jeunemorty-03",
+  "question": "Quelle mixtape de 20 titres Jeune Morty sort-il en mars 2026 ?",
+  "options": [
+   "Jeune Morty Vol. 1",
+   "Ghetto Youth Vol. 2",
+   "Eponyme Deluxe",
+   "Choisy Tape 1"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Sortie le 27 mars 2026, Jeune Morty Vol. 1 dure 55 minutes pour 20 morceaux.",
+  "sourceUrl": "https://music.apple.com/fr/album/jeune-morty-vol-1/1875299217",
+  "theme": "Jeune Morty"
+ },
+ {
+  "id": "ug-jeunemorty-04",
+  "question": "Quelle est la double origine culturelle de Jeune Morty ?",
+  "options": [
+   "Franco-ivoirienne",
+   "Franco-marocaine",
+   "Franco-sénégalaise",
+   "Franco-congolaise"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Artiste franco-ivoirien, il revendique l'influence d'Alpha Blondy et DJ Arafat.",
+  "sourceUrl": "https://miniwax.club/products/jeune-morty-jeune-morty-vol-1",
+  "theme": "Jeune Morty"
+ },
+ {
+  "id": "ug-jeunemorty-05",
+  "question": "Comment s'intitule l'album de 14 titres sorti en juin 2025 ?",
+  "options": [
+   "Eponyme",
+   "Ghetto Youth",
+   "ILUVMORTY",
+   "Souljah"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Paru le 20 juin 2025, Eponyme réunit 14 titres dont Oasis et Cour.",
+  "sourceUrl": "https://music.apple.com/ci/album/eponyme/1857612892",
+  "theme": "Jeune Morty"
+ },
+ {
+  "id": "ug-jeunemorty-06",
+  "question": "Avec quel rappeur ivoirien Jeune Morty signe-t-il BADDIES ?",
+  "options": [
+   "Himra",
+   "Didi B",
+   "Kaaris",
+   "Vegedream"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "BADDIES réunit Jeune Morty et la star ivoirienne Himra en 2025.",
+  "sourceUrl": "https://music.apple.com/ci/artist/jeune-morty/1524030885",
+  "theme": "Jeune Morty"
+ },
+ {
+  "id": "ug-jeunemorty-07",
+  "question": "Quel morceau ouvre la mixtape Jeune Morty Vol. 1 en 2026 ?",
+  "options": [
+   "Ivoire Feeling",
+   "Premier Kata",
+   "Katy Perry",
+   "Dos-d'Âne"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Ivoire Feeling est la piste d'ouverture et le titre le plus streamé de la mixtape.",
+  "sourceUrl": "https://music.apple.com/fr/album/jeune-morty-vol-1/1875299217",
+  "theme": "Jeune Morty"
+ },
+ {
+  "id": "ug-jeunemorty-08",
+  "question": "Quel EP sert de prélude à son album Eponyme en 2024 ?",
+  "options": [
+   "En Attendant Eponyme",
+   "Avant la Tempête",
+   "Retour à Choisy",
+   "Premier Chapitre"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "En Attendant Eponyme (2024) contient notamment le morceau Camera.",
+  "sourceUrl": "https://music.apple.com/ci/artist/jeune-morty/1524030885",
+  "theme": "Jeune Morty"
+ },
+ {
+  "id": "ug-jeunemorty-09",
+  "question": "Quel single de Jeune Morty sorti en 2021 cite Call of Duty ?",
+  "options": [
+   "Dead Ops Arcade",
+   "Nuketown 2025",
+   "Modern Warfare",
+   "Black Ops 2"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Dead Ops Arcade fait référence au mode zombie arcade de Call of Duty: Black Ops.",
+  "sourceUrl": "https://music.apple.com/fr/album/jeune-morty-vol-1/1875299217",
+  "theme": "Jeune Morty"
+ },
+ {
+  "id": "ug-jeunemorty-10",
+  "question": "Quel titre clôt la tracklist de Jeune Morty Vol. 1 en 2026 ?",
+  "options": [
+   "Katy Perry",
+   "Ivoire Feeling",
+   "One More Time",
+   "Boubou Star"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Katy Perry (piste 20, avec le producteur ok) conclut la mixtape sortie en mars 2026.",
+  "sourceUrl": "https://music.apple.com/fr/album/jeune-morty-vol-1/1875299217",
+  "theme": "Jeune Morty"
  }
 ]
