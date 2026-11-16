@@ -750,13 +750,13 @@ function cleanQ(o){
   const q=str(o.q),a=Array.isArray(o.a)?o.a.map(str).filter(Boolean).slice(0,4):[];
   if(q.length<8||a.length<4||new Set(a.map(norm)).size<4)return null;
   const k=norm(q),gk=norm(a[0]);if(Q.seen.has(k)||Q.goods.has(gk))return null;
-  Q.seen.add(k);Q.goods.add(gk);return{q,good:a[0],opts:shuffle(a),e:''};
+  Q.seen.add(k);Q.goods.add(gk);return{q,good:a[0],opts:shuffle(a),e:'',src:''};
 }
 function abortAll(){Q.ctls.forEach(c=>{try{c.abort()}catch(e){}});Q.ctls=[]}
 function stream(spec,tier,effort,ctl,eat){
   const kill=setTimeout(()=>{try{ctl.abort()}catch(e){}},65000); /* a call that hangs is dropped; the next batch tries again */
   return fetch('/api/questions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(spec),signal:ctl.signal})
-    .then(r=>r.json().catch(()=>({})).then(d=>{if(!r.ok||typeof d.text!=='string')throw{code:r.status===429?'rate_limited':'upstream_error'};d.text.split('\n').forEach(eat);return d.text}))
+    .then(r=>r.json().catch(()=>({})).then(d=>{if(!r.ok||typeof d.text!=='string')throw{code:r.status===429?'rate_limited':'upstream_error'};ctl.docs=Array.isArray(d.docs)?d.docs:[];d.text.split('\n').forEach(l=>eat(l));return d.text}))
     .finally(()=>clearTimeout(kill));
 }
 const parse=line=>{line=line.trim().replace(/,$/,'');if(line[0]!=='{')return null;try{const o=JSON.parse(line);return o&&typeof o==='object'?o:null}catch(e){return null}};
@@ -770,6 +770,7 @@ function launch(run,from,to,tier,meta,vtier){
     if(!live())return;const o=parse(line);if(!o)return;
     if(!gotMeta&&'ok'in o){gotMeta=true;if(o.ok===false){rejected=true;ctl.abort();reject(str(o.mot)||pick(NOPE))}else accept(run,o);return}
     const q=cleanQ(o);if(!q)return;
+    const u=(ctl.docs||[])[(o.s|0)-1];if(typeof u==='string'&&/^https?:\/\//.test(u))q.src=u; /* the link can only be one of the pages the server really collected */
     if(!gotMeta){gotMeta=true;accept(run,{})}
     cand.push(q);Q.asked.push(q.q);
   };
@@ -785,7 +786,7 @@ function launch(run,from,to,tier,meta,vtier){
         if(!q||seen.has(i))return;seen.add(i);
         if(r>=0&&q.opts[r]===q.good){q.e=str(o.e);B.items.push(q);pump()}
       };
-      stream({kind:'verify',label:st.label,cand:cand.map(q=>({q:q.q,opts:q.opts}))},vtier,vtier==='quick'?null:'medium',ctl,verdict)
+      stream({kind:'verify',topic:st.topic,label:st.label,cand:cand.map(q=>({q:q.q,opts:q.opts}))},vtier,vtier==='quick'?null:'medium',ctl,verdict)
         .then(all=>{if(!seen.size&&live())(all.match(/\{[^{}]*\}/g)||[]).forEach(verdict)},e=>{B.err=(e&&e.code)||'upstream_error'})
         .then(finish);
     });
@@ -1070,7 +1071,7 @@ function recheck(){
     if(!q||seen.has(i))return;seen.add(i);
     if(r<0||opts[i][r]!==q.good)for(let k=Q.b;k<Q.batches.length;k++){const a=Q.batches[k].items,j=a.indexOf(q);if(j>=0&&!(k===Q.b&&j<Q.i)){a.splice(j,1);break}}
   };
-  stream({kind:'verify',label:st.label,cand:items.map((q,i)=>({q:q.q,opts:opts[i]}))},0,0,ctl,verdict).then(()=>{if(run===st.run)topUp(run)},()=>{});
+  stream({kind:'verify',topic:st.topic,label:st.label,cand:items.map((q,i)=>({q:q.q,opts:opts[i]}))},0,0,ctl,verdict).then(()=>{if(run===st.run)topUp(run)},()=>{});
 }
 
 /* ---------- controls ---------- */
