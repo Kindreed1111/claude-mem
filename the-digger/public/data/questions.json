@@ -8773,5 +8773,245 @@
   "anecdote": "Boyhood suit l'acteur Ellar Coltrane de ses 6 ans à ses 18 ans avec la même équipe.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Boyhood",
   "theme": "Films du XXIe siècle"
+ },
+ {
+  "id": "twilight-expert-05",
+  "question": "Quel est le titre français du roman centré sur Bree Tanner (2010) ?",
+  "options": [
+   "L'Appel du sang",
+   "La Nuit éternelle",
+   "Le Pacte d'ombre",
+   "La Morsure froide"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Paru en juin 2010, L'Appel du sang : La Seconde Vie de Bree Tanner suit une nouveau-née créée par Victoria.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/L%27Appel_du_sang",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-expert-06",
+  "question": "Comment s'appellent Bella et Edward dans la version inversée Vie et Mort ?",
+  "options": [
+   "Beau et Edythe",
+   "Ben et Evelyne",
+   "Brian et Elena",
+   "Bruce et Emilia"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Publié en 2015 pour les 10 ans de la saga, Vie et Mort inverse le genre des héros en Beaufort et Edythe.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Twilight",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-expert-07",
+  "question": "Quel compositeur français signe la musique du film Tentation (2009) ?",
+  "options": [
+   "Carter Burwell",
+   "Alexandre Desplat",
+   "Howard Shore",
+   "Danny Elfman"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Alexandre Desplat a composé la bande originale de Twilight, chapitre II : Tentation de Chris Weitz.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Twilight,_chapitre_II_:_Tentation",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-expert-08",
+  "question": "Dans quelle armée Jasper Whitlock s'est-il engagé avant sa morsure ?",
+  "options": [
+   "L'armée de l'Union",
+   "L'armée britannique",
+   "L'armée confédérée",
+   "La légion étrangère"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Né au Texas en 1844, Jasper s'engage dans l'armée confédérée en 1861 avant d'être transformé par Maria en 1863.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Jasper_Hale",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-expert-09",
+  "question": "Quelle actrice incarne Jane, membre redoutée de la garde des Volturi ?",
+  "options": [
+   "Bryce Dallas Howard",
+   "Anna Kendrick",
+   "Ashley Greene",
+   "Dakota Fanning"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Dakota Fanning incarne Jane, capable d'infliger une douleur mentale illusoire d'un simple regard.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Jane_Volturi_(Twilight)",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-expert-10",
+  "question": "Quel est le nom de jeune fille humain de Jasper Hale ?",
+  "options": [
+   "Whitlock",
+   "Masen",
+   "McCarty",
+   "Stanley"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Il porte le nom Hale uniquement pour se faire passer pour le frère jumeau de Rosalie.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Jasper_Hale",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-expert-11",
+  "question": "Quel est le nom de naissance humain d'Edward Cullen ?",
+  "options": [
+   "Edward Whitlock",
+   "Edward Masen",
+   "Edward Stanley",
+   "Edward McCarty"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Fils d'Edward Masen Senior et Elizabeth Masen, il est né à Chicago en 1901.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Personnages_de_Twilight",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-expert-12",
+  "question": "Dans quelle ville Carlisle Cullen est-il né dans les années 1640 ?",
+  "options": [
+   "Édimbourg",
+   "Dublin",
+   "Londres",
+   "Oxford"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Fils d'un pasteur anglican chasseur de sorcières, Carlisle est né à Londres au XVIIe siècle.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Personnages_de_Twilight",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-expert-13",
+  "question": "Quel morceau de Claude Debussy Edward joue-t-il au piano pour Bella ?",
+  "options": [
+   "Rêverie",
+   "La Mer",
+   "Arabesque n°1",
+   "Clair de lune"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Pianiste virtuose, Edward joue notamment « Clair de lune » de Debussy dans Fascination.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Edward_Cullen",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-expert-14",
+  "question": "Quel réalisateur a mis en scène Twilight, chapitre III : Hésitation ?",
+  "options": [
+   "David Slade",
+   "Chris Weitz",
+   "Bill Condon",
+   "Catherine Hardwicke"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "David Slade (30 jours de nuit) a réalisé Hésitation en 2010 sur une musique d'Howard Shore.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Twilight,_chapitre_III_:_H%C3%A9sitation",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-expert-15",
+  "question": "Quel pouvoir particulier possède Marcus, l'un des trois chefs Volturi ?",
+  "options": [
+   "Lire les pensées",
+   "Détecter les relations",
+   "Prédire l'avenir",
+   "Contrôler les émotions"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Marcus perçoit la force et la nature des liens émotionnels entre les individus.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Personnages_de_Twilight",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-expert-16",
+  "question": "Quelle est la particularité du don télépathique de Renesmée Cullen ?",
+  "options": [
+   "Elle bloque tous les dons",
+   "Elle contrôle les éléments",
+   "Elle transmet par le toucher",
+   "Elle efface les souvenirs"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "À l'inverse d'Edward qui lit les pensées à distance, Renesmée projette ses pensées en touchant la peau.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Personnages_de_Twilight",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-expert-17",
+  "question": "Quel réalisateur a signé les deux parties de Révélation (2011-2012) ?",
+  "options": [
+   "Chris Weitz",
+   "David Slade",
+   "Francis Lawrence",
+   "Bill Condon"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Bill Condon a réalisé les deux volets finaux de la saga sortis en novembre 2011 et novembre 2012.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Twilight_(s%C3%A9rie_de_films)",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-expert-18",
+  "question": "Quel chef quileute a conclu le traité initial avec les Cullen ?",
+  "options": [
+   "Ephraïm Black",
+   "Billy Black",
+   "Taha Aki",
+   "Quil Ateara"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Ephraïm Black, arrière-grand-père de Jacob, a négocié la trêve interdisant aux Cullen les terres quileutes.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Personnages_de_Twilight",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-expert-19",
+  "question": "Quelle actrice incarne Bree Tanner dans le film Hésitation (2010) ?",
+  "options": [
+   "Christian Serratos",
+   "Jodelle Ferland",
+   "Nikki Reed",
+   "Julia Jones"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "L'actrice canadienne Jodelle Ferland interprète la jeune vampire nouveau-née dans Hésitation.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/L%27Appel_du_sang",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-expert-20",
+  "question": "À quelle date exacte Stephenie Meyer a-t-elle rêvé de Twilight ?",
+  "options": [
+   "14 février 2004",
+   "31 octobre 2002",
+   "2 juin 2003",
+   "11 septembre 2001"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Le 2 juin 2003, un rêve d'une humaine et d'un vampire brillant au soleil dans une clairière lance l'écriture.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Twilight",
+  "theme": "Twilight"
  }
 ]
