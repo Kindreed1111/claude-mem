@@ -5233,5 +5233,1205 @@
   "anecdote": "Katy Perry (piste 20, avec le producteur ok) conclut la mixtape sortie en mars 2026.",
   "sourceUrl": "https://music.apple.com/fr/album/jeune-morty-vol-1/1875299217",
   "theme": "Jeune Morty"
+ },
+ {
+  "id": "expert-lafeve-01",
+  "question": "Sous quel pseudonyme La Fève composait-il des prods à ses débuts ?",
+  "options": [
+   "Hermes",
+   "Kosei",
+   "Lyele",
+   "Walone"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Avant d'exploser au micro, La Fève a mené une carrière de beatmaker sous le nom Hermes.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-lafeve-02",
+  "question": "Quel album de La Fève est sorti le 23 octobre 2026 ?",
+  "options": [
+   "BIGLAF",
+   "Finis-les",
+   "Nocturnes 3",
+   "Paresse 2"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Finis-les est paru le 23 octobre 2026, deux ans après la mixtape surprise BIGLAF.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-lafeve-03",
+  "question": "Quelle mixtape surprise La Fève publie-t-il le 6 septembre 2024 ?",
+  "options": [
+   "Empty the Bin 4",
+   "Nocturnes 4",
+   "BIGLAF",
+   "Kolaf 2"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Sortie sans annonce le 6 septembre 2024, BIGLAF précède Empty the Bin vol. 4 de trois mois.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-lafeve-04",
+  "question": "Quel rappeur partage le morceau Ingé Son avec Kekra et La Fève ?",
+  "options": [
+   "Freeze Corleone",
+   "Jazzy Bazz",
+   "Deen Burbigo",
+   "Alpha Wann"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Paru en 2023, Ingé Son réunit Kekra, Alpha Wann et La Fève sur un même titre.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-lafeve-05",
+  "question": "Avec quel rappeur suisse La Fève signe-t-il SLO' JAM en 2026 ?",
+  "options": [
+   "Makala",
+   "Di-Meh",
+   "Slimka",
+   "Varnish La Piscine"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "En 2026, La Fève apparaît aux côtés du rappeur genevois Makala sur le titre SLO' JAM.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-lafeve-06",
+  "question": "Quel rappeur est invité sur le titre Rip Dolph dans l'album 24 ?",
+  "options": [
+   "Jolagreen23",
+   "Zequin",
+   "Beendo Z",
+   "Rowjay"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Zequin pose son couplet sur Rip Dolph, extrait du premier album studio 24 (2023).",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/24_(album)",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-lafeve-07",
+  "question": "Quel titre de 2025 réunit Hamza, La Fève et Tarik Azzouz ?",
+  "options": [
+   "JOLAF",
+   "SOLO",
+   "BIG BODY",
+   "FAUX G"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "BIG BODY est une collaboration sortie en 2025 entre Tarik Azzouz, Hamza et La Fève.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-lafeve-08",
+  "question": "Quelle mixtape de La Fève est parue en 2017 avant Paresse ?",
+  "options": [
+   "Luxure",
+   "Nocturnes 2",
+   "Kolaf",
+   "Bail De Canard"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Bail De Canard et Paresse comptent parmi ses premières mixtapes SoundCloud de 2017.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-lafeve-09",
+  "question": "Via quelle structure l'album 24 est-il distribué en décembre 2023 ?",
+  "options": [
+   "Walone / ADA France",
+   "Subliminal / Sony",
+   "92i / Capitol",
+   "Rec. 118 / Warner"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Sorti le 22 décembre 2023, 24 est publié sous le label Walone distribué par ADA France.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/24_(album)",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-lafeve-10",
+  "question": "Avec quel artiste La Fève sort-il le titre JOLAF en 2026 ?",
+  "options": [
+   "Ikaz Boi",
+   "Jolagreen23",
+   "Bushi",
+   "Roshi"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "JOLAF scelle en 2026 la rencontre entre Jolagreen23 et La Fève.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-lafeve-11",
+  "question": "Quel producteur américain d'Atlanta signe ZAY INTRO et RIP KEED ?",
+  "options": [
+   "Metro Boomin",
+   "Southside",
+   "Zaytoven",
+   "Wheezy"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Le pionnier de la trap d'Atlanta Zaytoven produit deux pistes de l'album 24 (2023).",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/24_(album)",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-lafeve-12",
+  "question": "Quel duo produit la piste bonus SAMESHIT de l'album 24 ?",
+  "options": [
+   "Kosei & D1gri",
+   "Zaytoven & Kosei",
+   "Lyele & FREAKEY!",
+   "Rosaliedu38 & Neophron"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Rosaliedu38 et Neophron signent la production de SAMESHIT, deuxième bonus de 24.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/24_(album)",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-lafeve-13",
+  "question": "Quelle place atteint l'album 24 au classement SNEP en France ?",
+  "options": [
+   "2e place",
+   "1re place",
+   "5e place",
+   "8e place"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "L'album 24 s'est hissé jusqu'à la 2e place du Top Albums français (SNEP).",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/24_(album)",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-lafeve-14",
+  "question": "Quel morceau de 24 contient des voix additionnelles de Tiakola ?",
+  "options": [
+   "HOMESTUDIO",
+   "LOYAL",
+   "NAVRÉ",
+   "ZAY INTRO"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "En plus de son featuring sur 500, Tiakola pose des voix additionnelles sur LOYAL.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/24_(album)",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-lafeve-15",
+  "question": "Sur quelle mixtape de La Fouine La Fève pose-t-il sur Eolienne ?",
+  "options": [
+   "Drôle de parcours",
+   "La Fouine vs Laouni",
+   "Capitale du Crime Radio",
+   "Aller-Retour"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "En novembre 2024, La Fève apparaît sur Eolienne et T'es bête ou quoi avec La Fouine.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-lafeve-16",
+  "question": "Avec quel artiste La Fève sort-il l'EP 7EP vol. 1 en 2017 ?",
+  "options": [
+   "Kosei",
+   "Lyele",
+   "J9ueve",
+   "Dundy"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Paru en 2017, 7EP vol. 1 est un projet collaboratif réalisé avec Dundy.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-lafeve-17",
+  "question": "Quel titre de 2022 réunit Deen Burbigo, Jazzy Bazz et La Fève ?",
+  "options": [
+   "FAUX G",
+   "Ingé Son",
+   "King Kong",
+   "DOUBLE F"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Sorti en 2022, FAUX G associe Deen Burbigo, Jazzy Bazz et La Fève.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-lafeve-18",
+  "question": "Quel rappeur canadien partage DOUBLE F avec La Fève en 2024 ?",
+  "options": [
+   "Tory Lanez",
+   "Rowjay",
+   "NAV",
+   "BBNO$"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "DOUBLE F réunit le rappeur québécois Rowjay et La Fève en 2024.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-lafeve-19",
+  "question": "Quel rappeur partage le morceau La vie est belle avec La Fève ?",
+  "options": [
+   "Luther",
+   "Khali",
+   "Zamdane",
+   "EDGE"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "La vie est belle est une collaboration entre Zamdane et La Fève parue en 2025.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-lafeve-20",
+  "question": "Quel premier extrait clippé annonce l'album 24 le 23 nov. 2023 ?",
+  "options": [
+   "ZAZA PART. 2",
+   "HOMESTUDIO",
+   "QUI ?",
+   "LOYAL"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Le clip de LOYAL est sorti le 23 novembre 2023, un mois avant l'album 24.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/24_(album)",
+  "theme": "La Fève"
+ },
+ {
+  "id": "expert-carti-01",
+  "question": "Sous quel pseudonyme Playboi Carti sort-il Young Misfit en 2012 ?",
+  "options": [
+   "Sir Cartier",
+   "King Vamp",
+   "Cash Carti",
+   "Jordan Carter"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Avant Playboi Carti, il publie THC: The High Chronicals (2011) et Young Misfit (2012) sous Sir Cartier.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Playboi_Carti_discography",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-carti-02",
+  "question": "Quel DJ anime et héberge l'album Music de Playboi Carti en 2025 ?",
+  "options": [
+   "DJ Drama",
+   "DJ Swamp Izzo",
+   "DJ Akademiks",
+   "DJ Whoo Kid"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "DJ Swamp Izzo assure les transitions et l'animation de l'album Music sorti le 14 mars 2025.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Music_(Playboi_Carti_album)",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-carti-03",
+  "question": "Quel titre de l'album Music réunit Playboi Carti et Lil Uzi Vert ?",
+  "options": [
+   "Radar",
+   "Munyun",
+   "Jumpin",
+   "Crank"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Long de 1 min 32, Jumpin marque les retrouvailles officielles du duo sur l'album Music.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Music_(Playboi_Carti_album)",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-carti-04",
+  "question": "Comment s'appelle l'édition deluxe de Music sortie en mars 2025 ?",
+  "options": [
+   "Whole Lotta Music",
+   "I Am Vamp",
+   "Opium Edition",
+   "Sorry 4 Da Wait"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Music - Sorry 4 Da Wait ajoute quatre morceaux supplémentaires quelques jours après l'album.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Playboi_Carti_discography",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-carti-05",
+  "question": "Quel rappeur britannique apparaît sur le titre Toxic dans Music ?",
+  "options": [
+   "Skepta",
+   "Lancey Foux",
+   "Central Cee",
+   "Headie One"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Skepta retrouve Playboi Carti sur Toxic, sept ans après leur classique Lean 4 Real.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Music_(Playboi_Carti_album)",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-carti-06",
+  "question": "Quel est le nom du premier EP auto-produit de Carti en mai 2015 ?",
+  "options": [
+   "In Abundance",
+   "Death in Tune",
+   "Red Tape",
+   "Die Lit 0"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Paru le 13 mai 2015, Death in Tune précède de deux ans sa mixtape éponyme chez AWGE.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Playboi_Carti_discography",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-carti-07",
+  "question": "Quel morceau de Music réunit Kendrick Lamar et Jhené Aiko ?",
+  "options": [
+   "Mojo Jojo",
+   "Good Credit",
+   "Backd00r",
+   "Fine Shit"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Backd00r, coproduit notamment par Kanye West et Ojivolta, invite Kendrick Lamar et Jhené Aiko.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Music_(Playboi_Carti_album)",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-carti-08",
+  "question": "Quel producteur signe seul l'instrumentale de Radar sur Music ?",
+  "options": [
+   "F1lthy",
+   "Cardo",
+   "Pi'erre Bourne",
+   "Metro Boomin"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Metro Boomin produit en solo le morceau Radar (1:47) sur l'album Music.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Music_(Playboi_Carti_album)",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-carti-09",
+  "question": "Quel titre inédit Carti partage-t-il sur l'Instagram Opium fin 2024 ?",
+  "options": [
+   "Play This",
+   "All Red",
+   "Evil J0rdan",
+   "Pop Out"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Le 22 novembre 2024, il dévoile Play This directement via le compte Instagram d'Opium.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Music_(Playboi_Carti_album)",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-carti-10",
+  "question": "Combien de streams Spotify en 1 jour l'album Music bat-il en 2025 ?",
+  "options": [
+   "89 millions",
+   "134 millions",
+   "178 millions",
+   "61 millions"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Avec 134 millions d'écoutes le 14 mars 2025, Music signe le record rap sur une journée en 2025.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Playboi_Carti_discography",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-carti-11",
+  "question": "Quel label d'Atlanta signe Playboi Carti dès 2014 avant AWGE ?",
+  "options": [
+   "Quality Control",
+   "1017 Records",
+   "Awful Records",
+   "Freebandz"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Avant d'intégrer AWGE en 2016, Carti débute au sein du collectif d'Atlanta Awful Records.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-carti-12",
+  "question": "Quel titre de l'album Music débute n°2 au Billboard Hot 100 ?",
+  "options": [
+   "Pop Out",
+   "Good Credit",
+   "Rather Lie",
+   "Evil J0rdan"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Evil J0rdan a débuté directement à la 2e place du classement Billboard Hot 100 en 2025.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-carti-13",
+  "question": "Quel morceau de Kendrick Lamar et Carti figure sur Music ?",
+  "options": [
+   "Good Credit",
+   "Crush",
+   "Philly",
+   "Munyun"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Produit par Cardo, Good Credit réunit Playboi Carti et Kendrick Lamar.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Music_(Playboi_Carti_album)",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-carti-14",
+  "question": "Sur quels deux titres de Xperiment de Ken Carson Carti pose-t-il ?",
+  "options": [
+   "Pop Out et Crush",
+   "Deaf Note et WeDidIt",
+   "Radar et Crank",
+   "Toxic et Munyun"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Le 3 juillet 2026, Carti apparaît sur Deaf Note et WeDidIt de l'album Xperiment de Ken Carson.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-carti-15",
+  "question": "Quel était le nom initial de la tournée King Vamp Tour en 2021 ?",
+  "options": [
+   "Opium World Tour",
+   "Whole Lotta Tour",
+   "Narcissist Tour",
+   "Red Vamp Tour"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "La tournée de l'automne 2021 s'appelait à l'origine Narcissist Tour avant d'être renommée.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-carti-16",
+  "question": "Quel vétéran d'A$AP Mob est aussi signé sur le label Opium ?",
+  "options": [
+   "A$AP Ferg",
+   "A$AP Twelvyy",
+   "A$AP Ant",
+   "A$AP Nast"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Fondé en 2019, Opium réunit Ken Carson, Destroy Lonely, Homixide Gang et A$AP Nast.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-carti-17",
+  "question": "Quel morceau ouvre la tracklist officielle de l'album Music ?",
+  "options": [
+   "Pop Out",
+   "Evil J0rdan",
+   "Crush",
+   "K Pop"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Produit notamment par DY Krazy et Slowburnz, Pop Out (2:41) ouvre l'album Music.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Music_(Playboi_Carti_album)",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-carti-18",
+  "question": "Quel titre de Music réunit Carti, Future et Travis Scott ?",
+  "options": [
+   "Type Shit",
+   "Charge Dem Hoes a Fee",
+   "Philly",
+   "Mojo Jojo"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Produit par Wheezy et Southside, Charge Dem Hoes a Fee réunit le trio sur Music.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Music_(Playboi_Carti_album)",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-carti-19",
+  "question": "Quelle est la date exacte de sortie de la mixtape Playboi Carti ?",
+  "options": [
+   "11 mai 2018",
+   "25 décembre 2020",
+   "14 avril 2017",
+   "5 novembre 2011"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Sa mixtape commerciale éponyme est sortie le 14 avril 2017 chez AWGE et Interscope.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Playboi_Carti_discography",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-carti-20",
+  "question": "Combien d'unités équivalent-album Die Lit fait-il en 1re semaine ?",
+  "options": [
+   "100 000",
+   "45 000",
+   "134 000",
+   "61 000"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Sorti le 11 mai 2018, Die Lit a débuté n°3 au Billboard 200 avec 61 000 unités.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Playboi_Carti_discography",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "expert-uzi-01",
+  "question": "Quel nom de scène Lil Uzi Vert utilisait-il au lycée avec Steaktown ?",
+  "options": [
+   "Sealab Vertical",
+   "Baby Pluto",
+   "Renji Vertical",
+   "Symere Woods"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "En classe de seconde à Philadelphie, il forme le groupe Steaktown sous le pseudo Sealab Vertical.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Lil_Uzi_Vert",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-uzi-02",
+  "question": "Quel producteur a composé le single White Shit d'Uzi en 2014 ?",
+  "options": [
+   "Maaly Raw",
+   "SpaceGhostPurrp",
+   "Don Cannon",
+   "TM88"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Extrait de Purple Thoughtz EP Vol. 1 (janvier 2014), White Shit est produit par SpaceGhostPurrp.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Lil_Uzi_Vert",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-uzi-03",
+  "question": "Via quelle structure Lil Uzi Vert publie-t-il sa musique fin 2025 ?",
+  "options": [
+   "AWGE / Interscope",
+   "Opium / Universal",
+   "Roc Nation Dist.",
+   "Quality Control"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Après la fin de son contrat Atlantic fin 2025, Uzi passe en indépendant via Roc Nation Distribution.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Lil_Uzi_Vert_discography",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-uzi-04",
+  "question": "Quel EP de Lil Uzi Vert est sorti le 31 juillet 2026 ?",
+  "options": [
+   "Red & White",
+   "Luv Is Rage 1.5",
+   "Purple Thoughtz 2",
+   "Maverick Almost Forever"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Paru le 31 juillet 2026 via Cor(e) et Roc Nation, l'EP s'est classé 25e au Billboard 200.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Lil_Uzi_Vert_discography",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-uzi-05",
+  "question": "Comment s'appelle la mixtape commune d'Uzi et Gucci Mane en 2016 ?",
+  "options": [
+   "1017 vs. the World",
+   "Pluto x Baby Pluto",
+   "The Perfect LUV Tape",
+   "The Real Uzi"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Sortie le 23 novembre 2016, 1017 vs. the World réunit Lil Uzi Vert et Gucci Mane sur 7 titres.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Lil_Uzi_Vert_discography",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-uzi-06",
+  "question": "Quel single marque les débuts indépendants d'Uzi fin 2025 ?",
+  "options": [
+   "New Patek",
+   "Chanel Boy",
+   "Free Uzi",
+   "Sauce It Up"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Chanel Boy et Relevant sont les deux premiers singles publiés après son départ d'Atlantic.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Lil_Uzi_Vert_discography",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-uzi-07",
+  "question": "À quelle date précise l'album Eternal Atake 2 est-il sorti ?",
+  "options": [
+   "30 juin 2023",
+   "6 mars 2020",
+   "1er novembre 2024",
+   "25 août 2017"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Eternal Atake 2 est sorti le 1er novembre 2024 et a débuté à la 3e place du Billboard 200.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Lil_Uzi_Vert_discography",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-uzi-08",
+  "question": "Sur quel sous-label de Don Cannon Uzi sort-il The Real Uzi en 2014 ?",
+  "options": [
+   "Generation Now",
+   "Freebandz",
+   "Cactus Jack",
+   "The Academy"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Don Cannon le repère via DJ Diamond Kuts et le signe d'abord sur The Academy en août 2014.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Lil_Uzi_Vert",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-uzi-09",
+  "question": "Quel producteur signe le titre SoundCloud No Wait d'Uzi en 2015 ?",
+  "options": [
+   "Metro Boomin",
+   "Pi'erre Bourne",
+   "Wheezy",
+   "Southside"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Avant Luv Is Rage, Uzi dévoile sur SoundCloud No Wait produit par Metro Boomin.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Lil_Uzi_Vert",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-uzi-10",
+  "question": "Quel duo indie-pop est samplé sur The Way Life Goes d'Uzi ?",
+  "options": [
+   "MGMT",
+   "Oh Wonder",
+   "Empire of the Sun",
+   "Beach House"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Le morceau repose sur un sample de Landslide du duo londonien Oh Wonder.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Lil_Uzi_Vert_discography",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-uzi-11",
+  "question": "Quel producteur norvégien coproduit la majorité d'Eternal Atake 2 ?",
+  "options": [
+   "Kygo",
+   "Alan Walker",
+   "Cashmere Cat",
+   "Lido"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Cashmere Cat et Brandon Finessin assurent l'essentiel de la production d'Eternal Atake 2.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Eternal_Atake_2",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-uzi-12",
+  "question": "Quel boys band américain est invité sur The Rush dans EA 2 ?",
+  "options": [
+   "Backstreet Boys",
+   "One Direction",
+   "Jonas Brothers",
+   "Big Time Rush"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Big Time Rush apparaît sur la piste 5 The Rush de l'album Eternal Atake 2 (2024).",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Eternal_Atake_2",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-uzi-13",
+  "question": "Quel groupe japonais de kawaii metal est invité sur Pink Tape ?",
+  "options": [
+   "Babymetal",
+   "Perfume",
+   "One Ok Rock",
+   "CHAI"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Babymetal collabore avec Lil Uzi Vert sur le titre The End (produit par Maaly Raw).",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Pink_Tape_(Lil_Uzi_Vert_album)",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-uzi-14",
+  "question": "Quel classique métal Uzi reprend-il sur la piste CS de Pink Tape ?",
+  "options": [
+   "Enter Sandman",
+   "Chop Suey!",
+   "Master of Puppets",
+   "In the End"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Produit par Rick Rubin, CS est une reprise de Chop Suey! du groupe System of a Down.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Pink_Tape_(Lil_Uzi_Vert_album)",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-uzi-15",
+  "question": "Quel classique du duo français Justice est samplé sur Fire Alarm ?",
+  "options": [
+   "D.A.N.C.E.",
+   "Genesis",
+   "Stress",
+   "Phantom"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Fire Alarm (feat. Snow Strippers) sur Pink Tape sample le morceau Stress de Justice.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Pink_Tape_(Lil_Uzi_Vert_album)",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-uzi-16",
+  "question": "Quel chanteur pop pose sur PerkySex et Conceited dans EA 2 ?",
+  "options": [
+   "Shawn Mendes",
+   "Ed Sheeran",
+   "Troye Sivan",
+   "Charlie Puth"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Charlie Puth coproduit et pose des voix additionnelles sur PerkySex et Conceited.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Eternal_Atake_2",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-uzi-17",
+  "question": "Quel groupe rock britannique accompagne Uzi sur Werewolf ?",
+  "options": [
+   "Bring Me the Horizon",
+   "Arctic Monkeys",
+   "Muse",
+   "Radiohead"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Bring Me the Horizon produit et chante sur Werewolf, piste 18 de Pink Tape (2023).",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Pink_Tape_(Lil_Uzi_Vert_album)",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-uzi-18",
+  "question": "Quelle productrice vénézuélienne coproduit Suicide Doors ?",
+  "options": [
+   "Tokischa",
+   "Arca",
+   "Rosalía",
+   "Kali Uchis"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Arca coproduit Suicide Doors aux côtés de Brandon Finessin sur Pink Tape.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Pink_Tape_(Lil_Uzi_Vert_album)",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-uzi-19",
+  "question": "Quel morceau d'Alvvays est interpolé sur We Good dans EA 2 ?",
+  "options": [
+   "Archie, Marry Me",
+   "Dreams Tonite",
+   "Very Online Guy",
+   "In Undertow"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "We Good (produit par Cashmere Cat et WondaGurl) interpole Very Online Guy d'Alvvays.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Eternal_Atake_2",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-uzi-20",
+  "question": "Quel tube eurodance d'Eiffel 65 est interpolé sur Endless Fashion ?",
+  "options": [
+   "Move Your Body",
+   "Too Much of Heaven",
+   "Lucky",
+   "Blue (Da Ba Dee)"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Endless Fashion (feat. Nicki Minaj) reprend la mélodie de Blue (Da Ba Dee) d'Eiffel 65.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Pink_Tape_(Lil_Uzi_Vert_album)",
+  "theme": "Lil Uzi Vert"
+ },
+ {
+  "id": "expert-aitana-01",
+  "question": "Dans quelle commune catalane Aitana a-t-elle grandi dès ses 9 ans ?",
+  "options": [
+   "Sant Climent de Llobregat",
+   "Hospitalet de Llobregat",
+   "Badalona de Mar",
+   "Terrassa del Vallès"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Née à Barcelone le 27 juin 1999, Aitana grandit à Viladecans puis à Sant Climent de Llobregat.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Aitana_(singer)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "expert-aitana-02",
+  "question": "Quel album studio Aitana publie-t-elle le 30 mai 2025 ?",
+  "options": [
+   "Alpha",
+   "Cuarto Azul",
+   "11 Razones",
+   "Spoiler"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Paru le 30 mai 2025, Cuarto Azul s'est classé n°1 en Espagne dès sa première semaine.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Cuarto_Azul",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "expert-aitana-03",
+  "question": "Quel producteur argentin supervise la majorité de Cuarto Azul ?",
+  "options": [
+   "Bizarrap",
+   "Tainy",
+   "Nico Cotton",
+   "Sky Rompiendo"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Nicolás Cotton produit la majeure partie des pistes de Cuarto Azul, dont Segundo Intento.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Cuarto_Azul",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "expert-aitana-04",
+  "question": "Quel interlude sépare les deux actes de l'album Cuarto Azul ?",
+  "options": [
+   "6 de Febrero",
+   "Cuando Hables con Él",
+   "Conexión Psíquica",
+   "Luz de la Mañana"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Luz de la Mañana (Interlude) marque la transition entre la partie sombre et lumineuse du disque.",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Cuarto_azul",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "expert-aitana-05",
+  "question": "Quel Latin Grammy Award Aitana remporte-t-elle en 2025 ?",
+  "options": [
+   "Best Recording Package",
+   "Album of the Year",
+   "Best New Artist",
+   "Song of the Year"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "En 2025, Aitana décroche le Latin Grammy du meilleur design d'emballage d'album (Recording Package).",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Aitana_(singer)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "expert-aitana-06",
+  "question": "Quel est le nom de son personnage dans la série Disney+ La Última ?",
+  "options": [
+   "Valeria",
+   "Candela",
+   "Sofía",
+   "Lucía"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Dans La Última (2022), Aitana incarne Candela, une jeune chanteuse face au boxeur Diego.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Aitana_(singer)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "expert-aitana-07",
+  "question": "Dans quelle ville islandaise le clip d'Akureyri a-t-il été tourné ?",
+  "options": [
+   "Reykjavik",
+   "Vik",
+   "Akureyri",
+   "Selfoss"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Le clip de son duo de 2024 avec Sebastián Yatra a été filmé directement à Akureyri, en Islande.",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "expert-aitana-08",
+  "question": "Quel producteur signe le titre Conexión Psíquica sur Cuarto Azul ?",
+  "options": [
+   "Andrés Torres",
+   "Manu Lara",
+   "Mauricio Rengifo",
+   "DallasK"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "DallasK produit Conexión Psíquica, sorti comme single de Cuarto Azul en septembre 2026.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Cuarto_Azul",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "expert-aitana-09",
+  "question": "Comment s'intitule la docu-série Netflix sur Aitana sortie en 2025 ?",
+  "options": [
+   "Aitana: Metamorfosis",
+   "Aitana: Play Tour",
+   "Aitana: Cuarto Azul",
+   "Aitana: Sin Filtro"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Réalisée par Chloé Wallace, la série documentaire en 6 épisodes est sortie le 28 février 2025.",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "expert-aitana-10",
+  "question": "Sur quel album de Quevedo Aitana chante-t-elle le n°1 Gran Vía ?",
+  "options": [
+   "Donde Quiero Estar",
+   "Buenas Noches",
+   "Pedestrian",
+   "La Última"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Extrait de Buenas Noches (2024) de Quevedo, leur duo Gran Vía a débuté n°1 sur Spotify Espagne.",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "expert-aitana-11",
+  "question": "À quelle place Aitana termine-t-elle Operación Triunfo 2017 ?",
+  "options": [
+   "1re place",
+   "3e place",
+   "2e place (42 % des voix)",
+   "4e place"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Le 5 février 2018, Aitana se classe deuxième d'Operación Triunfo 2017 avec 42 % des votes.",
+  "sourceUrl": "https://eu.wikipedia.org/wiki/Aitana_Oca%C3%B1a",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "expert-aitana-12",
+  "question": "Quel est le titre du tout premier single solo d'Aitana en 2018 ?",
+  "options": [
+   "Lo Malo",
+   "Vas a Quedarte",
+   "Berlín",
+   "Teléfono"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Sorti en juillet 2018, Teléfono est resté n°1 six semaines en Espagne (4× platine).",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Aitana_(singer)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "expert-aitana-13",
+  "question": "Avec quel artiste britannique Aitana reprend-elle Like I Can en 2024 ?",
+  "options": [
+   "Sam Smith",
+   "Ed Sheeran",
+   "Harry Styles",
+   "Lewis Capaldi"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "En août 2024, Aitana enregistre une version bilingue espagnol-anglais de Like I Can avec Sam Smith.",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "expert-aitana-14",
+  "question": "Quel film Netflix de 2024 adapte Un peu, beaucoup, aveuglément ?",
+  "options": [
+   "La Última",
+   "Pared con pared",
+   "Cuarto Azul",
+   "A través de mi ventana"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Réalisée par Patricia Font, la comédie romantique Pared con pared met en scène Aitana.",
+  "sourceUrl": "https://de.wikipedia.org/wiki/Aitana_Oca%C3%B1a",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "expert-aitana-15",
+  "question": "Quel chanteur portoricain partage Sentimiento Natural sur Cuarto Azul ?",
+  "options": [
+   "Bad Bunny",
+   "Rauw Alejandro",
+   "Myke Towers",
+   "Ozuna"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Paru le 13 mars 2025, Sentimiento Natural est un duo entre Aitana et Myke Towers.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Cuarto_Azul",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "expert-aitana-16",
+  "question": "Quel chanteur italien invite Aitana au Festival de Sanremo 2024 ?",
+  "options": [
+   "Mahmood",
+   "Blanco",
+   "Marco Mengoni",
+   "Sangiovanni"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "En février 2024, Aitana chante Farfalle aux côtés de Sangiovanni sur la scène de Sanremo.",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "expert-aitana-17",
+  "question": "Quel artiste espagnol partage le remix n°1 Mon Amour avec Aitana ?",
+  "options": [
+   "Zzoilo",
+   "C. Tangana",
+   "Rels B",
+   "Morad"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Le remix de Mon Amour avec Zzoilo en 2021 est resté n°1 en Espagne pendant six semaines.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Aitana_(singer)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "expert-aitana-18",
+  "question": "Quel duo produit 6 de Febrero et Cuando Hables con Él ?",
+  "options": [
+   "Nico Cotton & Casta",
+   "Andrés Torres & M. Rengifo",
+   "DallasK & Manu Lara",
+   "Kuinvi & SpreadLof"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Andrés Torres et Mauricio Rengifo produisent notamment 6 de Febrero sur Cuarto Azul.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Cuarto_Azul",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "expert-aitana-19",
+  "question": "Quel morceau de Cuarto Azul est certifié 6× platine en Espagne ?",
+  "options": [
+   "Segundo Intento",
+   "6 de Febrero",
+   "Superestrella",
+   "Lía"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Superestrella, produit par Nico Cotton, a décroché six disques de platine en Espagne.",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Cuarto_azul",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "expert-aitana-20",
+  "question": "Quelle artiste mexicaine chante Ex Ex Ex avec Aitana sur Cuarto Azul ?",
+  "options": [
+   "Danna Paola",
+   "Sofía Reyes",
+   "Belinda",
+   "Kenia Os"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Kenia Os partage le morceau Ex Ex Ex (produit par Nico Cotton) sur Cuarto Azul.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Cuarto_Azul",
+  "theme": "Aitana Ocaña"
  }
 ]

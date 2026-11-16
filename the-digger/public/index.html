@@ -110,6 +110,7 @@ button{font:inherit;color:inherit}
 #zone{position:absolute;top:100%;left:6px;margin-top:7px;background:var(--pale);color:var(--ink);font:800 10px/1 var(--text);letter-spacing:.1em;text-transform:uppercase;padding:5px 8px 4px;border-radius:var(--wob-s);white-space:nowrap;opacity:.92}
 #zone[data-t="1"]{background:var(--sun)}
 #zone[data-t="2"]{background:var(--sky);color:var(--ink)}
+#zone[data-t="3"]{background:var(--ink);color:var(--sun)}
 #zone.bump{animation:thud .45s cubic-bezier(.3,1.5,.5,1)}
 #game:not(.playing) #zone,#game.running #zone{display:none}
 /* ---- air gauge: a strip of light set above the coal slabs; when it is empty the gallery caves in ---- */
@@ -298,8 +299,8 @@ const tierName=l=>l>=10?'Diamant':l>=7?'Saphir':l>=4?'Acier bleui':l>=2?'Fer':'C
 const MT=[0],baseM=n=>n*n+4*n;
 function depthM(n){n=Math.max(0,n);const L=MT.length-1;if(n>=L)return MT[L]+baseM(n)-baseM(L);const k=Math.floor(n);return lerp(MT[k],MT[k+1],n-k)}
 /* difficulty and air follow the depth in metres */
-const TIER=[{n:'Friche',d:'Facile',air:15},{n:'Galerie',d:'Moyen',air:12},{n:'Abysse',d:'Difficile',air:9}];
-const tierAt=m=>m<25?0:m<70?1:2;
+const TIER=[{n:'Friche',d:'Facile',air:15},{n:'Galerie',d:'Moyen',air:12},{n:'Abysse',d:'Difficile',air:9},{n:'Noyau',d:'Expert',air:7}];
+const tierAt=m=>m<25?0:m<70?1:m<150?2:3;
 /* tools earned with the metres dug over all games */
 const TOOLS=[{k:'pelle',n:'Pelle de chantier',m:0,b:'L’outil de base.'},{k:'pioche',n:'Pioche en acier',m:250,b:'+2 m à chaque bonne réponse.'},{k:'marteau',n:'Marteau-piqueur',m:750,b:'+2 s d’air sur chaque question.'},{k:'foreuse',n:'Foreuse thermique',m:1500,b:'Répare 1 casque tous les 100 m.'}];
 const toolOf=t=>{let i=0;while(i<TOOLS.length-1&&t>=TOOLS[i+1].m)i++;return i};
@@ -751,7 +752,7 @@ const BACKUP=[
 ].map((r,i)=>({id:'secours-'+i,question:r[0],options:r.slice(1,5),correctAnswerIndex:0,difficulty:i<6?'facile':i<11?'moyen':'difficile',anecdote:r[5],sourceUrl:'',theme:'Culture générale'}));
 /* The question bank is built offline by scripts/generate-questions.mjs (every question checked against its source);
    BACKUP above only serves when /data/questions.json cannot be loaded. */
-const DIFF=['facile','moyen','difficile'];
+const DIFF=['facile','moyen','difficile','expert'];
 let BANK=null;
 const bank=()=>BANK||BACKUP;
 const seen=new Set();try{(JSON.parse(localStorage.getItem('digger-seen'))||[]).forEach(id=>seen.add(id))}catch(e){}
@@ -761,7 +762,8 @@ const validQ=b=>b&&typeof b.id==='string'&&typeof b.question==='string'&&Array.i
 const toQ=b=>({id:b.id,diff:b.difficulty,q:b.question,good:b.options[b.correctAnswerIndex],opts:shuffle(b.options),e:str(b.anecdote),src:/^https?:\/\//.test(b.sourceUrl||'')?b.sourceUrl:''});
 function pickBank(){ /* the difficulty follows the depth strictly: another difficulty is never served */
   const want=DIFF[tierAt(depthM(world.level))];
-  let pool=bank().filter(b=>b.difficulty===want&&!Q.used.has(b.id));if(!pool.length)return null;
+  let pool=bank().filter(b=>b.difficulty===want&&!Q.used.has(b.id));
+  if(!pool.length){const all=bank().filter(b=>b.difficulty===want);if(!all.length)return null;all.forEach(b=>Q.used.delete(b.id));pool=all} /* run longer than the pool: reuse this difficulty only, never an easier one */
   if(Q.theme){const th=pool.filter(b=>norm(b.theme||'')===Q.theme);if(th.length)pool=th}
   let fresh=pool.filter(b=>!seen.has(b.id));
   if(!fresh.length){pool.forEach(b=>seen.delete(b.id));saveSeen();fresh=pool} /* all of them already seen: forget only these */
@@ -779,7 +781,7 @@ function matchTheme(raw){ /* null = not a theme of the bank */
   return hit?{key:norm(hit.t),label:hit.t}:null;
 }
 /* usual ways of typing a bank theme */
-const ALIAS={'lol':'league of legends','league':'league of legends','foot':'football','rap francais':'rap fr','rap fr':'rap fr','rap americain':'rap us','rap us':'rap us','hip hop':'rap us','culture g':'culture generale','general':'culture generale'};
+const ALIAS={'uzi':'lil uzi vert','lil uzi':'lil uzi vert','lol':'league of legends','league':'league of legends','foot':'football','rap francais':'rap fr','rap fr':'rap fr','rap americain':'rap us','rap us':'rap us','hip hop':'rap us','culture g':'culture generale','general':'culture generale'};
 function fillVeins(){
   const themes=shuffle([...new Set(bank().map(b=>b.theme).filter(Boolean))]).slice(0,3);veins.textContent='';
   ['Grand filon',...themes].forEach(t=>{const b=document.createElement('button');b.className='vein';b.type='button';b.textContent=t;veins.append(b)});
@@ -932,9 +934,9 @@ function answer(i){ /* i = -1: the air ran out */
   if(ok){
     const n=++st.streak;st.maxStreak=Math.max(st.maxStreak,n);
     sfx.good(world.level+1);hero.pose='dig';hero.pt=0;hero.mood='happy';hero.moodT=now+1.3;
-    const L=world.level,hard=(q.diff||DIFF[tierAt(depthM(L))])==='difficile',gain=Math.round((baseM(L+1)-baseM(L))*(hard?1.25:1))+(st.tool>=1?2:0);
+    const L=world.level,dq=q.diff||DIFF[tierAt(depthM(L))],hard=dq==='difficile'||dq==='expert',mult=dq==='expert'?2:dq==='difficile'?1.25:1,gain=Math.round((baseM(L+1)-baseM(L))*mult)+(st.tool>=1?2:0);
     MT[L+1]=MT[L]+gain;MT.length=L+2;strataLv();
-    say(pick(GOOD),'+'+gain+' m'+(hard?' · prime de risque':''),q.e,'good');
+    say(pick(GOOD),'+'+gain+' m'+(dq==='expert'?' · prime expert ×2':hard?' · prime de risque':''),q.e,'good');
     let fix=0;while(MT[L+1]>=st.next100){if(st.tool>=3&&st.wrong-fix>0)fix++;st.next100+=100} /* thermal drill: a helmet mended every 100 m */
     if(fix){const run=st.run;after(1.1,()=>{if(run!==st.run||st.mode==='over')return;st.wrong=Math.max(0,st.wrong-fix);hero.buriedTo=st.wrong/3;refreshLives();sfx.life();
       const hat=livesEl.children[2-st.wrong];if(hat){hat.style.animation='none';void hat.offsetWidth;hat.style.animation='thud .45s cubic-bezier(.3,1.5,.5,1)'}
