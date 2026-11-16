@@ -973,5 +973,2915 @@
   "anecdote": "Ces 72 scientifiques, uniquement des hommes, ont vécu et travaillé entre 1789 et 1889.",
   "sourceUrl": "https://www.youtube.com/watch?v=-7O1dQTfYuA",
   "theme": "Tour Eiffel"
+ },
+ {
+  "id": "q-df52a943ec",
+  "question": "Combien d'os compte le corps humain ?",
+  "options": [
+   "186",
+   "226",
+   "306",
+   "206"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Le corps humain compte 206 os et 639 muscles, dont 570 muscles squelettiques.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Corps_humain",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-1baf8a6428",
+  "question": "Quel est le vrai nom de Molière ?",
+  "options": [
+   "Jean de La Fontaine",
+   "Jean-Baptiste Poquelin",
+   "Jean Racine",
+   "Pierre Corneille"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Jean-Baptiste Poquelin, dit Molière, est le plus célèbre auteur de comédies de la langue française.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Moli%C3%A8re",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-2005bbd609",
+  "question": "Quel est le plus haut sommet du monde ?",
+  "options": [
+   "Le K2",
+   "Le mont Blanc",
+   "L'Everest",
+   "L'Aconcagua"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "L'Everest, dans l'Himalaya entre le Népal et la Chine, culmine à 8 849 mètres.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Everest",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-6d75e22125",
+  "question": "Sur quel continent coule le Nil ?",
+  "options": [
+   "L'Afrique",
+   "L'Asie",
+   "L'Europe",
+   "L'Amérique"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Le Nil, fleuve d'Afrique de plus de 6 700 km, se jette dans la Méditerranée par un delta au nord de l'Égypte.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Nil",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-5efb7a4be8",
+  "question": "Combien de planètes confirmées compte le Système solaire ?",
+  "options": [
+   "Neuf",
+   "Sept",
+   "Dix",
+   "Huit"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Le Système solaire compte huit planètes confirmées, plus de deux cents lunes et cinq planètes naines.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Syst%C3%A8me_solaire",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-cd5d6e0a65",
+  "question": "Quelle équation célèbre est associée à Albert Einstein ?",
+  "options": [
+   "E = mc2",
+   "F = ma",
+   "PV = nRT",
+   "a² + b² = c²"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "E = mc2 établit une équivalence entre la masse et l'énergie d'un système.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Albert_Einstein",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-21cce025d0",
+  "question": "Quel roman de Victor Hugo est paru en 1862 ?",
+  "options": [
+   "Notre-Dame de Paris",
+   "Les Misérables",
+   "Germinal",
+   "Le Rouge et le Noir"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Après Notre-Dame de Paris en 1831, Victor Hugo connaît un succès plus grand encore avec Les Misérables en 1862.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Victor_Hugo",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-5e10d7a0db",
+  "question": "Dans quelle ville est né Napoléon Bonaparte ?",
+  "options": [
+   "Bastia",
+   "Paris",
+   "Ajaccio",
+   "Toulon"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Napoléon Bonaparte est né le 15 août 1769 à Ajaccio, en Corse.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Napol%C3%A9on_Ier",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-c821c3712c",
+  "question": "En quelle année commence la Révolution française ?",
+  "options": [
+   "1792",
+   "1789",
+   "1799",
+   "1815"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "La Révolution commence avec l'ouverture des États généraux le 5 mai 1789 et s'achève au 18 Brumaire en 1799.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/R%C3%A9volution_fran%C3%A7aise",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-fe210d4c1f",
+  "question": "Près de quelle ville se trouvent les pyramides de Gizeh ?",
+  "options": [
+   "Alexandrie",
+   "Louxor",
+   "Le Caire",
+   "Assouan"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Les pyramides de Gizeh, proches du Caire, sont classées au patrimoine mondial de l'humanité depuis 1979.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Pyramides_de_Gizeh",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-432ec69b6c",
+  "question": "Combien d'États membres compte l'Union européenne depuis 2020 ?",
+  "options": [
+   "Vingt-huit",
+   "Vingt-cinq",
+   "Vingt-sept",
+   "Trente"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "L'UE réunit vingt-sept États depuis 2020 et plus de 449 millions d'habitants.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Union_europ%C3%A9enne",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-e03a2d3f61",
+  "question": "À quel chimiste russe attribue-t-on le tableau périodique des éléments ?",
+  "options": [
+   "Lavoisier",
+   "Pasteur",
+   "Marie Curie",
+   "Mendeleïev"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Dmitri Mendeleïev construit en 1869 une table qui permet même de prédire des éléments encore inconnus.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Tableau_p%C3%A9riodique_des_%C3%A9l%C3%A9ments",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-2bc2548700",
+  "question": "Combien d'éléments compte le tableau périodique standard depuis 2016 ?",
+  "options": [
+   "108",
+   "112",
+   "120",
+   "118"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Depuis 2016, le tableau standard compte 118 éléments, de l'hydrogène à l'oganesson.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Tableau_p%C3%A9riodique_des_%C3%A9l%C3%A9ments",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-5d2a6508f9",
+  "question": "En quelle année Albert Einstein a-t-il reçu le prix Nobel de physique ?",
+  "options": [
+   "1905",
+   "1915",
+   "1933",
+   "1921"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Einstein reçoit le Nobel de physique de 1921 pour son explication de l'effet photoélectrique.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Albert_Einstein",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-4f99a5e399",
+  "question": "Qui furent les premiers à atteindre avec certitude le sommet de l'Everest ?",
+  "options": [
+   "Mallory et Irvine",
+   "Messner et Habeler",
+   "Herzog et Lachenal",
+   "Hillary et Norgay"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Le 29 mai 1953, Edmund Hillary et Tensing Norgay atteignent le sommet de l'Everest.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Everest",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-90e4987374",
+  "question": "Dans quelle ville française est mort Léonard de Vinci ?",
+  "options": [
+   "Blois",
+   "Amboise",
+   "Tours",
+   "Orléans"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Léonard de Vinci est mort le 2 mai 1519 à Amboise, en Touraine.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/L%C3%A9onard_de_Vinci",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-124a8b8887",
+  "question": "En quelle année Napoléon a-t-il été sacré empereur à Notre-Dame de Paris ?",
+  "options": [
+   "1799",
+   "1815",
+   "1810",
+   "1804"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Napoléon est sacré empereur le 2 décembre 1804 à Notre-Dame de Paris, en présence du pape Pie VII.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Napol%C3%A9on_Ier",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-0d5825a8f6",
+  "question": "Sur quelle île Napoléon est-il mort en 1821 ?",
+  "options": [
+   "Sainte-Hélène",
+   "L'île d'Elbe",
+   "La Corse",
+   "Malte"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Napoléon est mort le 5 mai 1821 à Longwood, sur l'île de Sainte-Hélène.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Napol%C3%A9on_Ier",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-9d64998d63",
+  "question": "Dans quelle ville est né Victor Hugo ?",
+  "options": [
+   "Paris",
+   "Lyon",
+   "Besançon",
+   "Rouen"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Victor Hugo est né le 26 février 1802 à Besançon et mort le 22 mai 1885 à Paris.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Victor_Hugo",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-3b84ea83f8",
+  "question": "Quel jour l'Allemagne envahit-elle la Pologne, déclenchant la guerre ?",
+  "options": [
+   "3 septembre 1939",
+   "22 juin 1941",
+   "1er septembre 1939",
+   "7 décembre 1941"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "L'invasion de la Pologne le 1er septembre 1939 entraîne l'entrée en guerre du Royaume-Uni et de la France le 3.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Seconde_Guerre_mondiale",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-6137cad8a4",
+  "question": "Quelle attaque fait entrer les États-Unis dans la Seconde Guerre mondiale ?",
+  "options": [
+   "Midway",
+   "Hiroshima",
+   "Pearl Harbor",
+   "Normandie"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Les États-Unis abandonnent leur neutralité après l'attaque japonaise de Pearl Harbor, le 7 décembre 1941.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Seconde_Guerre_mondiale",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-52842fc36e",
+  "question": "Quelle est la seule des Sept Merveilles du monde encore debout ?",
+  "options": [
+   "Les pyramides de Gizeh",
+   "Le phare d'Alexandrie",
+   "Le colosse de Rhodes",
+   "Les jardins de Babylone"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Les pyramides de Gizeh sont les seules des Sept Merveilles du monde à avoir survécu jusqu'à nos jours.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Pyramides_de_Gizeh",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-4d6284c194",
+  "question": "Dans quelle galaxie se trouve le Système solaire ?",
+  "options": [
+   "Andromède",
+   "Le Triangle",
+   "La Voie lactée",
+   "Le Sombrero"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Le Système solaire réside dans le bras d'Orion de la Voie lactée, à environ 26 100 années-lumière du centre.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Syst%C3%A8me_solaire",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-8dfb645142",
+  "question": "Quel nom antique de l'Égypte vient du limon noir déposé par le Nil ?",
+  "options": [
+   "Nubie",
+   "Thèbes",
+   "Kemet",
+   "Memphis"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Kemet, « la terre noire », vient du limon apporté par la crue du Nil, divinisée sous le nom d'Hâpy.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Nil",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-2d7dcd10b1",
+  "question": "Où le Nil Blanc prend-il sa source ?",
+  "options": [
+   "Au lac Tana",
+   "Au lac Tchad",
+   "Au lac Victoria",
+   "Au lac Malawi"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Le Nil Blanc naît au lac Victoria, le Nil Bleu au lac Tana en Éthiopie.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Nil",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-18a3ff1a0c",
+  "question": "Dans quelle ville le Nil Blanc et le Nil Bleu se rejoignent-ils ?",
+  "options": [
+   "Khartoum",
+   "Le Caire",
+   "Assouan",
+   "Addis-Abeba"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Les deux branches du Nil s'unissent à Khartoum, capitale du Soudan.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Nil",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-ae75f7052a",
+  "question": "Quelle est l'altitude officielle de l'Everest ?",
+  "options": [
+   "8 611 m",
+   "8 091 m",
+   "8 849 m",
+   "9 012 m"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "L'altitude de l'Everest est établie à 8 849 mètres ; il a été identifié comme plus haut sommet après 1847.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Everest",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-646416d068",
+  "question": "Quel métier exerçait George Everest, qui a donné son nom à la montagne ?",
+  "options": [
+   "Alpiniste",
+   "Missionnaire",
+   "Arpenteur",
+   "Explorateur"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Le nom honore George Everest, arpenteur général des Indes orientales de 1830 à 1843.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Everest",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-7d6bb5888c",
+  "question": "Dans quelle ville est né Albert Einstein ?",
+  "options": [
+   "Berlin",
+   "Munich",
+   "Ulm",
+   "Zurich"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Albert Einstein est né le 14 mars 1879 à Ulm et mort le 18 avril 1955 à Princeton.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Albert_Einstein",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-a537de3082",
+  "question": "Combien de muscles compte le corps humain ?",
+  "options": [
+   "206",
+   "512",
+   "450",
+   "639"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Le corps humain compte 639 muscles, dont 570 muscles squelettiques, et 206 os.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Corps_humain",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-5ed399de86",
+  "question": "Quelle troupe Molière forme-t-il à 21 ans avec la famille Béjart ?",
+  "options": [
+   "La Comédie-Française",
+   "Le Théâtre du Soleil",
+   "L'Hôtel de Bourgogne",
+   "L'Illustre Théâtre"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "À 21 ans, Molière forme l'Illustre Théâtre avec une dizaine de camarades, dont trois Béjart.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Moli%C3%A8re",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-2c6a065f56",
+  "question": "À quel âge Molière est-il mort ?",
+  "options": [
+   "46 ans",
+   "63 ans",
+   "72 ans",
+   "51 ans"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Molière meurt brutalement à 51 ans, le 17 février 1673, à son domicile de la rue de Richelieu.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Moli%C3%A8re",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-983ea30b68",
+  "question": "Dans quelle région d'Italie est né Léonard de Vinci ?",
+  "options": [
+   "La Lombardie",
+   "La Vénétie",
+   "La Toscane",
+   "L'Ombrie"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Léonard est né le 15 avril 1452 à Vinci, en Toscane, et a grandi chez ses grands-parents paternels.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/L%C3%A9onard_de_Vinci",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-52a623f53d",
+  "question": "Quel traité, entré en vigueur le 1er décembre 2009, a réformé l'Union européenne ?",
+  "options": [
+   "Le traité de Nice",
+   "Le traité d'Amsterdam",
+   "Le traité de Lisbonne",
+   "Le traité de Versailles"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "L'UE est régie par les traités de Maastricht et de Rome, dans leur version issue du traité de Lisbonne (2009).",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Union_europ%C3%A9enne",
+  "theme": "Culture générale"
+ },
+ {
+  "id": "q-9abc73abde",
+  "question": "Quel pays détient le record de victoires en Coupe du monde ?",
+  "options": [
+   "Le Brésil",
+   "L'Allemagne",
+   "L'Italie",
+   "L'Argentine"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Le Brésil, seule équipe présente à toutes les phases finales, détient le record avec cinq titres mondiaux.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Coupe_du_monde_de_football",
+  "theme": "Football"
+ },
+ {
+  "id": "q-9571474c60",
+  "question": "Quel surnom est souvent donné à Zinédine Zidane ?",
+  "options": [
+   "Le Kaiser",
+   "CR7",
+   "O Rei",
+   "Zizou"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Zinédine Zidane, parfois surnommé Zizou, est né le 23 juin 1972 à Marseille.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Zin%C3%A9dine_Zidane",
+  "theme": "Football"
+ },
+ {
+  "id": "q-8832d2bbe1",
+  "question": "Quel surnom est le plus utilisé pour l'équipe de France de football ?",
+  "options": [
+   "Les Bleus",
+   "Les Diables rouges",
+   "La Seleção",
+   "Les Lions"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Les joueurs de l'équipe de France sont appelés Les Tricolores ou Les Bleus, l'appellation la plus usitée.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/%C3%89quipe_de_France_de_football",
+  "theme": "Football"
+ },
+ {
+  "id": "q-f0ad8225e7",
+  "question": "Combien d'étoiles figurent au-dessus du coq sur le maillot des Bleus ?",
+  "options": [
+   "Deux",
+   "Trois",
+   "Une",
+   "Quatre"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Les deux étoiles représentent les victoires de la France en Coupe du monde en 1998 et en 2018.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/%C3%89quipe_de_France_de_football",
+  "theme": "Football"
+ },
+ {
+  "id": "q-464cdfe39d",
+  "question": "Quel club est le plus titré de l'histoire de la Ligue des champions ?",
+  "options": [
+   "Le Real Madrid",
+   "Le FC Barcelone",
+   "L'AC Milan",
+   "Le Bayern Munich"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Le Real Madrid est le club le plus titré de la Ligue des champions, avec quinze victoires.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ligue_des_champions_de_l%27UEFA",
+  "theme": "Football"
+ },
+ {
+  "id": "q-8b1bf1bc75",
+  "question": "Dans quel stade l'Olympique de Marseille joue-t-il depuis 1937 ?",
+  "options": [
+   "Le Parc des Princes",
+   "Le stade Vélodrome",
+   "Le Stade de France",
+   "Le stade Bollaert"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "L'OM joue au stade de l'Huveaune de 1904 à 1937, année d'inauguration du stade Vélodrome.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Olympique_de_Marseille",
+  "theme": "Football"
+ },
+ {
+  "id": "q-270bc1a9f7",
+  "question": "Dans quel stade le Paris Saint-Germain joue-t-il ?",
+  "options": [
+   "Le stade Vélodrome",
+   "Le Stade de France",
+   "Le Parc des Princes",
+   "Le stade Charléty"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Le PSG joue au Parc des Princes et s'entraîne à Poissy depuis 2023.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Paris_Saint-Germain_Football_Club",
+  "theme": "Football"
+ },
+ {
+  "id": "q-8ef0fd4695",
+  "question": "Quel surnom porte Cristiano Ronaldo ?",
+  "options": [
+   "La Pulga",
+   "Zizou",
+   "O Rei",
+   "CR7"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Cristiano Ronaldo, surnommé CR7, est le meilleur buteur de l'histoire du football selon la FIFA.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Cristiano_Ronaldo",
+  "theme": "Football"
+ },
+ {
+  "id": "q-6cb2087ba6",
+  "question": "Quel club français a gagné la Ligue des champions 1992-1993, une première ?",
+  "options": [
+   "Le Paris Saint-Germain",
+   "L'Olympique de Marseille",
+   "L'AS Monaco",
+   "Les Girondins de Bordeaux"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Sous Bernard Tapie, l'OM remporte la Ligue des champions 1992-1993, une première pour un club français.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Olympique_de_Marseille",
+  "theme": "Football"
+ },
+ {
+  "id": "q-f5dfbf5d46",
+  "question": "Quel joueur est le seul à avoir gagné trois fois la Coupe du monde ?",
+  "options": [
+   "Maradona",
+   "Zidane",
+   "Messi",
+   "Pelé"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Pelé a remporté la Coupe du monde en 1958, 1962 et 1970, un exploit unique.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Pel%C3%A9",
+  "theme": "Football"
+ },
+ {
+  "id": "q-3f2553fcf1",
+  "question": "En quelle année a eu lieu la toute première Coupe du monde de football ?",
+  "options": [
+   "1928",
+   "1934",
+   "1950",
+   "1930"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "La première Coupe du monde a lieu en 1930 en Uruguay, champion olympique 1924 et 1928.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Coupe_du_monde_de_football",
+  "theme": "Football"
+ },
+ {
+  "id": "q-d7b27f4c9b",
+  "question": "Quel pays a accueilli la première Coupe du monde ?",
+  "options": [
+   "Le Brésil",
+   "L'Italie",
+   "La France",
+   "L'Uruguay"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "La première Coupe du monde se joue en 1930 en Uruguay, puis tous les quatre ans sauf en 1942 et 1946.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Coupe_du_monde_de_football",
+  "theme": "Football"
+ },
+ {
+  "id": "q-6b87479967",
+  "question": "Quel joueur a remporté le plus de Ballons d'or ?",
+  "options": [
+   "Lionel Messi",
+   "Cristiano Ronaldo",
+   "Michel Platini",
+   "Johan Cruyff"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Lionel Messi est le joueur le plus titré depuis la création du Ballon d'or, avec 8 trophées.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ballon_d%27or",
+  "theme": "Football"
+ },
+ {
+  "id": "q-9541526875",
+  "question": "Quel magazine a créé le Ballon d'or en 1956 ?",
+  "options": [
+   "L'Équipe",
+   "Onze Mondial",
+   "France Football",
+   "So Foot"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Créé en 1956 par France Football, le Ballon d'or était d'abord réservé aux joueurs européens.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ballon_d%27or",
+  "theme": "Football"
+ },
+ {
+  "id": "q-5884e1e3f4",
+  "question": "Dans quel club Zinédine Zidane a-t-il débuté en professionnel ?",
+  "options": [
+   "Bordeaux",
+   "Marseille",
+   "Monaco",
+   "L'AS Cannes"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Formé à l'AS Cannes, Zidane y débute en professionnel en 1989 avant de rejoindre Bordeaux.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Zin%C3%A9dine_Zidane",
+  "theme": "Football"
+ },
+ {
+  "id": "q-6632daf0ce",
+  "question": "Combien de buts Zidane a-t-il marqués en finale du Mondial 1998 contre le Brésil ?",
+  "options": [
+   "Un",
+   "Trois",
+   "Aucun",
+   "Deux"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Zidane marque deux buts en finale de la Coupe du monde 1998, gagnée 3-0 contre le Brésil.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Zin%C3%A9dine_Zidane",
+  "theme": "Football"
+ },
+ {
+  "id": "q-90c82b9da1",
+  "question": "Quel surnom portait Pelé ?",
+  "options": [
+   "El Pibe de Oro",
+   "La Pulga",
+   "Il Divino",
+   "O Rei"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Surnommé O Rei, « le roi », Pelé a été désigné joueur du XXe siècle par la FIFA.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Pel%C3%A9",
+  "theme": "Football"
+ },
+ {
+  "id": "q-caefec9b1b",
+  "question": "Quel surnom portait Diego Maradona ?",
+  "options": [
+   "O Rei",
+   "La Pulga",
+   "El Niño",
+   "El Pibe de Oro"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Surnommé El Pibe de Oro, « le gamin en or », Maradona porte l'Argentine vers le titre mondial en 1986.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Diego_Maradona",
+  "theme": "Football"
+ },
+ {
+  "id": "q-9641922759",
+  "question": "Quelle sélection a remporté le plus de championnats d'Europe ?",
+  "options": [
+   "L'Allemagne",
+   "L'Italie",
+   "La France",
+   "L'Espagne"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "L'Espagne est la plus titrée à l'Euro avec quatre sacres, devant l'Allemagne (trois), l'Italie et la France (deux).",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Championnat_d%27Europe_de_football",
+  "theme": "Football"
+ },
+ {
+  "id": "q-3a8d1e1756",
+  "question": "À quel âge Lionel Messi a-t-il rejoint le FC Barcelone ?",
+  "options": [
+   "Huit ans",
+   "Treize ans",
+   "Dix-sept ans",
+   "Vingt ans"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Atteint d'un problème de croissance, Messi rejoint à treize ans le FC Barcelone, dont il devient l'emblème.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Lionel_Messi",
+  "theme": "Football"
+ },
+ {
+  "id": "q-298708785b",
+  "question": "Dans quel club Kylian Mbappé a-t-il commencé sa carrière professionnelle ?",
+  "options": [
+   "Le PSG",
+   "L'OL",
+   "Le Real",
+   "L'AS Monaco"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Mbappé débute en professionnel en 2015 à l'AS Monaco, avec qui il remporte la Ligue 1 2016-2017.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Kylian_Mbapp%C3%A9",
+  "theme": "Football"
+ },
+ {
+  "id": "q-684c2ed304",
+  "question": "Contre quel pays Zidane a-t-il joué son dernier match, en finale du Mondial 2006 ?",
+  "options": [
+   "Le Brésil",
+   "Le Portugal",
+   "L'Allemagne",
+   "L'Italie"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Le 9 juillet 2006, Zidane joue son dernier match en finale contre l'Italie, perdue aux tirs au but.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Zin%C3%A9dine_Zidane",
+  "theme": "Football"
+ },
+ {
+  "id": "q-610bf657ca",
+  "question": "Dans quelle ville argentine est né Lionel Messi ?",
+  "options": [
+   "Buenos Aires",
+   "Córdoba",
+   "Rosario",
+   "Mendoza"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Lionel Messi est né le 24 juin 1987 à Rosario, où il commence le football à cinq ans.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Lionel_Messi",
+  "theme": "Football"
+ },
+ {
+  "id": "q-17ee96c1f1",
+  "question": "En quelle année l'Olympique de Marseille a-t-il été fondé ?",
+  "options": [
+   "1897",
+   "1900",
+   "1937",
+   "1970"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Fondé en 1897 sous le nom de Football Club de Marseille, le club prend son nom actuel en 1900.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Olympique_de_Marseille",
+  "theme": "Football"
+ },
+ {
+  "id": "q-c0e0e51988",
+  "question": "Quel club Lionel Messi a-t-il rejoint après le Paris Saint-Germain ?",
+  "options": [
+   "Al-Nassr",
+   "Le LA Galaxy",
+   "Al-Hilal",
+   "L'Inter Miami"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Après dix-sept saisons au Barça puis le PSG, Messi poursuit sa carrière à l'Inter Miami.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Lionel_Messi",
+  "theme": "Football"
+ },
+ {
+  "id": "q-a8e999e7fa",
+  "question": "Dans quelle ville est né Cristiano Ronaldo ?",
+  "options": [
+   "Lisbonne",
+   "Porto",
+   "Funchal",
+   "Braga"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Cristiano Ronaldo est né le 5 février 1985 à Funchal et a grandi sur l'île de Madère.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Cristiano_Ronaldo",
+  "theme": "Football"
+ },
+ {
+  "id": "q-67f610ff4f",
+  "question": "Combien de Ligues des champions le Real Madrid a-t-il remportées ?",
+  "options": [
+   "13",
+   "14",
+   "12",
+   "15"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Le Real Madrid compte 15 victoires en Ligue des champions, 36 titres de champion d'Espagne et 5 Mondiaux des clubs.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Real_Madrid_Club_de_F%C3%BAtbol",
+  "theme": "Football"
+ },
+ {
+  "id": "q-e8e8b0a3f0",
+  "question": "Pour quel montant Kylian Mbappé a-t-il été transféré au PSG ?",
+  "options": [
+   "180 millions d'euros",
+   "222 millions d'euros",
+   "94 millions d'euros",
+   "120 millions d'euros"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Le transfert de Mbappé au PSG, 180 millions d'euros, est le deuxième plus cher de l'histoire derrière Neymar.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Kylian_Mbapp%C3%A9",
+  "theme": "Football"
+ },
+ {
+  "id": "q-80aded86e3",
+  "question": "Dans quelle ville du Brésil est né Pelé ?",
+  "options": [
+   "São Paulo",
+   "Três Corações",
+   "Rio de Janeiro",
+   "Santos"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Edson Arantes do Nascimento, dit Pelé, est né le 23 octobre 1940 à Três Corações et mort en 2022 à São Paulo.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Pel%C3%A9",
+  "theme": "Football"
+ },
+ {
+  "id": "q-c0e431615e",
+  "question": "Sous l'impulsion de quel président de la FIFA la Coupe du monde a-t-elle été imaginée ?",
+  "options": [
+   "Jules Rimet",
+   "Henri Delaunay",
+   "Pierre de Coubertin",
+   "Gabriel Hanot"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "La Coupe du monde est imaginée en 1928 par la FIFA sous l'impulsion de son président Jules Rimet.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Coupe_du_monde_de_football",
+  "theme": "Football"
+ },
+ {
+  "id": "q-bd5bbaa648",
+  "question": "Qui a imaginé dès 1927 le championnat d'Europe de football ?",
+  "options": [
+   "Jules Rimet",
+   "Henri Delaunay",
+   "Pierre de Coubertin",
+   "Michel Platini"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Imaginé dès 1927 par Henri Delaunay, l'Euro est créé en 1956 et sa première édition se tient en 1960.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Championnat_d%27Europe_de_football",
+  "theme": "Football"
+ },
+ {
+  "id": "q-7001cdd652",
+  "question": "Combien d'équipes disputent la phase finale de la Coupe du monde depuis 2026 ?",
+  "options": [
+   "32",
+   "40",
+   "64",
+   "48"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "La phase finale est passée de 16 équipes (1934) à 24 (1982), 32 (1998) puis 48 à partir de 2026.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Coupe_du_monde_de_football",
+  "theme": "Football"
+ },
+ {
+  "id": "q-2e9b07f66e",
+  "question": "Combien de buts Kylian Mbappé compte-t-il en Coupe du monde, record de l'épreuve ?",
+  "options": [
+   "16",
+   "13",
+   "22",
+   "19"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Lors du Mondial 2026, Mbappé devient le meilleur buteur de l'histoire de la Coupe du monde avec 22 buts.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Kylian_Mbapp%C3%A9",
+  "theme": "Football"
+ },
+ {
+  "id": "q-7eb876af14",
+  "question": "Quelle entreprise développe et édite League of Legends ?",
+  "options": [
+   "Blizzard",
+   "Valve",
+   "Riot Games",
+   "Epic Games"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "League of Legends, jeu d'arène de bataille en ligne gratuit, est développé et édité par Riot Games.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/League_of_Legends",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-ad7ef577b3",
+  "question": "Combien de joueurs compte chaque équipe dans le mode principal de LoL ?",
+  "options": [
+   "5 joueurs",
+   "4 joueurs",
+   "6 joueurs",
+   "3 joueurs"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Deux équipes de 5 joueurs s'affrontent en temps réel, pour des parties d'environ une demi-heure.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/League_of_Legends",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-cc95ecbbe8",
+  "question": "Comment appelle-t-on les personnages jouables de League of Legends ?",
+  "options": [
+   "Les héros",
+   "Les agents",
+   "Les champions",
+   "Les légendes"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Les personnages, appelés « champions », ont chacun des compétences uniques et un style de jeu propre.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/League_of_Legends",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-be6a6c7ae5",
+  "question": "Quelle structure faut-il détruire pour gagner une partie de LoL ?",
+  "options": [
+   "Le Nexus",
+   "Le Trône",
+   "L'Ancien",
+   "Le Donjon"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "L'objectif est de détruire le « Nexus » ennemi, une large structure au centre de chaque base.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/League_of_Legends",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-209f35443d",
+  "question": "En quelle année League of Legends est-il sorti ?",
+  "options": [
+   "2006",
+   "2009",
+   "2011",
+   "2013"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Le jeu est publié le 27 octobre 2009 et adopte dès sa sortie un modèle « freemium ».",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/League_of_Legends",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-d848c4378e",
+  "question": "Quelle série d'animation se déroule dans l'univers de League of Legends ?",
+  "options": [
+   "Castlevania",
+   "Cyberpunk: Edgerunners",
+   "Arcane",
+   "Blue Eye Samurai"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Arcane, en deux saisons (2021 et 2024), a remporté neuf Annie Awards et quatre Emmy Awards en 2022.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Arcane_(s%C3%A9rie_d%27animation)",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-c2e53acd99",
+  "question": "Comment surnomme-t-on le Championnat du monde de League of Legends ?",
+  "options": [
+   "Le Major",
+   "Les Masters",
+   "Le Grand Slam",
+   "Les Worlds"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Les Worlds sont le point culminant de la saison, avec une cérémonie d'ouverture digne des grands événements sportifs.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Championnat_du_monde_de_League_of_Legends",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-2668f16b2d",
+  "question": "De quelle nationalité est l'équipe d'esport T1 ?",
+  "options": [
+   "Chinoise",
+   "Japonaise",
+   "Américaine",
+   "Sud-coréenne"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "T1 est une équipe sud-coréenne créée le 13 avril 2004, à l'origine sous le nom de SK Telecom T1.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/T1_(esport)",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-204ec2fa07",
+  "question": "Quel joueur, icône de l'esport, évolue chez T1 depuis 2013 ?",
+  "options": [
+   "Caps",
+   "Uzi",
+   "Faker",
+   "Rekkles"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Lee « Faker » Sang-hyeok a remporté les 6 championnats du monde de T1 et a été deux fois MVP de la finale.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/T1_(esport)",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-c02bb2112d",
+  "question": "Quelle structure d'esport française le streamer Kameto a-t-il cofondée ?",
+  "options": [
+   "Team Vitality",
+   "Solary",
+   "Karmine Corp",
+   "Gentle Mates"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "La Karmine Corp est formée le 30 mars 2020 par les streamers Kameto et Kotei, sous le nom de Kameto Corp.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Karmine_Corp",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-fa4c4114b0",
+  "question": "De quel ancien mod de Warcraft III League of Legends s'est-il inspiré ?",
+  "options": [
+   "Heroes of the Storm",
+   "Defense of the Ancients",
+   "Counter-Strike",
+   "Team Fortress"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "League of Legends s'inspire de Defense of the Ancients, un ancien mod de Warcraft III.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/League_of_Legends",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-9ff8b0483d",
+  "question": "Quel conglomérat chinois a racheté Riot Games en 2011 ?",
+  "options": [
+   "Alibaba",
+   "NetEase",
+   "Huawei",
+   "Tencent"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "En 2011, Riot Games est racheté par le conglomérat chinois Tencent.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Riot_Games",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-1830b0f4cc",
+  "question": "Quel trophée remporte le champion du monde de League of Legends ?",
+  "options": [
+   "La Nexus Cup",
+   "Le Riot Trophy",
+   "La Golden Rift",
+   "La Summoner's Cup"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Le vainqueur des Worlds soulève la Summoner's Cup, un trophée de 32 kg.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Championnat_du_monde_de_League_of_Legends",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-498639e6a7",
+  "question": "Quel studio français a réalisé l'animation de la série Arcane ?",
+  "options": [
+   "Ubisoft",
+   "Illumination",
+   "Fortiche",
+   "Xilam"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Arcane est produite par Riot Games avec le studio d'animation français Fortiche Production.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Arcane_(s%C3%A9rie_d%27animation)",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-ed218d7009",
+  "question": "Sur quelle plateforme la série Arcane est-elle diffusée ?",
+  "options": [
+   "Netflix",
+   "Disney+",
+   "Prime Video",
+   "Crunchyroll"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Arcane est diffusée dans le monde sur Netflix ; sa qualité d'animation a été acclamée par la critique.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Arcane_(s%C3%A9rie_d%27animation)",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-0d25bb5702",
+  "question": "Comment s'appelle l'auto battler de Riot Games sorti en 2019 ?",
+  "options": [
+   "Wild Rift",
+   "Legends of Runeterra",
+   "Teamfight Tactics",
+   "Valorant"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Teamfight Tactics sort le 26 juin 2019 et réunit 33 millions de joueurs mensuels dès septembre 2019.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Teamfight_Tactics",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-e074d05f7b",
+  "question": "Combien de championnats du monde de LoL l'équipe T1 a-t-elle gagnés ?",
+  "options": [
+   "3",
+   "4",
+   "5",
+   "6"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "T1 a gagné en 2013, 2015, 2016 puis 2023, 2024 et 2025 : 6 titres, record de l'histoire du jeu.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/T1_(esport)",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-bbe7ad4c29",
+  "question": "Quelle équipe est la plus titrée du LEC, la ligue européenne de LoL ?",
+  "options": [
+   "Fnatic",
+   "Karmine Corp",
+   "Team Vitality",
+   "G2 Esports"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "G2 Esports est l'équipe la plus titrée du LEC avec 20 titres ; Fnatic a disputé tous les segments depuis 2013.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/League_of_Legends_EMEA_Championship",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-9f05e4cf87",
+  "question": "Dans quelle ville se trouvent les studios où se joue le LEC ?",
+  "options": [
+   "Paris",
+   "Londres",
+   "Berlin",
+   "Madrid"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Hormis la dernière semaine de chaque segment, les parties du LEC se jouent dans les studios de Riot Games à Berlin.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/League_of_Legends_EMEA_Championship",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-da73f2d3e7",
+  "question": "Quel tournoi est considéré comme le deuxième plus prestigieux de LoL ?",
+  "options": [
+   "Le LEC",
+   "Le MSI",
+   "La LFL",
+   "Les EMEA Masters"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Le Mid-Season Invitational, organisé depuis 2015, est le tournoi le plus prestigieux après les Worlds.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Mid-Season_Invitational",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-bf6f9aa800",
+  "question": "Parmi combien de champions chaque joueur de LoL choisit-il son personnage ?",
+  "options": [
+   "172",
+   "140",
+   "200",
+   "160"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Chacun des dix joueurs contrôle un personnage parmi les 172 champions proposés.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/League_of_Legends",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-a7080b5dab",
+  "question": "En quelle année Riot Games a-t-il été fondé ?",
+  "options": [
+   "2009",
+   "2003",
+   "2011",
+   "2006"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Riot Games, fondée en 2006 à Los Angeles, n'a eu qu'un seul jeu publié pendant plus de dix ans : LoL.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Riot_Games",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-007f6d9b9a",
+  "question": "Dans quelle ville est située l'entreprise Riot Games ?",
+  "options": [
+   "San Francisco",
+   "Seattle",
+   "Los Angeles",
+   "Austin"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Riot Games est une entreprise américaine située à Los Angeles, en Californie.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Riot_Games",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-d31a547d6e",
+  "question": "Quelle est la première équipe européenne à avoir gagné le MSI, en 2019 ?",
+  "options": [
+   "Fnatic",
+   "Karmine Corp",
+   "Team Vitality",
+   "G2 Esports"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "En 2019, G2 Esports devient la première équipe européenne à remporter le MSI et empoche 400 000 dollars.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Mid-Season_Invitational",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-5f58764f72",
+  "question": "Sous quel ancien nom l'équipe T1 a-t-elle gagné ses premiers titres mondiaux ?",
+  "options": [
+   "SK Telecom T1",
+   "Samsung Galaxy",
+   "KT Rolster",
+   "Gen.G"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Sous le nom de SK Telecom T1, l'équipe remporte les championnats du monde 2013, 2015 et 2016.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/T1_(esport)",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-10eb45bcde",
+  "question": "Combien de spectateurs simultanés les Worlds 2019 ont-ils réunis à leur pic ?",
+  "options": [
+   "10 millions",
+   "100 millions",
+   "44 millions",
+   "25 millions"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Le Championnat du monde 2019 a réuni plus de 44 millions de spectateurs simultanés à son pic.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/League_of_Legends",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-e4d48aa030",
+  "question": "Combien pèse la Summoner's Cup, trophée des Worlds ?",
+  "options": [
+   "12 kg",
+   "32 kg",
+   "50 kg",
+   "5 kg"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "La Summoner's Cup pèse 32 kg ; elle s'accompagne d'une dotation de plusieurs millions de dollars.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Championnat_du_monde_de_League_of_Legends",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-098f6b2036",
+  "question": "En quelle année la Karmine Corp est-elle devenue la 1re équipe française championne du LEC ?",
+  "options": [
+   "2023",
+   "2025",
+   "2021",
+   "2024"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "En remportant le segment d'hiver 2025 du LEC, la Karmine Corp devient la première structure française titrée.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Karmine_Corp",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-758f1718a2",
+  "question": "Quel duo de streamers a formé la Karmine Corp en 2020 ?",
+  "options": [
+   "Zerator et Mynthos",
+   "Gotaga et Brawks",
+   "Squeezie et Cyprien",
+   "Kameto et Kotei"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "La structure est formée le 30 mars 2020 par Kamel « Kameto » Kebir et Zouhair « Kotei » Darji.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Karmine_Corp",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "q-79fa68e6a6",
+  "question": "Quel surnom est donné à Michael Jackson ?",
+  "options": [
+   "Le prince du funk",
+   "Le roi du rock",
+   "Le roi de la pop",
+   "Le boss du disco"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Surnommé « The King of Pop », Michael Jackson a vendu plus de 500 millions de disques dans le monde.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Michael_Jackson",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-8c89b14e95",
+  "question": "Quel album de Michael Jackson est le plus vendu de l'histoire de la musique ?",
+  "options": [
+   "Bad",
+   "Dangerous",
+   "Off the Wall",
+   "Thriller"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Avec environ 70 millions d'exemplaires, Thriller (1982) est l'album le plus vendu de l'histoire.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Michael_Jackson",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-48ea619a30",
+  "question": "Avec quelle chanson ABBA a-t-il remporté l'Eurovision en 1974 ?",
+  "options": [
+   "Mamma Mia",
+   "Dancing Queen",
+   "Fernando",
+   "Waterloo"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Vainqueur de l'Eurovision 1974 avec Waterloo, ABBA connaît ensuite un immense succès mondial.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/ABBA",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-5b69164091",
+  "question": "Quel pas de danse est devenu la signature de Michael Jackson ?",
+  "options": [
+   "Le dab",
+   "Le moonwalk",
+   "La tecktonik",
+   "Le twist"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Michael Jackson a popularisé de nombreux pas de danse, dont le moonwalk, devenu sa signature.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Michael_Jackson",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-d97b0acadb",
+  "question": "Quel surnom est donné à Madonna ?",
+  "options": [
+   "La Princesse de la pop",
+   "La Reine de la Pop",
+   "La Diva du RnB",
+   "La Reine du disco"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Surnommée « The Queen of Pop », Madonna est pour le Guinness la chanteuse ayant vendu le plus de disques.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Madonna",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-e8c61ba8b2",
+  "question": "Quel titre a fait connaître Britney Spears dans le monde entier en 1998 ?",
+  "options": [
+   "Oops!… I Did It Again",
+   "…Baby One More Time",
+   "Toxic",
+   "Circus"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "…Baby One More Time est considéré par Rolling Stone en 2020 comme le plus grand premier single de tous les temps.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Britney_Spears",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-8e520ff9d4",
+  "question": "Avec quel chanteur Lady Gaga chante-t-elle Die with a Smile ?",
+  "options": [
+   "Ed Sheeran",
+   "Bruno Mars",
+   "The Weeknd",
+   "Justin Bieber"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "En 2024, Lady Gaga sort Die with a Smile en duo avec Bruno Mars, avant son album Mayhem en 2025.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Lady_Gaga",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-e216ced566",
+  "question": "Quel titre de The Weeknd est la chanson la plus écoutée de l'histoire de Spotify ?",
+  "options": [
+   "Starboy",
+   "Blinding Lights",
+   "Save Your Tears",
+   "The Hills"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Blinding Lights a passé plus d'un an dans le top 10 du Billboard Hot 100 et cumule 5,3 milliards d'écoutes sur Spotify.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/The_Weeknd",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-57a0651879",
+  "question": "Quelle est la nationalité de la chanteuse Rihanna ?",
+  "options": [
+   "Jamaïcaine",
+   "Haïtienne",
+   "Bahaméenne",
+   "Barbadienne"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Robyn Rihanna Fenty, chanteuse barbadienne, est née le 20 février 1988 à Saint-Michael.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Rihanna",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-c1085db876",
+  "question": "Quelle chanson d'Ed Sheeran est issue de son album ÷ ?",
+  "options": [
+   "Shape of You",
+   "Blinding Lights",
+   "Bad Guy",
+   "Levitating"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Shape of You et Perfect, issues de l'album ÷ (2017), sont parmi les chansons les plus populaires d'Ed Sheeran.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ed_Sheeran",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-e683643167",
+  "question": "Quelle est la nationalité du groupe ABBA ?",
+  "options": [
+   "Suédois",
+   "Norvégien",
+   "Danois",
+   "Finlandais"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "ABBA est un groupe suédois de pop, originaire de Stockholm, formé le 1er novembre 1971.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/ABBA",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-9f6406f5da",
+  "question": "D'où vient le nom du groupe ABBA ?",
+  "options": [
+   "Le nom de leur ville natale",
+   "Les initiales des membres",
+   "Le nom de leur premier label",
+   "Un mot suédois ancien"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Le nom ABBA est un acronyme et un palindrome, formé des initiales des prénoms d'Agnetha, Björn, Benny et Frida.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/ABBA",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-e122b36f3b",
+  "question": "Quel est le titre du premier album d'Adele, sorti en 2008 ?",
+  "options": [
+   "19",
+   "21",
+   "25",
+   "30"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "19, sorti en 2008, se vend à plus de 8,5 millions d'exemplaires ; 21 suit en 2011.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Adele",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-a627eff051",
+  "question": "Pour quel film James Bond Adele a-t-elle remporté un Oscar ?",
+  "options": [
+   "Skyfall",
+   "Spectre",
+   "GoldenEye",
+   "Casino Royale"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "La chanson Skyfall vaut à Adele un Golden Globe et l'Oscar de la meilleure chanson originale.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Adele",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-9fa8908c84",
+  "question": "Dans quelle ville est née Beyoncé ?",
+  "options": [
+   "Atlanta",
+   "Memphis",
+   "Houston",
+   "La Nouvelle-Orléans"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Beyoncé Giselle Knowles est née le 4 septembre 1981 à Houston, au Texas.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Beyonc%C3%A9",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-6798cb60a2",
+  "question": "Dans quel groupe Beyoncé a-t-elle chanté avant et pendant sa carrière solo ?",
+  "options": [
+   "Spice Girls",
+   "TLC",
+   "Destiny's Child",
+   "Fifth Harmony"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Beyoncé compte plus de 350 millions de disques vendus, en solo et avec les Destiny's Child.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Beyonc%C3%A9",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-99487e5c89",
+  "question": "Quel est le premier album de Lady Gaga, sorti en 2008 ?",
+  "options": [
+   "The Fame",
+   "Born This Way",
+   "Artpop",
+   "Chromatica"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "The Fame (2008) la propulse grâce à Just Dance et Poker Face.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Lady_Gaga",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-2aff81bcbb",
+  "question": "Dans quelle série Ariana Grande jouait-elle Cat Valentine ?",
+  "options": [
+   "iCarly",
+   "Hannah Montana",
+   "Victorious",
+   "Drake et Josh"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Ariana Grande se fait connaître avec le rôle de Cat Valentine dans Victorious, puis dans Sam et Cat.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ariana_Grande",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-2dfcf2767d",
+  "question": "Avec qui Billie Eilish écrit-elle et produit-elle sa musique ?",
+  "options": [
+   "Son frère Finneas",
+   "Sa mère",
+   "Calvin Harris",
+   "Mark Ronson"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Ocean Eyes et son premier album sont écrits et produits avec son frère Finneas O'Connell.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Billie_Eilish",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-ef8a3d3d75",
+  "question": "Quelle chanteuse française a vendu le plus de disques depuis les années 1980 ?",
+  "options": [
+   "Vanessa Paradis",
+   "Mylène Farmer",
+   "Patricia Kaas",
+   "Zazie"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Mylène Farmer a vendu plus de 30 millions de disques et classé 21 chansons à la 1re place en France.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Myl%C3%A8ne_Farmer",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-03e7dd59c9",
+  "question": "Quel titre de Dua Lipa avec Calvin Harris a été n°1 au Royaume-Uni en 2018 ?",
+  "options": [
+   "New Rules",
+   "One Kiss",
+   "Levitating",
+   "Physical"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "One Kiss devient le n°1 le plus long de l'année 2018 pour une artiste et gagne le Brit Award de la chanson de l'année.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Dua_Lipa",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-93ed8fcc75",
+  "question": "Dans quelle ville est né Michael Jackson ?",
+  "options": [
+   "Detroit",
+   "Chicago",
+   "Gary",
+   "Memphis"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Michael Jackson est né le 29 août 1958 à Gary, dans l'Indiana, huitième d'une famille de dix enfants.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Michael_Jackson",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-665bb16f58",
+  "question": "Dans quelle ville est née Mylène Farmer ?",
+  "options": [
+   "Paris",
+   "Bruxelles",
+   "Montréal",
+   "Genève"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Mylène Gautier, dite Mylène Farmer, est née le 12 septembre 1961 à Montréal, au Québec.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Myl%C3%A8ne_Farmer",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-fc2962f111",
+  "question": "Quel est le vrai nom de Lady Gaga ?",
+  "options": [
+   "Robyn Fenty",
+   "Madonna Ciccone",
+   "Beyoncé Knowles",
+   "Stefani Germanotta"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Lady Gaga, de son vrai nom Stefani Joanne Angelina Germanotta, est née le 28 mars 1986 à New York.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Lady_Gaga",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-dc166c21ee",
+  "question": "Quel est le vrai nom de The Weeknd ?",
+  "options": [
+   "Aubrey Graham",
+   "Jacques Webster",
+   "Edward Sheeran",
+   "Abel Tesfaye"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "The Weeknd, Abel Makkonen Tesfaye, est né le 16 février 1990 à Toronto et a débuté anonymement sur YouTube.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/The_Weeknd",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-62b83f5744",
+  "question": "Dans quelle ville de Pennsylvanie est née Taylor Swift ?",
+  "options": [
+   "Philadelphie",
+   "West Reading",
+   "Pittsburgh",
+   "Harrisburg"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Taylor Swift est née le 13 décembre 1989 à West Reading, en Pennsylvanie.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Taylor_Swift",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-5534e6b765",
+  "question": "Combien de Grammy de l'album de l'année Taylor Swift a-t-elle reçus, un record ?",
+  "options": [
+   "Trois",
+   "Deux",
+   "Cinq",
+   "Quatre"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Avec Midnights en 2023, Taylor Swift devient quadruple récipiendaire du Grammy de l'album de l'année, record absolu.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Taylor_Swift",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-1697e51bfd",
+  "question": "Quel est le tout premier titre de Billie Eilish, sorti en 2016 ?",
+  "options": [
+   "Ocean Eyes",
+   "Bad Guy",
+   "Bury a Friend",
+   "No Time to Die"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Ocean Eyes, écrit avec son frère Finneas, totalise près de 87 millions d'écoutes en juillet 2016.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Billie_Eilish",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-749d175ba3",
+  "question": "Dans quel quartier de Londres est née Adele ?",
+  "options": [
+   "Tottenham",
+   "Camden",
+   "Brixton",
+   "Chelsea"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Adele Laurie Blue Adkins est née le 5 mai 1988 dans le quartier londonien de Tottenham.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Adele",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-1cd0b25b5a",
+  "question": "Quel album de Madonna, sorti en 1998, a été récompensé aux Grammy Awards ?",
+  "options": [
+   "Like a Virgin",
+   "Ray of Light",
+   "True Blue",
+   "Erotica"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Ray of Light (1998) et Confessions on a Dance Floor (2005) ont été récompensés aux Grammy Awards.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Madonna",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-81e9ab00a6",
+  "question": "Combien de chansons de Mylène Farmer ont été n°1 des ventes en France ?",
+  "options": [
+   "21",
+   "58",
+   "30",
+   "12"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Mylène Farmer détient le record avec 21 chansons n°1 en France et 58 titres dans le Top 10.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Myl%C3%A8ne_Farmer",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-f77c63fff4",
+  "question": "Dans quelle émission Britney Spears a-t-elle débuté enfant ?",
+  "options": [
+   "Le Club Dorothée",
+   "Star Academy",
+   "Le Mickey Mouse Club",
+   "American Idol"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Après une carrière d'enfant star au Mickey Mouse Club, Britney Spears signe chez Jive Records.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Britney_Spears",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-dc30e9f380",
+  "question": "Quel label The Weeknd a-t-il fondé en 2011 ?",
+  "options": [
+   "OVO",
+   "Young Money",
+   "XO",
+   "Republic"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "The Weeknd fonde le label XO en 2011 et publie House of Balloons, Thursday et Echoes of Silence.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/The_Weeknd",
+  "theme": "Pop"
+ },
+ {
+  "id": "q-d2401feeee",
+  "question": "Quels sont les deux rappeurs du groupe Suprême NTM ?",
+  "options": [
+   "Ademo et N.O.S",
+   "Orelsan et Gringe",
+   "JoeyStarr et Kool Shen",
+   "Booba et Ali"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "NTM est composé de JoeyStarr (Didier Morville) et Kool Shen (Bruno Lopes), originaires de Saint-Denis.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Supr%C3%AAme_NTM",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-206e8862ba",
+  "question": "Quel est le vrai nom de Booba ?",
+  "options": [
+   "Ken Samaras",
+   "Julien Mari",
+   "Élie Yaffa",
+   "William Nzobazola"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Booba, de son vrai nom Élie Yaffa, est né le 9 décembre 1976 à Sèvres, dans les Hauts-de-Seine.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Booba",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-4b7322f92a",
+  "question": "Dans quelle ville est né le rappeur Jul ?",
+  "options": [
+   "Lyon",
+   "Toulouse",
+   "Marseille",
+   "Nice"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Julien Mari, dit Jul, est né le 14 janvier 1990 dans le 5e arrondissement de Marseille.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Jul_(rappeur)",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-25b3740675",
+  "question": "Quel single a fait d'Aya Nakamura l'artiste francophone la plus écoutée au monde ?",
+  "options": [
+   "Bella",
+   "La Boulette",
+   "Djadja",
+   "Basique"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Djadja, certifié diamant, la propulse en 2018 ; son clip dépasse le milliard de vues sur YouTube en 2025.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Aya_Nakamura",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-b269643356",
+  "question": "Avec quel ami Orelsan forme-t-il les Casseurs Flowters ?",
+  "options": [
+   "Nekfeu",
+   "Gringe",
+   "Kool Shen",
+   "Black M"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Orelsan et Gringe forment les Casseurs Flowters dès le début des années 2000.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Orelsan",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-7c6530b801",
+  "question": "De quel groupe de hip-hop Gims est-il membre ?",
+  "options": [
+   "Suprême NTM",
+   "PNL",
+   "Lunatic",
+   "Sexion d'Assaut"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Gims est membre de Sexion d'Assaut ; il lance sa carrière solo en 2013 avec l'album Subliminal.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Gims",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-33c0f23c6f",
+  "question": "Avec quel titre MC Solaar a-t-il popularisé le rap en France en 1991 ?",
+  "options": [
+   "La Boulette",
+   "Bouge de là",
+   "Basique",
+   "Djadja"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "MC Solaar popularise le rap en France avec l'album Qui sème le vent récolte le tempo et les titres Bouge de là et Caroline.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/MC_Solaar",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-41b7375978",
+  "question": "À quel événement Aya Nakamura a-t-elle chanté le 26 juillet 2024 ?",
+  "options": [
+   "La finale de l'Euro de foot",
+   "L'ouverture des JO de Paris",
+   "Le Festival de Cannes",
+   "Le concert du 14 Juillet"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Sa prestation à l'ouverture des JO de Paris réalise le meilleur pic d'audience de la télévision française : 31,4 millions.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Aya_Nakamura",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-da17fa8811",
+  "question": "Quel rappeur est devenu en 2020 le plus gros vendeur de l'histoire du rap français ?",
+  "options": [
+   "Booba",
+   "Jul",
+   "Ninho",
+   "Nekfeu"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "En février 2020, Jul dépasse quatre millions d'albums vendus, à trente ans et en six ans de carrière.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Jul_(rappeur)",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-3d998aab2a",
+  "question": "Quel lien unit Ademo et N.O.S, les deux membres de PNL ?",
+  "options": [
+   "Des cousins",
+   "Un père et son fils",
+   "Des voisins",
+   "Des frères"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "PNL est un duo de cloud rap créé en 2008 par les frères Tarik et Nabil Andrieu, de Corbeil-Essonnes.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/PNL_(groupe)",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-d433abc96f",
+  "question": "Quel est le premier album solo de Nekfeu, sorti en 2015 ?",
+  "options": [
+   "Cyborg",
+   "Civilisation",
+   "Ipséité",
+   "Feu"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Feu vaut à Nekfeu la Victoire de l'album de musiques urbaines en 2016 ; Cyborg suit la même année.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Nekfeu",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-6ede6ecaf9",
+  "question": "Quel rappeur a été repéré par Booba en 2015 avant d'intégrer le 92i ?",
+  "options": [
+   "Nekfeu",
+   "Orelsan",
+   "Damso",
+   "Jul"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Repéré par Booba en 2015, Damso intègre le collectif et label 92i et signe chez Universal Music France.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Damso",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-97350e8bf2",
+  "question": "Quel est le vrai nom de Jul ?",
+  "options": [
+   "Julien Mari",
+   "Julien Schwarzer",
+   "Ken Samaras",
+   "Élie Yaffa"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Julien Mari, dit Jul, s'est d'abord fait appeler Juliano135.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Jul_(rappeur)",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-2d4b98c904",
+  "question": "Sur quel album de Diam's figure le single La Boulette ?",
+  "options": [
+   "Brut de femme",
+   "Premier Mandat",
+   "Dans ma bulle",
+   "SOS"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Dans ma bulle (2006), avec La Boulette, est certifié disque de diamant en 2007.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Diam%27s",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-810ebfba1c",
+  "question": "Quel est le premier album d'Orelsan, sorti en 2009 ?",
+  "options": [
+   "Le Chant des sirènes",
+   "Perdu d'avance",
+   "La fête est finie",
+   "Civilisation"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Perdu d'avance (2009) est certifié disque d'or ; Le Chant des sirènes suit en 2011.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Orelsan",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-51ab9d6b5f",
+  "question": "De quelle ville du 93 le groupe NTM est-il originaire ?",
+  "options": [
+   "Montreuil",
+   "Saint-Denis",
+   "Bobigny",
+   "Aubervilliers"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "NTM, d'abord appelé 93 NTM, est originaire de Saint-Denis, en Seine-Saint-Denis.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Supr%C3%AAme_NTM",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-13432f66e1",
+  "question": "Quel est le premier album solo de Gims, sorti en 2013 ?",
+  "options": [
+   "Ceinture noire",
+   "Mon cœur avait raison",
+   "Subliminal",
+   "L'Apogée"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Subliminal, avec J'me tire et Bella, finit double disque de diamant avec plus d'un million d'exemplaires.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Gims",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-6cdb2aef6c",
+  "question": "Quel label indépendant Jul a-t-il fondé en 2015 ?",
+  "options": [
+   "Liga One Industry",
+   "92i",
+   "D'Or et de Platine",
+   "Wati B"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "En 2015, Jul quitte Liga One Industry après des désaccords financiers et fonde D'Or et de Platine.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Jul_(rappeur)",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-c86cfe1471",
+  "question": "Quel collectif Booba a-t-il fondé avec des rappeurs des Hauts-de-Seine ?",
+  "options": [
+   "Wati B",
+   "L'Entourage",
+   "Le 92i",
+   "1995"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Booba a fondé le 92i, collectif réunissant à l'origine des rappeurs des Hauts-de-Seine comme Mala et Nessbeal.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Booba",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-56f19930a9",
+  "question": "Quel est le premier album studio de PNL, sorti en 2015 ?",
+  "options": [
+   "Dans la légende",
+   "Le Monde Chico",
+   "Deux frères",
+   "Feu"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Le Monde Chico (2015) est suivi de Dans la légende en 2016 puis de Deux frères en 2019.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/PNL_(groupe)",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-c2a4e04586",
+  "question": "Dans quelle ville est née Aya Nakamura ?",
+  "options": [
+   "Dakar",
+   "Bamako",
+   "Abidjan",
+   "Kinshasa"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Aya Danioko, dite Aya Nakamura, est née le 10 mai 1995 à Bamako, au Mali.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Aya_Nakamura",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-18939f49c1",
+  "question": "Avec quel groupe Booba s'est-il fait connaître aux côtés d'Ali ?",
+  "options": [
+   "Sexion d'Assaut",
+   "S-Crew",
+   "PNL",
+   "Lunatic"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Entre 1994 et 2003, Booba forme Lunatic avec Ali ; leur album Mauvais Œil obtient un disque d'or.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Booba",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-07c027b021",
+  "question": "Dans quelle ville est né MC Solaar ?",
+  "options": [
+   "Bamako",
+   "Kinshasa",
+   "Abidjan",
+   "Dakar"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Claude M'Barali, dit MC Solaar, est né le 5 mars 1969 à Dakar, au Sénégal.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/MC_Solaar",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-7290d7dc2a",
+  "question": "Dans quelle ville est née la rappeuse Diam's ?",
+  "options": [
+   "Nicosie",
+   "Athènes",
+   "Marseille",
+   "Beyrouth"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Mélanie Georgiades, dite Diam's, est née le 25 juillet 1980 à Nicosie.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Diam%27s",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-8c5f476474",
+  "question": "Combien de membres composent le groupe Sexion d'Assaut ?",
+  "options": [
+   "Cinq",
+   "Quatre",
+   "Sept",
+   "Dix"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Formé en 2002, Sexion d'Assaut compte sept membres, dont Gims, Lefa et Black M.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Sexion_d%27assaut",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-cfed2109b6",
+  "question": "Quel est le vrai nom d'Orelsan ?",
+  "options": [
+   "Ken Samaras",
+   "Julien Mari",
+   "Claude M'Barali",
+   "Aurélien Cotentin"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Aurélien Cotentin, dit Orelsan, est né le 1er août 1982 à Alençon, dans l'Orne.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Orelsan",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-febeb939d4",
+  "question": "À quel héros d'animé Orelsan prête-t-il sa voix française depuis 2016 ?",
+  "options": [
+   "Goku",
+   "Naruto",
+   "Luffy",
+   "Saitama"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Orelsan est depuis 2016 la voix française de Saitama dans l'animé One Punch Man.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Orelsan",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-6b2ba59b50",
+  "question": "Quel album de Damso a gagné le prix du meilleur album rap aux Victoires 2019 ?",
+  "options": [
+   "Ipséité",
+   "Batterie faible",
+   "Lithopédion",
+   "QALF"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Lithopédion, sorti le 15 juin 2018, remporte le prix du meilleur album rap aux Victoires de la musique 2019.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Damso",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-98386ff30b",
+  "question": "Dans quelle ville est né le rappeur Ninho ?",
+  "options": [
+   "Corbeil-Essonnes",
+   "Évry",
+   "Sèvres",
+   "Longjumeau"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "William Nzobazola, dit Ninho, est né le 2 avril 1996 à Longjumeau, dans l'Essonne.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ninho",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-f5f40774c8",
+  "question": "Quel morceau figure sur Suprême NTM, le dernier album du groupe en 1998 ?",
+  "options": [
+   "Qui sème le vent récolte le tempo",
+   "Sapés comme jamais",
+   "Laisse pas traîner ton fils",
+   "Avant qu'elle parte"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Porté par Laisse pas traîner ton fils, l'album Suprême NTM dépasse le million d'exemplaires vendus.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Supr%C3%AAme_NTM",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-bcdd102f4a",
+  "question": "Quel prix PNL a-t-il reçu aux Victoires 2020 pour le clip de Au DD ?",
+  "options": [
+   "Album de musiques urbaines",
+   "Révélation scène",
+   "Meilleure création audiovisuelle",
+   "Chanson originale"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "PNL remporte la « meilleure création audiovisuelle » aux Victoires de la musique 2020 pour le clip de Au DD.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/PNL_(groupe)",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-5422625d03",
+  "question": "Combien de singles certifiés Ninho compte-t-il en 2026, record français ?",
+  "options": [
+   "452",
+   "212",
+   "150",
+   "90"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Ninho détient le record français avec 452 singles certifiés en 2026, dont 90 singles de diamant.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ninho",
+  "theme": "Rap FR"
+ },
+ {
+  "id": "q-a15c38e646",
+  "question": "Quel est le vrai nom d'Eminem ?",
+  "options": [
+   "Curtis Jackson",
+   "Marshall Mathers",
+   "Shawn Carter",
+   "Calvin Broadus"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Eminem, de son vrai nom Marshall Bruce Mathers III, est né le 17 octobre 1972 à Saint Joseph, dans le Missouri.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Eminem",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-a31df2e7e6",
+  "question": "Avec quelle chanteuse Jay-Z est-il marié depuis 2008 ?",
+  "options": [
+   "Rihanna",
+   "Nicki Minaj",
+   "Alicia Keys",
+   "Beyoncé"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Jay-Z, de son vrai nom Shawn Corey Carter, est marié avec la chanteuse Beyoncé depuis 2008.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Jay-Z",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-466aa083b7",
+  "question": "Dans quelle ville du Texas est né Travis Scott ?",
+  "options": [
+   "Dallas",
+   "Austin",
+   "Houston",
+   "San Antonio"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Jacques Bermon Webster II, dit Travis Scott, est né le 30 avril 1991 à Houston, au Texas.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Travis_Scott",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-d426da1a85",
+  "question": "Quel rappeur a fondé la marque de casques Beats Electronics ?",
+  "options": [
+   "Dr. Dre",
+   "Snoop Dogg",
+   "Jay-Z",
+   "50 Cent"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Dr. Dre est le fondateur et le CEO d'Aftermath Entertainment et de Beats Electronics.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Dr._Dre",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-84e95bf004",
+  "question": "Sous quel nom de scène Tupac Shakur est-il aussi connu ?",
+  "options": [
+   "Biggie",
+   "50 Cent",
+   "2Pac",
+   "Ye"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Tupac Shakur est connu sous les noms de scène 2Pac et Makaveli.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Tupac_Shakur",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-a73fc5d1ec",
+  "question": "Dans quelle ville canadienne est né Drake ?",
+  "options": [
+   "Montréal",
+   "Vancouver",
+   "Toronto",
+   "Ottawa"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Aubrey Drake Graham est né le 24 octobre 1986 à Toronto ; son album Views raconte son attachement à sa ville natale.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Drake_(rappeur)",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-6dc63a906d",
+  "question": "À quel personnage Snoop Dogg doit-il le surnom donné par sa mère ?",
+  "options": [
+   "Scooby-Doo",
+   "Snoopy des Peanuts",
+   "Pluto de Disney",
+   "Garfield"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Sa mère le surnomme « Snoopy » en raison de sa ressemblance avec le chien de la bande dessinée Peanuts.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Snoop_Dogg",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-c4f6b56dfc",
+  "question": "Quel rappeur a découvert 50 Cent et l'a signé sur son label ?",
+  "options": [
+   "Eminem",
+   "Kanye West",
+   "Jay-Z",
+   "Lil Wayne"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Après sa compilation Guess Who's Back? en 2002, 50 Cent est découvert par Eminem et signe sur Shady Records.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/50_Cent",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-4d04d6fc7a",
+  "question": "Dans quelle ville Tupac Shakur a-t-il été mortellement visé par des tirs en 1996 ?",
+  "options": [
+   "Los Angeles",
+   "Las Vegas",
+   "New York",
+   "Atlanta"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Le 7 septembre 1996, Tupac Shakur est la cible de tirs à Las Vegas ; il meurt le 13 septembre.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Tupac_Shakur",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-44b6a5830b",
+  "question": "Avec quel rappeur Kanye West a-t-il publié l'album Watch the Throne en 2011 ?",
+  "options": [
+   "Jay-Z",
+   "Kid Cudi",
+   "Drake",
+   "Eminem"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Ye a publié Watch the Throne avec Jay-Z en 2011 et Kids See Ghosts avec Kid Cudi en 2018.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Kanye_West",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-89905d5ab7",
+  "question": "Quel est le premier album de Snoop Dogg, sorti en 1993 ?",
+  "options": [
+   "Tha Doggfather",
+   "The Chronic",
+   "Doggystyle",
+   "Ready to Die"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Doggystyle débute premier du Billboard 200, avec presque un million d'exemplaires vendus en une semaine.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Snoop_Dogg",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-00237932ad",
+  "question": "Quel premier album de Dr. Dre a popularisé le G-funk en 1992 ?",
+  "options": [
+   "The Chronic",
+   "Doggystyle",
+   "Compton",
+   "Ready to Die"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Avec The Chronic (1992), Dr. Dre popularise le G-funk, aux basses profondes et synthétiseurs funk.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Dr._Dre",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-b3fd85cb24",
+  "question": "De quel groupe de rap Dr. Dre a-t-il été l'un des leaders ?",
+  "options": [
+   "Wu-Tang Clan",
+   "Run–DMC",
+   "N.W.A",
+   "D12"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Dr. Dre a été l'un des leaders du groupe N.W.A avant ses labels Death Row et Aftermath.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Dr._Dre",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-54b81b61ec",
+  "question": "Quel est le premier album de The Notorious B.I.G., sorti en 1994 ?",
+  "options": [
+   "Life After Death",
+   "The Chronic",
+   "Doggystyle",
+   "Ready to Die"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Avec Ready to Die en 1994, il devient le pilier du rap new-yorkais face au rap West Coast.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/The_Notorious_B.I.G.",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-55efc7c11b",
+  "question": "Quel prix Kendrick Lamar est-il le seul musicien hors classique et jazz à avoir reçu ?",
+  "options": [
+   "Le prix Nobel",
+   "Le prix Goncourt",
+   "Le prix Albert-Londres",
+   "Le prix Pulitzer"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Kendrick Lamar est le seul musicien, hors classique et jazz, à avoir reçu le prix Pulitzer de musique.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Kendrick_Lamar",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-5f1a5b1933",
+  "question": "Sur quel album de Kendrick Lamar figure le single Humble ?",
+  "options": [
+   "GNX",
+   "Section.80",
+   "To Pimp a Butterfly",
+   "Damn"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Damn (2017), axé sur le R&B et la pop, donne à Kendrick Lamar son deuxième numéro un avec Humble.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Kendrick_Lamar",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-30b707b9a4",
+  "question": "Quel label Lil Wayne a-t-il fondé en 2005 ?",
+  "options": [
+   "Young Money",
+   "Cash Money",
+   "Death Row",
+   "Roc Nation"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Lil Wayne a fondé Young Money Entertainment en 2005, où il signe notamment Drake et Nicki Minaj.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Lil_Wayne",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-f5bb59b886",
+  "question": "Quel est le premier album de Kanye West, sorti en 2004 ?",
+  "options": [
+   "Late Registration",
+   "The College Dropout",
+   "Graduation",
+   "Yeezus"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Après avoir signé chez Roc-A-Fella en 2002, il publie The College Dropout en 2004, un succès critique et commercial.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Kanye_West",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-2a046b5666",
+  "question": "De quel arrondissement de New York est originaire le groupe Run–DMC ?",
+  "options": [
+   "Le Queens",
+   "Brooklyn",
+   "Le Bronx",
+   "Manhattan"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Run–DMC vient du quartier d'Hollis, dans le Queens ; c'est le premier groupe de rap à passer sur MTV.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Run%E2%80%93DMC",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-c2ebe6b54a",
+  "question": "Sous quel nom Snoop Dogg s'est-il temporairement fait appeler en 2012 ?",
+  "options": [
+   "Snoop Lion",
+   "Snoop Tiger",
+   "Snoop Wolf",
+   "Snoop Bear"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Il s'est temporairement appelé Snoop Lion à la suite de son expérience dans le reggae en 2012.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Snoop_Dogg",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-8c64b4a189",
+  "question": "Quel single de Drake a dépassé le milliard de vues sur YouTube en 2016 ?",
+  "options": [
+   "God's Plan",
+   "One Dance",
+   "In My Feelings",
+   "Hotline Bling"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Drake devient en 2016 le troisième rappeur à atteindre le milliard de vues sur YouTube, avec Hotline Bling.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Drake_(rappeur)",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-c1cc371d5e",
+  "question": "Quel est le tout premier album d'Eminem, publié en 1996 ?",
+  "options": [
+   "Encore",
+   "Relapse",
+   "Infinite",
+   "Recovery"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Infinite, publié en 1996 en indépendant, est un échec commercial ; le succès arrive avec The Slim Shady LP en 1999.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Eminem",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-5e915dcafa",
+  "question": "Dans quel État américain est né Eminem ?",
+  "options": [
+   "Le Michigan",
+   "L'Ohio",
+   "Le Missouri",
+   "L'Illinois"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Eminem est né le 17 octobre 1972 à Saint Joseph, dans le Missouri.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Eminem",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-0ccbfa076a",
+  "question": "Avec quel rappeur Eminem forme-t-il le duo Bad Meets Evil ?",
+  "options": [
+   "Royce da 5'9\"",
+   "50 Cent",
+   "Dr. Dre",
+   "Obie Trice"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Ancien membre de D12, Eminem compose aussi le duo Bad Meets Evil avec Royce da 5'9\".",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Eminem",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-786d1c582d",
+  "question": "Quel est le vrai nom de Dr. Dre ?",
+  "options": [
+   "Calvin Broadus",
+   "Shawn Carter",
+   "Aubrey Graham",
+   "Andre Young"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Andre Romelle Young, dit Dr. Dre, est né le 18 février 1965 à Compton, en Californie.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Dr._Dre",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-f43a9bbf8e",
+  "question": "Quel est le vrai nom de Snoop Dogg ?",
+  "options": [
+   "Andre Young",
+   "Calvin Broadus",
+   "Curtis Jackson",
+   "Dwayne Carter"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Snoop Dogg, né Calvin Cordozar Broadus Jr. le 20 octobre 1971 à Long Beach, en Californie.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Snoop_Dogg",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-b35f85c843",
+  "question": "Quel album de Tupac est le premier album double d'un rappeur solo ?",
+  "options": [
+   "Me Against the World",
+   "2Pacalypse Now",
+   "Thug Life Vol. 1",
+   "All Eyez on Me"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "All Eyez on Me, premier album double de l'histoire du hip-hop pour un artiste solo, est l'un des plus vendus aux États-Unis.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Tupac_Shakur",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-2e9f18c458",
+  "question": "Combien de membres composent le Wu-Tang Clan ?",
+  "options": [
+   "Huit",
+   "Six",
+   "Dix",
+   "Douze"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Les dix membres du Wu-Tang Clan, formé en 1992, viennent de Staten Island et de Brooklyn.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Wu-Tang_Clan",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-b5de018eb9",
+  "question": "Quel titre de Kendrick Lamar est le plus récompensé de l'histoire des Grammy Awards ?",
+  "options": [
+   "Humble",
+   "Squabble Up",
+   "Like That",
+   "Not Like Us"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Not Like Us devient le titre le plus décoré de l'histoire des Grammy Awards, avec 5 victoires.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Kendrick_Lamar",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-866c43be36",
+  "question": "Quel est le vrai nom de Lil Wayne ?",
+  "options": [
+   "Dwayne Carter",
+   "Christopher Wallace",
+   "Curtis Jackson",
+   "Aubrey Graham"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Lil Wayne, de son vrai nom Dwayne Michael Carter Jr., est né le 27 septembre 1982 à La Nouvelle-Orléans.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Lil_Wayne",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-762b369020",
+  "question": "Dans quelle ville est née la rappeuse Nicki Minaj ?",
+  "options": [
+   "Port-d'Espagne",
+   "Kingston",
+   "Miami",
+   "Nassau"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Onika Tanya Maraj, dite Nicki Minaj, est née le 8 décembre 1982 à Port-d'Espagne, à Trinité-et-Tobago.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Nicki_Minaj",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-264d965969",
+  "question": "Quelle maison de champagne Jay-Z possède-t-il depuis 2014 ?",
+  "options": [
+   "Moët & Chandon",
+   "Veuve Clicquot",
+   "Dom Pérignon",
+   "Armand de Brignac"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Entrepreneur, Jay-Z possède depuis 2014 la maison de champagne Armand de Brignac.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Jay-Z",
+  "theme": "Rap US"
+ },
+ {
+  "id": "q-ea7cb4c4f9",
+  "question": "Combien de jours après la mort de Biggie son album Life After Death est-il sorti ?",
+  "options": [
+   "16 jours",
+   "3 jours",
+   "30 jours",
+   "90 jours"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Biggie est assassiné le 9 mars 1997 ; Life After Death sort 16 jours plus tard et atteint la 1re place du Billboard 200.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/The_Notorious_B.I.G.",
+  "theme": "Rap US"
  }
 ]

@@ -21,6 +21,8 @@ Jeu de quiz : le joueur tape un sujet, le mineur creuse à chaque bonne réponse
 
 Le contrôle garantit que la source citée fait partie des textes fournis ; il ne prouve pas à lui seul que chaque fait y est correctement lu.
 
+Thèmes Rap US, Rap FR, Pop, Football, League of Legends et Culture générale : environ 30 questions chacun, rédigées à partir des introductions d'articles Wikipédia FR collectées, avec les mêmes contrôles (et, en plus, chaque mot de la bonne réponse doit figurer dans la page citée). Raccourcis acceptés dans la recherche : « lol », « foot », « rap fr », « rap us »…
+
 ## Règles du quiz
 
 - « Grand filon » (ou Entrée sans rien taper) mélange tous les thèmes ; un thème de la banque peut être choisi ou tapé. Un sujet absent de la banque passe par Gemini en direct (plus lent).

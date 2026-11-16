@@ -727,10 +727,13 @@ function pickBank(){ /* difficulty follows the depth; the chosen theme first, qu
   return null;
 }
 function matchTheme(raw){ /* null = not a theme of the bank */
-  const n=norm(raw);if(!n||n==='grand filon'||n==='culture generale')return{key:'',label:'Grand filon'};
+  let n=norm(raw);if(!n||n==='grand filon')return{key:'',label:'Grand filon'};
+  n=ALIAS[n]||n;
   const t=[...new Set(bank().map(b=>b.theme).filter(Boolean))].find(t=>{const k=norm(t);return k===n||(n.length>=3&&(k.includes(n)||n.includes(k)))});
   return t?{key:norm(t),label:t}:null;
 }
+/* usual ways of typing a bank theme */
+const ALIAS={'lol':'league of legends','league':'league of legends','foot':'football','rap francais':'rap fr','rap fr':'rap fr','rap americain':'rap us','rap us':'rap us','hip hop':'rap us','culture g':'culture generale','general':'culture generale'};
 function fillVeins(){
   const themes=shuffle([...new Set(bank().map(b=>b.theme).filter(Boolean))]).slice(0,3);veins.textContent='';
   ['Grand filon',...themes].forEach(t=>{const b=document.createElement('button');b.className='vein';b.type='button';b.textContent=t;veins.append(b)});
