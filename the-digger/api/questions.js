@@ -122,6 +122,8 @@ ${cand.map((q, i) => (i + 1) + '. ' + q.q + '\n' + q.opts.map((o, k) => '   ' + 
 const API = 'https://generativelanguage.googleapis.com/v1beta/';
 let working = null;      // model that last answered (kept while the function stays warm)
 let listed = null;       // candidate models read from the key's own model list
+// Fallback that answered reliably in tests; tried right after GEMINI_MODEL when the key has it.
+const STEADY = ['gemini-3.6-flash'];
 const resting = new Map(); // model -> time until which it is skipped (quota reached)
 
 // GEMINI_MODEL first, then the models this key can use (recent Flash first, then Pro). Models resting after a 429 go last.
@@ -137,9 +139,9 @@ async function candidates(key) {
       .map(m => String(m.name || '').replace(/^models\//, ''))
       .filter(n => /^gemini-/.test(n) && !/lite|image|tts|audio|live|embed|vision|exp|preview|learn|robot|computer/i.test(n));
     const rank = n => (/flash/.test(n) ? 0 : 1000) - ver(n) * 10 + (/latest|-\d{3}$/.test(n) ? 1 : 0);
-    listed = ok.sort((a, b) => rank(a) - rank(b)).slice(0, 6);
+    listed = ok.sort((a, b) => rank(a) - rank(b)).slice(0, 8);
   }
-  const all = [...new Set([...forced, ...(working ? [working] : []), ...listed])], t = Date.now();
+  const all = [...new Set([...forced, ...(working ? [working] : []), ...STEADY.filter(m => listed.includes(m)), ...listed])], t = Date.now();
   return [...all.filter(m => !(resting.get(m) > t)), ...all.filter(m => resting.get(m) > t)];
 }
 
@@ -191,7 +193,7 @@ module.exports = async (req, res) => {
     for (const model of models) {
       const left = 52000 - (Date.now() - t0);
       if (left < 4000) break;
-      const out = await ask(key, model, prompt, Math.min(30000, left)).catch(e => ({ status: 504, message: clip(e && e.message, 120) }));
+      const out = await ask(key, model, prompt, Math.min(25000, left)).catch(e => ({ status: 504, message: clip(e && e.message, 120) }));
       if (out.text) {
         working = model;
         res.setHeader('Cache-Control', 'no-store');
