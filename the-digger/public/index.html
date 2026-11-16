@@ -99,14 +99,13 @@ button{font:inherit;color:inherit}
 
 #bsrc{display:inline-block;margin-top:4px;font:700 12px/1.2 var(--text);color:var(--ink);opacity:.7;text-decoration:underline;text-underline-offset:2px}
 #bsrc:hover,#bsrc:focus-visible{opacity:1}
-/* ---- gold fever tag under the depth sign, stratum plank dropping from the top ---- */
-#fever{position:absolute;top:100%;left:6px;margin-top:7px;background:var(--sun);color:var(--ink);font:400 11px/1 var(--display);letter-spacing:.04em;padding:6px 9px 5px;border-radius:var(--wob-s);white-space:nowrap;box-shadow:0 3px 0 var(--sun-deep);animation:pulse .7s ease-in-out infinite}
+/* ---- stratum plank dropping from the top ---- */
 #stratum{position:absolute;top:112px;left:0;right:0;margin-inline:auto;width:max-content;max-width:calc(100% - 2*var(--g));background:var(--ink);color:var(--pale);text-align:center;padding:8px 18px 9px;border-radius:var(--wob-s);box-shadow:0 0 0 3px var(--sun);opacity:0;pointer-events:none;z-index:2}
 #stratum small{display:block;font:800 10px/1.1 var(--text);letter-spacing:.16em;text-transform:uppercase;color:var(--sun)}
 #stratum b{display:block;font:400 clamp(16px,4.6vw,21px)/1.1 var(--display);margin-top:3px}
 #stratum.show{animation:plank 3.2s cubic-bezier(.3,1.3,.5,1) both}
 @keyframes plank{0%{transform:translateY(-26px) scale(.7) rotate(-4deg);opacity:0}10%,84%{transform:none;opacity:1}100%{transform:translateY(-18px) scale(.85);opacity:0}}
-#game.running :is(#stratum,#fever){display:none}
+#game.running #stratum{display:none}
 /* ---- air gauge: a strip of light set above the coal slabs; when it is empty the gallery caves in ---- */
 #air{grid-column:1/-1;display:flex;align-items:center;gap:8px}
 #air b{flex:none;background:var(--ink);color:var(--sun);font:400 11px/1 var(--display);letter-spacing:.08em;padding:5px 8px 4px;border-radius:var(--wob-s)}
@@ -195,7 +194,6 @@ button{font:inherit;color:inherit}
         <small>Profondeur</small>
         <span id="depth">0 m</span>
         <span id="best" hidden></span>
-        <span id="fever" hidden></span>
       </div>
       <div class="sign" id="rsign" aria-live="off">
         <small>Course</small>
@@ -565,7 +563,6 @@ const sfx={
   beat(){tone(74,.1,{v:.3,to:48});tone(60,.12,{v:.22,to:40,at:.14})},
   cave(){noise(1.2,{f:200,to:60,v:.5});tone(58,.9,{v:.3,to:30});noise(.5,{f:1800,to:300,v:.12,at:.15})},
   strata(){[1047,1319,1568,2093,2637].forEach((f,i)=>tone(f,.7,{v:.07,at:i*.09}));noise(.7,{f:260,to:90,v:.22})},
-  fever(){[784,988,1175,1568].forEach((f,i)=>tone(f,.18,{type:'triangle',v:.13,at:i*.055}))},
   life(){[523,784,1047].forEach((f,i)=>tone(f,.22,{type:'triangle',v:.15,at:i*.08}))}
 };
 
@@ -615,7 +612,6 @@ function impact(){
   if(lv>=6&&!RM)ring(heroBlade.bx,bwy);
   for(let i=0;i<(RM?3:9);i++)parts.push({k:'chunk',x:cx+rnd(-.3,.3)*shaftW,y:fy-rnd(0,8),vx:rnd(-240,240)*S,vy:-rnd(300,660)*S,g:1700*S,life:0,max:rnd(.6,1),r:rnd(5,10)*S,rot:rnd(0,6),vr:rnd(-10,10),c:pick([C.ink,C.clod,C.pit2])});
   for(let i=0;i<Math.min(4,1+(lv>>1));i++)parts.push({k:lv>=7?'gem':'chunk',x:cx+rnd(-.2,.2)*shaftW,y:fy,vx:rnd(-150,150)*S,vy:-rnd(480,760)*S,g:1500*S,life:0,max:rnd(.8,1.1),r:rnd(5,8)*S,rot:rnd(0,6),vr:rnd(-8,8),c:C.sun});
-  if(st.streak>=3&&!RM)for(let i=0;i<14;i++)parts.push({k:'chunk',x:cx+rnd(-.3,.3)*shaftW,y:fy,vx:rnd(-260,260)*S,vy:-rnd(420,820)*S,g:1500*S,life:0,max:rnd(.8,1.2),r:rnd(4,7)*S,rot:rnd(0,6),vr:rnd(-9,9),c:pick([C.sun,C.sun,C.pale])});
   world.punch=1;world.shake=(5+Math.min(lv,10)*.5)*S;hero.squash=.5;sfx.dig(lv);if(onDig)onDig(lv);
   const si=stratumOf(lv);if(si!==stratumOf(lv-1)){ /* a new stratum: the plank drops, the walls ring */
     const el=$('#stratum');el.querySelector('b').textContent=STRATA[si].n;el.classList.remove('show');void el.offsetWidth;el.classList.add('show');
@@ -770,7 +766,7 @@ function launch(run,from,to,tier,meta,vtier){
     if(!live())return;const o=parse(line);if(!o)return;
     if(!gotMeta&&'ok'in o){gotMeta=true;if(o.ok===false){rejected=true;ctl.abort();reject(str(o.mot)||pick(NOPE))}else accept(run,o);return}
     const q=cleanQ(o);if(!q)return;
-    const u=(ctl.docs||[])[(o.s|0)-1];if(typeof u==='string'&&/^https?:\/\//.test(u))q.src=u; /* the link can only be one of the pages the server really collected */
+    const u=(ctl.docs||[])[(o.s|0)-1];if(typeof u==='string'&&/^https?:\/\//.test(u)){q.src=u;q.e=str(o.e)} /* the link can only be one of the pages the server really collected */
     if(!gotMeta){gotMeta=true;accept(run,{})}
     cand.push(q);Q.asked.push(q.q);
   };
@@ -778,15 +774,18 @@ function launch(run,from,to,tier,meta,vtier){
     .then(all=>{if(!cand.length&&live())(all.match(/\{[^{}]*\}/g)||[]).forEach(eat)},e=>{B.err=(e&&e.code)||'upstream_error'})
     .then(()=>{
       if(!live()||!cand.length){finish();return}
+      /* sourced questions (the server found the answer written in the cited page) skip the check call: fewer Gemini requests */
+      cand.filter(q=>q.src).forEach(q=>B.items.push(q));if(B.items.length)pump();
+      const blind=cand.filter(q=>!q.src);if(!blind.length){finish();return}
       /* blind check by a second, independent call: a question is kept only if the checker, alone, lands on the same answer */
       const seen=new Set();
       const verdict=line=>{
         if(!live())return;const o=parse(line);if(!o)return;
-        const i=(o.i|0)-1,q=cand[i],r='ABCD'.indexOf(String(o.r||'').trim().toUpperCase().charAt(0));
+        const i=(o.i|0)-1,q=blind[i],r='ABCD'.indexOf(String(o.r||'').trim().toUpperCase().charAt(0));
         if(!q||seen.has(i))return;seen.add(i);
         if(r>=0&&q.opts[r]===q.good){q.e=str(o.e);B.items.push(q);pump()}
       };
-      stream({kind:'verify',topic:st.topic,label:st.label,cand:cand.map(q=>({q:q.q,opts:q.opts}))},vtier,vtier==='quick'?null:'medium',ctl,verdict)
+      stream({kind:'verify',topic:st.topic,label:st.label,cand:blind.map(q=>({q:q.q,opts:q.opts}))},vtier,vtier==='quick'?null:'medium',ctl,verdict)
         .then(all=>{if(!seen.size&&live())(all.match(/\{[^{}]*\}/g)||[]).forEach(verdict)},e=>{B.err=(e&&e.code)||'upstream_error'})
         .then(finish);
     });
@@ -794,7 +793,7 @@ function launch(run,from,to,tier,meta,vtier){
 function accept(run,o){
   st.label=str(o.sujet).slice(0,60)||st.topic;const mot=str(o.mot);
   if(mot&&st.mode==='prospect'&&!away()){say(mot,'Filon',null,null,st.label);st.hold=Math.max(st.hold,now+1.35)}
-  launch(run,4,7,'complex',false,'default');
+  launch(run,4,9,'complex',false,'default');
 }
 function settled(run,B,first){
   if(!B.items.length)Q.fail++;
@@ -810,7 +809,7 @@ function topUp(run){
   if(Q.batches.some(b=>!b.done))return true;
   if(Q.fail>=2)return false;
   let ahead=0;for(let k=Q.b;k<Q.batches.length;k++)ahead+=Q.batches[k].items.length-(k===Q.b?Q.i:0);
-  if(ahead<5)launch(run,Q.nextFrom,Q.nextFrom+3,'complex',false,'default');
+  if(ahead<5)launch(run,Q.nextFrom,Q.nextFrom+5,'complex',false,'default');
   return true;
 }
 function take(){if(Q.bank)return pickBank();while(Q.b<Q.batches.length){const B=Q.batches[Q.b];if(Q.i<B.items.length)return B.items[Q.i++];if(!B.done)return null;Q.b++;Q.i=0}return null}
@@ -836,7 +835,7 @@ function nextQuestion(){
 
 /* ================= the game ================= */
 const bubble=$('#bubble'),btag=$('#btag'),btext=$('#btext'),bnote=$('#bnote'),answersEl=$('#answers'),ansBtns=[...document.querySelectorAll('.ans')];
-const srcEl=$('#bsrc'),airEl=$('#air'),airFill=$('#air i'),feverEl=$('#fever'),shareBtn=$('#share');
+const srcEl=$('#bsrc'),airEl=$('#air'),airFill=$('#air i'),shareBtn=$('#share');
 const quipEl=$('#quip'),veins=$('#veins'),form=$('#search'),input=$('#q'),depthEl=$('#depth'),bestEl=$('#best'),signEl=$('#sign'),livesEl=$('#lives'),overEl=$('#over');
 function setMode(m){st.mode=m;game.classList.toggle('playing',m!=='intro');bubble.hidden=!['prospect','wait','ask','resolve'].includes(m);answersEl.hidden=!(m==='ask'||m==='resolve');overEl.hidden=m!=='over'}
 function say(text,tag,note,cls,sub){
@@ -861,7 +860,7 @@ function startRun(raw){
   const run=++st.run;abortAll();resetWorld();
   Object.assign(st,{topic:raw,label:raw,wrong:0,cur:null,next:null,holdT:0,hold:now+.9,streak:0,maxStreak:0});
   Object.assign(Q,{batches:[],b:0,i:0,asked:[],seen:new Set(),goods:new Set(),fail:0,backup:false,bank:false,theme:'',used:new Set(),nextFrom:1});
-  feverEl.hidden=true;refreshHud();setMode('prospect');hero.pose='think';sfx.start();
+  refreshHud();setMode('prospect');hero.pose='think';sfx.start();
   say(pick(PROSPECT).replace('{t}',()=>raw),'Je sonde');
   const th=matchTheme(raw);
   if(th){Q.backup=Q.bank=true;Q.theme=th.key;st.label=th.label;after(.95,()=>{if(run===st.run)pump()});return} /* a theme of the verified bank: no waiting */
@@ -884,13 +883,9 @@ function answer(i){ /* i = -1: the air ran out */
     const n=++st.streak;st.maxStreak=Math.max(st.maxStreak,n);
     sfx.good(world.level+1);hero.pose='dig';hero.pt=0;hero.mood='happy';hero.moodT=now+1.3;
     say(pick(GOOD),'Niveau '+(world.level+1)+' percé',q.e,'good');
-    if(n>=3){feverEl.hidden=false;feverEl.textContent='Fièvre de l’or ×'+n;if(n===3)sfx.fever()}
-    if(n%5===0&&st.wrong>0){ /* five in a row: a helmet comes back and some of the dirt falls off */
-      st.wrong--;hero.buriedTo=st.wrong/3;refreshLives();sfx.life();dirtBurst(cx,world.d*STEP-hero.buried*100*S,16,.8);
-      const hat=livesEl.children[2-st.wrong];hat.style.animation='none';void hat.offsetWidth;hat.style.animation='thud .45s cubic-bezier(.3,1.5,.5,1)'}
     st.skipAt=now+.78;st.advanceAt=now+1.25+read;st.next=nextQuestion;
   }else{
-    st.streak=0;feverEl.hidden=true;st.wrong++;sfx.bad();refreshLives();const final=st.wrong>=3;
+    st.streak=0;st.wrong++;sfx.bad();refreshLives();const final=st.wrong>=3;
     say(i<0?'Plus d’air : la galerie s’effondre !':pick(BAD),i<0?'Éboulement':'Mauvaise pioche','C’était « '+q.good+' ». '+q.e,'up');
     st.next=null;
     const then=()=>{if(final)endRun('dead');else{hero.moodT=now+.8;st.skipAt=now+.25;st.advanceAt=now+.9+read;st.next=nextQuestion}};
@@ -908,11 +903,11 @@ function endRun(kind){
     if(run!==st.run)return;
     $('#oTitle').textContent=kind==='dead'?'Enseveli':'Filon épuisé';
     $('#epitaph').textContent=kind==='dead'?pick(EPITAPHS):'Plus une seule question en stock : tu as vidé le filon.';
-    $('#oTopic').textContent=STRATA[stratumOf(lv)].n;$('#oSubject').textContent=st.label;$('#oStreak').textContent=st.maxStreak;shareBtn.textContent='Partager';feverEl.hidden=true;$('#oDepth').textContent=m?'−'+m+' m':'0 m';$('#oShovel').textContent=tierName(lv);$('#oBest').textContent=st.best?'−'+st.best+' m':'0 m';
+    $('#oTopic').textContent=STRATA[stratumOf(lv)].n;$('#oSubject').textContent=st.label;$('#oStreak').textContent=st.maxStreak;shareBtn.textContent='Partager';$('#oDepth').textContent=m?'−'+m+' m':'0 m';$('#oShovel').textContent=tierName(lv);$('#oBest').textContent=st.best?'−'+st.best+' m':'0 m';
     $('#stamp').hidden=!(rec&&m>0);refreshHud();showDepth(m);setMode('over');$('#again').focus({preventScroll:true});
   });
 }
-function toIntro(){st.run++;abortAll();resetWorld();st.wrong=0;st.streak=0;feverEl.hidden=true;setMode('intro');quipEl.hidden=true;veins.hidden=false;fillVeins();input.value='';refreshHud();input.focus({preventScroll:true})}
+function toIntro(){st.run++;abortAll();resetWorld();st.wrong=0;st.streak=0;setMode('intro');quipEl.hidden=true;veins.hidden=false;fillVeins();input.value='';refreshHud();input.focus({preventScroll:true})}
 
 form.addEventListener('submit',e=>{e.preventDefault();ac();const t=str(input.value).slice(0,60)||'Grand filon',j=localJoke(t);if(j){quip(j);sfx.bad();input.select();return}input.blur();startRun(t)});
 veins.addEventListener('click',e=>{const b=e.target.closest('.vein');if(!b)return;ac();input.value=b.textContent;startRun(b.textContent)});
@@ -1002,9 +997,9 @@ function beginRun(){
   Object.assign(R,{on:true,phase:'play',t:0,pt:0,ct:0,ent:0,x:0,v:430,dist:0,score:0,bonus:0,shown:-1,shownBest:-1,y:0,vy:0,air:false,held:false,kd:false,td:false,coy:0,buf:0,duck:0,stum:0,inv:0,heat:0,freeze:0,
     gap:112,gapTo:120,fy:0,fvy:0,fduck:0,fact:'run',ft:0,fload:0,fmood:'angry',fmoodT:0,swingAt:0,mood:'shock',moodT:1.1,sq:0,step:0,stepN:0,shake:0,flash:0,combo:0,comboT:0,mile:0,rec:false,best0:R.best,
     cart:0,cartAt:rnd(15,22),rollT:0,pick:null,throwAt:rnd(6,8),clod:null,nextX:900,seed:Math.random()*9999|0,b0:lv<1?0:Math.min(3,1+stratumOf(lv)),
-    waiting:st.mode==='prospect'||st.mode==='wait',ready:false,tp:null,rcAt:2.5});
+    waiting:st.mode==='prospect'||st.mode==='wait',ready:false,tp:null});
   R.bunk=3+R.seed%4;R.obs.length=0;R.nugs.length=0;R.fx.length=0;
-  rlayout();R.gapTo=R.far;R.hx=-70*R.RS;rhud();topUp(st.run);recheck();
+  rlayout();R.gapTo=R.far;R.hx=-70*R.RS;rhud();topUp(st.run);
 }
 function quitRun(){if(R.on&&R.phase==='play'){sfx.tick();caught()}}
 function finishRun(){ /* cut back to the quiz scene: the rival hauls the miner in from the right and flings him back to his spot */
@@ -1059,20 +1054,6 @@ function drawEsc(hy){ /* figures of the getaway / the return, in the quiz scene;
   fo.mood='happy';fo.flip=!e.under;fo.feet=stride(s2,c2);fo.lean=.24;rminer(e.fx,hy,fo,fP);return false;
 }
 function rhud(){const s=Math.floor(R.score),b=Math.max(R.best,s);if(s!==R.shown){R.shown=s;rscoreEl.textContent=String(s)}if(b!==R.shownBest){R.shownBest=b;rbestEl.textContent='Record '+b}}
-/* while the player runs, queued questions get a second blind check (answers reshuffled); any doubt removes the question */
-function recheck(){
-  if(Q.backup||st.mode==='intro')return;const run=st.run,items=[];
-  for(let k=Q.b;k<Q.batches.length;k++)Q.batches[k].items.forEach((q,i)=>{if(!q.v2&&!(k===Q.b&&i<Q.i)&&items.length<10)items.push(q)});
-  if(items.length<2)return;
-  items.forEach(q=>{q.v2=1});const opts=items.map(q=>shuffle(q.opts)),ctl=new AbortController(),seen=new Set();Q.ctls.push(ctl);
-  const verdict=line=>{
-    if(run!==st.run)return;const o=parse(line);if(!o)return;
-    const i=(o.i|0)-1,q=items[i],r='ABCD'.indexOf(String(o.r||'').trim().toUpperCase().charAt(0));
-    if(!q||seen.has(i))return;seen.add(i);
-    if(r<0||opts[i][r]!==q.good)for(let k=Q.b;k<Q.batches.length;k++){const a=Q.batches[k].items,j=a.indexOf(q);if(j>=0&&!(k===Q.b&&j<Q.i)){a.splice(j,1);break}}
-  };
-  stream({kind:'verify',topic:st.topic,label:st.label,cand:items.map((q,i)=>({q:q.q,opts:opts[i]}))},0,0,ctl,verdict).then(()=>{if(run===st.run)topUp(run)},()=>{});
-}
 
 /* ---------- controls ---------- */
 function rPress(){if(R.phase==='play'){R.held=true;R.buf=.13}}
@@ -1178,7 +1159,6 @@ function runUpdate(dt){
   R.t+=dt;R.shake*=Math.exp(-dt*9);R.sq*=Math.exp(-dt*11);R.flash=Math.max(0,R.flash-dt*2.5);
   if(R.moodT&&R.t>R.moodT){R.mood=R.heat>0?'shock':'calm';R.moodT=0}
   if(R.waiting&&!R.ready&&(R.later||Q.batches.some((b,k)=>k>=Q.b&&b.items.length>(k===Q.b?Q.i:0)))){R.ready=true;rquit.classList.add('ready');sfx.pop()}
-  if(R.t>R.rcAt){R.rcAt=R.t+2.5;recheck()} /* questions that arrive during the run get their second check too */
   if(R.freeze>0){R.freeze-=dt;return}
   const ph=R.phase;
   if(R.ent<1){R.ent=Math.min(1,R.ent+dt/.55);R.hx=lerp(-70*R.RS,R.hx0,ease.out(R.ent))} /* he runs into the frame from the left, the rival on his heels */

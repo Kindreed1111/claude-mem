@@ -29,7 +29,6 @@ Le contrôle garantit que la source citée fait partie des textes fournis ; il n
 - Difficulté selon la profondeur : facile jusqu'au niveau 5, moyen jusqu'au niveau 10, difficile ensuite. Les réponses sont remélangées à chaque affichage ; les questions déjà vues (mémorisées dans le navigateur) passent en dernier.
 - Jauge d'air : 15 s par question, moins en profondeur (9 s au minimum). À zéro, éboulement : une erreur.
 - Strates : Terre & Argile (0 m), Roche & Charbon (50 m), Galerie de Cristal (150 m), Filon d'Or (300 m), Noyau Magmatique (500 m). La strate atteinte est la ligne « Filon » de l'écran de fin.
-- Fièvre de l'or : à partir de 3 bonnes réponses d'affilée ; toutes les 5, un casque perdu est rendu.
 - Sans réseau, 16 questions intégrées servent de secours.
 
 ## La course
@@ -37,7 +36,7 @@ Le contrôle garantit que la source citée fait partie des textes fournis ; il n
 - Lancement : deux clics rapides sur le mineur, à n'importe quelle profondeur. En surface, le rival arrive par la gauche et le mineur file à droite ; sous terre, un passage s'ouvre dans la paroi de droite.
 - Commandes : Espace / flèche haut / tap pour sauter (appui long = saut plus haut), flèche bas / glissé vers le bas pour glisser, Échap ou le panneau « retour » pour arrêter.
 - Règles : un obstacle touché fait trébucher et rapproche le rival pendant quelques secondes ; un second choc pendant ce temps et il attrape le mineur, puis le ramène par la pelle là où il était. Le rival lance des pelletées de sable qui deviennent des obstacles. Un wagonnet rend invincible quelques secondes. Les pépites rapportent des points.
-- Le quiz est figé pendant la course et reprend sur la même question. Les questions suivantes se préparent pendant ce temps (5 d'avance au plus).
+- Le quiz (et la jauge d'air) est figé pendant la course et reprend sur la même question. Les questions suivantes se préparent pendant ce temps (5 d'avance au plus).
 - Records (quiz et course) enregistrés dans le navigateur du joueur.
 
 ## Déploiement sur Vercel (offre gratuite)
@@ -47,7 +46,7 @@ Le contrôle garantit que la source citée fait partie des textes fournis ; il n
 3. Dans Settings → Environment Variables, ajouter :
    - `GEMINI_API_KEY` : la clé API Gemini. C'est la seule valeur obligatoire.
    - `TAVILY_API_KEY` (facultatif) : ajoute des résultats web aux sources des sujets libres.
-   - `GEMINI_MODEL` (facultatif) : pour imposer un modèle. Sans elle, le serveur lit la liste des modèles accessibles à la clé et essaie les modèles Flash les plus récents, puis Pro.
+   - `GEMINI_MODEL` (facultatif) : modèle essayé en premier. S'il est refusé (quota atteint), le serveur passe aux autres modèles accessibles à la clé, chacun ayant son propre quota gratuit.
 4. Déployer. La branche à déployer se choisit dans les réglages du projet.
 
 ## Limites connues
