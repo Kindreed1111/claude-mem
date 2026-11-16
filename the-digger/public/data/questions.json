@@ -7333,5 +7333,1445 @@
   "anecdote": "À 14:00, les plaques tombent et les tourelles perdent définitivement leurs résistances bonus de début de partie.",
   "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Turret",
   "theme": "League of Legends"
+ },
+ {
+  "id": "foot-facile-01",
+  "question": "Combien de joueurs d'une équipe sont sur le terrain au coup d'envoi ?",
+  "options": [
+   "11 joueurs",
+   "10 joueurs",
+   "12 joueurs",
+   "9 joueurs"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Chaque équipe aligne 10 joueurs de champ et 1 gardien de but au coup d'envoi.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Football",
+  "theme": "Football"
+ },
+ {
+  "id": "foot-facile-02",
+  "question": "Quel pays a remporté la Coupe du monde 2026 aux États-Unis ?",
+  "options": [
+   "L'Argentine",
+   "L'Espagne",
+   "La France",
+   "Le Brésil"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "L'Espagne a battu l'Argentine 1-0 après prolongation le 19 juillet 2026.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Finale_de_la_Coupe_du_monde_de_football_2026",
+  "theme": "Football"
+ },
+ {
+  "id": "foot-facile-03",
+  "question": "Quel joueur détient le record absolu de 8 Ballons d'Or ?",
+  "options": [
+   "Cristiano Ronaldo",
+   "Zinédine Zidane",
+   "Lionel Messi",
+   "Michel Platini"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Lionel Messi a remporté ses 8 Ballons d'Or entre 2009 et 2023.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ballon_d%27or",
+  "theme": "Football"
+ },
+ {
+  "id": "foot-facile-04",
+  "question": "Quelle couleur de carton entraîne l'expulsion immédiate d'un joueur ?",
+  "options": [
+   "Carton jaune",
+   "Carton bleu",
+   "Carton blanc",
+   "Carton rouge"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Le carton rouge a été introduit officiellement lors de la Coupe du monde 1970.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Carton_rouge",
+  "theme": "Football"
+ },
+ {
+  "id": "foot-moyen-01",
+  "question": "Quel joueur anglais a remporté le Ballon d'Or masculin en 2026 ?",
+  "options": [
+   "Harry Kane",
+   "Jude Bellingham",
+   "Bukayo Saka",
+   "Phil Foden"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Attaquant du Bayern Munich, Harry Kane a été sacré au London Palladium en octobre 2026.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ballon_d%27or_2026",
+  "theme": "Football"
+ },
+ {
+  "id": "foot-moyen-02",
+  "question": "Quel club détient le record de victoires en Ligue des champions ?",
+  "options": [
+   "FC Barcelone",
+   "Real Madrid",
+   "AC Milan",
+   "Bayern Munich"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Le Real Madrid domine largement le palmarès européen avec 15 sacres.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ligue_des_champions_de_l%27UEFA",
+  "theme": "Football"
+ },
+ {
+  "id": "foot-moyen-03",
+  "question": "Contre quel pays la France a-t-elle gagné le Mondial 1998 ?",
+  "options": [
+   "L'Italie",
+   "L'Allemagne",
+   "Le Brésil",
+   "La Croatie"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Les Bleus se sont imposés 3-0 au Stade de France grâce à Zidane et Petit.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Finale_de_la_Coupe_du_monde_de_football_1998",
+  "theme": "Football"
+ },
+ {
+  "id": "foot-moyen-04",
+  "question": "Quel club français a été sacré champion d'Europe en 1993 ?",
+  "options": [
+   "Paris Saint-Germain",
+   "AS Monaco",
+   "Olympique Lyonnais",
+   "Olympique de Marseille"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "L'OM a battu l'AC Milan 1-0 à Munich grâce à une tête de Basile Boli.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Finale_de_la_Ligue_des_champions_de_l%27UEFA_1992-1993",
+  "theme": "Football"
+ },
+ {
+  "id": "foot-difficile-01",
+  "question": "Qui a inscrit l'unique but de la finale du Mondial 2026 ?",
+  "options": [
+   "Ferran Torres",
+   "Lamine Yamal",
+   "Dani Olmo",
+   "Nico Williams"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Ferran Torres a marqué à la 106e minute en prolongation face à l'Argentine.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Finale_de_la_Coupe_du_monde_de_football_2026",
+  "theme": "Football"
+ },
+ {
+  "id": "foot-difficile-02",
+  "question": "Quel joueur français a remporté le Ballon d'Or masculin en 2025 ?",
+  "options": [
+   "Kylian Mbappé",
+   "Ousmane Dembélé",
+   "Antoine Griezmann",
+   "William Saliba"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Ousmane Dembélé (PSG) a décroché le trophée lors de la cérémonie 2025.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ballon_d%27or_2025",
+  "theme": "Football"
+ },
+ {
+  "id": "foot-difficile-03",
+  "question": "Quel est le seul gardien de but à avoir gagné le Ballon d'Or ?",
+  "options": [
+   "Gianluigi Buffon",
+   "Manuel Neuer",
+   "Lev Yachine",
+   "Iker Casillas"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Surnommé l'Araignée noire, Lev Yachine a été récompensé en 1963.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Lev_Yachine",
+  "theme": "Football"
+ },
+ {
+  "id": "foot-difficile-04",
+  "question": "Quelle nation a réalisé le triplé Euro 2008 - Mondial 2010 - Euro 2012 ?",
+  "options": [
+   "L'Allemagne",
+   "La France",
+   "L'Italie",
+   "L'Espagne"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Aucune autre sélection nationale n'a enchaîné trois tournois majeurs consécutifs.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/%C3%89quipe_d%27Espagne_de_football",
+  "theme": "Football"
+ },
+ {
+  "id": "foot-expert-01",
+  "question": "Dans quel stade s'est jouée la finale de la Coupe du monde 2026 ?",
+  "options": [
+   "MetLife Stadium",
+   "Rose Bowl",
+   "SoFi Stadium",
+   "AT&T Stadium"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Le MetLife Stadium (East Rutherford, New Jersey) a accueilli 80 663 spectateurs.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Finale_de_la_Coupe_du_monde_de_football_2026",
+  "theme": "Football"
+ },
+ {
+  "id": "foot-expert-02",
+  "question": "Combien de points séparaient Harry Kane et Kylian Mbappé au Ballon d'Or 2026 ?",
+  "options": [
+   "12 points",
+   "28 points",
+   "45 points",
+   "64 points"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Harry Kane a obtenu 1 055 points contre 1 027 points pour Kylian Mbappé.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ballon_d%27or_2026",
+  "theme": "Football"
+ },
+ {
+  "id": "foot-expert-03",
+  "question": "Qui détient le record de buts sur une seule phase finale de Mondial (13) ?",
+  "options": [
+   "Gerd Müller",
+   "Ronaldo Nazário",
+   "Just Fontaine",
+   "Miroslav Klose"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Just Fontaine a inscrit 13 buts en 6 matchs lors du Mondial 1958 en Suède.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Just_Fontaine",
+  "theme": "Football"
+ },
+ {
+  "id": "foot-expert-04",
+  "question": "Quel arbitre slovène a dirigé la finale de la Coupe du monde 2026 ?",
+  "options": [
+   "Szymon Marciniak",
+   "Daniele Orsato",
+   "Clément Turpin",
+   "Slavko Vinčić"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Slavko Vinčić avait déjà arbitré la finale de l'Euro 2024 et de la C1 2024.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Finale_de_la_Coupe_du_monde_de_football_2026",
+  "theme": "Football"
+ },
+ {
+  "id": "starac-facile-01",
+  "question": "Qui présente les primes de la Star Academy sur TF1 depuis 2001 ?",
+  "options": [
+   "Nikos Aliagas",
+   "Arthur",
+   "Camille Combal",
+   "Denis Brogniart"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Nikos Aliagas a animé toutes les éditions diffusées sur TF1 depuis le lancement en 2001.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Star_Academy_(France)",
+  "theme": "Star Academy"
+ },
+ {
+  "id": "starac-facile-02",
+  "question": "Dans quelle commune se situe le château des Vives-Eaux de l'émission ?",
+  "options": [
+   "Fontainebleau",
+   "Dammarie-les-Lys",
+   "Versailles",
+   "Rambouillet"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Le château des Vives-Eaux se trouve en Seine-et-Marne (77), près de Melun.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_des_Vives-Eaux",
+  "theme": "Star Academy"
+ },
+ {
+  "id": "starac-facile-03",
+  "question": "Qui a gagné la saison 11 avec le tube « Ceux qu'on était » ?",
+  "options": [
+   "Julien Lieb",
+   "Héléna Bailly",
+   "Pierre Garnier",
+   "Lénie Vacher"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Pierre Garnier a remporté la finale en février 2024 avant de signer un album diamant.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Saison_11_de_Star_Academy",
+  "theme": "Star Academy"
+ },
+ {
+  "id": "starac-facile-04",
+  "question": "Quelle gagnante de la saison 1 a triomphé dès 2002 avec « Au soleil » ?",
+  "options": [
+   "Nolwenn Leroy",
+   "Élodie Frégé",
+   "Magalie Vaé",
+   "Jenifer"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Jenifer a remporté la toute première édition de la Star Academy en janvier 2002.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Saison_1_de_Star_Academy",
+  "theme": "Star Academy"
+ },
+ {
+  "id": "starac-moyen-01",
+  "question": "Qui a remporté la saison 12 de la Star Academy en janvier 2025 ?",
+  "options": [
+   "Marine",
+   "Ebony",
+   "Franck",
+   "Charles"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Originaire d'Arras, Marine a remporté la finale face à Ebony avec son titre « Ma faute ».",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Saison_12_de_Star_Academy",
+  "theme": "Star Academy"
+ },
+ {
+  "id": "starac-moyen-02",
+  "question": "Quelle chanson de Bob Sinclar sert de générique depuis 2006 ?",
+  "options": [
+   "World, Hold On",
+   "Love Generation",
+   "Rock This Party",
+   "Sound of Freedom"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "« Love Generation » est devenu l'indicatif musical indissociable de l'émission.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Star_Academy_(France)",
+  "theme": "Star Academy"
+ },
+ {
+  "id": "starac-moyen-03",
+  "question": "Qui a remporté la saison 13 de la Star Academy en février 2026 ?",
+  "options": [
+   "Léa",
+   "Sarah",
+   "Ambre",
+   "Anouk"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Âgée de 18 ans, Ambre a remporté la finale face à Léa le 7 février 2026.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Saison_13_de_Star_Academy",
+  "theme": "Star Academy"
+ },
+ {
+  "id": "starac-moyen-04",
+  "question": "Qui a remporté la saison 4 en 2004 avant de disparaître en 2007 ?",
+  "options": [
+   "Cyril Cinélu",
+   "Quentin Mosimann",
+   "Mickels Réa",
+   "Grégory Lemarchal"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Grégory Lemarchal avait marqué l'histoire de l'émission par son interprétation de « SOS d'un terrien en détresse ».",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Gr%C3%A9gory_Lemarchal",
+  "theme": "Star Academy"
+ },
+ {
+  "id": "starac-difficile-01",
+  "question": "Quels artistes étaient les deux parrains officiels de la saison 13 ?",
+  "options": [
+   "Ed Sheeran & C. Cardin",
+   "Vitaa & James Blunt",
+   "Clara Luciani & Slimane",
+   "Robbie Williams & Zaho"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Ed Sheeran et Charlotte Cardin ont accompagné la promotion 2025-2026.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Saison_13_de_Star_Academy",
+  "theme": "Star Academy"
+ },
+ {
+  "id": "starac-difficile-02",
+  "question": "Quelle chanson d'ABBA servait d'hymne à la saison 13 sur TF1 ?",
+  "options": [
+   "Dancing Queen",
+   "Voulez-Vous",
+   "Gimme! Gimme! Gimme!",
+   "Mamma Mia"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Les élèves de la saison 13 ouvraient chaque prime sur une adaptation française de « Voulez-Vous ».",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Saison_13_de_Star_Academy",
+  "theme": "Star Academy"
+ },
+ {
+  "id": "starac-difficile-03",
+  "question": "Qui a remporté la saison 10 marquant le retour de l'émission en 2022 ?",
+  "options": [
+   "Enola Cox",
+   "Louis Albi",
+   "Anisha Jo",
+   "Léa Haddad"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Anisha Jo s'est imposée en novembre 2022 face à Enola avec 57 % des suffrages.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Saison_10_de_Star_Academy",
+  "theme": "Star Academy"
+ },
+ {
+  "id": "starac-difficile-04",
+  "question": "Quel chorégraphe a été le professeur de danse des saisons 1 à 8 ?",
+  "options": [
+   "Malika Benjelloun",
+   "Yanis Marshall",
+   "Jonathan Jenvrin",
+   "Kamel Ouali"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Kamel Ouali signait également les grands tableaux scéniques des primes.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Kamel_Ouali",
+  "theme": "Star Academy"
+ },
+ {
+  "id": "starac-expert-01",
+  "question": "Avec quel score Ambre a-t-elle gagné la finale de la saison 13 ?",
+  "options": [
+   "59 % des voix",
+   "52 % des voix",
+   "64 % des voix",
+   "71 % des voix"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Ambre a devancé Léa avec 59 % des votes du public lors de la finale du 7 février 2026.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Saison_13_de_Star_Academy",
+  "theme": "Star Academy"
+ },
+ {
+  "id": "starac-expert-02",
+  "question": "Qui a remporté l'unique saison diffusée sur NRJ 12 en 2013 ?",
+  "options": [
+   "Zayra",
+   "Laurène Bourvon",
+   "Daniel Saïd",
+   "Sidoine"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Laurène Bourvon a remporté la saison 9 face à Zayra sur NRJ 12.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Saison_9_de_Star_Academy",
+  "theme": "Star Academy"
+ },
+ {
+  "id": "starac-expert-03",
+  "question": "Dans quel studio de La Plaine Saint-Denis sont tournés les primes ?",
+  "options": [
+   "Studio 107",
+   "Studio 128",
+   "Studio 217",
+   "Studio 204"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Les primes en direct sont enregistrés au Studio 217 à La Plaine Saint-Denis.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Saison_13_de_Star_Academy",
+  "theme": "Star Academy"
+ },
+ {
+  "id": "starac-expert-04",
+  "question": "Qui occupait le poste de directrice du château lors des saisons 5 à 7 ?",
+  "options": [
+   "Alexia Laroche-Joubert",
+   "Sylvie Tellier",
+   "Armande Altaï",
+   "Nathalie André"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Nathalie André a dirigé l'académie de 2005 à 2007 avant le retour d'Alexia Laroche-Joubert.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Star_Academy_(France)",
+  "theme": "Star Academy"
+ },
+ {
+  "id": "cap-facile-01",
+  "question": "Quelle est la capitale du Japon ?",
+  "options": [
+   "Tokyo",
+   "Kyoto",
+   "Osaka",
+   "Séoul"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Tokyo est devenue la capitale officielle du Japon en 1868 à la place de Kyoto.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Tokyo",
+  "theme": "Capitales"
+ },
+ {
+  "id": "cap-facile-02",
+  "question": "Quelle est la capitale de l'Espagne ?",
+  "options": [
+   "Barcelone",
+   "Madrid",
+   "Séville",
+   "Valence"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Située au centre du pays, Madrid est la capitale de l'Espagne depuis le XVIe siècle.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Madrid",
+  "theme": "Capitales"
+ },
+ {
+  "id": "cap-facile-03",
+  "question": "Quelle est la capitale de l'Égypte ?",
+  "options": [
+   "Alexandrie",
+   "Louxor",
+   "Le Caire",
+   "Gizeh"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Le Caire est la plus grande agglomération du monde arabe et d'Afrique.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Le_Caire",
+  "theme": "Capitales"
+ },
+ {
+  "id": "cap-facile-04",
+  "question": "Quelle est la capitale du Canada ?",
+  "options": [
+   "Toronto",
+   "Montréal",
+   "Vancouver",
+   "Ottawa"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Ottawa a été choisie par la reine Victoria en 1857 pour sa position entre Ontario et Québec.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ottawa",
+  "theme": "Capitales"
+ },
+ {
+  "id": "cap-moyen-01",
+  "question": "Quelle est la capitale de l'Australie ?",
+  "options": [
+   "Canberra",
+   "Sydney",
+   "Melbourne",
+   "Brisbane"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Canberra a été bâtie comme compromis entre les deux rivales Sydney et Melbourne.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Canberra",
+  "theme": "Capitales"
+ },
+ {
+  "id": "cap-moyen-02",
+  "question": "Quelle est la capitale du Brésil ?",
+  "options": [
+   "Rio de Janeiro",
+   "Brasilia",
+   "São Paulo",
+   "Salvador"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Inaugurée en 1960, Brasilia a été dessinée par Oscar Niemeyer et Lúcio Costa.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Brasilia",
+  "theme": "Capitales"
+ },
+ {
+  "id": "cap-moyen-03",
+  "question": "Quelle est la capitale de la Turquie ?",
+  "options": [
+   "Istanbul",
+   "Izmir",
+   "Ankara",
+   "Antalya"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Mustafa Kemal Atatürk a fait d'Ankara la capitale en 1923 à la place d'Istanbul.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ankara",
+  "theme": "Capitales"
+ },
+ {
+  "id": "cap-moyen-04",
+  "question": "Quelle est la capitale du Maroc ?",
+  "options": [
+   "Casablanca",
+   "Marrakech",
+   "Fès",
+   "Rabat"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Bien que Casablanca soit plus peuplée, Rabat est la capitale administrative du Maroc.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Rabat",
+  "theme": "Capitales"
+ },
+ {
+  "id": "cap-difficile-01",
+  "question": "Quelle est la capitale de la Nouvelle-Zélande ?",
+  "options": [
+   "Wellington",
+   "Auckland",
+   "Christchurch",
+   "Queenstown"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Wellington est la capitale souveraine la plus méridionale du monde.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Wellington",
+  "theme": "Capitales"
+ },
+ {
+  "id": "cap-difficile-02",
+  "question": "Quelle est la capitale du Kazakhstan ?",
+  "options": [
+   "Almaty",
+   "Astana",
+   "Tachkent",
+   "Bichkek"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Brièvement rebaptisée Noursoultan entre 2019 et 2022, elle a repris son nom d'Astana.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Astana",
+  "theme": "Capitales"
+ },
+ {
+  "id": "cap-difficile-03",
+  "question": "Quelle ville est le siège du gouvernement en Bolivie ?",
+  "options": [
+   "Sucre",
+   "Santa Cruz",
+   "La Paz",
+   "Cochabamba"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Sucre est la capitale constitutionnelle, mais La Paz abrite le gouvernement à 3 650 m d'altitude.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_Paz",
+  "theme": "Capitales"
+ },
+ {
+  "id": "cap-difficile-04",
+  "question": "Quelle est la capitale législative du Sri Lanka depuis 1982 ?",
+  "options": [
+   "Colombo",
+   "Kandy",
+   "Galle",
+   "Sri Jayawardenapura"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Sri Jayawardenapura Kotte jouxte Colombo, qui reste la capitale économique.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Sri_Jayawardenapura",
+  "theme": "Capitales"
+ },
+ {
+  "id": "cap-expert-01",
+  "question": "Quelle est la capitale des Palaos (Palau) depuis 2006 ?",
+  "options": [
+   "Ngerulmud",
+   "Koror",
+   "Melekeok",
+   "Airai"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Ngerulmud est la capitale la moins peuplée d'un État souverain dans le monde.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ngerulmud",
+  "theme": "Capitales"
+ },
+ {
+  "id": "cap-expert-02",
+  "question": "Quelle est la capitale de la Birmanie (Myanmar) depuis 2005 ?",
+  "options": [
+   "Rangoun",
+   "Naypyidaw",
+   "Mandalay",
+   "Bago"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Naypyidaw a remplacé Rangoun en novembre 2005 au centre du pays.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Naypyidaw",
+  "theme": "Capitales"
+ },
+ {
+  "id": "cap-expert-03",
+  "question": "Quelle est la capitale du Belize depuis 1970 ?",
+  "options": [
+   "Belize City",
+   "San Ignacio",
+   "Belmopan",
+   "Orange Walk"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Belmopan a été construite à l'intérieur des terres après la destruction de Belize City par un ouragan.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Belmopan",
+  "theme": "Capitales"
+ },
+ {
+  "id": "cap-expert-04",
+  "question": "Quelle est la capitale des États fédérés de Micronésie ?",
+  "options": [
+   "Weno",
+   "Kolonia",
+   "Tofol",
+   "Palikir"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Palikir est située sur l'île de Pohnpei dans l'océan Pacifique.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Palikir",
+  "theme": "Capitales"
+ },
+ {
+  "id": "twilight-facile-01",
+  "question": "Quelle autrice américaine a écrit la saga Twilight ?",
+  "options": [
+   "Stephenie Meyer",
+   "J.K. Rowling",
+   "Suzanne Collins",
+   "Veronica Roth"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Stephenie Meyer a publié le premier tome de Twilight en octobre 2005.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Twilight_(s%C3%A9rie)",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-facile-02",
+  "question": "Quel acteur incarne le vampire Edward Cullen au cinéma ?",
+  "options": [
+   "Taylor Lautner",
+   "Robert Pattinson",
+   "Kellan Lutz",
+   "Jackson Rathbone"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Robert Pattinson partage l'affiche des cinq films avec Kristen Stewart (Bella Swan).",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Twilight,_chapitre_I_:_Fascination",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-facile-03",
+  "question": "Dans quelle ville pluvieuse Bella emménage-t-elle chez son père ?",
+  "options": [
+   "Seattle",
+   "Portland",
+   "Forks",
+   "Tacoma"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Forks est une petite ville réelle de la péninsule Olympique (État de Washington).",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Forks_(Washington)",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-facile-04",
+  "question": "En quel animal Jacob Black se transforme-t-il ?",
+  "options": [
+   "Un ours noir",
+   "Un puma",
+   "Un corbeau",
+   "Un loup géant"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Jacob appartient à la tribu Quileute, dont les membres protègent les humains des vampires.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Jacob_Black",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-moyen-01",
+  "question": "Quel est le titre français du premier volet sorti en 2008 ?",
+  "options": [
+   "Fascination",
+   "Tentation",
+   "Hésitation",
+   "Révélation"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Les quatre romans s'intitulent Fascination, Tentation, Hésitation et Révélation.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Twilight_(s%C3%A9rie)",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-moyen-02",
+  "question": "Quel don surnaturel possède Alice Cullen ?",
+  "options": [
+   "Lire dans les pensées",
+   "Voir l'avenir",
+   "Contrôler les émotions",
+   "Bouclier mental"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Les visions d'Alice évoluent dès qu'un personnage change de décision.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Famille_Cullen",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-moyen-03",
+  "question": "Comment s'appelle la fille d'Edward et Bella ?",
+  "options": [
+   "Esmée",
+   "Rosalie",
+   "Renesmée",
+   "Victoria"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Son prénom est formé à partir de ceux de ses deux grands-mères : Renée et Esmée.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Twilight,_chapitre_IV_:_R%C3%A9v%C3%A9lation,_1re_partie",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-moyen-04",
+  "question": "Quel clan royal fait respecter les lois des vampires en Italie ?",
+  "options": [
+   "Les Quileutes",
+   "Les Denali",
+   "Les Roumains",
+   "Les Volturi"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Les Volturi siègent dans la cité toscane de Volterra.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Volturi",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-difficile-01",
+  "question": "Quelle réalisatrice a tourné le premier film Twilight (2008) ?",
+  "options": [
+   "Catherine Hardwicke",
+   "Sofia Coppola",
+   "Patty Jenkins",
+   "Greta Gerwig"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Catherine Hardwicke a établi toute l'esthétique bleutée du premier opus.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Catherine_Hardwicke",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-difficile-02",
+  "question": "Quel vampire traqueur mord Bella dans le studio de ballet à Phoenix ?",
+  "options": [
+   "Laurent",
+   "James",
+   "Riley",
+   "Aro"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "L'élimination de James déclenche ensuite la vengeance de sa compagne Victoria.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Twilight,_chapitre_I_:_Fascination",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-difficile-03",
+  "question": "En quelle année Edward Cullen a-t-il été transformé par Carlisle ?",
+  "options": [
+   "1901",
+   "1929",
+   "1918",
+   "1895"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Né en 1901 à Chicago, Edward est figé à l'âge de 17 ans depuis 1918.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Edward_Cullen",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-difficile-04",
+  "question": "Quel titre de Muse accompagne la partie de baseball sous l'orage ?",
+  "options": [
+   "Starlight",
+   "Time Is Running Out",
+   "Uprising",
+   "Supermassive Black Hole"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Cette scène culte du premier film a propulsé le morceau de Muse auprès d'un nouveau public.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Twilight,_chapitre_I_:_Fascination",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-expert-01",
+  "question": "Quel roman de 2020 raconte Twilight du point de vue d'Edward ?",
+  "options": [
+   "Midnight Sun",
+   "Life and Death",
+   "Bree Tanner",
+   "Eclipse"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Longtemps suspendu après une fuite en 2008, Midnight Sun est paru officiellement en août 2020.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Midnight_Sun_(roman)",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-expert-02",
+  "question": "Quel acteur incarne Aro, l'un des trois chefs des Volturi ?",
+  "options": [
+   "Jamie Campbell Bower",
+   "Michael Sheen",
+   "Christopher Heyerdahl",
+   "Billy Burke"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Michael Sheen incarne Aro aux côtés de Marcus (Christopher Heyerdahl) et Caius.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Volturi",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-expert-03",
+  "question": "De quelle maladie mortelle Edward souffrait-il avant sa transformation ?",
+  "options": [
+   "La tuberculose",
+   "Le choléra",
+   "La grippe espagnole",
+   "La typhoïde"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Carlisle l'a transformé à l'hôpital de Chicago durant l'épidémie de grippe espagnole de 1918.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Edward_Cullen",
+  "theme": "Twilight"
+ },
+ {
+  "id": "twilight-expert-04",
+  "question": "Quel est le prénom du chef de la police de Forks, père de Bella ?",
+  "options": [
+   "Billy",
+   "Carlisle",
+   "Sam",
+   "Charlie"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Charlie Swan est interprété par Billy Burke dans les cinq volets de la saga.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Twilight,_chapitre_I_:_Fascination",
+  "theme": "Twilight"
+ },
+ {
+  "id": "spidey-facile-01",
+  "question": "Quelle est la véritable identité du Spider-Man original ?",
+  "options": [
+   "Peter Parker",
+   "Miles Morales",
+   "Eddie Brock",
+   "Harry Osborn"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Peter Parker acquiert ses pouvoirs après avoir été mordu par une araignée radioactive.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Spider-Man",
+  "theme": "Spider-Man"
+ },
+ {
+  "id": "spidey-facile-02",
+  "question": "Quel célèbre précepte est associé à l'oncle Ben de Peter Parker ?",
+  "options": [
+   "Ne regarde jamais en arrière",
+   "Un grand pouvoir implique...",
+   "La vengeance est un plat...",
+   "L'union fait la force"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "« Un grand pouvoir implique de grandes responsabilités » est la devise fondatrice du héros.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ben_Parker",
+  "theme": "Spider-Man"
+ },
+ {
+  "id": "spidey-facile-03",
+  "question": "Dans quel journal new-yorkais Peter Parker vend-il ses photos ?",
+  "options": [
+   "New York Times",
+   "Daily Planet",
+   "Daily Bugle",
+   "Gotham Gazette"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Le Daily Bugle mène pourtant une campagne de presse virulente contre Spider-Man.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Daily_Bugle",
+  "theme": "Spider-Man"
+ },
+ {
+  "id": "spidey-facile-04",
+  "question": "Quel acteur incarne Spider-Man dans la trilogie de Sam Raimi ?",
+  "options": [
+   "Andrew Garfield",
+   "Tom Holland",
+   "Jake Johnson",
+   "Tobey Maguire"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Tobey Maguire a tenu le rôle dans les trois films sortis entre 2002 et 2007.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Spider-Man_(film)",
+  "theme": "Spider-Man"
+ },
+ {
+  "id": "spidey-moyen-01",
+  "question": "Quel adolescent de Brooklyn est le héros d'Into the Spider-Verse ?",
+  "options": [
+   "Miles Morales",
+   "Miguel O'Hara",
+   "Hobie Brown",
+   "Pavitr Prabhakar"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Créé en 2011, Miles Morales possède en plus un camouflage optique et une décharge bio-électrique.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Miles_Morales",
+  "theme": "Spider-Man"
+ },
+ {
+  "id": "spidey-moyen-02",
+  "question": "Qui est le rédacteur en chef colérique du Daily Bugle ?",
+  "options": [
+   "Norman Osborn",
+   "J. Jonah Jameson",
+   "Curt Connors",
+   "Wilson Fisk"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "J.K. Simmons a incarné J. Jonah Jameson aussi bien chez Sam Raimi que dans le MCU.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/J._Jonah_Jameson",
+  "theme": "Spider-Man"
+ },
+ {
+  "id": "spidey-moyen-03",
+  "question": "Quel est le titre du 4e film avec Tom Holland sorti en juillet 2026 ?",
+  "options": [
+   "Homecoming 2",
+   "Web of Shadows",
+   "Brand New Day",
+   "Back in Black"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Spider-Man: Brand New Day fait suite aux événements de No Way Home (2021).",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Spider-Man:_Brand_New_Day",
+  "theme": "Spider-Man"
+ },
+ {
+  "id": "spidey-moyen-04",
+  "question": "Quel symbiote extraterrestre fusionne avec Peter Parker puis Eddie Brock ?",
+  "options": [
+   "Carnage",
+   "Riot",
+   "Toxin",
+   "Venom"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Le costume noir symbiotique est apparu dans les comics en 1984 lors des Guerres Secrètes.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Venom_(comics)",
+  "theme": "Spider-Man"
+ },
+ {
+  "id": "spidey-difficile-01",
+  "question": "Qui a réalisé Spider-Man: Brand New Day sorti en juillet 2026 ?",
+  "options": [
+   "Destin Daniel Cretton",
+   "Jon Watts",
+   "Sam Raimi",
+   "Marc Webb"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Destin Daniel Cretton (Shang-Chi) succède à Jon Watts à la réalisation.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Spider-Man:_Brand_New_Day",
+  "theme": "Spider-Man"
+ },
+ {
+  "id": "spidey-difficile-02",
+  "question": "Dans quel comics de 1962 Spider-Man fait-il sa première apparition ?",
+  "options": [
+   "The Amazing Spider-Man #1",
+   "Amazing Fantasy #15",
+   "Marvel Tales #1",
+   "Strange Tales #100"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Le numéro d'août 1962 d'Amazing Fantasy devait être le dernier avant que le succès ne lance sa série.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Amazing_Fantasy",
+  "theme": "Spider-Man"
+ },
+ {
+  "id": "spidey-difficile-03",
+  "question": "Quel duo a créé Spider-Man chez Marvel en 1962 ?",
+  "options": [
+   "Stan Lee & Jack Kirby",
+   "Bob Kane & Bill Finger",
+   "Stan Lee & Steve Ditko",
+   "Roy Thomas & John Romita"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Steve Ditko a conçu le costume emblématique rouge et bleu ainsi que les lance-toiles.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Steve_Ditko",
+  "theme": "Spider-Man"
+ },
+ {
+  "id": "spidey-difficile-04",
+  "question": "Quelle actrice incarne Jean Grey dans Spider-Man: Brand New Day ?",
+  "options": [
+   "Zendaya",
+   "Florence Pugh",
+   "Sydney Sweeney",
+   "Sadie Sink"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Sadie Sink rejoint le casting de Brand New Day (2026) dans le rôle de Jean Grey.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Spider-Man:_Brand_New_Day",
+  "theme": "Spider-Man"
+ },
+ {
+  "id": "spidey-expert-01",
+  "question": "Quelle est l'identité secrète de Spider-Man 2099 ?",
+  "options": [
+   "Miguel O'Hara",
+   "Ben Reilly",
+   "Kaine Parker",
+   "Flash Thompson"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Généticien à Nueva York en 2099, Miguel O'Hara dirige la Spider-Société dans Across the Spider-Verse.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Spider-Man_2099",
+  "theme": "Spider-Man"
+ },
+ {
+  "id": "spidey-expert-02",
+  "question": "Quel compositeur signe la musique de Spider-Man: Brand New Day ?",
+  "options": [
+   "Danny Elfman",
+   "Michael Giacchino",
+   "Hans Zimmer",
+   "Daniel Pemberton"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Michael Giacchino a composé la musique des quatre films Spider-Man avec Tom Holland.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Spider-Man:_Brand_New_Day",
+  "theme": "Spider-Man"
+ },
+ {
+  "id": "spidey-expert-03",
+  "question": "Quel justicier joué par Jon Bernthal apparaît dans Brand New Day ?",
+  "options": [
+   "Daredevil",
+   "Moon Knight",
+   "The Punisher",
+   "Blade"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Jon Bernthal reprend son rôle de Frank Castle / The Punisher au cinéma en 2026.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Spider-Man:_Brand_New_Day",
+  "theme": "Spider-Man"
+ },
+ {
+  "id": "spidey-expert-04",
+  "question": "Dans quel quartier de New York Peter Parker vit-il avec tante May ?",
+  "options": [
+   "Hell's Kitchen",
+   "Harlem",
+   "Staten Island",
+   "Forest Hills (Queens)"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Peter Parker est historiquement lié au quartier résidentiel de Forest Hills dans le Queens.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Spider-Man",
+  "theme": "Spider-Man"
+ },
+ {
+  "id": "cine21-facile-01",
+  "question": "Quel réalisateur a signé la saga Avatar depuis 2009 ?",
+  "options": [
+   "James Cameron",
+   "Steven Spielberg",
+   "Ridley Scott",
+   "Peter Jackson"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Avatar (2009) demeure le plus gros succès de l'histoire du box-office mondial.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Avatar_(film,_2009)",
+  "theme": "Films du XXIe siècle"
+ },
+ {
+  "id": "cine21-facile-02",
+  "question": "Quel film de Christopher Nolan a gagné l'Oscar du meilleur film en 2024 ?",
+  "options": [
+   "Tenet",
+   "Oppenheimer",
+   "Dunkerque",
+   "Interstellar"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Oppenheimer a remporté 7 Oscars lors de la 96e cérémonie en mars 2024.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Oppenheimer_(film)",
+  "theme": "Films du XXIe siècle"
+ },
+ {
+  "id": "cine21-facile-03",
+  "question": "Qui a réalisé Parasite, Palme d'or 2019 et Oscar 2020 ?",
+  "options": [
+   "Park Chan-wook",
+   "Kim Jee-woon",
+   "Bong Joon-ho",
+   "Lee Chang-dong"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Parasite est le premier film non anglophone à remporter l'Oscar du meilleur film.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Parasite_(film,_2019)",
+  "theme": "Films du XXIe siècle"
+ },
+ {
+  "id": "cine21-facile-04",
+  "question": "Quel film avec Omar Sy a dépassé 19 millions d'entrées en France en 2011 ?",
+  "options": [
+   "Bienvenue chez les Ch'tis",
+   "Qu'est-ce qu'on a fait...",
+   "Le Fabuleux Destin...",
+   "Intouchables"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Réalisé par Éric Toledano et Olivier Nakache, Intouchables est l'un des plus gros succès français.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Intouchables_(film)",
+  "theme": "Films du XXIe siècle"
+ },
+ {
+  "id": "cine21-moyen-01",
+  "question": "Quel film de Paul Thomas Anderson a gagné l'Oscar du meilleur film en 2026 ?",
+  "options": [
+   "Une bataille après l'autre",
+   "Sinners",
+   "Marty Supreme",
+   "Hamnet"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Une bataille après l'autre (One Battle After Another) a remporté 6 Oscars en mars 2026.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/98e_c%C3%A9r%C3%A9monie_des_Oscars",
+  "theme": "Films du XXIe siècle"
+ },
+ {
+  "id": "cine21-moyen-02",
+  "question": "Qui a réalisé le film Barbie sorti en 2023 avec Margot Robbie ?",
+  "options": [
+   "Sofia Coppola",
+   "Greta Gerwig",
+   "Chloé Zhao",
+   "Emerald Fennell"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Barbie a dépassé 1,4 milliard de dollars de recettes mondiales en 2023.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Barbie_(film,_2023)",
+  "theme": "Films du XXIe siècle"
+ },
+ {
+  "id": "cine21-moyen-03",
+  "question": "Quel réalisateur québécois a adapté Dune en 2021 et 2024 ?",
+  "options": [
+   "Xavier Dolan",
+   "Jean-Marc Vallée",
+   "Denis Villeneuve",
+   "Philippe Falardeau"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Denis Villeneuve a adapté le roman de Frank Herbert en deux volets salués par la critique.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Dune_(film,_2021)",
+  "theme": "Films du XXIe siècle"
+ },
+ {
+  "id": "cine21-moyen-04",
+  "question": "Quel film français de Justine Triet a gagné la Palme d'or 2023 ?",
+  "options": [
+   "Titane",
+   "Portrait de la jeune fille...",
+   "La Vie d'Adèle",
+   "Anatomie d'une chute"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Anatomie d'une chute a également remporté l'Oscar du meilleur scénario original en 2024.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Anatomie_d%27une_chute",
+  "theme": "Films du XXIe siècle"
+ },
+ {
+  "id": "cine21-difficile-01",
+  "question": "Quel acteur a gagné l'Oscar du meilleur acteur en 2026 pour Sinners ?",
+  "options": [
+   "Michael B. Jordan",
+   "Timothée Chalamet",
+   "Leonardo DiCaprio",
+   "Ethan Hawke"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Michael B. Jordan a été sacré pour son double rôle dans Sinners de Ryan Coogler.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/98e_c%C3%A9r%C3%A9monie_des_Oscars",
+  "theme": "Films du XXIe siècle"
+ },
+ {
+  "id": "cine21-difficile-02",
+  "question": "Quel film de Sean Baker a gagné la Palme d'or 2024 et l'Oscar 2025 ?",
+  "options": [
+   "The Florida Project",
+   "Anora",
+   "Red Rocket",
+   "Tangerine"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Anora a remporté 5 Oscars en mars 2025, dont meilleur film et meilleure actrice (Mikey Madison).",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Anora",
+  "theme": "Films du XXIe siècle"
+ },
+ {
+  "id": "cine21-difficile-03",
+  "question": "Quel film d'animation de Hayao Miyazaki a remporté l'Oscar en 2003 ?",
+  "options": [
+   "Mon voisin Totoro",
+   "Princesse Mononoké",
+   "Le Voyage de Chihiro",
+   "Le Château ambulant"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Le Voyage de Chihiro a également remporté l'Ours d'or à Berlin en 2002.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Le_Voyage_de_Chihiro",
+  "theme": "Films du XXIe siècle"
+ },
+ {
+  "id": "cine21-difficile-04",
+  "question": "Qui a réalisé Everything Everywhere All at Once (7 Oscars en 2023) ?",
+  "options": [
+   "Jordan Peele",
+   "Ari Aster",
+   "Robert Eggers",
+   "Daniel Kwan & D. Scheinert"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Surnommés « les Daniels », ils ont raflé meilleur film, réalisation et scénario original en 2023.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Everything_Everywhere_All_at_Once",
+  "theme": "Films du XXIe siècle"
+ },
+ {
+  "id": "cine21-expert-01",
+  "question": "Combien de nominations record le film Sinners a-t-il reçues aux Oscars 2026 ?",
+  "options": [
+   "16 nominations",
+   "14 nominations",
+   "13 nominations",
+   "15 nominations"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Avec 16 nominations en 2026, Sinners a battu le record historique de Titanic et La La Land (14).",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/98e_c%C3%A9r%C3%A9monie_des_Oscars",
+  "theme": "Films du XXIe siècle"
+ },
+ {
+  "id": "cine21-expert-02",
+  "question": "Quel film norvégien de Joachim Trier a gagné l'Oscar international 2026 ?",
+  "options": [
+   "Julie (en 12 chapitres)",
+   "Valeur sentimentale",
+   "Oslo, 31 août",
+   "Thelma"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Valeur sentimentale (Affeksjonsverdi) a offert à la Norvège l'Oscar du meilleur film international 2026.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/98e_c%C3%A9r%C3%A9monie_des_Oscars",
+  "theme": "Films du XXIe siècle"
+ },
+ {
+  "id": "cine21-expert-03",
+  "question": "Qui est la 1re femme à gagner l'Oscar de la meilleure photo en 2026 ?",
+  "options": [
+   "Rachel Morrison",
+   "Mandy Walker",
+   "Autumn Durald Arkapaw",
+   "Ari Wegner"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Autumn Durald Arkapaw a été récompensée en mars 2026 pour la photographie de Sinners.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/98e_c%C3%A9r%C3%A9monie_des_Oscars",
+  "theme": "Films du XXIe siècle"
+ },
+ {
+  "id": "cine21-expert-04",
+  "question": "Quel film tourné sur 12 ans par Richard Linklater est sorti en 2014 ?",
+  "options": [
+   "Before Midnight",
+   "Waking Life",
+   "A Scanner Darkly",
+   "Boyhood"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Boyhood suit l'acteur Ellar Coltrane de ses 6 ans à ses 18 ans avec la même équipe.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Boyhood",
+  "theme": "Films du XXIe siècle"
  }
 ]
