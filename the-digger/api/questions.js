@@ -28,16 +28,16 @@ async function wiki(q) {
   const d = await grab(u, { headers: { 'User-Agent': UA, 'Api-User-Agent': UA, Accept: 'application/json' } });
   const p = Object.values((d.query && d.query.pages) || {})[0];
   if (!p || !p.extract || !/^https:\/\/fr\.wikipedia\.org\//.test(p.fullurl || '')) return [];
-  return [{ url: p.fullurl, title: 'Wikipédia — ' + clip(p.title, 80), text: clip(p.extract, 9000) }];
+  return [{ url: p.fullurl, title: 'Wikipédia — ' + clip(p.title, 80), text: clip(p.extract, 6000) }];
 }
 async function tavily(q) {
   const d = await grab('https://api.tavily.com/search', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + process.env.TAVILY_API_KEY },
-    body: JSON.stringify({ query: q, search_depth: 'basic', max_results: 4, include_answer: false })
+    body: JSON.stringify({ query: q, search_depth: 'basic', max_results: 3, include_answer: false })
   });
   return (d.results || []).filter(r => /^https?:\/\//.test(r.url || '') && clip(r.content, 300).length > 150)
-    .map(r => ({ url: r.url, title: clip(r.title, 80), text: clip(r.content, 2500) }));
+    .map(r => ({ url: r.url, title: clip(r.title, 80), text: clip(r.content, 1500) }));
 }
 // Wikipedia always; Tavily only when asked, when the key exists and when it answers. A failure never blocks the game.
 async function collect(topic, label, useTavily) {
@@ -189,7 +189,7 @@ module.exports = async (req, res) => {
   try {
     const models = await candidates(key);
     if (!models.length) { res.status(502).json({ error: 'no-model', message: 'no usable Gemini model for this key' }); return; }
-    let last = null;
+    let last = null; const tries = [];   // every refused model, reported in the error answer
     for (const model of models) {
       const left = 52000 - (Date.now() - t0);
       if (left < 4000) break;
@@ -200,12 +200,12 @@ module.exports = async (req, res) => {
         res.status(200).json({ text: b.kind === 'gen' ? pinSources(out.text, found.docs) : out.text, docs: found.docs.map(d => d.url), via: found.via, model });
         return;
       }
-      last = { model, ...out };
+      last = { model, ...out }; tries.push({ model, status: out.status, ms: Date.now() - t0, message: clip(out.message, 90) });
       console.error('gemini', JSON.stringify(last));
       if (working === model) working = null;
       if (out.status === 429) resting.set(model, Date.now() + (/per ?day|PerDay|daily/i.test(out.message || '') ? 36e5 : 6e4));
     }
-    res.status(last && last.status === 429 ? 429 : 502).json({ error: 'gemini', via: found.via, ...last });
+    res.status(last && last.status === 429 ? 429 : 502).json({ error: 'gemini', via: found.via, tries, ...last });
   } catch (e) {
     console.error('questions', e && e.status, e && e.detail, e);
     res.status(502).json({ error: 'network', status: e && e.status, message: clip(e && e.detail, 300) });
