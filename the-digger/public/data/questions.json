@@ -4573,5 +4573,215 @@
   "anecdote": "Louis Darshan Ambroise Le Mongne, dit La Fève, est d'origine kino-congolaise.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
   "theme": "La Fève"
+ },
+ {
+  "id": "q-5af289bf29",
+  "question": "Avec quelle chanteuse Aitana interprète-t-elle le tube « Lo malo » ?",
+  "options": [
+   "Lola Índigo",
+   "Ana Guerra",
+   "Amaia",
+   "Karol G"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "« Lo malo », en duo avec Ana Guerra, a été certifié cinq fois disque de platine en Espagne.",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-271ae4e3b2",
+  "question": "Quelle chanson d'Aitana a accompagné le parcours de l'Espagne au Mondial 2026 ?",
+  "options": [
+   "Formentera",
+   "Mon Amour",
+   "Teléfono",
+   "Superestrella"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Après la victoire de l'Espagne, Aitana chante « Superestrella » place de Cibeles avec les joueurs et les supporters.",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-a533f1c522",
+  "question": "Quel est le premier single officiel en solo d'Aitana, sorti en 2018 ?",
+  "options": [
+   "Formentera",
+   "Superestrella",
+   "Mon Amour",
+   "Teléfono"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "« Teléfono », sorti le 27 juillet 2018, entre directement à la première place du Top 50 de Promusicae.",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-834954b163",
+  "question": "Quelle candidate a gagné Operación Triunfo 2017, devant Aitana ?",
+  "options": [
+   "Ana Guerra",
+   "Amaia",
+   "Lola Índigo",
+   "Miriam"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Le 5 février 2018, Aitana termine deuxième d'Operación Triunfo 2017, derrière la gagnante Amaia.",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-00bf69dba3",
+  "question": "Pour quel concours Aitana était-elle candidate avec la chanson « Arde » en 2018 ?",
+  "options": [
+   "La Voz",
+   "Benidorm Fest",
+   "Factor X",
+   "L'Eurovision"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Candidate pour représenter l'Espagne à l'Eurovision 2018 à Lisbonne, elle termine deuxième de la sélection avec « Arde ».",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-2b2b11334f",
+  "question": "Dans quelle série Disney+ Aitana tient-elle le rôle principal en 2022 ?",
+  "options": [
+   "Élite",
+   "Valeria",
+   "La casa de papel",
+   "La última"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Aitana débute comme actrice en 2022 dans La última, série dramatique et musicale sur une future star de la pop.",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-3308ec4a26",
+  "question": "Quel est le quatrième album studio d'Aitana, sorti en 2025 ?",
+  "options": [
+   "Cuarto azul",
+   "Alpha",
+   "Spoiler",
+   "11 Razones"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Après Spoiler, 11 razones et Alpha, Cuarto azul (2025) contient le tube « Superestrella ».",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-ec2f3af1bb",
+  "question": "Quel tube de Michael Jackson Aitana chante-t-elle à 12 ans dans son collège ?",
+  "options": [
+   "We Are the World",
+   "Thriller",
+   "Heal the World",
+   "Billie Jean"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "À 12 ans, elle chante « We Are the World » au collège et se passionne pour la musique et le chant.",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-62a3b9bf5f",
+  "question": "Avec quel groupe Aitana a-t-elle enregistré la chanson « Presiento » ?",
+  "options": [
+   "Morat",
+   "Maná",
+   "Reik",
+   "Camila"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "« Presiento », avec le groupe Morat, est double disque de platine en Espagne et disque de platine au Mexique.",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-80f3a9c89a",
+  "question": "Quel livre d'illustrations Aitana a-t-elle publié en 2018 ?",
+  "options": [
+   "El color del verano",
+   "Diario de una estrella",
+   "La tinta de mis ojos",
+   "Mis noches en OT"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Le 18 octobre 2018, Aitana publie un livre de ses illustrations, La tinta de mis ojos.",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-0d094b4bd8",
+  "question": "De quel chanteur Aitana a-t-elle été la conseillère dans La Voz Kids 6 ?",
+  "options": [
+   "David Bisbal",
+   "Alejandro Sanz",
+   "Pablo Alborán",
+   "Antonio Orozco"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "En 2020, Aitana est choisie comme conseillère de David Bisbal dans La Voz Kids 6, sur Antena 3.",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-908c9abe9b",
+  "question": "Avec quel pourcentage des votes Aitana a-t-elle fini deuxième d'OT 2017 ?",
+  "options": [
+   "31 %",
+   "26 %",
+   "42 %",
+   "58 %"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Aitana finit deuxième d'Operación Triunfo 2017 avec 42 % des votes du public.",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-f2f3655163",
+  "question": "Avec quel illusionniste Aitana a-t-elle racheté un théâtre de Barcelone en 2026 ?",
+  "options": [
+   "El Mago Pop",
+   "Jorge Blass",
+   "Dani DaOrtiz",
+   "David Copperfield"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "En 2026, Aitana annonce le rachat du Teatre Aquitània de Barcelone avec Antonio Díaz, dit El Mago Pop.",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-2d0fee058f",
+  "question": "Quelle salle Aitana a-t-elle été la 1re ex-candidate d'OT à remplir lors du Play Tour ?",
+  "options": [
+   "Le WiZink Center",
+   "Le Movistar Arena",
+   "L'Olympia",
+   "Le Palau Sant Jordi"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Pendant le Play Tour, elle devient la première participante d'Operación Triunfo à remplir le Palau Sant Jordi.",
+  "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
+  "theme": "Aitana Ocaña"
  }
 ]
