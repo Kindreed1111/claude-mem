@@ -1,10 +1,11 @@
 // THE DIGGER — question service (Vercel serverless function).
-// Keeps the Gemini API key on the server, builds the prompts itself (the browser only sends
-// the topic and the candidate questions), and asks Gemini with Google Search grounding.
+// Keeps the Gemini API key on the server and builds the prompts itself (the browser only sends
+// the topic and the candidate questions). No paid tool is used: Gemini answers from its own knowledge,
+// and the game keeps a question only when independent blind checks land on the same answer.
 //
 // Environment variables (Vercel → Project → Settings → Environment Variables):
 //   GEMINI_API_KEY  required  your Gemini API key
-//   GEMINI_MODEL    required  a model ID that supports Google Search grounding (see README)
+//   GEMINI_MODEL    optional  force a model ID; otherwise the newest Flash model the key can use is picked
 
 const clip = (v, n) => String(v == null ? '' : v).replace(/\s+/g, ' ').trim().slice(0, n);
 
@@ -49,7 +50,7 @@ ${cand.map((q, i) => (i + 1) + '. ' + q.q + '\n' + q.opts.map((o, k) => '   ' + 
 }
 
 const API = 'https://generativelanguage.googleapis.com/v1beta/';
-let working = null;      // model that last answered with search results (kept while the function stays warm)
+let working = null;      // model that last answered (kept while the function stays warm)
 let listed = null;       // candidate models read from the key's own model list
 
 // Without GEMINI_MODEL, ask the API which models this key can use and prefer recent Flash models, then Pro.
@@ -82,7 +83,6 @@ async function ask(key, model, prompt) {
   const text = ((c.content && c.content.parts) || []).map(p => p.text || '').join('');
   const chunks = (c.groundingMetadata && c.groundingMetadata.groundingChunks) || [];
   const sources = chunks.map(g => g.web && { uri: g.web.uri, title: g.web.title }).filter(Boolean).slice(0, 12);
-  // A reply that did not actually search is not trusted.
   if (!text) return { status: 200, message: 'empty answer' };
   return { text, sources };
 }
