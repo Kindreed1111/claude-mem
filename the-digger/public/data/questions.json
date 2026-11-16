@@ -3883,5 +3883,695 @@
   "anecdote": "Biggie est assassiné le 9 mars 1997 ; Life After Death sort 16 jours plus tard et atteint la 1re place du Billboard 200.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/The_Notorious_B.I.G.",
   "theme": "Rap US"
+ },
+ {
+  "id": "q-cfe10e759b",
+  "question": "Quelle est la nationalité de la chanteuse Aitana ?",
+  "options": [
+   "Mexicaine",
+   "Italienne",
+   "Argentine",
+   "Espagnole"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Aitana Ocaña Morales, dite Aitana, est une chanteuse et actrice espagnole née le 27 juin 1999.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Aitana",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-93b213bb97",
+  "question": "Dans quel télé-crochet Aitana s'est-elle fait connaître ?",
+  "options": [
+   "Operación Triunfo",
+   "La Voz",
+   "Factor X",
+   "Got Talent España"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Aitana s'est fait connaître lors de la neuvième saison d'Operación Triunfo.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Aitana",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-286d793bf1",
+  "question": "Quelle place Aitana a-t-elle obtenue à Operación Triunfo ?",
+  "options": [
+   "Première",
+   "Troisième",
+   "Deuxième",
+   "Quatrième"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Lors de la neuvième saison d'Operación Triunfo, Aitana termine deuxième.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Aitana",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-e5585ad635",
+  "question": "Quel est le premier album d'Aitana, sorti en 2019 ?",
+  "options": [
+   "Alpha",
+   "11 Razones",
+   "Cuarto Azul",
+   "Spoiler"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Spoiler sort le 7 juin 2019 chez Universal Music Spain, suivi de la Play Tour.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Aitana",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-f4ccf66335",
+  "question": "Quel est le premier EP d'Aitana, publié en 2018 ?",
+  "options": [
+   "Spoiler",
+   "Alpha",
+   "Tráiler",
+   "Cuarto Azul"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Aitana publie son premier EP, Tráiler, en 2018, avant l'album Spoiler en 2019.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Aitana",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-f6577f967a",
+  "question": "Dans quelle région d'Espagne la chanteuse Aitana est-elle née ?",
+  "options": [
+   "L'Andalousie",
+   "La Galice",
+   "Le Pays basque",
+   "La Catalogne"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Aitana est née en Catalogne et a grandi à Viladecans avant de s'installer à Sant Climent de Llobregat.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Aitana",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-490bc89ab4",
+  "question": "Quel est le deuxième album d'Aitana, sorti en décembre 2020 ?",
+  "options": [
+   "Spoiler",
+   "Alpha",
+   "Tráiler",
+   "11 Razones"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "11 Razones sort en décembre 2020 ; sa tournée va de Barcelone en 2021 à Madrid en décembre 2022.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Aitana",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-6bad5f895b",
+  "question": "En quelle année est née la chanteuse Aitana ?",
+  "options": [
+   "1997",
+   "2001",
+   "1995",
+   "1999"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Aitana est née le 27 juin 1999, fille unique de Cosme Ocaña et Belén Morales.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Aitana",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-c0da11a324",
+  "question": "Dans quel stade Aitana est-elle la première artiste féminine programmée ?",
+  "options": [
+   "Camp Nou",
+   "Metropolitano",
+   "La Cartuja",
+   "Santiago-Bernabéu"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Ses deux concerts au Santiago-Bernabéu, prévus fin 2024, ont été reprogrammés aux 27 et 28 juin 2025.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Aitana",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-a1c6a43f9d",
+  "question": "Quel album d'Aitana est sorti en 2023 ?",
+  "options": [
+   "Spoiler",
+   "Alpha",
+   "Tráiler",
+   "11 Razones"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Après Spoiler (2019) et 11 Razones (2020), Aitana sort Alpha en 2023, puis Cuarto Azul en 2025.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Aitana",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-63764a5dfd",
+  "question": "Comment s'appelait la première tournée d'Aitana, en 2019 ?",
+  "options": [
+   "Play Tour",
+   "Alpha Tour",
+   "Spoiler Tour",
+   "Razones Tour"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Après l'album Spoiler, Aitana entame sa première tournée, la Play Tour, de juin à décembre 2019.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Aitana",
+  "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "q-a7123d81e4",
+  "question": "Dans quelle ville est né Playboi Carti ?",
+  "options": [
+   "Houston",
+   "Chicago",
+   "Miami",
+   "Atlanta"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Playboi Carti est né le 13 septembre 1996 à Atlanta et a grandi dans le quartier de Riverdale.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-6785307156",
+  "question": "Quel est le premier album studio de Playboi Carti, sorti en 2018 ?",
+  "options": [
+   "Whole Lotta Red",
+   "Die Lit",
+   "MUSIC",
+   "Magnolia"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Die Lit sort par surprise le 11 mai 2018 et se hisse à la troisième place du Billboard 200.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-b6b960a8a2",
+  "question": "Quel album de Playboi Carti est sorti le 25 décembre 2020 ?",
+  "options": [
+   "Die Lit",
+   "Whole Lotta Red",
+   "MUSIC",
+   "In Abundance"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Whole Lotta Red sort le jour de Noël 2020 et débute à la première place du Billboard 200.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-8f44f1932a",
+  "question": "Quelle technique vocale est la marque de fabrique de Playboi Carti ?",
+  "options": [
+   "Le beatbox",
+   "Le yodel",
+   "Le growl",
+   "La baby voice"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Sa « baby voice » se caractérise par une voix aiguë, une prononciation floue et des cadences frénétiques.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-594b1e3480",
+  "question": "Quel single de Playboi Carti est entré au Billboard Hot 100 en 2017 ?",
+  "options": [
+   "Magnolia",
+   "Sicko Mode",
+   "Humble",
+   "Bad Guy"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Magnolia, titre phare de sa mixtape de 2017, atteint la 29e place du Billboard Hot 100.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-45768164b2",
+  "question": "Quel est le vrai nom de Playboi Carti ?",
+  "options": [
+   "Jacques Webster",
+   "Dwayne Carter",
+   "Jordan Carter",
+   "Aubrey Graham"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Jordan Terrell Carter, dit Playboi Carti, a grandi à Riverdale, à Atlanta.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-ad241cc839",
+  "question": "Quel label Playboi Carti a-t-il créé en 2019 ?",
+  "options": [
+   "AWGE",
+   "Young Money",
+   "OVO",
+   "Opium"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Son label Opium, créé en 2019, a signé Ken Carson et Destroy Lonely.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-8299e297b3",
+  "question": "Quel rappeur dirige le label AWGE, que Playboi Carti a rejoint ?",
+  "options": [
+   "Travis Scott",
+   "Future",
+   "A$AP Rocky",
+   "Young Thug"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Après Awful Records, Playboi Carti rejoint AWGE, le label d'A$AP Rocky, filiale d'Interscope.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-62e9fea6e1",
+  "question": "Quel est le troisième album studio de Playboi Carti, sorti en mars 2025 ?",
+  "options": [
+   "Babyboi",
+   "Narcissist",
+   "MUSIC",
+   "King Vamp"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "MUSIC sort le 14 mars 2025, près de cinq ans après Whole Lotta Red, et dépasse 250 000 ventes en une semaine.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-4822f3b80f",
+  "question": "Sous quel nom de scène Playboi Carti a-t-il débuté ?",
+  "options": [
+   "Sir Cartier",
+   "Lil Carti",
+   "Young Carter",
+   "King Vamp"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Il commence sous le nom de Sir Cartier et publie en 2012 la mixtape Young Misfit.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-3cffcac135",
+  "question": "Quel rappeur est le producteur exécutif de Whole Lotta Red ?",
+  "options": [
+   "Kid Cudi",
+   "Kanye West",
+   "Future",
+   "Metro Boomin"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Kanye West est le producteur exécutif de Whole Lotta Red, où apparaissent aussi Future et Kid Cudi.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-ae9d405ec2",
+  "question": "Quel producteur a signé la plupart des titres de l'album Die Lit ?",
+  "options": [
+   "Metro Boomin",
+   "Zaytoven",
+   "Wheezy",
+   "Pi'erre Bourne"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Pi'erre Bourne a produit la plupart des titres de Die Lit, qui réunit Nicki Minaj, Travis Scott ou Skepta.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-8d0d5e1b4b",
+  "question": "À quelle génération de rappeurs Playboi Carti est-il associé ?",
+  "options": [
+   "La génération SoundCloud",
+   "La génération Myspace",
+   "La génération YouTube",
+   "La Dirty South"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Playboi Carti est l'un des rappeurs les plus célèbres de la génération SoundCloud et a popularisé la rage.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-dcb472d955",
+  "question": "Combien de titres compte l'album MUSIC de Playboi Carti à sa sortie ?",
+  "options": [
+   "24",
+   "20",
+   "30",
+   "18"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "MUSIC contient 30 titres, avec Travis Scott, The Weeknd, Kendrick Lamar ou Future.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-2bc3d56d81",
+  "question": "Combien de titres compte l'album Whole Lotta Red ?",
+  "options": [
+   "30",
+   "19",
+   "16",
+   "24"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Whole Lotta Red compte 24 titres ; Rolling Stone le classe meilleur album hip-hop de 2021.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-997da4555a",
+  "question": "Dans quel quartier d'Atlanta Playboi Carti a-t-il grandi ?",
+  "options": [
+   "Buckhead",
+   "Riverdale",
+   "Midtown",
+   "Decatur"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Jordan Terrell Carter grandit à Riverdale, à Atlanta, et sort diplômé du lycée North Springs.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-9a5fc8f845",
+  "question": "Quelle est la première mixtape de Playboi Carti, publiée en 2012 ?",
+  "options": [
+   "In Abundance",
+   "Cash Cash",
+   "Young Misfit",
+   "Die Lit"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Encore sous le nom de Sir Cartier, il dévoile en 2012 la mixtape Young Misfit.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-a08b741dc8",
+  "question": "Avec MUSIC, dans quel classement Carti place-t-il tous les titres de l'album ?",
+  "options": [
+   "Le Billboard 200",
+   "Le UK Singles Chart",
+   "Le Billboard Hot 100",
+   "Le Top 50 Spotify"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Il devient le premier rappeur à placer tous les titres d'un album de plus de 30 chansons dans le Billboard Hot 100.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-2aa54e22ec",
+  "question": "Sur quel titre de The Weeknd Playboi Carti est-il invité ?",
+  "options": [
+   "Blinding Lights",
+   "Timeless",
+   "Starboy",
+   "Save Your Tears"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "En attendant MUSIC, Carti multiplie les featurings, dont Timeless de The Weeknd et FE!N de Travis Scott.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-1d13328750",
+  "question": "Combien de ventes l'album MUSIC a-t-il dépassées en première semaine ?",
+  "options": [
+   "100 000",
+   "500 000",
+   "250 000",
+   "75 000"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "MUSIC finit sa première semaine avec plus de 250 000 ventes.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-3ab23af72e",
+  "question": "Quel magazine a classé Whole Lotta Red meilleur album hip-hop de 2021 ?",
+  "options": [
+   "Pitchfork",
+   "Billboard",
+   "Rolling Stone",
+   "XXL"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Rolling Stone y voit l'arrivée d'un Carti « paré de tresses rouge bonbon et d'un alter ego vampire ».",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
+  "theme": "Playboi Carti"
+ },
+ {
+  "id": "q-3715fdab30",
+  "question": "Dans quel arrondissement de Paris est né le rappeur La Fève ?",
+  "options": [
+   "Le 20e",
+   "Le 18e",
+   "Le 13e",
+   "Le 19e"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "La Fève est né le 26 juin 1999 dans le 20e arrondissement de Paris.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "q-6b51a1c31f",
+  "question": "Quel était le premier nom de scène de La Fève ?",
+  "options": [
+   "Fevou",
+   "Lafayette",
+   "Orfèv",
+   "Dundy"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Son premier nom de scène, Orfèv, évolue ensuite en La Fève.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "q-fca3be3f59",
+  "question": "Sur quel projet de La Fève, sorti en 2021, figure Mauvais payeur ?",
+  "options": [
+   "ERRR",
+   "24",
+   "BIGLAF",
+   "Finis-les"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "ERRR sort le 17 décembre 2021 ; Mauvais payeur devient single d'or en 2022 puis de platine en 2023.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "q-c32ab92984",
+  "question": "Dans quelle ville du Val-de-Marne La Fève a-t-il grandi ?",
+  "options": [
+   "Vitry-sur-Seine",
+   "Fontenay-sous-Bois",
+   "Créteil",
+   "Ivry-sur-Seine"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Né à Paris, La Fève grandit à Fontenay-sous-Bois, dans le Val-de-Marne.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "q-8676b39759",
+  "question": "Quel est le titre du premier album studio de La Fève, sorti en 2023 ?",
+  "options": [
+   "ERRR",
+   "BIGLAF",
+   "Finis-les",
+   "24"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "L'album 24 sort le 22 décembre 2023, annoncé par le clip de Loyal.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "q-13f5a83833",
+  "question": "Quelle série de compilations réunit les sons « poubelle » de La Fève ?",
+  "options": [
+   "Empty the Bin",
+   "Nocturnes",
+   "Paresse",
+   "Misanthrope"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Empty the Bin (« vider la poubelle ») rassemble ses chansons non retenues, en quatre volumes.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "q-9799eea4ec",
+  "question": "Sous quel pseudonyme La Fève publiait-il ses instrumentales de beatmaker ?",
+  "options": [
+   "Orfèv",
+   "Zaytoven",
+   "Hermes",
+   "Walone"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "À ses débuts, La Fève mène une petite carrière de beatmaker sous le pseudonyme Hermes.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "q-e20219a407",
+  "question": "Avec quel ami d'enfance, lui aussi rappeur, La Fève a-t-il commencé à rapper ?",
+  "options": [
+   "Dundy",
+   "Kosei",
+   "Tiakola",
+   "Zequin"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "La Fève commence à rapper avec Dundy, son ami d'enfance ; ils sortent 7EP vol. 1 en 2017.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "q-8eb25ed74d",
+  "question": "Quel producteur américain a collaboré à l'album 24 de La Fève ?",
+  "options": [
+   "Metro Boomin",
+   "Pi'erre Bourne",
+   "Wheezy",
+   "Zaytoven"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "L'album 24 réunit Yung L.A., Knucks, Tiakola, Zequin et le producteur américain Zaytoven.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "q-6f717af2c3",
+  "question": "Combien d'exemplaires l'album 24 a-t-il vendus en première semaine ?",
+  "options": [
+   "8 000",
+   "35 000",
+   "18 000",
+   "50 000"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Sorti le 22 décembre 2023, l'album 24 cumule plus de 18 000 ventes en première semaine.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "q-c029056bdb",
+  "question": "Quel album La Fève a-t-il sorti le 23 octobre 2026 ?",
+  "options": [
+   "BIGLAF",
+   "Finis-les",
+   "24",
+   "ERRR"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "En 2026, La Fève sort l'album Finis-les, après des featurings avec Makala et Jolagreen23.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "q-71b5b059e3",
+  "question": "Avec quel rappeur La Fève apparaît-il sur le titre Eolienne ?",
+  "options": [
+   "Booba",
+   "Tiakola",
+   "Ninho",
+   "La Fouine"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "En novembre 2024, La Fève apparaît sur Eolienne, sur la mixtape Capitale du Crime Radio de La Fouine.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "q-6d34800d53",
+  "question": "En quelle année l'album ERRR de La Fève a-t-il été certifié disque de platine ?",
+  "options": [
+   "2023",
+   "2022",
+   "2025",
+   "2024"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "ERRR est certifié disque d'or en 2023 puis disque de platine en avril 2025.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
+ },
+ {
+  "id": "q-ce5f6302c7",
+  "question": "Quel est le vrai nom du rappeur La Fève ?",
+  "options": [
+   "Julien Mari",
+   "Louis Le Mongne",
+   "Ken Samaras",
+   "William Nzobazola"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Louis Darshan Ambroise Le Mongne, dit La Fève, est d'origine kino-congolaise.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
+  "theme": "La Fève"
  }
 ]

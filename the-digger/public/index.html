@@ -718,9 +718,9 @@ const validQ=b=>b&&typeof b.id==='string'&&typeof b.question==='string'&&Array.i
 const toQ=b=>({id:b.id,q:b.question,good:b.options[b.correctAnswerIndex],opts:shuffle(b.options),e:str(b.anecdote),src:/^https?:\/\//.test(b.sourceUrl||'')?b.sourceUrl:''});
 function pickBank(){ /* difficulty follows the depth; the chosen theme first, questions never seen first */
   const lvl=world.level+1,want=lvl<=5?0:lvl<=10?1:2;
-  for(const d of[want,want+1,want-1,want+2,want-2]){
-    if(d<0||d>2)continue;let pool=bank().filter(b=>b.difficulty===DIFF[d]&&!Q.used.has(b.id));if(!pool.length)continue;
-    if(Q.theme){const th=pool.filter(b=>norm(b.theme||'')===Q.theme);if(th.length)pool=th}
+  /* the chosen theme is used up (any difficulty, nearest first) before other themes are mixed in */
+  for(const only of Q.theme?[true,false]:[false])for(const d of[want,want+1,want-1,want+2,want-2]){
+    if(d<0||d>2)continue;let pool=bank().filter(b=>b.difficulty===DIFF[d]&&!Q.used.has(b.id)&&(!only||norm(b.theme||'')===Q.theme));if(!pool.length)continue;
     const fresh=pool.filter(b=>!seen.has(b.id));if(fresh.length)pool=fresh;
     const b=pick(pool);Q.used.add(b.id);return toQ(b);
   }
