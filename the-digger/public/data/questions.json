@@ -6433,5 +6433,905 @@
   "anecdote": "Kenia Os partage le morceau Ex Ex Ex (produit par Nico Cotton) sur Cuarto Azul.",
   "sourceUrl": "https://en.wikipedia.org/wiki/Cuarto_Azul",
   "theme": "Aitana Ocaña"
+ },
+ {
+  "id": "lol-facile-01",
+  "question": "Quel studio a développé et édite League of Legends ?",
+  "options": [
+   "Riot Games",
+   "Blizzard",
+   "Valve",
+   "Epic Games"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Riot Games a lancé League of Legends en octobre 2009 après avoir été fondé en 2006.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/League_of_Legends",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-facile-02",
+  "question": "Combien de joueurs composent une équipe sur la Faille de l'invocateur ?",
+  "options": [
+   "3 joueurs",
+   "5 joueurs",
+   "6 joueurs",
+   "4 joueurs"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Chaque équipe réunit 5 rôles : Top, Jungle, Mid, Carry AD et Support.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/League_of_Legends",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-facile-03",
+  "question": "Quel bâtiment faut-il détruire pour remporter une partie ?",
+  "options": [
+   "L'Inhibiteur",
+   "Le Baron Nashor",
+   "Le Nexus",
+   "Le Héraut"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Le Nexus est protégé par deux tourelles dédiées au cœur de chaque base.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/League_of_Legends",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-facile-04",
+  "question": "En quelle année League of Legends est-il officiellement sorti ?",
+  "options": [
+   "2007",
+   "2011",
+   "2012",
+   "2009"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "La sortie officielle du jeu a eu lieu le 27 octobre 2009 en Amérique du Nord et en Europe.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/League_of_Legends",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-facile-05",
+  "question": "Quel joueur coréen est surnommé le « Unkillable Demon King » ?",
+  "options": [
+   "Faker",
+   "Caps",
+   "Uzi",
+   "Rekkles"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Lee « Faker » Sang-hyeok est considéré comme le plus grand joueur de l'histoire du jeu.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Faker_(joueur)",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-facile-06",
+  "question": "Quelle série animée Netflix se déroule à Piltover et Zaun ?",
+  "options": [
+   "Castlevania",
+   "Arcane",
+   "Edgerunners",
+   "DOTA: Dragon's Blood"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Produite avec le studio français Fortiche, Arcane retrace l'histoire de Vi et Jinx.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Arcane_(s%C3%A9rie_t%C3%A9l%C3%A9vis%C3%A9e)",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-facile-07",
+  "question": "Comment s'appelle le monstre épique violet de la rivière supérieure ?",
+  "options": [
+   "Dragon Ancestral",
+   "Carapateur",
+   "Baron Nashor",
+   "Gromp"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Éliminer le Baron Nashor confère un puissant bonus d'attaque et renforce les sbires.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Baron_Nashor",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-facile-08",
+  "question": "Quelle championne utilise un lance-roquettes nommé Poiscaille ?",
+  "options": [
+   "Caitlyn",
+   "Miss Fortune",
+   "Tristana",
+   "Jinx"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Jinx alterne entre sa mitrailleuse Bang-Bang et son lance-roquettes Poiscaille.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Jinx",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-facile-09",
+  "question": "De quel royaume Garen et Lux sont-ils originaires ?",
+  "options": [
+   "Demacia",
+   "Noxus",
+   "Ionia",
+   "Freljord"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Garen et sa sœur Lux appartiennent à la noble famille Crownguard de Demacia.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Demacia",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-facile-10",
+  "question": "Quel sort d'invocateur permet de se téléporter sur une courte distance ?",
+  "options": [
+   "Embrasement",
+   "Saut éclair (Flash)",
+   "Fatigue",
+   "Barrière"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Le Saut éclair est le sort d'invocateur le plus joué tous rôles confondus.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Flash",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-facile-11",
+  "question": "Quel mode de jeu se déroule sur une seule voie (Abîme hurlant) ?",
+  "options": [
+   "Classé Solo/Duo",
+   "Mode Arena",
+   "ARAM",
+   "TFT"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "ARAM signifie « All Random All Mid » : chaque joueur reçoit un champion aléatoire.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/ARAM",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-facile-12",
+  "question": "Qui est le frère aîné de Yasuo dans l'univers de Runeterra ?",
+  "options": [
+   "Zed",
+   "Shen",
+   "Kayn",
+   "Yone"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "facile",
+  "anecdote": "Tué en duel par Yasuo, Yone est revenu d'entre les morts sous forme d'esprit.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Yone",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-facile-13",
+  "question": "Quelle arme emblématique manie Darius, la Main de Noxus ?",
+  "options": [
+   "Une hache",
+   "Une épée longue",
+   "Une lance",
+   "Un marteau"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Darius tranche ses ennemis avec sa lourde hache à deux mains pour appliquer Hémorragie.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Darius",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-facile-14",
+  "question": "Quel champion pose des champignons invisibles et empoisonnés ?",
+  "options": [
+   "Fizz",
+   "Teemo",
+   "Heimerdinger",
+   "Twitch"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Le piège nocif (R) de Teemo ralentit et inflige des dégâts magiques sur la durée.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Teemo",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-facile-15",
+  "question": "Quelle créature accompagne le jeune Nunu dans ses déplacements ?",
+  "options": [
+   "Un dragon",
+   "Un loup",
+   "Un yéti",
+   "Un ours"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Nunu parcourt Freljord sur le dos de son meilleur ami yéti nommé Willump.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Nunu_%26_Willump",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-moyen-01",
+  "question": "Quelle équipe européenne a remporté les tout premiers Worlds en 2011 ?",
+  "options": [
+   "G2 Esports",
+   "MAD Lions",
+   "Fnatic",
+   "SK Gaming"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Fnatic a remporté le championnat de la Saison 1 en juin 2011 à Jönköping, en Suède.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/League_of_Legends_World_Championship",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-moyen-02",
+  "question": "Quel groupe virtuel K-pop Riot Games a-t-il lancé aux Worlds 2018 ?",
+  "options": [
+   "True Damage",
+   "Pentakill",
+   "HEARTSTEEL",
+   "K/DA"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "K/DA réunit Ahri, Akali, Evelynn et Kai'Sa avec leur premier tube « POP/STARS ».",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/K/DA",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-moyen-03",
+  "question": "Quelle est la ressource utilisée par Yasuo pour activer son bouclier ?",
+  "options": [
+   "Impulsion (Flow)",
+   "Mana",
+   "Énergie",
+   "Fureur"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "L'Impulsion se charge lorsque Yasuo se déplace et déclenche un bouclier dès qu'il est touché.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Yasuo",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-moyen-04",
+  "question": "De quelle région glaciale Ashe, Sejuani et Lissandra sont-elles issues ?",
+  "options": [
+   "Shurima",
+   "Freljord",
+   "Bilgewater",
+   "Targon"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Les trois matriarches dirigent chacune une faction rivale dans les terres gelées de Freljord.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Freljord",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-moyen-05",
+  "question": "Quel champion est le Roi Déchu à l'origine de la Ruine ?",
+  "options": [
+   "Mordekaiser",
+   "Thresh",
+   "Viego",
+   "Karthus"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "En tentant de ressusciter sa reine Isolde, Viego a déclenché la Brume noire sur les Îles obscures.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Viego",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-moyen-06",
+  "question": "Combien de titres de champion du monde Faker a-t-il remportés ?",
+  "options": [
+   "4 titres",
+   "5 titres",
+   "7 titres",
+   "6 titres"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Faker a soulevé la Coupe de l'Invocateur en 2013, 2015, 2016, 2023, 2024 et 2025 avec T1.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/League_of_Legends_World_Championship",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-moyen-07",
+  "question": "Quelle équipe a battu T1 3-2 en finale des Worlds 2022 ?",
+  "options": [
+   "DRX",
+   "Gen.G",
+   "DAMWON Gaming",
+   "EDward Gaming"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Parti des Play-Ins, DRX mené par Deft a créé l'exploit à San Francisco en novembre 2022.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/League_of_Legends_World_Championship",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-moyen-08",
+  "question": "Quel champion possède 5 armes différentes qui tournent en cycle ?",
+  "options": [
+   "Jhin",
+   "Aphelios",
+   "Ezreal",
+   "Samira"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Calibrum, Severum, Gravitum, Infernum et Crescendum composent l'arsenal lunaire d'Aphelios.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Aphelios",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-moyen-09",
+  "question": "Quel est le titre officiel d'Aurelion Sol dans le jeu ?",
+  "options": [
+   "Dragon d'Eau",
+   "Phénix de Feu",
+   "Forgeur d'Étoiles",
+   "Gardien du Temps"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Aurelion Sol façonne des constellations entières avant d'avoir été asservi par Targon.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Aurelion_Sol",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-moyen-10",
+  "question": "Quel objet permet de revenir à la vie après avoir subi un coup fatal ?",
+  "options": [
+   "Sablier de Zhonya",
+   "Lame d'infini",
+   "Coiffe de Rabadon",
+   "Ange gardien"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "L'Ange gardien place le champion en stase pendant 4 secondes avant de le réanimer.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Guardian_Angel",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-moyen-11",
+  "question": "Quelle équipe européenne a remporté le MSI 2019 face à Team Liquid ?",
+  "options": [
+   "G2 Esports",
+   "Fnatic",
+   "Team Vitality",
+   "Rogue"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "G2 Esports s'est imposé 3-0 en finale du Mid-Season Invitational 2019 à Taipei.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/2019_Mid-Season_Invitational",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-moyen-12",
+  "question": "Comment s'appelle le passif de Jhin qui limite sa vitesse d'attaque ?",
+  "options": [
+   "Dernier Soupir",
+   "Murmure",
+   "Rappel de Rideau",
+   "Public Captivé"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Murmure limite Jhin à 4 balles, la quatrième infligeant toujours un coup critique.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Jhin",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-moyen-13",
+  "question": "Dans quelle cité portuaire Gangplank et Miss Fortune s'affrontent-ils ?",
+  "options": [
+   "Ixtal",
+   "Zaun",
+   "Bilgewater",
+   "Noxus"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Bilgewater est une cité de pirates et de chasseurs de monstres marins.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Bilgewater",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-moyen-14",
+  "question": "Quelle championne mécanique manipule une sphère métallique au combat ?",
+  "options": [
+   "Viktor",
+   "Syndra",
+   "Zilean",
+   "Orianna"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Tous les sorts d'Orianna se déclenchent autour de la position de sa Sphère.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Orianna",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-moyen-15",
+  "question": "Quelle équipe chinoise a remporté les Worlds 2026 à New York ?",
+  "options": [
+   "Bilibili Gaming",
+   "EDward Gaming",
+   "Invictus Gaming",
+   "Top Esports"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Bilibili Gaming a battu Gen.G 3-1 en finale des Worlds 2026 au Barclays Center.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/2026_League_of_Legends_World_Championship",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-difficile-01",
+  "question": "Contre quelle équipe française Fnatic a-t-il gagné les Worlds 2011 ?",
+  "options": [
+   "Millenium",
+   "against All authority",
+   "Team LDLC",
+   "Eclypsia"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Fnatic a battu l'équipe française against All authority (aAa) 2-1 en finale en 2011.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/League_of_Legends_World_Championship",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-difficile-02",
+  "question": "Quel joueur de T1 a été élu MVP de la finale des Worlds 2025 ?",
+  "options": [
+   "Faker",
+   "Zeus",
+   "Gumayusi",
+   "Keria"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Le carry AD Gumayusi a été sacré MVP après la victoire 3-2 de T1 contre KT Rolster.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/League_of_Legends_World_Championship",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-difficile-03",
+  "question": "Combien de cartouches contient le fusil de Graves avant rechargement ?",
+  "options": [
+   "4 cartouches",
+   "6 cartouches",
+   "3 cartouches",
+   "2 cartouches"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Depuis sa refonte, le fusil Destinée de Graves tire 2 cartouches avant de recharger.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Graves",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-difficile-04",
+  "question": "Quelle championne issue d'Arcane est sortie le 23 janvier 2025 ?",
+  "options": [
+   "Mel",
+   "Ambessa",
+   "Sevika",
+   "Renata Glasc"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Mel, le Reflet de l'âme, a rejoint la Faille deux mois après sa mère Ambessa.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Mel",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-difficile-05",
+  "question": "Quel groupe a interprété l'hymne « Warriors » des Worlds 2014 ?",
+  "options": [
+   "Linkin Park",
+   "Imagine Dragons",
+   "Lil Nas X",
+   "Against The Current"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Imagine Dragons a également joué le morceau en direct lors de la finale 2014 à Séoul.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Warriors_(chanson_d%27Imagine_Dragons)",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-difficile-06",
+  "question": "Quel était le nom du maître de Zed et père adoptif de Kayn ?",
+  "options": [
+   "Kusho",
+   "Shen",
+   "Yone",
+   "Master Yi"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Kusho dirigeait l'ordre Kinkou avant que Zed ne fonde l'Ordre de l'Ombre.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Kusho",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-difficile-07",
+  "question": "Quelle équipe a remporté le Bo5 international le plus rapide (70 min) ?",
+  "options": [
+   "T1",
+   "G2 Esports",
+   "DAMWON Gaming",
+   "Samsung White"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "G2 Esports a battu Team Liquid en 70 minutes et 43 secondes cumulées au MSI 2019.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/2019_Mid-Season_Invitational",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-difficile-08",
+  "question": "Quelle championne transforme un ennemi en créature inoffensive (Z) ?",
+  "options": [
+   "Veigar",
+   "Poppy",
+   "Lulu",
+   "Tristana"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "La compétence Fantaisie (Z) de Lulu polymorphe un adversaire et l'empêche d'attaquer.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Lulu",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-difficile-09",
+  "question": "Quelle équipe taïwanaise a remporté les Worlds Saison 2 en 2012 ?",
+  "options": [
+   "Flash Wolves",
+   "ahq e-Sports Club",
+   "PSG Talon",
+   "Taipei Assassins"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Taipei Assassins a battu Azubu Frost 3-1 en finale de la Saison 2 à Los Angeles.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/League_of_Legends_World_Championship",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-difficile-10",
+  "question": "Quel monstre neutre apparaît dans l'antre du Baron en début de partie ?",
+  "options": [
+   "Larves du Néant",
+   "Dragon Hextech",
+   "Gromp Géant",
+   "Arpenteur"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Les Larves du Néant octroient un bonus de dégâts permanents contre les structures.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Voidgrub",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-difficile-11",
+  "question": "En quelle année la finale des Worlds s'est-elle jouée à l'AccorHotels Arena ?",
+  "options": [
+   "2015",
+   "2019",
+   "2021",
+   "2024"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Le 10 novembre 2019 à Paris, FunPlus Phoenix a battu G2 Esports 3-0 devant le public français.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/League_of_Legends_World_Championship",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-difficile-12",
+  "question": "Quel joueur détient le record de kills sur un match aux Worlds 2026 ?",
+  "options": [
+   "Faker",
+   "Knight",
+   "Zeka",
+   "Chovy"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Le mid laner de Hanwha Life Esports Zeka a signé 17 éliminations en une seule partie.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/2026_League_of_Legends_World_Championship",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-difficile-13",
+  "question": "Quel champion possède la compétence ultime « Chute céleste » ?",
+  "options": [
+   "Leona",
+   "Diana",
+   "Taric",
+   "Pantheon"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Chute céleste permet à Pantheon de bondir dans les airs et d'atterrir sur une longue distance.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Pantheon",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-difficile-14",
+  "question": "Quelle championne a la portée d'attaque de base la plus élevée au niv. 1 ?",
+  "options": [
+   "Caitlyn (650)",
+   "Ashe (600)",
+   "Varus (575)",
+   "Jinx (525)"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Avec 650 unités dès le niveau 1, Caitlyn domine la phase de voie à longue distance.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Caitlyn",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-difficile-15",
+  "question": "Quel mid laner de Bilibili Gaming a été élu MVP des Worlds 2026 ?",
+  "options": [
+   "Bin",
+   "Knight",
+   "Elk",
+   "Xun"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Zhuo « Knight » Ding a terminé le tournoi avec un KDA record de 9,2 et le titre de MVP.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/2026_League_of_Legends_World_Championship",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-expert-01",
+  "question": "Quel est le 173e champion de LoL, sorti le 24 juin 2026 (patch 26.13) ?",
+  "options": [
+   "Locke",
+   "Zaahen",
+   "Yunara",
+   "Mel"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Locke, l'Exorciste cendré, est un assassin AP mid sorti le 24 juin 2026.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/List_of_champions",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-expert-02",
+  "question": "Combien de champions étaient jouables au lancement officiel en oct. 2009 ?",
+  "options": [
+   "17 champions",
+   "40 champions",
+   "25 champions",
+   "50 champions"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Après 17 champions en phase alpha, League of Legends est sorti avec 40 champions le 27 oct. 2009.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/List_of_champions",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-expert-03",
+  "question": "Quel champion a atteint 99,5 % de taux de ban en classé début Saison 4 ?",
+  "options": [
+   "Zed",
+   "Fizz",
+   "Kassadin",
+   "Leblanc"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Avant la réduction de portée de son ultime Fissure, Kassadin était banni dans presque toutes les parties.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Kassadin",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-expert-04",
+  "question": "Quel joueur polonais a été élu MVP des tout premiers Worlds en 2011 ?",
+  "options": [
+   "xPeke",
+   "Cyanide",
+   "Mellisan",
+   "Shushei"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Maciej « Shushei » Ratuszniak a marqué le tournoi avec Gragas et Alistar AP chez Fnatic.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/League_of_Legends_World_Championship",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-expert-05",
+  "question": "Quel champion sorti le 19 nov. 2025 porte le titre « The Unsundered » ?",
+  "options": [
+   "Zaahen",
+   "Yunara",
+   "Locke",
+   "Ambessa"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Zaahen est un combattant (Skirmisher) sorti en novembre 2025 avant la saison 2026.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/List_of_champions",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-expert-06",
+  "question": "Quelle salle new-yorkaise a accueilli la finale des Worlds 2026 ?",
+  "options": [
+   "Madison Square Garden",
+   "Barclays Center",
+   "Chase Center",
+   "Staples Center"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Le Barclays Center de Brooklyn a accueilli le sacre de Bilibili Gaming le 14 novembre 2026.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/2026_League_of_Legends_World_Championship",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-expert-07",
+  "question": "Quel taux de présence (pick/ban) Gangplank a-t-il atteint aux Worlds 2015 ?",
+  "options": [
+   "88,4 %",
+   "93,2 %",
+   "100 %",
+   "79,5 %"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Juste après sa refonte, Gangplank a été choisi ou banni dans 100 % des 73 matchs des Worlds 2015.",
+  "sourceUrl": "https://lol.fandom.com/wiki/2015_Season_World_Championship",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-expert-08",
+  "question": "Quel champion reçoit une refonte complète (VGU) au patch 26.06 ?",
+  "options": [
+   "Skarner",
+   "Nocturne",
+   "Tryndamere",
+   "Shyvana"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Shyvana a bénéficié d'une mise à jour visuelle et de gameplay majeure au printemps 2026.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Shyvana",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-expert-09",
+  "question": "Quel est le délai de récupération de base du Saut éclair (Flash) ?",
+  "options": [
+   "300 secondes",
+   "240 secondes",
+   "180 secondes",
+   "360 secondes"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Sans accélération de sort d'invocateur, il faut exactement 300 secondes (5 min) pour récupérer Flash.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Flash",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-expert-10",
+  "question": "Quelle tireuse (Marksman) est sortie le 16 juillet 2025 ?",
+  "options": [
+   "Smolder",
+   "Yunara",
+   "Zeri",
+   "Nilah"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Yunara est le 171e champion de League of Legends, sorti en juillet 2025.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/List_of_champions",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-expert-11",
+  "question": "Quel atelier a conçu la nouvelle Coupe de l'Invocateur en 2025 ?",
+  "options": [
+   "Tiffany & Co.",
+   "Swarovski",
+   "Volpin Props",
+   "Weta Workshop"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "Volpin Props a créé la 3e version du trophée des Worlds inaugurée en 2025 après Tiffany & Co.",
+  "sourceUrl": "https://liquipedia.net/leagueoflegends/World_Championships",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-expert-12",
+  "question": "Quelle équipe coréenne T1 a-t-il battue 3-2 en finale des Worlds 2025 ?",
+  "options": [
+   "Gen.G",
+   "Hanwha Life",
+   "Dplus KIA",
+   "KT Rolster"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "expert",
+  "anecdote": "Cette finale 100 % LCK à Chengdu a offert à T1 un triplé inédit (2023, 2024, 2025).",
+  "sourceUrl": "https://en.wikipedia.org/wiki/League_of_Legends_World_Championship",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-expert-13",
+  "question": "Combien de secondes dure la stase active du Sablier de Zhonya ?",
+  "options": [
+   "2,5 secondes",
+   "2 secondes",
+   "3 secondes",
+   "1,5 seconde"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "expert",
+  "anecdote": "Pendant ces 2,5 secondes d'invulnérabilité, le champion ne peut ni bouger ni lancer de sorts.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Zhonya%27s_Hourglass",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-expert-14",
+  "question": "Quelle championne applique le passif « Rayon de soleil » (Sunlight) ?",
+  "options": [
+   "Diana",
+   "Leona",
+   "Aurelion Sol",
+   "Kayle"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "expert",
+  "anecdote": "Les alliés de Leona peuvent déclencher cette marque sur les ennemis pour infliger des dégâts bonus.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Leona",
+  "theme": "League of Legends"
+ },
+ {
+  "id": "lol-expert-15",
+  "question": "À quelle minute précise les plaques de tourelles disparaissent-elles ?",
+  "options": [
+   "12 minutes",
+   "15 minutes",
+   "14 minutes",
+   "10 minutes"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "expert",
+  "anecdote": "À 14:00, les plaques tombent et les tourelles perdent définitivement leurs résistances bonus de début de partie.",
+  "sourceUrl": "https://leagueoflegends.fandom.com/wiki/Turret",
+  "theme": "League of Legends"
  }
 ]
