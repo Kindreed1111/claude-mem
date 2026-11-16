@@ -23,6 +23,14 @@ Le contrôle garantit que la source citée fait partie des textes fournis ; il n
 
 Thèmes Rap US, Rap FR, Pop, Football, League of Legends et Culture générale : environ 30 questions chacun, rédigées à partir des introductions d'articles Wikipédia FR collectées, avec les mêmes contrôles (et, en plus, chaque mot de la bonne réponse doit figurer dans la page citée). Raccourcis acceptés dans la recherche : « lol », « foot », « rap fr », « rap us »…
 
+### Ajouter un thème à la main (sans Gemini)
+
+1. `node scripts/bank/collect.mjs "Mon thème=Titre exact de l'article"` (option `--lang=es` pour un autre Wikipédia) : ajoute le texte de l'article à `scripts/bank/sources.json`.
+2. Écrire les questions dans `scripts/bank/q-<thème>.json` (`{"theme":"Mon thème","items":[{"d":"f|m|d","u":"<fin de l'URL>","q":"…","o":["bonne réponse","leurre","leurre","leurre"],"e":"anecdote"}]}`).
+3. `node scripts/bank/build.mjs` contrôle tout (URL exacte, longueurs, mots de la réponse présents dans la page, doublons) puis `--write` ajoute les questions valides à la banque.
+
+Règle des noms de thème (vérifiée par `build.mjs`) : le jeu reconnaît un thème sur des mots entiers seulement. Le nom complet du thème tapé seul ou dans une phrase (« quiz rap fr ») ouvre ce thème ; une partie du nom d'au moins 4 lettres (« aitana », « carti ») aussi ; un mot collé à un autre ne compte pas (« victor hugo » n'ouvre pas « Or », « k-pop » n'ouvre pas « Pop »). Le pluriel final est ignoré, et si deux thèmes correspondent, le nom le plus long gagne. `build.mjs` signale tout nom de thème qui, tapé en entier, ouvrirait un autre thème.
+
 ## Règles du quiz
 
 - « Grand filon » (ou Entrée sans rien taper) mélange tous les thèmes ; un thème de la banque peut être choisi ou tapé. Un sujet absent de la banque passe par Gemini en direct (plus lent).

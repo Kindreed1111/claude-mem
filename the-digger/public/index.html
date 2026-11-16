@@ -770,8 +770,13 @@ function pickBank(){ /* the difficulty follows the depth strictly: another diffi
 function matchTheme(raw){ /* null = not a theme of the bank */
   let n=norm(raw);if(!n||n==='grand filon')return{key:'',label:'Grand filon'};
   n=ALIAS[n]||n;
-  const t=[...new Set(bank().map(b=>b.theme).filter(Boolean))].find(t=>{const k=norm(t);return k===n||(n.length>=3&&(k.includes(n)||n.includes(k)))});
-  return t?{key:norm(t),label:t}:null;
+  /* whole words only: the theme's name written in full inside what was typed (« quiz rap fr »), or what was typed
+     being a full word group of the theme's name (« aitana » → Aitana Ocaña, at least 4 letters). The longest name wins. */
+  /* hyphenated words stay one word (« k-pop » is not « pop »); a final plural s is ignored (« requin » = « Requins ») */
+  const tk=x=>norm(String(x).replace(/[-‐–]/g,'')).replace(/s\b/g,''),w=x=>' '+x+' ',m=tk(ALIAS[norm(raw)]||raw);
+  const hit=[...new Set(bank().map(b=>b.theme).filter(Boolean))].map(t=>({t,k:tk(t)}))
+    .filter(({k})=>k===m||w(m).includes(w(k))||(m.length>=4&&w(k).includes(w(m)))).sort((a,b)=>b.k.length-a.k.length)[0];
+  return hit?{key:norm(hit.t),label:hit.t}:null;
 }
 /* usual ways of typing a bank theme */
 const ALIAS={'lol':'league of legends','league':'league of legends','foot':'football','rap francais':'rap fr','rap fr':'rap fr','rap americain':'rap us','rap us':'rap us','hip hop':'rap us','culture g':'culture generale','general':'culture generale'};
@@ -1475,7 +1480,7 @@ function frame(t){
   else{now+=dt;update(dt);draw()}
   requestAnimationFrame(frame);
 }
-if(/[#&]debug\b/.test(location.hash))window.__digger={R,Q,st,world,hero,esc,enterRun,bank}; /* test hook, inert otherwise */
+if(/[#&]debug\b/.test(location.hash))window.__digger={R,Q,st,world,hero,esc,enterRun,bank,matchTheme}; /* test hook, inert otherwise */
 requestAnimationFrame(frame);
 if(matchMedia('(pointer:fine)').matches)input.focus({preventScroll:true});
 })();
