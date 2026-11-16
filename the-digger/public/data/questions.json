@@ -1,0 +1,977 @@
+[
+ {
+  "id": "q-a6c27e5714",
+  "question": "Entre quels deux pays le mont Blanc se situe-t-il ?",
+  "options": [
+   "La France et l'Italie",
+   "La France et la Suisse",
+   "L'Italie et l'Autriche",
+   "La Suisse et l'Italie"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Il se situe entre la Haute-Savoie en France et la Vallée d'Aoste en Italie, près de Chamonix et Courmayeur.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Mont_Blanc",
+  "theme": "Mont Blanc et Alpes"
+ },
+ {
+  "id": "q-ee440340f6",
+  "question": "Quel surnom donne-t-on au mont Blanc, plus haut sommet d'Europe de l'Ouest ?",
+  "options": [
+   "Le géant des glaces",
+   "Le roi des Alpes",
+   "Le toit de l'Europe",
+   "Le pic des nuages"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Il culmine au cœur du massif du Mont-Blanc et constitue le point culminant de la chaîne des Alpes.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Mont_Blanc",
+  "theme": "Mont Blanc et Alpes"
+ },
+ {
+  "id": "q-b9141b71fa",
+  "question": "En quelle année la première ascension du mont Blanc a-t-elle eu lieu ?",
+  "options": [
+   "En 1742",
+   "En 1786",
+   "En 1815",
+   "En 1685"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Avant cette ascension, le nom de « mont Blanc » apparaît sur une carte de Suisse dès 1778.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Mont_Blanc",
+  "theme": "Mont Blanc et Alpes"
+ },
+ {
+  "id": "q-97fdcfe400",
+  "question": "À quelle température Horace Bénédict de Saussure a-t-il vu l'eau bouillir au mont Blanc ?",
+  "options": [
+   "78,40 degrés",
+   "92,50 degrés",
+   "95,12 degrés",
+   "86,24 degrés"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Cette expérience menée en 1787 permit de comprendre l'effet de la pression atmosphérique sur l'ébullition.",
+  "sourceUrl": "https://www.youtube.com/watch?v=uHk75LGSrGc&vl=en-US",
+  "theme": "Mont Blanc et Alpes"
+ },
+ {
+  "id": "q-089deadba5",
+  "question": "Qui a établi en 1778 la première carte faisant figurer le nom du mont Blanc ?",
+  "options": [
+   "Pierre Martel",
+   "Nicolas Fatio",
+   "William Faden",
+   "Jean de Beins"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Il s'agissait d'une carte de la Suisse, alors que l'oronyme « mont Blanc » figurait déjà sur des croquis de 1742.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Mont_Blanc",
+  "theme": "Mont Blanc et Alpes"
+ },
+ {
+  "id": "q-488dbaa439",
+  "question": "Quel souverain autorisa Jacques Balmat à porter le nom de « Balmat du Mont Blanc » ?",
+  "options": [
+   "Le roi de France",
+   "Le roi de Sardaigne",
+   "Le duc de Savoie",
+   "L'empereur d'Autriche"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Jacques Balmat et Michel Paccard atteignirent le sommet du mont Blanc aux alentours de 18 h 30.",
+  "sourceUrl": "https://www.youtube.com/watch?v=uHk75LGSrGc&vl=en-US",
+  "theme": "Mont Blanc et Alpes"
+ },
+ {
+  "id": "q-a560e5da48",
+  "question": "Il y a combien d'années les dinosaures non aviens ont-ils disparu ?",
+  "options": [
+   "240 millions d'années",
+   "66 millions d'années",
+   "170 millions d'années",
+   "13 millions d'années"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "L'extinction Crétacé-Paléogène s'est produite sur une courte période géologique il y a 66 millions d'années.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Extinction_Cr%C3%A9tac%C3%A9-Pal%C3%A9og%C3%A8ne",
+  "theme": "Dinosaures"
+ },
+ {
+  "id": "q-0d9cdccd78",
+  "question": "Que signifie littéralement le mot « dinosaure » issu du grec ancien ?",
+  "options": [
+   "Terrible lézard",
+   "Grand dragon",
+   "Reptile géant",
+   "Bête ancienne"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Le terme vient du grec ancien deinos (« terrible ») et sauros (« lézard »), choisi par Richard Owen en 1842.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Dinosauria",
+  "theme": "Dinosaures"
+ },
+ {
+  "id": "q-9b13fce4f3",
+  "question": "Quel paléontologue anglais a proposé le terme « Dinosauria » en 1842 ?",
+  "options": [
+   "Gideon Mantell",
+   "William Buckland",
+   "Richard Owen",
+   "John Ostrom"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Avec l'aide du prince Albert, Richard Owen a ensuite créé le musée d'histoire naturelle de Londres pour exposer les fossiles.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Dinosauria",
+  "theme": "Dinosaures"
+ },
+ {
+  "id": "q-6424b73482",
+  "question": "Quel métal rare abonde dans la couche géologique marquant la fin des dinosaures ?",
+  "options": [
+   "Le titane",
+   "Le platine",
+   "Le mercure",
+   "L'iridium"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "L'iridium est rare dans la croûte terrestre mais abondant dans les météorites pierreuses, preuve d'un impact extraterrestre.",
+  "sourceUrl": "https://www.nationalgeographic.com/science/article/dinosaur-extinction",
+  "theme": "Dinosaures"
+ },
+ {
+  "id": "q-4ddc8c57e1",
+  "question": "Quelle est la toute première espèce de dinosaure à avoir été identifiée et baptisée ?",
+  "options": [
+   "L'iguanodon",
+   "Le mégalosaure",
+   "Le platéosaure",
+   "Le cétiosaure"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Il a été découvert en 1820 par Gideon Mantell, qui a noté des similitudes entre ses fossiles et les os de l'iguane actuel.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Dinosauria",
+  "theme": "Dinosaures"
+ },
+ {
+  "id": "q-c13a12b086",
+  "question": "Les crânes de quel dinosaure seraient à l'origine du mythe des griffons selon Adrienne Mayor ?",
+  "options": [
+   "Megalosaurus",
+   "Protoceratops",
+   "Hylaeosaurus",
+   "Cetiosaurus"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Selon l'approche géomythologique d'Adrienne Mayor, les fossiles de grands animaux mésozoïques ont inspiré diverses légendes.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Dinosauria",
+  "theme": "Dinosaures"
+ },
+ {
+  "id": "q-f5eaf6ef64",
+  "question": "Qui a fondé le Comité international olympique en 1894 pour rénover les Jeux ?",
+  "options": [
+   "Pierre de Coubertin",
+   "Georges Clemenceau",
+   "Raymond Poincaré",
+   "Gustave Eiffel"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Les premiers Jeux olympiques modernes se sont ensuite déroulés en 1896 à Athènes.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Jeux_olympiques",
+  "theme": "Jeux olympiques"
+ },
+ {
+  "id": "q-b5cde275e2",
+  "question": "Dans quelle ville se sont déroulés les premiers Jeux olympiques d'hiver en 1924 ?",
+  "options": [
+   "Grenoble",
+   "Albertville",
+   "Chamonix",
+   "Innsbruck"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Jusqu'en 1994, les Jeux d'été et d'hiver avaient lieu la même année tous les quatre ans.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Jeux_olympiques",
+  "theme": "Jeux olympiques"
+ },
+ {
+  "id": "q-fee6266d2a",
+  "question": "Lors de quels Jeux les femmes ont-elles été admises pour la première fois ?",
+  "options": [
+   "Athènes 1896",
+   "Paris 1900",
+   "Londres 1908",
+   "Stockholm 1912"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Vingt-deux femmes ont alors concouru dans cinq sports : tennis, croquet, voile, équitation et golf.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Jeux_olympiques",
+  "theme": "Jeux olympiques"
+ },
+ {
+  "id": "q-22f071dca5",
+  "question": "En quelle année le podium or, argent et bronze a-t-il été introduit aux JO ?",
+  "options": [
+   "1896",
+   "1900",
+   "1904",
+   "1912"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "En 1896, les vainqueurs recevaient une médaille d'argent, les seconds du bronze et les troisièmes rien.",
+  "sourceUrl": "https://www.bridgemanimages.com/fr/news/10-faits-etonnants-sur-les-jeux-olympiques/16362",
+  "theme": "Jeux olympiques"
+ },
+ {
+  "id": "q-7268698190",
+  "question": "Quel titre honorait l'athlète antique vainqueur des quatre Jeux panhelléniques ?",
+  "options": [
+   "Olympionike",
+   "Pankratiaste",
+   "Stratège",
+   "Periodonikès"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Le cycle des jeux sacrés réunissait les Jeux olympiques, pythiques, néméens et isthmiques.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Jeux_olympiques",
+  "theme": "Jeux olympiques"
+ },
+ {
+  "id": "q-9bbd19f3a1",
+  "question": "Quelle plongeuse américaine devint championne olympique à 13 ans en 1936 ?",
+  "options": [
+   "Nadia Comăneci",
+   "Aileen Riggin",
+   "Marjorie Gestring",
+   "Eleanor Holm"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Elle est ainsi devenue la plus jeune championne olympique de tous les temps en individuel.",
+  "sourceUrl": "https://www.bridgemanimages.com/fr/news/10-faits-etonnants-sur-les-jeux-olympiques/16362",
+  "theme": "Jeux olympiques"
+ },
+ {
+  "id": "q-04802d2a9d",
+  "question": "Quel surnom porte la dernière symphonie composée par Mozart ?",
+  "options": [
+   "Héroïque",
+   "Jupiter",
+   "Pastorale",
+   "Inachevée"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Mozart a achevé la symphonie Jupiter en 1788, trois ans seulement avant sa mort.",
+  "sourceUrl": "https://www.britannica.com/biography/Wolfgang-Amadeus-Mozart",
+  "theme": "Mozart"
+ },
+ {
+  "id": "q-b069f9646a",
+  "question": "Quel élève de Mozart a achevé son Requiem après sa mort en 1791 ?",
+  "options": [
+   "Franz Xaver Süssmayr",
+   "Lorenzo da Ponte",
+   "Emanuel Schikaneder",
+   "Joseph Haydn"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Le premier mouvement fut joué à ses funérailles, mais Süssmayr termina l'œuvre en 1792.",
+  "sourceUrl": "https://www.chambermusicsociety.org/about-the-music/composers/wolfgang-amadeus-mozart",
+  "theme": "Mozart"
+ },
+ {
+  "id": "q-aca53e7d13",
+  "question": "Combien d'enfants de Mozart et Constanze ont survécu à la petite enfance ?",
+  "options": [
+   "Aucun",
+   "Deux",
+   "Quatre",
+   "Six"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Le couple a eu six enfants, mais seuls Karl Thomas et Franz Xaver Wolfgang ont survécu à l'enfance.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart",
+  "theme": "Mozart"
+ },
+ {
+  "id": "q-f6c82a4d45",
+  "question": "Pour le couronnement de quel souverain Mozart composa-t-il La clemenza di Tito ?",
+  "options": [
+   "Léopold II",
+   "Joseph II",
+   "François Ier",
+   "Charles VI"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "En 1791, Mozart écrivit aussi Die Zauberflöte, qui fut son plus grand triomphe musical.",
+  "sourceUrl": "https://www.chambermusicsociety.org/about-the-music/composers/wolfgang-amadeus-mozart",
+  "theme": "Mozart"
+ },
+ {
+  "id": "q-481873160b",
+  "question": "Quelle loge maçonnique admit Mozart comme membre le 14 décembre 1784 ?",
+  "options": [
+   "Zur Wohltätigkeit",
+   "Zur Eintracht",
+   "Zur Hoffnung",
+   "Zur Krone"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "La franc-maçonnerie joua un rôle essentiel dans sa vie, inspirant notamment la Maurerische Trauermusik.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart",
+  "theme": "Mozart"
+ },
+ {
+  "id": "q-f89618116d",
+  "question": "La Grande Muraille de Chine est-elle réellement visible depuis l'espace ?",
+  "options": [
+   "Non, c'est impossible",
+   "Oui, par temps clair",
+   "Oui, uniquement de jour",
+   "Oui, en hiver seulement"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Bien qu'elle mesure plus de 20 000 km, elle ne fait que 6 m de largeur, ce qui la rend invisible depuis l'espace.",
+  "sourceUrl": "https://chinoistips.com/grande-muraille-de-chine",
+  "theme": "Grande Muraille de Chine"
+ },
+ {
+  "id": "q-1e8f1f6354",
+  "question": "Quelle frontière de la Chine la Grande Muraille avait-elle pour rôle de défendre ?",
+  "options": [
+   "La frontière sud",
+   "La frontière nord",
+   "La frontière est",
+   "La frontière ouest"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Elle protégeait la Chine des attaques mongoles et mandchoues entre le IIIe siècle av. J.-C. et le XVIIe siècle.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Grande_Muraille",
+  "theme": "Grande Muraille de Chine"
+ },
+ {
+  "id": "q-caeb7dc4cf",
+  "question": "Quel empereur ordonna vers 220 av. J.-C. de réunir les tronçons de la Grande Muraille ?",
+  "options": [
+   "Hàn Wǔdì",
+   "Táng Tàizōng",
+   "Qín Shǐ Huáng",
+   "Míng Chéngzǔ"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Après l'unification de la Chine, il voulut protéger tout le nord du territoire des Mongols, des Turcs et des Xiongnu.",
+  "sourceUrl": "https://chinoistips.com/grande-muraille-de-chine",
+  "theme": "Grande Muraille de Chine"
+ },
+ {
+  "id": "q-3889db5745",
+  "question": "Quelle est la hauteur moyenne de la Grande Muraille de Chine ?",
+  "options": [
+   "2 à 3 mètres",
+   "6 à 7 mètres",
+   "15 à 18 mètres",
+   "25 à 30 mètres"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "En plus de ses 6 à 7 mètres de hauteur moyenne, la Grande Muraille mesure entre 4 et 5 mètres de largeur.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Grande_Muraille",
+  "theme": "Grande Muraille de Chine"
+ },
+ {
+  "id": "q-fe4dcf4f12",
+  "question": "Qui lança au XVIIIe siècle le mythe de la Grande Muraille visible depuis la Lune ?",
+  "options": [
+   "Howard Carter",
+   "Thomas Young",
+   "Arthur Evans",
+   "William Stukeley"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "L'antiquaire anglais William Stukeley écrivit qu'elle dessinait une formidable figure sur le globe terrestre.",
+  "sourceUrl": "https://chinoistips.com/grande-muraille-de-chine",
+  "theme": "Grande Muraille de Chine"
+ },
+ {
+  "id": "q-3bef674857",
+  "question": "À quel endroit de la province du Hebei la Grande Muraille commence-t-elle à l'est ?",
+  "options": [
+   "Jiayuguan",
+   "Badaling",
+   "Shanhaiguan",
+   "Liaodong"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Elle s'étend de Shanhaiguan, à l'est dans le Hebei, jusqu'à Jiayuguan, à l'ouest dans le Gansu.",
+  "sourceUrl": "https://whc.unesco.org/fr/list/438",
+  "theme": "Grande Muraille de Chine"
+ },
+ {
+  "id": "q-bfd33e335a",
+  "question": "Comment désigne-t-on traditionnellement le cinéma parmi les arts ?",
+  "options": [
+   "Le cinquième art",
+   "Le sixième art",
+   "Le septième art",
+   "Le huitième art"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Cette expression vient du critique Ricciotto Canudo qui l'a popularisée dans les années 1920.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Cin%C3%A9ma",
+  "theme": "Cinéma"
+ },
+ {
+  "id": "q-0feb068208",
+  "question": "En quelle année les frères Lumière ont-ils fait leur première projection publique ?",
+  "options": [
+   "1885",
+   "1895",
+   "1905",
+   "1915"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Cette première projection publique eut lieu le 28 décembre 1895 au Grand Café à Paris.",
+  "sourceUrl": "https://www.history.com/articles/the-lumiere-brothers-pioneers-of-cinema",
+  "theme": "Cinéma"
+ },
+ {
+  "id": "q-8dda173e93",
+  "question": "Que signifie littéralement la racine grecque « kínēma » du mot cinéma ?",
+  "options": [
+   "Lumière",
+   "Mouvement",
+   "Projection",
+   "Spectacle"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Léon Bouly déposa le brevet du « cinématographe » en 1892 avant que les frères Lumière ne reprennent le nom.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Cin%C3%A9ma",
+  "theme": "Cinéma"
+ },
+ {
+  "id": "q-eba0a3cdee",
+  "question": "Quel lieu voit-on dans le premier film des frères Lumière tourné en 1895 ?",
+  "options": [
+   "Une gare",
+   "Une usine",
+   "Un théâtre",
+   "Une caserne"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Intitulé La Sortie des ouvriers de l'usine Lumière, ce film fut montré à Paris en mars 1895.",
+  "sourceUrl": "https://www.history.com/articles/the-lumiere-brothers-pioneers-of-cinema",
+  "theme": "Cinéma"
+ },
+ {
+  "id": "q-d74d021159",
+  "question": "Quel nom Antoine Lumière voulait-il donner à l'appareil de ses fils ?",
+  "options": [
+   "Domitor",
+   "Kinétographe",
+   "Praxinoscope",
+   "Zootrope"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Louis et Auguste préférèrent le terme Cinématographe, mais une association reprit Domitor en 1985.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Cin%C3%A9ma",
+  "theme": "Cinéma"
+ },
+ {
+  "id": "q-1f90122f0e",
+  "question": "Quel événement Charles Moisson filma-t-il en Russie en 1896 pour les Lumière ?",
+  "options": [
+   "Le couronnement de Nicolas II",
+   "L'ouverture du Transsibérien",
+   "Un défilé militaire à Moscou",
+   "L'incendie du palais d'Hiver"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Les frères Lumière envoyaient des opérateurs partout dans le monde pour filmer des événements locaux.",
+  "sourceUrl": "https://www.nationalgeographic.fr/histoire/2019/02/comment-les-freres-lumiere-ont-invente-le-cinema",
+  "theme": "Cinéma"
+ },
+ {
+  "id": "q-68c042e783",
+  "question": "Quel est le symbole chimique de l'or ?",
+  "options": [
+   "Ag",
+   "Au",
+   "Or",
+   "Ar"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Choisi par Berzelius, le symbole Au vient des deux premières lettres du nom latin de l'or, aurum.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Or",
+  "theme": "Or"
+ },
+ {
+  "id": "q-8b814916b9",
+  "question": "Comment appelle-t-on l'art du travail de l'or ?",
+  "options": [
+   "La dinanderie",
+   "La ferronnerie",
+   "L'orfèvrerie",
+   "La chaudronnerie"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Très ductile et apprécié pour son éclat, l'or est si mou qu'il se travaille parfois à la main et au bâton.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Or",
+  "theme": "Or"
+ },
+ {
+  "id": "q-99bbaf8cde",
+  "question": "Parmi ces substances, laquelle parvient à attaquer l'or ?",
+  "options": [
+   "L'acide nitrique",
+   "L'acide sulfurique",
+   "L'acide chlorhydrique",
+   "L'eau régale"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "L'eau régale est un mélange d'acides chlorhydrique et nitrique concentrés, contrairement aux acides pris isolément.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Or",
+  "theme": "Or"
+ },
+ {
+  "id": "q-e22a0e0040",
+  "question": "Quel peuple antique a frappé les premières pièces de monnaie en électrum ?",
+  "options": [
+   "Les Lydiens",
+   "Les Égyptiens",
+   "Les Perses",
+   "Les Daces"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "moyen",
+  "anecdote": "Ces pièces en électrum, un alliage naturel d'or et d'argent, portaient un motif de tête de lion.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Or",
+  "theme": "Or"
+ },
+ {
+  "id": "q-dc7612027b",
+  "question": "Où a été mis au jour le plus vieil objet en or, daté du Ve millénaire av. J.-C. ?",
+  "options": [
+   "À Louxor en Égypte",
+   "À Varna en Bulgarie",
+   "À Mycènes en Grèce",
+   "À Sardes en Turquie"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Découvert dans la nécropole de Varna, cet objet date du milieu du Ve millénaire av. J.-C.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Or",
+  "theme": "Or"
+ },
+ {
+  "id": "q-ebe95c095e",
+  "question": "Quelles lois américaines de 1866 ont légalisé les règles des chercheurs d'or ?",
+  "options": [
+   "Les lois Sutter",
+   "Les lois Marshall",
+   "Les lois Chaffee",
+   "Les lois Nevada"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Ces lois ont officialisé les règles adoptées par les forty-niners pour gérer les prospections minières.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Ru%C3%A9e_vers_l%27or_en_Californie",
+  "theme": "Or"
+ },
+ {
+  "id": "q-ab9ae3d541",
+  "question": "En quelle année les premiers humains ont-ils posé le pied sur la Lune avec Apollo 11 ?",
+  "options": [
+   "1965",
+   "1969",
+   "1972",
+   "1975"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Neil Armstrong et Buzz Aldrin foulèrent le sol lunaire en 1969, suivis par dix autres astronautes jusqu'en 1972.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Lune",
+  "theme": "La Lune"
+ },
+ {
+  "id": "q-f7bebf479f",
+  "question": "Par combien le poids d'un être humain est-il divisé sur la surface de la Lune ?",
+  "options": [
+   "Par deux",
+   "Par quatre",
+   "Par six",
+   "Par dix"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "La gravité lunaire est de 1,62 m/s2 : une combinaison de 90 kg y donne la sensation de peser 15 kg.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Lune",
+  "theme": "La Lune"
+ },
+ {
+  "id": "q-1129cc3ca1",
+  "question": "Comment se nomme la protoplanète dont l'impact avec la Terre aurait formé la Lune ?",
+  "options": [
+   "Cérès",
+   "Théia",
+   "Vesta",
+   "Pallas"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "La Lune se serait formée il y a environ 4,51 milliards d'années à partir des débris de cet impact géant.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Lune",
+  "theme": "La Lune"
+ },
+ {
+  "id": "q-832afdea71",
+  "question": "Quel était le nom du module lunaire d'Apollo 11 qui s'est posé sur la Lune ?",
+  "options": [
+   "Columbia",
+   "Eagle",
+   "Discovery",
+   "Challenger"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Pendant la descente d'Eagle vers la mer de la Tranquillité, Michael Collins resta en orbite dans le module Columbia.",
+  "sourceUrl": "https://www.lpi.usra.edu/lunar/missions/apollo/apollo_11",
+  "theme": "La Lune"
+ },
+ {
+  "id": "q-2fb40aa02b",
+  "question": "Quel est le plus grand bassin d'impact situé sur la face cachée de la Lune ?",
+  "options": [
+   "Mare Orientale",
+   "Pôle Sud-Aitken",
+   "Mare Imbrium",
+   "Fra Mauro"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Avec un diamètre de 2 500 km, le bassin Pôle Sud-Aitken figure aussi parmi les plus grands du Système solaire.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Lune",
+  "theme": "La Lune"
+ },
+ {
+  "id": "q-6920b5082b",
+  "question": "Combien de jours l'équipage d'Apollo 11 fut-il mis en quarantaine après son retour ?",
+  "options": [
+   "7 jours",
+   "14 jours",
+   "21 jours",
+   "30 jours"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Bien que la présence de vie sur la Lune parût improbable aux scientifiques, cette précaution biologique fut appliquée.",
+  "sourceUrl": "https://www.lpi.usra.edu/lunar/missions/apollo/apollo_11",
+  "theme": "La Lune"
+ },
+ {
+  "id": "q-5f1169b3fb",
+  "question": "De quoi le requin-baleine, plus grand des requins, se nourrit-il principalement ?",
+  "options": [
+   "De plancton",
+   "De phoques",
+   "De tortues",
+   "De dauphins"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Pouvant dépasser vingt mètres de long, ce géant des mers filtre l'eau pour capturer le plancton.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Requin",
+  "theme": "Requins"
+ },
+ {
+  "id": "q-782227da27",
+  "question": "De quelle matière le squelette du requin est-il entièrement constitué ?",
+  "options": [
+   "D'os solides",
+   "De cartilage",
+   "De kératine",
+   "De calcaire"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Contrairement aux poissons osseux, les requins appartiennent à la classe des poissons cartilagineux.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Requin",
+  "theme": "Requins"
+ },
+ {
+  "id": "q-800c385cac",
+  "question": "Comment appelle-t-on le sixième sens qui permet aux requins de détecter des proies ?",
+  "options": [
+   "L'écholocation",
+   "La magnétoréception",
+   "L'électroréception",
+   "La thermoréception"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Des pores remplis de gel sur leur tête perçoivent les champs électriques émis par des proies cachées.",
+  "sourceUrl": "https://wwf.ca/fr/stories/7-faits-etonnants-a-propos-des-requins",
+  "theme": "Requins"
+ },
+ {
+  "id": "q-9b01bc339e",
+  "question": "Quel est l'angle du champ de vision vertical d'un requin-marteau grâce à ses yeux ?",
+  "options": [
+   "120 degrés",
+   "180 degrés",
+   "360 degrés",
+   "270 degrés"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Grâce à ses yeux placés aux extrémités de sa tête, le requin-marteau voit au-dessus et en dessous de lui.",
+  "sourceUrl": "https://battat.com/fr/blogs/blog/10-amazing-shark-facts",
+  "theme": "Requins"
+ },
+ {
+  "id": "q-f5a331e02b",
+  "question": "Quelle substance compose à 90 % le foie des requins pour assurer leur flottabilité ?",
+  "options": [
+   "Le squalène",
+   "La kératine",
+   "Le collagène",
+   "La chitine"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "Le foie du requin peut représenter 25 % de son poids et compense son absence de vessie natatoire.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Requin",
+  "theme": "Requins"
+ },
+ {
+  "id": "q-8dc1f598c5",
+  "question": "À quelle période géologique les premiers requins sont-ils apparus ?",
+  "options": [
+   "Au Jurassique",
+   "Au Crétacé",
+   "Au Silurien",
+   "Au Dévonien"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "Les premiers requins sont apparus au Dévonien, il y a environ 420 millions d'années.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Requin",
+  "theme": "Requins"
+ },
+ {
+  "id": "q-79dc3588c9",
+  "question": "Quel est le plus grand et le plus profond océan de la Terre ?",
+  "options": [
+   "L'océan Pacifique",
+   "L'océan Atlantique",
+   "L'océan Indien",
+   "L'océan Arctique"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "L'océan Pacifique abrite la fosse des Mariannes, le point le plus bas connu des fonds marins terrestres.",
+  "sourceUrl": "https://www.infoplease.com/top-10s/top-10-deepest-oceans-and-seas",
+  "theme": "Océans"
+ },
+ {
+  "id": "q-babc9529e5",
+  "question": "Quel est actuellement le plus petit des cinq océans ?",
+  "options": [
+   "L'océan Austral",
+   "L'océan Arctique",
+   "L'océan Indien",
+   "L'océan Atlantique"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "facile",
+  "anecdote": "Il correspond à l'agrégat des mers côtières du cercle arctique et de la banquise autour du pôle Nord.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Oc%C3%A9an",
+  "theme": "Océans"
+ },
+ {
+  "id": "q-e51f4a53c4",
+  "question": "Dans la mythologie grecque, qui était Océan, divinité à l'origine du mot ?",
+  "options": [
+   "Le dieu des tempêtes",
+   "Le fils de Poséidon",
+   "L'aîné des Titans",
+   "Le roi des Cyclopes"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "moyen",
+  "anecdote": "Le mot français « océan » dérive du grec ancien Ôkeanós, le nom de cette divinité mythologique.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Oc%C3%A9an",
+  "theme": "Océans"
+ },
+ {
+  "id": "q-cbebe18296",
+  "question": "Quel réalisateur a plongé jusqu'à Challenger Deep en 2012 en sous-marin ?",
+  "options": [
+   "Steven Spielberg",
+   "James Cameron",
+   "Ridley Scott",
+   "Luc Besson"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "Il a atteint 10 828 mètres de profondeur en monoplace, sans battre le record de Jacques Piccard.",
+  "sourceUrl": "https://www.youtube.com/watch?v=PhS30G3utyo",
+  "theme": "Océans"
+ },
+ {
+  "id": "q-56da9b9242",
+  "question": "En quelle année l'équipage du HMS Challenger a-t-il découvert Challenger Deep ?",
+  "options": [
+   "En 1852",
+   "En 1901",
+   "En 1924",
+   "En 1875"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "difficile",
+  "anecdote": "L'expédition du navire britannique HMS Challenger s'est déroulée entre 1873 et 1876.",
+  "sourceUrl": "https://fr.ripleybelieves.com/how-deep-is-ocean-2944",
+  "theme": "Océans"
+ },
+ {
+  "id": "q-57bdca35bd",
+  "question": "De combien d'années datent les plus anciennes roches de la croûte océanique ?",
+  "options": [
+   "220 millions d'années",
+   "500 millions d'années",
+   "1,2 milliard d'années",
+   "3,7 milliards d'années"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "difficile",
+  "anecdote": "À l'inverse, les plus anciennes roches de la croûte continentale datent de 3 700 millions d'années.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Oc%C3%A9an",
+  "theme": "Océans"
+ },
+ {
+  "id": "q-4b4b5ef481",
+  "question": "Pour quel événement la tour Eiffel a-t-elle été construite en 1889 ?",
+  "options": [
+   "L'Exposition universelle",
+   "Les Jeux olympiques",
+   "Le sacre de Napoléon III",
+   "Le Salon de l'agriculture"
+  ],
+  "correctAnswerIndex": 0,
+  "difficulty": "facile",
+  "anecdote": "Elle devait être le clou de l'Exposition de 1889 célébrant le centenaire de la Révolution française.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Tour_Eiffel",
+  "theme": "Tour Eiffel"
+ },
+ {
+  "id": "q-fdf31fb0eb",
+  "question": "Dans quel arrondissement de Paris la tour Eiffel est-elle située ?",
+  "options": [
+   "Le 1er arrondissement",
+   "Le 16e arrondissement",
+   "Le 7e arrondissement",
+   "Le 8e arrondissement"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "facile",
+  "anecdote": "Elle se dresse à l'extrémité nord-ouest du Champ-de-Mars, au 5, avenue Anatole-France.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Tour_Eiffel",
+  "theme": "Tour Eiffel"
+ },
+ {
+  "id": "q-0a3e9049b0",
+  "question": "Quel bâtiment a ravi à la tour Eiffel le record mondial de hauteur en 1930 ?",
+  "options": [
+   "L'Empire State Building",
+   "Le Chrysler Building",
+   "Le Rockefeller Center",
+   "Le Woolworth Building"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "moyen",
+  "anecdote": "La tour Eiffel a conservé le titre de plus haute structure du monde pendant quarante ans.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Tour_Eiffel",
+  "theme": "Tour Eiffel"
+ },
+ {
+  "id": "q-9ee7ce250b",
+  "question": "Quel architecte a amélioré l'esthétique du premier plan de la tour Eiffel ?",
+  "options": [
+   "Maurice Koechlin",
+   "Émile Nouguier",
+   "Édouard Lockroy",
+   "Stéphen Sauvestre"
+  ],
+  "correctAnswerIndex": 3,
+  "difficulty": "moyen",
+  "anecdote": "Les ingénieurs Maurice Koechlin et Émile Nouguier ont réalisé le premier plan en juin 1884.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Tour_Eiffel",
+  "theme": "Tour Eiffel"
+ },
+ {
+  "id": "q-5272d83d53",
+  "question": "Combien de marches comptent les escaliers de la tour Eiffel jusqu'au sommet ?",
+  "options": [
+   "1 280 marches",
+   "1 665 marches",
+   "1 889 marches",
+   "2 140 marches"
+  ],
+  "correctAnswerIndex": 1,
+  "difficulty": "difficile",
+  "anecdote": "Les escaliers ne sont toutefois ouverts au public que jusqu'au deuxième étage, depuis le pilier est.",
+  "sourceUrl": "https://fr.wikipedia.org/wiki/Tour_Eiffel",
+  "theme": "Tour Eiffel"
+ },
+ {
+  "id": "q-13eb5df8c0",
+  "question": "Combien de noms de savants sont inscrits sous le premier étage de la tour Eiffel ?",
+  "options": [
+   "54 savants",
+   "64 savants",
+   "72 savants",
+   "89 savants"
+  ],
+  "correctAnswerIndex": 2,
+  "difficulty": "difficile",
+  "anecdote": "Ces 72 scientifiques, uniquement des hommes, ont vécu et travaillé entre 1789 et 1889.",
+  "sourceUrl": "https://www.youtube.com/watch?v=-7O1dQTfYuA",
+  "theme": "Tour Eiffel"
+ }
+]

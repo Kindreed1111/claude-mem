@@ -4,18 +4,31 @@ Jeu de quiz : le joueur tape un sujet, le mineur creuse à chaque bonne réponse
 
 ## Contenu
 
-- `index.html` : le jeu complet (scène, sons, interface, quiz et course).
-- `api/questions.js` : fonction serveur qui garde la clé Gemini secrète, écrit les consignes et interroge Gemini.
+- `public/index.html` : le jeu complet (scène, sons, interface, quiz et course).
+- `public/data/questions.json` : la banque de questions vérifiées, chargée par le jeu.
+- `scripts/generate-questions.mjs` : le script qui alimente la banque.
+- `api/questions.js` : fonction serveur (clé Gemini secrète) pour les sujets libres absents de la banque.
 - `vercel.json` : durée maximale de la fonction (60 s).
 
-## Fonctionnement des questions
+## Banque de questions
 
-1. Gemini propose des questions candidates sur le sujet, à partir de ses propres connaissances (aucun outil payant, pas de recherche Google).
-2. Un second appel répond à chaque question sans connaître la réponse attendue.
-3. Une question n'est posée que si les deux appels tombent sur la même réponse.
-4. Pendant la course, les questions en attente passent un troisième contrôle, réponses mélangées ; au moindre doute la question est retirée.
+`GEMINI_API_KEY=… TAVILY_API_KEY=… npm run generate -- 40` ajoute au moins 40 questions à la banque (derrière un proxy HTTP : `NODE_USE_ENV_PROXY=1`).
 
-Sans recherche web, l'exactitude repose sur les connaissances du modèle : ces contrôles réduisent les erreurs, ils ne les éliminent pas.
+1. Collecte par thème : un article de Wikipédia FR et une recherche Tavily (`search_depth: "advanced"`).
+2. Gemini (`gemini-4-hydrogen`, `thinkingLevel: MEDIUM`, sortie JSON par `responseSchema`) rédige les questions à partir de ces seuls textes.
+3. Contrôle en JavaScript : `sourceUrl` doit être exactement une des URLs collectées ; question de 95 caractères au plus ; 4 réponses distinctes de 35 caractères au plus et de longueur homogène ; un chiffre donné en réponse doit figurer dans le texte de la source. Sinon la question est rejetée.
+4. Mode cumulatif : les questions existantes sont conservées et transmises à Gemini avec l'interdiction de reposer les mêmes faits.
+
+Le contrôle garantit que la source citée fait partie des textes fournis ; il ne prouve pas à lui seul que chaque fait y est correctement lu.
+
+## Règles du quiz
+
+- « Grand filon » (ou Entrée sans rien taper) mélange tous les thèmes ; un thème de la banque peut être choisi ou tapé. Un sujet absent de la banque passe par Gemini en direct (plus lent, sans source).
+- Difficulté selon la profondeur : facile jusqu'au niveau 5, moyen jusqu'au niveau 10, difficile ensuite. Les réponses sont remélangées à chaque affichage ; les questions déjà vues (mémorisées dans le navigateur) passent en dernier.
+- Jauge d'air : 15 s par question, moins en profondeur (9 s au minimum). À zéro, éboulement : une erreur.
+- Strates : Terre & Argile (0 m), Roche & Charbon (50 m), Galerie de Cristal (150 m), Filon d'Or (300 m), Noyau Magmatique (500 m). La strate atteinte est la ligne « Filon » de l'écran de fin.
+- Fièvre de l'or : à partir de 3 bonnes réponses d'affilée ; toutes les 5, un casque perdu est rendu.
+- Sans réseau, 16 questions intégrées servent de secours.
 
 ## La course
 
@@ -37,5 +50,5 @@ Sans recherche web, l'exactitude repose sur les connaissances du modèle : ces c
 ## Limites connues
 
 - N'importe qui possédant l'adresse du jeu peut déclencher des appels sur la clé (la clé elle-même reste invisible).
-- Si aucune question ne peut être confirmée, le jeu bascule sur 16 questions de culture générale intégrées.
+- Un sujet libre que Gemini ne confirme pas bascule sur la banque.
 - `index.html#debug` expose l'état interne du jeu dans `window.__digger` pour les tests automatisés.
