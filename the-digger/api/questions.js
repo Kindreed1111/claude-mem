@@ -199,7 +199,7 @@ module.exports = async (req, res) => {
       console.error('gemini', JSON.stringify(last));
       if (working === model) working = null;
     }
-    res.status(last && last.status === 429 ? 429 : 502).json({ error: 'gemini', ...last });
+    res.status(last && last.status === 429 ? 429 : 502).json({ error: 'gemini', via: found.via, ...last });
   } catch (e) {
     console.error('questions', e && e.status, e && e.detail, e);
     res.status(502).json({ error: 'network', status: e && e.status, message: clip(e && e.detail, 300) });
