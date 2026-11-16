@@ -45,9 +45,11 @@ Règle des noms de thème (vérifiée par `build.mjs`) : le jeu reconnaît un th
 
 ## La course
 
-- Lancement : deux clics rapides sur le mineur, à n'importe quelle profondeur. En surface, le rival arrive par la gauche et le mineur file à droite ; sous terre, un passage s'ouvre dans la paroi de droite.
-- Commandes : Espace / flèche haut / tap pour sauter (appui long = saut plus haut), flèche bas / glissé vers le bas pour glisser, Échap ou le panneau « retour » pour arrêter.
-- Règles : un obstacle touché fait trébucher et rapproche le rival pendant quelques secondes ; un second choc pendant ce temps et il attrape le mineur, puis le ramène par la pelle là où il était. Le rival lance des pelletées de sable qui deviennent des obstacles. Un wagonnet rend invincible quelques secondes. Les pépites rapportent des points.
+- Lancement : le badge « Course-Poursuite » à côté du mineur, ou deux clics rapides sur le mineur, à n'importe quelle profondeur. En surface, le rival arrive par la gauche et le mineur file à droite ; sous terre, un passage s'ouvre dans la paroi de droite.
+- Commandes : Espace / clic / tap pour un saut court, appui maintenu pour un saut haut ; flèche bas / glissé vers le bas pour glisser ; Échap ou le panneau « retour » pour arrêter. Saut permis 100 ms après avoir quitté le sol (coyote time). Le bouton cloche coupe le son.
+- Règles : un obstacle touché fait trébucher et rapproche le rival ; un second choc pendant ce temps et il attrape le mineur. Le rival lance des pelletées de sable qui deviennent des obstacles. Un wagonnet à ramasser rend invincible quelques secondes. Les pépites rapportent des points. Esquiver un obstacle au dernier moment (action déclenchée moins de 150 ms avant le contact) rapporte « +25 FRÔLEMENT ».
+- Paliers de distance (1 m = 45 unités de piste) : 0 à 150 m rochers et caisses ; 150 à 400 m accélération, poutres basses à franchir en glissant, wagonnets en sens inverse annoncés 1 s avant par une alerte à droite ; 400 à 800 m stalactites (poussière d'avertissement, puis chute et pointe à sauter) et trous dans les rails ; 800 m et plus vitesse maximale, enchaînements saut / glissade et champ de vision resserré autour de la lampe.
+- Fin : l'écran « Rattrapé ! » affiche distance, frôlements, pépites et record de course (distance, enregistrée dans le navigateur), avec « Courir à nouveau » (Espace / Entrée) ou « Retour à la mine » (Échap).
 - Le quiz (et la jauge d'air) est figé pendant la course et reprend sur la même question. Les questions suivantes se préparent pendant ce temps (5 d'avance au plus).
 - Records (quiz et course) enregistrés dans le navigateur du joueur.
 
