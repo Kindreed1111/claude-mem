@@ -54,7 +54,7 @@
    "86,24 degrés"
   ],
   "correctAnswerIndex": 3,
-  "difficulty": "moyen",
+  "difficulty": "difficile",
   "anecdote": "Cette expérience menée en 1787 permit de comprendre l'effet de la pression atmosphérique sur l'ébullition.",
   "sourceUrl": "https://www.youtube.com/watch?v=uHk75LGSrGc&vl=en-US",
   "theme": "Mont Blanc et Alpes"
@@ -114,7 +114,7 @@
    "Bête ancienne"
   ],
   "correctAnswerIndex": 0,
-  "difficulty": "facile",
+  "difficulty": "moyen",
   "anecdote": "Le terme vient du grec ancien deinos (« terrible ») et sauros (« lézard »), choisi par Richard Owen en 1842.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Dinosauria",
   "theme": "Dinosaures"
@@ -129,7 +129,7 @@
    "John Ostrom"
   ],
   "correctAnswerIndex": 2,
-  "difficulty": "moyen",
+  "difficulty": "difficile",
   "anecdote": "Avec l'aide du prince Albert, Richard Owen a ensuite créé le musée d'histoire naturelle de Londres pour exposer les fossiles.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Dinosauria",
   "theme": "Dinosaures"
@@ -204,7 +204,7 @@
    "Innsbruck"
   ],
   "correctAnswerIndex": 2,
-  "difficulty": "facile",
+  "difficulty": "moyen",
   "anecdote": "Jusqu'en 1994, les Jeux d'été et d'hiver avaient lieu la même année tous les quatre ans.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Jeux_olympiques",
   "theme": "Jeux olympiques"
@@ -234,7 +234,7 @@
    "1912"
   ],
   "correctAnswerIndex": 2,
-  "difficulty": "moyen",
+  "difficulty": "difficile",
   "anecdote": "En 1896, les vainqueurs recevaient une médaille d'argent, les seconds du bronze et les troisièmes rien.",
   "sourceUrl": "https://www.bridgemanimages.com/fr/news/10-faits-etonnants-sur-les-jeux-olympiques/16362",
   "theme": "Jeux olympiques"
@@ -279,7 +279,7 @@
    "Inachevée"
   ],
   "correctAnswerIndex": 1,
-  "difficulty": "facile",
+  "difficulty": "moyen",
   "anecdote": "Mozart a achevé la symphonie Jupiter en 1788, trois ans seulement avant sa mort.",
   "sourceUrl": "https://www.britannica.com/biography/Wolfgang-Amadeus-Mozart",
   "theme": "Mozart"
@@ -309,7 +309,7 @@
    "Six"
   ],
   "correctAnswerIndex": 1,
-  "difficulty": "moyen",
+  "difficulty": "difficile",
   "anecdote": "Le couple a eu six enfants, mais seuls Karl Thomas et Franz Xaver Wolfgang ont survécu à l'enfance.",
   "sourceUrl": "https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart",
   "theme": "Mozart"
@@ -384,7 +384,7 @@
    "Míng Chéngzǔ"
   ],
   "correctAnswerIndex": 2,
-  "difficulty": "moyen",
+  "difficulty": "difficile",
   "anecdote": "Après l'unification de la Chine, il voulut protéger tout le nord du territoire des Mongols, des Turcs et des Xiongnu.",
   "sourceUrl": "https://chinoistips.com/grande-muraille-de-chine",
   "theme": "Grande Muraille de Chine"
@@ -399,7 +399,7 @@
    "25 à 30 mètres"
   ],
   "correctAnswerIndex": 1,
-  "difficulty": "moyen",
+  "difficulty": "difficile",
   "anecdote": "En plus de ses 6 à 7 mètres de hauteur moyenne, la Grande Muraille mesure entre 4 et 5 mètres de largeur.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Grande_Muraille",
   "theme": "Grande Muraille de Chine"
@@ -579,7 +579,7 @@
    "Les Daces"
   ],
   "correctAnswerIndex": 0,
-  "difficulty": "moyen",
+  "difficulty": "difficile",
   "anecdote": "Ces pièces en électrum, un alliage naturel d'or et d'argent, portaient un motif de tête de lion.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Or",
   "theme": "Or"
@@ -639,7 +639,7 @@
    "Par dix"
   ],
   "correctAnswerIndex": 2,
-  "difficulty": "facile",
+  "difficulty": "moyen",
   "anecdote": "La gravité lunaire est de 1,62 m/s2 : une combinaison de 90 kg y donne la sensation de peser 15 kg.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Lune",
   "theme": "La Lune"
@@ -729,7 +729,7 @@
    "De calcaire"
   ],
   "correctAnswerIndex": 1,
-  "difficulty": "facile",
+  "difficulty": "moyen",
   "anecdote": "Contrairement aux poissons osseux, les requins appartiennent à la classe des poissons cartilagineux.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Requin",
   "theme": "Requins"
@@ -759,7 +759,7 @@
    "270 degrés"
   ],
   "correctAnswerIndex": 2,
-  "difficulty": "moyen",
+  "difficulty": "difficile",
   "anecdote": "Grâce à ses yeux placés aux extrémités de sa tête, le requin-marteau voit au-dessus et en dessous de lui.",
   "sourceUrl": "https://battat.com/fr/blogs/blog/10-amazing-shark-facts",
   "theme": "Requins"
@@ -819,7 +819,7 @@
    "L'océan Atlantique"
   ],
   "correctAnswerIndex": 1,
-  "difficulty": "facile",
+  "difficulty": "moyen",
   "anecdote": "Il correspond à l'agrégat des mers côtières du cercle arctique et de la banquise autour du pôle Nord.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Oc%C3%A9an",
   "theme": "Océans"
@@ -834,7 +834,7 @@
    "Le roi des Cyclopes"
   ],
   "correctAnswerIndex": 2,
-  "difficulty": "moyen",
+  "difficulty": "difficile",
   "anecdote": "Le mot français « océan » dérive du grec ancien Ôkeanós, le nom de cette divinité mythologique.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Oc%C3%A9an",
   "theme": "Océans"
@@ -909,7 +909,7 @@
    "Le 8e arrondissement"
   ],
   "correctAnswerIndex": 2,
-  "difficulty": "facile",
+  "difficulty": "moyen",
   "anecdote": "Elle se dresse à l'extrémité nord-ouest du Champ-de-Mars, au 5, avenue Anatole-France.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Tour_Eiffel",
   "theme": "Tour Eiffel"
@@ -924,7 +924,7 @@
    "Le Woolworth Building"
   ],
   "correctAnswerIndex": 1,
-  "difficulty": "moyen",
+  "difficulty": "difficile",
   "anecdote": "La tour Eiffel a conservé le titre de plus haute structure du monde pendant quarante ans.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Tour_Eiffel",
   "theme": "Tour Eiffel"
@@ -939,7 +939,7 @@
    "Stéphen Sauvestre"
   ],
   "correctAnswerIndex": 3,
-  "difficulty": "moyen",
+  "difficulty": "difficile",
   "anecdote": "Les ingénieurs Maurice Koechlin et Émile Nouguier ont réalisé le premier plan en juin 1884.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Tour_Eiffel",
   "theme": "Tour Eiffel"
@@ -1239,7 +1239,7 @@
    "Malte"
   ],
   "correctAnswerIndex": 0,
-  "difficulty": "moyen",
+  "difficulty": "facile",
   "anecdote": "Napoléon est mort le 5 mai 1821 à Longwood, sur l'île de Sainte-Hélène.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Napol%C3%A9on_Ier",
   "theme": "Culture générale"
@@ -1284,7 +1284,7 @@
    "Normandie"
   ],
   "correctAnswerIndex": 2,
-  "difficulty": "moyen",
+  "difficulty": "facile",
   "anecdote": "Les États-Unis abandonnent leur neutralité après l'attaque japonaise de Pearl Harbor, le 7 décembre 1941.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Seconde_Guerre_mondiale",
   "theme": "Culture générale"
@@ -1314,7 +1314,7 @@
    "Le Sombrero"
   ],
   "correctAnswerIndex": 2,
-  "difficulty": "moyen",
+  "difficulty": "facile",
   "anecdote": "Le Système solaire réside dans le bras d'Orion de la Voie lactée, à environ 26 100 années-lumière du centre.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Syst%C3%A8me_solaire",
   "theme": "Culture générale"
@@ -1344,7 +1344,7 @@
    "Au lac Malawi"
   ],
   "correctAnswerIndex": 2,
-  "difficulty": "difficile",
+  "difficulty": "moyen",
   "anecdote": "Le Nil Blanc naît au lac Victoria, le Nil Bleu au lac Tana en Éthiopie.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Nil",
   "theme": "Culture générale"
@@ -1479,7 +1479,7 @@
    "Le traité de Versailles"
   ],
   "correctAnswerIndex": 2,
-  "difficulty": "difficile",
+  "difficulty": "moyen",
   "anecdote": "L'UE est régie par les traités de Maastricht et de Rome, dans leur version issue du traité de Lisbonne (2009).",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Union_europ%C3%A9enne",
   "theme": "Culture générale"
@@ -1674,7 +1674,7 @@
    "Johan Cruyff"
   ],
   "correctAnswerIndex": 0,
-  "difficulty": "moyen",
+  "difficulty": "facile",
   "anecdote": "Lionel Messi est le joueur le plus titré depuis la création du Ballon d'or, avec 8 trophées.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Ballon_d%27or",
   "theme": "Football"
@@ -1854,7 +1854,7 @@
    "L'Inter Miami"
   ],
   "correctAnswerIndex": 3,
-  "difficulty": "difficile",
+  "difficulty": "moyen",
   "anecdote": "Après dix-sept saisons au Barça puis le PSG, Messi poursuit sa carrière à l'Inter Miami.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Lionel_Messi",
   "theme": "Football"
@@ -1929,7 +1929,7 @@
    "Gabriel Hanot"
   ],
   "correctAnswerIndex": 0,
-  "difficulty": "difficile",
+  "difficulty": "moyen",
   "anecdote": "La Coupe du monde est imaginée en 1928 par la FIFA sous l'impulsion de son président Jules Rimet.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Coupe_du_monde_de_football",
   "theme": "Football"
@@ -2049,7 +2049,7 @@
    "2013"
   ],
   "correctAnswerIndex": 1,
-  "difficulty": "facile",
+  "difficulty": "moyen",
   "anecdote": "Le jeu est publié le 27 octobre 2009 et adopte dès sa sortie un modèle « freemium ».",
   "sourceUrl": "https://fr.wikipedia.org/wiki/League_of_Legends",
   "theme": "League of Legends"
@@ -2199,7 +2199,7 @@
    "Crunchyroll"
   ],
   "correctAnswerIndex": 0,
-  "difficulty": "moyen",
+  "difficulty": "facile",
   "anecdote": "Arcane est diffusée dans le monde sur Netflix ; sa qualité d'animation a été acclamée par la critique.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Arcane_(s%C3%A9rie_d%27animation)",
   "theme": "League of Legends"
@@ -2229,7 +2229,7 @@
    "6"
   ],
   "correctAnswerIndex": 3,
-  "difficulty": "moyen",
+  "difficulty": "difficile",
   "anecdote": "T1 a gagné en 2013, 2015, 2016 puis 2023, 2024 et 2025 : 6 titres, record de l'histoire du jeu.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/T1_(esport)",
   "theme": "League of Legends"
@@ -2319,7 +2319,7 @@
    "Austin"
   ],
   "correctAnswerIndex": 2,
-  "difficulty": "difficile",
+  "difficulty": "moyen",
   "anecdote": "Riot Games est une entreprise américaine située à Los Angeles, en Californie.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Riot_Games",
   "theme": "League of Legends"
@@ -2574,7 +2574,7 @@
    "Finlandais"
   ],
   "correctAnswerIndex": 0,
-  "difficulty": "moyen",
+  "difficulty": "facile",
   "anecdote": "ABBA est un groupe suédois de pop, originaire de Stockholm, formé le 1er novembre 1971.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/ABBA",
   "theme": "Pop"
@@ -3099,7 +3099,7 @@
    "Élie Yaffa"
   ],
   "correctAnswerIndex": 0,
-  "difficulty": "moyen",
+  "difficulty": "difficile",
   "anecdote": "Julien Mari, dit Jul, s'est d'abord fait appeler Juliano135.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Jul_(rappeur)",
   "theme": "Rap FR"
@@ -3309,7 +3309,7 @@
    "Saitama"
   ],
   "correctAnswerIndex": 3,
-  "difficulty": "difficile",
+  "difficulty": "moyen",
   "anecdote": "Orelsan est depuis 2016 la voix française de Saitama dans l'animé One Punch Man.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Orelsan",
   "theme": "Rap FR"
@@ -3519,7 +3519,7 @@
    "Atlanta"
   ],
   "correctAnswerIndex": 1,
-  "difficulty": "facile",
+  "difficulty": "moyen",
   "anecdote": "Le 7 septembre 1996, Tupac Shakur est la cible de tirs à Las Vegas ; il meurt le 13 septembre.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Tupac_Shakur",
   "theme": "Rap US"
@@ -3999,7 +3999,7 @@
    "1999"
   ],
   "correctAnswerIndex": 3,
-  "difficulty": "moyen",
+  "difficulty": "difficile",
   "anecdote": "Aitana est née le 27 juin 1999, fille unique de Cosme Ocaña et Belén Morales.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Aitana",
   "theme": "Aitana Ocaña"
@@ -4029,7 +4029,7 @@
    "11 Razones"
   ],
   "correctAnswerIndex": 1,
-  "difficulty": "difficile",
+  "difficulty": "moyen",
   "anecdote": "Après Spoiler (2019) et 11 Razones (2020), Aitana sort Alpha en 2023, puis Cuarto Azul en 2025.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Aitana",
   "theme": "Aitana Ocaña"
@@ -4119,7 +4119,7 @@
    "Bad Guy"
   ],
   "correctAnswerIndex": 0,
-  "difficulty": "facile",
+  "difficulty": "moyen",
   "anecdote": "Magnolia, titre phare de sa mixtape de 2017, atteint la 29e place du Billboard Hot 100.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
   "theme": "Playboi Carti"
@@ -4224,7 +4224,7 @@
    "Pi'erre Bourne"
   ],
   "correctAnswerIndex": 3,
-  "difficulty": "moyen",
+  "difficulty": "difficile",
   "anecdote": "Pi'erre Bourne a produit la plupart des titres de Die Lit, qui réunit Nicki Minaj, Travis Scott ou Skepta.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
   "theme": "Playboi Carti"
@@ -4329,7 +4329,7 @@
    "Save Your Tears"
   ],
   "correctAnswerIndex": 1,
-  "difficulty": "difficile",
+  "difficulty": "moyen",
   "anecdote": "En attendant MUSIC, Carti multiplie les featurings, dont Timeless de The Weeknd et FE!N de Travis Scott.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/Playboi_Carti",
   "theme": "Playboi Carti"
@@ -4374,7 +4374,7 @@
    "Le 19e"
   ],
   "correctAnswerIndex": 0,
-  "difficulty": "facile",
+  "difficulty": "moyen",
   "anecdote": "La Fève est né le 26 juin 1999 dans le 20e arrondissement de Paris.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
   "theme": "La Fève"
@@ -4389,7 +4389,7 @@
    "Dundy"
   ],
   "correctAnswerIndex": 2,
-  "difficulty": "facile",
+  "difficulty": "moyen",
   "anecdote": "Son premier nom de scène, Orfèv, évolue ensuite en La Fève.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
   "theme": "La Fève"
@@ -4419,7 +4419,7 @@
    "Ivry-sur-Seine"
   ],
   "correctAnswerIndex": 1,
-  "difficulty": "facile",
+  "difficulty": "moyen",
   "anecdote": "Né à Paris, La Fève grandit à Fontenay-sous-Bois, dans le Val-de-Marne.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
   "theme": "La Fève"
@@ -4464,7 +4464,7 @@
    "Walone"
   ],
   "correctAnswerIndex": 2,
-  "difficulty": "moyen",
+  "difficulty": "difficile",
   "anecdote": "À ses débuts, La Fève mène une petite carrière de beatmaker sous le pseudonyme Hermes.",
   "sourceUrl": "https://fr.wikipedia.org/wiki/La_F%C3%A8ve",
   "theme": "La Fève"
@@ -4599,7 +4599,7 @@
    "Superestrella"
   ],
   "correctAnswerIndex": 3,
-  "difficulty": "facile",
+  "difficulty": "moyen",
   "anecdote": "Après la victoire de l'Espagne, Aitana chante « Superestrella » place de Cibeles avec les joueurs et les supporters.",
   "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
   "theme": "Aitana Ocaña"
@@ -4614,7 +4614,7 @@
    "Teléfono"
   ],
   "correctAnswerIndex": 3,
-  "difficulty": "facile",
+  "difficulty": "moyen",
   "anecdote": "« Teléfono », sorti le 27 juillet 2018, entre directement à la première place du Top 50 de Promusicae.",
   "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
   "theme": "Aitana Ocaña"
@@ -4659,7 +4659,7 @@
    "La última"
   ],
   "correctAnswerIndex": 3,
-  "difficulty": "moyen",
+  "difficulty": "difficile",
   "anecdote": "Aitana débute comme actrice en 2022 dans La última, série dramatique et musicale sur une future star de la pop.",
   "sourceUrl": "https://es.wikipedia.org/wiki/Aitana_(cantante)",
   "theme": "Aitana Ocaña"

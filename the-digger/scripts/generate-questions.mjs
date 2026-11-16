@@ -119,7 +119,11 @@ RÈGLES STRICTES
 - "question" : ${MAX_Q} caractères maximum, claire, autonome (elle doit se comprendre sans connaître le thème ni la source), terminée par « ? ». Une seule réponse possible, sans débat.
 - "options" : exactement 4 réponses distinctes de ${MAX_OPT} caractères maximum chacune, de MÊME NATURE et de LONGUEUR HOMOGÈNE : la bonne réponse ne doit être ni plus longue ni plus détaillée que les pièges. Les 3 pièges sont crédibles mais indiscutablement faux.
 - "correctAnswerIndex" : position (0 à 3) de la bonne réponse dans "options".
-- "difficulty" : facile = connu de presque tout le monde ; moyen = culture générale solide ; difficile = détail précis donné par la source.
+- "difficulty" — critères STRICTS, à respecter à la lettre :
+  • facile = ÉVIDENT : un collégien ou n'importe quel passant connaît la réponse ; les 3 leurres sont clairement d'une autre catégorie ou manifestement faux (ex. « Quel est le plus haut sommet du monde ? »).
+  • moyen = CONNAISSANCE PRÉCISE : il faut s'intéresser au sujet (une date clé, un album, un lieu, un nom) ; les leurres sont plausibles et de même nature, mais un amateur les écarte.
+  • difficile = PIÈGE PROCHE : détail pointu de la source (chiffre exact, nom secondaire, origine) ET leurres très proches de la bonne réponse (dates voisines, noms de la même famille, valeurs du même ordre), au point que seul un connaisseur tranche.
+  En cas d'hésitation entre deux niveaux, choisis le plus difficile.
 - "anecdote" : une phrase de ${MAX_ANECDOTE - 20} caractères maximum, tirée de la même source, qui explique ou prolonge la bonne réponse.
 - "id" : identifiant court unique (ex. "volcans-01").
 - Évite les faits susceptibles de changer (records récents, classements, chiffres de population).

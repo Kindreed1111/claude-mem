@@ -106,6 +106,12 @@ button{font:inherit;color:inherit}
 #stratum.show{animation:plank 3.2s cubic-bezier(.3,1.3,.5,1) both}
 @keyframes plank{0%{transform:translateY(-26px) scale(.7) rotate(-4deg);opacity:0}10%,84%{transform:none;opacity:1}100%{transform:translateY(-18px) scale(.85);opacity:0}}
 #game.running #stratum{display:none}
+/* ---- discreet tag under the depth sign: zone and difficulty ---- */
+#zone{position:absolute;top:100%;left:6px;margin-top:7px;background:var(--pale);color:var(--ink);font:800 10px/1 var(--text);letter-spacing:.1em;text-transform:uppercase;padding:5px 8px 4px;border-radius:var(--wob-s);white-space:nowrap;opacity:.92}
+#zone[data-t="1"]{background:var(--sun)}
+#zone[data-t="2"]{background:var(--sky);color:var(--ink)}
+#zone.bump{animation:thud .45s cubic-bezier(.3,1.5,.5,1)}
+#game:not(.playing) #zone,#game.running #zone{display:none}
 /* ---- air gauge: a strip of light set above the coal slabs; when it is empty the gallery caves in ---- */
 #air{grid-column:1/-1;display:flex;align-items:center;gap:8px}
 #air b{flex:none;background:var(--ink);color:var(--sun);font:400 11px/1 var(--display);letter-spacing:.08em;padding:5px 8px 4px;border-radius:var(--wob-s)}
@@ -146,6 +152,9 @@ button{font:inherit;color:inherit}
 .stats dt{font:800 10px/1.1 var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--sun)}
 .stats dd{margin:3px 0 0;font:400 clamp(12.5px,3.5vw,16px)/1.1 var(--display);overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
 #oShovel{color:var(--diamond)}
+#unlock{margin:10px 0 0;font:700 12px/1.35 var(--text);color:var(--pale);opacity:.8}
+#unlock.new{opacity:1;color:var(--ink);background:var(--sun);padding:7px 10px;border-radius:var(--wob-s);animation:thud .5s cubic-bezier(.3,1.5,.5,1) both}
+#unlock b{font-weight:800}
 #stamp{position:absolute;top:-12px;right:-8px;background:var(--diamond);color:var(--ink);font:400 12px/1 var(--display);padding:7px 10px 6px;border-radius:var(--wob-s);transform:rotate(8deg);animation:pop .4s .6s cubic-bezier(.3,1.6,.5,1) both}
 .acts{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 .plank{all:unset;box-sizing:border-box;cursor:pointer;background:var(--sun);color:var(--ink);font:400 15px/1.1 var(--display);padding:11px 16px 10px;border-radius:var(--wob-s);box-shadow:0 4px 0 var(--sun-deep);transition:transform .12s}
@@ -194,6 +203,7 @@ button{font:inherit;color:inherit}
         <small>Profondeur</small>
         <span id="depth">0 m</span>
         <span id="best" hidden></span>
+        <span id="zone"></span>
       </div>
       <div class="sign" id="rsign" aria-live="off">
         <small>Course</small>
@@ -258,6 +268,7 @@ button{font:inherit;color:inherit}
           <div><dt>Série max</dt><dd id="oStreak"></dd></div>
           <div><dt>Record</dt><dd id="oBest"></dd></div>
         </dl>
+        <p id="unlock" hidden></p>
         <div class="acts">
           <button class="plank" id="again" type="button">Recreuser ce filon</button>
           <button class="plank alt" id="fresh" type="button">Nouveau filon</button>
@@ -283,7 +294,16 @@ function mix(a,b,t){const A=hex(a),B=hex(b);return'rgb('+A.map((v,i)=>Math.round
 const STOPS=[[0,'#17130F'],[2,'#1B2530'],[4,'#1F4670'],[6,'#1F7FCC'],[8,'#33B6F2'],[10,'#5CE2FF']];
 function bladeColor(l){l=clamp(l,0,10);for(let i=1;i<STOPS.length;i++)if(l<=STOPS[i][0]){const[a,ca]=STOPS[i-1],[b,cb]=STOPS[i];return mix(ca,cb,(l-a)/(b-a))}return STOPS[STOPS.length-1][1]}
 const tierName=l=>l>=10?'Diamant':l>=7?'Saphir':l>=4?'Acier bleui':l>=2?'Fer':'Charbon';
-const depthM=n=>n*n+4*n;
+/* metres dug at each level of the current descent: the base curve is n²+4n, bonuses (hard questions, pickaxe) push it further */
+const MT=[0],baseM=n=>n*n+4*n;
+function depthM(n){n=Math.max(0,n);const L=MT.length-1;if(n>=L)return MT[L]+baseM(n)-baseM(L);const k=Math.floor(n);return lerp(MT[k],MT[k+1],n-k)}
+/* difficulty and air follow the depth in metres */
+const TIER=[{n:'Friche',d:'Facile',air:15},{n:'Galerie',d:'Moyen',air:12},{n:'Abysse',d:'Difficile',air:9}];
+const tierAt=m=>m<25?0:m<70?1:2;
+/* tools earned with the metres dug over all games */
+const TOOLS=[{k:'pelle',n:'Pelle de chantier',m:0,b:'L’outil de base.'},{k:'pioche',n:'Pioche en acier',m:250,b:'+2 m à chaque bonne réponse.'},{k:'marteau',n:'Marteau-piqueur',m:750,b:'+2 s d’air sur chaque question.'},{k:'foreuse',n:'Foreuse thermique',m:1500,b:'Répare 1 casque tous les 100 m.'}];
+const toolOf=t=>{let i=0;while(i<TOOLS.length-1&&t>=TOOLS[i+1].m)i++;return i};
+let total=0;try{total=+localStorage.getItem('digger-total')||0}catch(e){}
 /* geological strata by depth in metres: a = earth, b = its alternate band, pit/pit2 = the dug shaft, mote = ambient particles */
 const STRATA=[
   {n:'Terre & Argile',m:0,a:'#8A5527',b:'#7A4A21',pit:'#42250F',pit2:'#26140A',mote:'#FFE08A'},
@@ -292,7 +312,9 @@ const STRATA=[
   {n:'Filon d’Or',m:300,a:'#80601A',b:'#6E5114',pit:'#43310B',pit2:'#281D06',mote:'#FFD23F'},
   {n:'Noyau Magmatique',m:500,a:'#63220F',b:'#521A0B',pit:'#351007',pit2:'#1E0804',mote:'#FF8A1F'}
 ];
-STRATA.forEach(s=>{s.lv=Math.sqrt(4+s.m)-2}); /* level at which the stratum starts (inverse of depthM) */
+function levelOf(m){let a=0,b=1;while(depthM(b)<m)b*=2;for(let i=0;i<40;i++){const c=(a+b)/2;if(depthM(c)<m)a=c;else b=c}return b}
+function strataLv(){STRATA.forEach(s=>{s.lv=s.m?levelOf(s.m):0})} /* level at which each stratum starts, for the current descent */
+strataLv();
 function stratumOf(lv){let i=0;while(i<STRATA.length-1&&lv>=STRATA[i+1].lv-1e-6)i++;return i}
 function sc(lv,key){ /* stratum colour at a (fractional) level, blended over one level around each boundary */
   const i=stratumOf(lv+.5),p=i>0?clamp(lv-(STRATA[i].lv-.5),0,1):1;
@@ -406,11 +428,13 @@ function eyes(mood,blink,lx){
   }
   if(mood==='angry'){g.fillStyle=C.ink;g.beginPath();g.moveTo(0,-91);g.lineTo(8,-91);g.lineTo(8,-85.5);g.lineTo(0,-88);g.closePath();g.fill();g.beginPath();g.moveTo(7,-91);g.lineTo(15.500,-91);g.lineTo(15.500,-88);g.lineTo(7,-85.5);g.closePath();g.fill()}
 }
-function shovel(P,shine){
+const HT=()=>TOOLS[st.tool].k; /* the hero's equipped tool; the rival keeps his shovel */
+function shovel(P,shine,tool=HT()){
   const a=P.a*Math.PI/180,dx=Math.cos(a),dy=Math.sin(a),gx=P.tx-dx*LEN,gy=P.ty-dy*LEN;
   g.strokeStyle=C.ink;g.lineWidth=5;g.beginPath();g.moveTo(gx,gy);g.lineTo(gx+dx*60,gy+dy*60);g.stroke();
   g.lineWidth=3.5;g.beginPath();g.arc(gx-dx*4,gy-dy*4,5,0,7);g.stroke();
   g.save();g.translate(gx+dx*58,gy+dy*58);g.rotate(a);
+  if(tool!=='pelle'){toolHead(tool,shine);g.restore();return{gx,gy,dx,dy}}
   const glow=clamp((shine-4)/6,0,1);
   if(glow>0){g.shadowColor=C.dia;g.shadowBlur=(8+glow*22+Math.sin(now*5)*4*glow)*S*DPR}
   g.fillStyle=bladeColor(shine);g.beginPath();g.moveTo(0,-10);g.lineTo(0,10);g.bezierCurveTo(14,11,22,5,26,0);g.bezierCurveTo(22,-5,14,-11,0,-10);g.closePath();g.fill();g.shadowBlur=0;
@@ -420,6 +444,24 @@ function shovel(P,shine){
   if(P.load>0){g.fillStyle=C.mound;g.beginPath();g.ellipse(13,-3,13*P.load,8*P.load,0,0,7);g.fill();g.fillStyle=C.clod;g.beginPath();g.ellipse(17,-5,5*P.load,3.5*P.load,0,0,7);g.fill()}
   g.restore();
   return{gx,gy,dx,dy};
+}
+function toolHead(tool,shine){ /* drawn along +x from the end of the handle */
+  if(tool==='pioche'){ /* steel pick: a crescent across the handle, points bent back */
+    g.fillStyle=C.ink;g.beginPath();g.roundRect(-4,-6,9,12,3);g.fill();
+    g.fillStyle='#9FB3C4';g.beginPath();g.moveTo(-9,-28);g.quadraticCurveTo(20,0,-9,28);g.quadraticCurveTo(8,0,-9,-28);g.closePath();g.fill();
+    g.fillStyle=C.ice;g.beginPath();g.moveTo(-6,-22);g.quadraticCurveTo(9,-8,7,-2);g.quadraticCurveTo(4,-9,-6,-22);g.closePath();g.fill();
+  }else if(tool==='marteau'){ /* jackhammer: yellow body, steel chisel */
+    g.fillStyle=C.sun;g.beginPath();g.roundRect(-4,-12,24,24,5);g.fill();
+    g.fillStyle=C.ink;g.fillRect(2,-12,3.5,24);g.fillRect(10,-12,3.5,24);
+    g.fillStyle='#9FB3C4';g.fillRect(20,-4,12,8);g.beginPath();g.moveTo(32,-4);g.lineTo(39,0);g.lineTo(32,4);g.closePath();g.fill();
+    if(hero.pose==='dig'){g.fillStyle=C.white;g.globalAlpha=.6;g.beginPath();g.arc(39+Math.random()*3,0,3,0,7);g.fill();g.globalAlpha=1}
+  }else{ /* thermal drill: dark body, glowing cone with a spiral */
+    g.fillStyle=C.ink;g.beginPath();g.roundRect(-4,-11,15,22,4);g.fill();
+    g.shadowColor='#FF8A1F';g.shadowBlur=(10+Math.sin(now*9)*4)*S*DPR;
+    g.fillStyle='#FF8A1F';g.beginPath();g.moveTo(10,-10);g.lineTo(38,0);g.lineTo(10,10);g.closePath();g.fill();g.shadowBlur=0;
+    g.fillStyle=C.sun;g.beginPath();g.moveTo(24,-5);g.lineTo(38,0);g.lineTo(24,5);g.closePath();g.fill();
+    g.strokeStyle=C.ink;g.lineWidth=2;const sp=(now*14)%7;g.beginPath();for(let x=12+sp;x<34;x+=7){const h=10*(1-(x-10)/28);g.moveTo(x,-h);g.lineTo(x+3,h)}g.stroke();
+  }
 }
 function miner(x,y,o,P){
   g.save();g.translate(x,y);g.scale((o.flip?-1:1)*S*(o.wide||1)*(1+(o.squash||0)*.22),S*(1-(o.squash||0)*.26));
@@ -436,7 +478,7 @@ function miner(x,y,o,P){
   eyes(o.mood,o.blink,o.look||0);
   g.restore();
   g.fillStyle=g.strokeStyle=C.ink;
-  const s=shovel(P,o.shine||0),h=q=>[s.gx+s.dx*LEN*q,s.gy+s.dy*LEN*q];
+  const s=shovel(P,o.shine||0,o.stripe?'pelle':HT()),h=q=>[s.gx+s.dx*LEN*q,s.gy+s.dy*LEN*q];
   g.strokeStyle=C.ink;g.lineWidth=8;g.beginPath();
   const h1=h(P.a1);g.moveTo(12,-63+by);g.lineTo(h1[0],h1[1]);
   const hs=h(P.a2),hang=[-19,-36+by],gr=P.grab==null?1:P.grab;g.moveTo(-12,-63+by);g.lineTo(lerp(hang[0],hs[0],gr),lerp(hang[1],hs[1],gr));g.stroke();
@@ -657,7 +699,7 @@ function punish(targets,done){
   tween(.5,e=>{foe.x=lerp(x0,home,e);if(G){G.grow=Math.min(1,e*1.3);if(G.grow<1&&Math.random()<.6)dust(W-(W-x1+6)*G.grow,ledge*STEP-rnd(8,90)*S,1)}},()=>{foe.walk=0;scoop(0)},ease.lin);
 }
 function resetWorld(){
-  Object.assign(world,{d:0,level:0,shake:0,punch:0,over:false});spy.a=0;worm.t0=-99;world.galleries.length=0;parts.length=0;timers.length=0;tweens.length=0;
+  Object.assign(world,{d:0,level:0,shake:0,punch:0,over:false});MT.length=1;strataLv();spy.a=0;worm.t0=-99;world.galleries.length=0;parts.length=0;timers.length=0;tweens.length=0;
   Object.assign(hero,{pose:'idle',pt:0,buried:0,buriedTo:0,mood:'calm',moodT:0,squash:0});foe.on=false;
   if(feetFrac!==.58){const f0=feetFrac;tween(.5,e=>{feetFrac=lerp(f0,.58,e);placeFeet()})}
 }
@@ -713,18 +755,17 @@ const DIFF=['facile','moyen','difficile'];
 let BANK=null;
 const bank=()=>BANK||BACKUP;
 const seen=new Set();try{(JSON.parse(localStorage.getItem('digger-seen'))||[]).forEach(id=>seen.add(id))}catch(e){}
-function markSeen(id){seen.add(id);if(seen.size>bank().length*.85)seen.clear();try{localStorage.setItem('digger-seen',JSON.stringify([...seen].slice(-800)))}catch(e){}}
+const saveSeen=()=>{try{localStorage.setItem('digger-seen',JSON.stringify([...seen].slice(-2000)))}catch(e){}};
+function markSeen(id){seen.add(id);saveSeen()}
 const validQ=b=>b&&typeof b.id==='string'&&typeof b.question==='string'&&Array.isArray(b.options)&&b.options.length===4&&b.options.every(o=>typeof o==='string'&&o)&&Number.isInteger(b.correctAnswerIndex)&&b.correctAnswerIndex>=0&&b.correctAnswerIndex<4&&DIFF.includes(b.difficulty);
-const toQ=b=>({id:b.id,q:b.question,good:b.options[b.correctAnswerIndex],opts:shuffle(b.options),e:str(b.anecdote),src:/^https?:\/\//.test(b.sourceUrl||'')?b.sourceUrl:''});
-function pickBank(){ /* difficulty follows the depth; the chosen theme first, questions never seen first */
-  const lvl=world.level+1,want=lvl<=5?0:lvl<=10?1:2;
-  /* the chosen theme is used up (any difficulty, nearest first) before other themes are mixed in */
-  for(const only of Q.theme?[true,false]:[false])for(const d of[want,want+1,want-1,want+2,want-2]){
-    if(d<0||d>2)continue;let pool=bank().filter(b=>b.difficulty===DIFF[d]&&!Q.used.has(b.id)&&(!only||norm(b.theme||'')===Q.theme));if(!pool.length)continue;
-    const fresh=pool.filter(b=>!seen.has(b.id));if(fresh.length)pool=fresh;
-    const b=pick(pool);Q.used.add(b.id);return toQ(b);
-  }
-  return null;
+const toQ=b=>({id:b.id,diff:b.difficulty,q:b.question,good:b.options[b.correctAnswerIndex],opts:shuffle(b.options),e:str(b.anecdote),src:/^https?:\/\//.test(b.sourceUrl||'')?b.sourceUrl:''});
+function pickBank(){ /* the difficulty follows the depth strictly: another difficulty is never served */
+  const want=DIFF[tierAt(depthM(world.level))];
+  let pool=bank().filter(b=>b.difficulty===want&&!Q.used.has(b.id));if(!pool.length)return null;
+  if(Q.theme){const th=pool.filter(b=>norm(b.theme||'')===Q.theme);if(th.length)pool=th}
+  let fresh=pool.filter(b=>!seen.has(b.id));
+  if(!fresh.length){pool.forEach(b=>seen.delete(b.id));saveSeen();fresh=pool} /* all of them already seen: forget only these */
+  const b=pick(fresh);Q.used.add(b.id);return toQ(b);
 }
 function matchTheme(raw){ /* null = not a theme of the bank */
   let n=norm(raw);if(!n||n==='grand filon')return{key:'',label:'Grand filon'};
@@ -743,7 +784,7 @@ const hist={};
 let sampleFn=null,sampleKnown=false;
 sampleFn=true;sampleKnown=true;const sampleP=Promise.resolve(true);
 const Q={batches:[],b:0,i:0,asked:[],seen:new Set(),goods:new Set(),ctls:[],fail:0,backup:false,bank:false,theme:'',used:new Set(),nextFrom:1};
-const st={mode:'intro',run:0,topic:'',label:'',wrong:0,cur:null,hold:0,holdT:0,advanceAt:0,skipAt:0,askT:0,next:null,best:0,air:15,airMax:15,beat:0,streak:0,maxStreak:0};
+const st={mode:'intro',run:0,topic:'',label:'',wrong:0,cur:null,hold:0,holdT:0,advanceAt:0,skipAt:0,askT:0,next:null,best:0,air:15,airMax:15,beat:0,streak:0,maxStreak:0,tool:toolOf(total),next100:100,gain:0};
 
 function cleanQ(o){
   const q=str(o.q),a=Array.isArray(o.a)?o.a.map(str).filter(Boolean).slice(0,4):[];
@@ -853,15 +894,16 @@ function say(text,tag,note,cls,sub){
 function quip(msg){quipEl.textContent=msg;veins.hidden=true;quipEl.hidden=true;void quipEl.offsetWidth;quipEl.hidden=false;hero.mood='happy';hero.moodT=now+1.4}
 const showDepth=m=>{depthEl.textContent=m?'−'+m+' m':'0 m'};
 function refreshLives(){[...livesEl.children].forEach((s,i)=>s.classList.toggle('lost',i>=3-st.wrong));livesEl.setAttribute('aria-label',(3-st.wrong)+' casques restants')}
-function refreshHud(){showDepth(depthM(world.level));bestEl.hidden=!st.best;bestEl.textContent='Record −'+st.best+' m';refreshLives()}
-onDig=lv=>{const a=depthM(lv-1),b=depthM(lv);tween(.45,e=>showDepth(Math.round(lerp(a,b,e))));signEl.classList.remove('bump');void signEl.offsetWidth;signEl.classList.add('bump')};
+function refreshZone(){const t=tierAt(depthM(world.level)),z=$('#zone');if(z.dataset.t!==String(t)){z.dataset.t=t;z.textContent=TIER[t].n+' • '+TIER[t].d;z.classList.remove('bump');void z.offsetWidth;z.classList.add('bump')}}
+function refreshHud(){refreshZone();showDepth(depthM(world.level));bestEl.hidden=!st.best;bestEl.textContent='Record −'+st.best+' m';refreshLives()}
+onDig=lv=>{refreshZone();const a=depthM(lv-1),b=depthM(lv);tween(.45,e=>showDepth(Math.round(lerp(a,b,e))));signEl.classList.remove('bump');void signEl.offsetWidth;signEl.classList.add('bump')};
 onTick=()=>{if(st.mode==='resolve'&&st.next&&now>=st.advanceAt)proceed()};
 function proceed(){const f=st.next;st.next=null;if(f)f()}
 function skip(){if(st.mode==='resolve'&&st.next&&now>=st.skipAt)proceed()}
 
 function startRun(raw){
   const run=++st.run;abortAll();resetWorld();
-  Object.assign(st,{topic:raw,label:raw,wrong:0,cur:null,next:null,holdT:0,hold:now+.9,streak:0,maxStreak:0});
+  Object.assign(st,{topic:raw,label:raw,wrong:0,cur:null,next:null,holdT:0,hold:now+.9,streak:0,maxStreak:0,tool:toolOf(total),next100:100});
   Object.assign(Q,{batches:[],b:0,i:0,asked:[],seen:new Set(),goods:new Set(),fail:0,backup:false,bank:false,theme:'',used:new Set(),nextFrom:1});
   refreshHud();setMode('prospect');hero.pose='think';sfx.start();
   say(pick(PROSPECT).replace('{t}',()=>raw),'Je sonde');
@@ -872,7 +914,7 @@ function startRun(raw){
 }
 function ask(q){
   setMode('ask');st.askT=now;if(hero.pose!=='dig'&&hero.pose!=='raise')hero.pose='idle';
-  q.opts=shuffle(q.opts);st.airMax=st.air=Math.max(9,15-world.level*.4);st.beat=0;airEl.className='';airFill.style.transform='scaleX(1)';
+  q.opts=shuffle(q.opts);st.airMax=st.air=TIER[tierAt(depthM(world.level))].air+(st.tool>=2?2:0);st.beat=0;airEl.className='';airFill.style.transform='scaleX(1)';
   say(q.q,'Niveau '+(world.level+1),null,null,st.label);
   ansBtns.forEach((b,i)=>{b.className='ans';b.disabled=false;b.querySelector('.txt').textContent=q.opts[i];b.style.animation='none';void b.offsetWidth;b.style.animation=''});
   sfx.pop();
@@ -885,7 +927,13 @@ function answer(i){ /* i = -1: the air ran out */
   if(ok){
     const n=++st.streak;st.maxStreak=Math.max(st.maxStreak,n);
     sfx.good(world.level+1);hero.pose='dig';hero.pt=0;hero.mood='happy';hero.moodT=now+1.3;
-    say(pick(GOOD),'Niveau '+(world.level+1)+' percé',q.e,'good');
+    const L=world.level,hard=(q.diff||DIFF[tierAt(depthM(L))])==='difficile',gain=Math.round((baseM(L+1)-baseM(L))*(hard?1.25:1))+(st.tool>=1?2:0);
+    MT[L+1]=MT[L]+gain;MT.length=L+2;strataLv();
+    say(pick(GOOD),'+'+gain+' m'+(hard?' · prime de risque':''),q.e,'good');
+    let fix=0;while(MT[L+1]>=st.next100){if(st.tool>=3&&st.wrong-fix>0)fix++;st.next100+=100} /* thermal drill: a helmet mended every 100 m */
+    if(fix){const run=st.run;after(1.1,()=>{if(run!==st.run||st.mode==='over')return;st.wrong=Math.max(0,st.wrong-fix);hero.buriedTo=st.wrong/3;refreshLives();sfx.life();
+      const hat=livesEl.children[2-st.wrong];if(hat){hat.style.animation='none';void hat.offsetWidth;hat.style.animation='thud .45s cubic-bezier(.3,1.5,.5,1)'}
+      if(!RM)sparks(cx,world.d*STEP-60*S,18,1)})}
     st.skipAt=now+.78;st.advanceAt=now+1.25+read;st.next=nextQuestion;
   }else{
     st.streak=0;st.wrong++;sfx.bad();refreshLives();const final=st.wrong>=3;
@@ -897,7 +945,9 @@ function answer(i){ /* i = -1: the air ran out */
   if(q.src){srcEl.href=q.src;srcEl.hidden=false}
 }
 function endRun(kind){
-  const run=st.run,lv=world.level,m=depthM(lv),rec=m>st.best;
+  const run=st.run,lv=world.level,m=Math.round(depthM(lv)),rec=m>st.best,had=st.tool;
+  total+=m;try{localStorage.setItem('digger-total',String(total))}catch(e){}
+  const tool=toolOf(total);
   if(rec){st.best=m;try{localStorage.setItem('digger-best',String(m))}catch(e){}}
   st.next=null;if(st.mode!=='resolve')st.mode='resolve';
   const f0=feetFrac;tween(.9,e=>{feetFrac=lerp(f0,.82,e);placeFeet()},null,ease.io);
@@ -906,7 +956,10 @@ function endRun(kind){
     if(run!==st.run)return;
     $('#oTitle').textContent=kind==='dead'?'Enseveli':'Filon épuisé';
     $('#epitaph').textContent=kind==='dead'?pick(EPITAPHS):'Plus une seule question en stock : tu as vidé le filon.';
-    $('#oTopic').textContent=STRATA[stratumOf(lv)].n;$('#oSubject').textContent=st.label;$('#oStreak').textContent=st.maxStreak;shareBtn.textContent='Partager';$('#oDepth').textContent=m?'−'+m+' m':'0 m';$('#oShovel').textContent=tierName(lv);$('#oBest').textContent=st.best?'−'+st.best+' m':'0 m';
+    $('#oTopic').textContent=STRATA[stratumOf(lv)].n;$('#oSubject').textContent=st.label;$('#oStreak').textContent=st.maxStreak;shareBtn.textContent='Partager';$('#oDepth').textContent=m?'−'+m+' m':'0 m';$('#oShovel').textContent=TOOLS[tool].n;st.tool=tool;
+    const un=$('#unlock'),nx=TOOLS[tool+1];un.textContent='';un.classList.toggle('new',tool>had);un.hidden=false;
+    if(tool>had){const b=document.createElement('b');b.textContent='Nouvel outil : '+TOOLS[tool].n+' !';un.append(b,' '+TOOLS[tool].b);sfx.tier()}
+    else un.textContent='Cumul : '+total+' m'+(nx?' · '+nx.n+' à '+nx.m+' m':' · outil ultime');$('#oBest').textContent=st.best?'−'+st.best+' m':'0 m';
     $('#stamp').hidden=!(rec&&m>0);refreshHud();showDepth(m);setMode('over');$('#again').focus({preventScroll:true});
   });
 }
@@ -919,7 +972,7 @@ $('#again').addEventListener('click',()=>{ac();startRun(st.topic)});
 $('#fresh').addEventListener('click',()=>{ac();sfx.tick();toIntro()});
 shareBtn.addEventListener('click',async()=>{
   ac();sfx.tick();const lv=world.level,url=location.origin+location.pathname;
-  const text='THE DIGGER — j’ai creusé jusqu’à −'+depthM(lv)+' m ('+STRATA[stratumOf(lv)].n+'), pelle '+tierName(lv)+'. Qui descend plus bas ?';
+  const text='THE DIGGER — j’ai creusé jusqu’à −'+Math.round(depthM(lv))+' m ('+STRATA[stratumOf(lv)].n+'), '+TOOLS[st.tool].n.toLowerCase()+'. Qui descend plus bas ?';
   try{if(navigator.share)await navigator.share({title:'THE DIGGER',text,url});else{await navigator.clipboard.writeText(text+' '+url);shareBtn.textContent='Copié !'}}catch(e){}
 });
 $('#snd').addEventListener('click',e=>{A.on=!A.on;e.currentTarget.setAttribute('aria-pressed',String(A.on));if(A.on){ac();sfx.pop()}else if(A.ctx)A.ctx.suspend().catch(()=>{})});
@@ -1218,7 +1271,7 @@ function rminer(x,y,o,P){ /* same miner as the quiz, with free feet, a hip drop,
   g.fillStyle=C.sun;g.beginPath();g.arc(13,-97,3.8,0,7);g.fill();
   eyes(o.mood,o.blink,o.look||0);
   g.fillStyle=g.strokeStyle=C.ink;let a1=o.arms&&o.arms[0],a2=o.hand2||(o.arms&&o.arms[1]);
-  if(P){const s=shovel(P,o.shine||0);a1=[s.gx+s.dx*LEN*P.a1,s.gy+s.dy*LEN*P.a1];if(!a2)a2=[s.gx+s.dx*LEN*P.a2,s.gy+s.dy*LEN*P.a2]}
+  if(P){const s=shovel(P,o.shine||0,o.stripe?'pelle':HT());a1=[s.gx+s.dx*LEN*P.a1,s.gy+s.dy*LEN*P.a1];if(!a2)a2=[s.gx+s.dx*LEN*P.a2,s.gy+s.dy*LEN*P.a2]}
   g.strokeStyle=C.ink;g.lineWidth=8;g.beginPath();if(a1){g.moveTo(12,-63);g.lineTo(a1[0],a1[1])}if(a2){g.moveTo(-12,-63);g.lineTo(a2[0],a2[1])}g.stroke();
   g.restore();
 }

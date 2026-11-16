@@ -28,8 +28,10 @@ Thèmes Rap US, Rap FR, Pop, Football, League of Legends et Culture générale :
 - « Grand filon » (ou Entrée sans rien taper) mélange tous les thèmes ; un thème de la banque peut être choisi ou tapé. Un sujet absent de la banque passe par Gemini en direct (plus lent).
 - Sources d'un sujet libre : l'article Wikipédia FR le plus proche, plus une recherche Tavily (`search_depth: "basic"`) tant que `TAVILY_API_KEY` existe et que Tavily répond. Si Tavily refuse (crédits épuisés, erreur), Wikipédia seul. Si aucune source n'est trouvée, Gemini répond de mémoire et la question n'a pas de lien.
 - Le lien « Voir la source » d'une question n'est gardé que si les mots de la bonne réponse figurent dans la page citée ; sinon une autre page collectée qui les contient est citée, ou le lien est retiré.
-- Difficulté selon la profondeur : facile jusqu'au niveau 5, moyen jusqu'au niveau 10, difficile ensuite. Les réponses sont remélangées à chaque affichage ; les questions déjà vues (mémorisées dans le navigateur) passent en dernier.
-- Jauge d'air : 15 s par question, moins en profondeur (9 s au minimum). À zéro, éboulement : une erreur.
+- Difficulté selon la profondeur : Friche (0 à 25 m) facile, Galerie (25 à 70 m) moyen, Abysse (70 m et plus) difficile, affichée sous le panneau de profondeur. Une autre difficulté n'est jamais servie : quand toutes les questions d'une difficulté ont été vues, seuls leurs identifiants sont oubliés. Les réponses sont remélangées à chaque affichage.
+- Mètres : une bonne réponse fait creuser 5, 7, 9… m ; une question difficile rapporte 25 % de plus (prime de risque).
+- Jauge d'air : 15 s (Friche), 12 s (Galerie), 9 s (Abysse). À zéro, éboulement : une erreur.
+- Outils, gagnés avec les mètres cumulés sur toutes les parties (ligne « Pelle » de l'écran de fin) : Pelle de chantier (0 m), Pioche en acier (250 m : +2 m par bonne réponse), Marteau-piqueur (750 m : +2 s d'air), Foreuse thermique (1 500 m : un casque réparé tous les 100 m d'une même descente). Les bonus se cumulent ; l'outil équipé est dessiné dans les mains du mineur.
 - Strates : Terre & Argile (0 m), Roche & Charbon (50 m), Galerie de Cristal (150 m), Filon d'Or (300 m), Noyau Magmatique (500 m). La strate atteinte est la ligne « Filon » de l'écran de fin.
 - Sans réseau, 16 questions intégrées servent de secours.
 
