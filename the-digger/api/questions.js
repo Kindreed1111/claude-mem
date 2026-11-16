@@ -193,7 +193,7 @@ module.exports = async (req, res) => {
     for (const model of models) {
       const left = 52000 - (Date.now() - t0);
       if (left < 4000) break;
-      const out = await ask(key, model, prompt, Math.min(25000, left)).catch(e => ({ status: 504, message: clip(e && e.message, 120) }));
+      const out = await ask(key, model, prompt, Math.min(STEADY.includes(model) ? 40000 : 25000, left)).catch(e => ({ status: 504, message: clip(e && e.message, 120) }));
       if (out.text) {
         working = model;
         res.setHeader('Cache-Control', 'no-store');
