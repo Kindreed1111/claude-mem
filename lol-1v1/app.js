@@ -11,7 +11,8 @@
   const START_AT = 10;           // index logique de départ (carte centrée au repos)
   const DURATION = { blue: 4300, red: 5100 };
   const SETTLE_MS = 380;
-  const TICK_MIN_GAP = 28;       // ms mini entre deux ticks d'une même roue
+  const TICK_MIN_GAP = 28;
+  const PRELOAD_TIMEOUT = 3000;  // ms max par source d'image au préchargement       // ms mini entre deux ticks d'une même roue
 
   // Roster de secours (écrit hors ligne, non vérifié) si Data Dragon est inaccessible
   const OFFLINE_IDS = ["Aatrox", "Ahri", "Akali", "Akshan", "Alistar", "Ambessa", "Amumu", "Anivia", "Annie", "Aphelios", "Ashe", "AurelionSol", "Aurora", "Azir", "Bard", "Belveth", "Blitzcrank", "Brand", "Braum", "Briar", "Caitlyn", "Camille", "Cassiopeia", "Chogath", "Corki", "Darius", "Diana", "DrMundo", "Draven", "Ekko", "Elise", "Evelynn", "Ezreal", "Fiddlesticks", "Fiora", "Fizz", "Galio", "Gangplank", "Garen", "Gnar", "Gragas", "Graves", "Gwen", "Hecarim", "Heimerdinger", "Hwei", "Illaoi", "Irelia", "Ivern", "Janna", "JarvanIV", "Jax", "Jayce", "Jhin", "Jinx", "KSante", "Kaisa", "Kalista", "Karma", "Karthus", "Kassadin", "Katarina", "Kayle", "Kayn", "Kennen", "Khazix", "Kindred", "Kled", "KogMaw", "Leblanc", "LeeSin", "Leona", "Lillia", "Lissandra", "Lucian", "Lulu", "Lux", "Malphite", "Malzahar", "Maokai", "MasterYi", "Mel", "Milio", "MissFortune", "MonkeyKing", "Mordekaiser", "Morgana", "Naafiri", "Nami", "Nasus", "Nautilus", "Neeko", "Nidalee", "Nilah", "Nocturne", "Nunu", "Olaf", "Orianna", "Ornn", "Pantheon", "Poppy", "Pyke", "Qiyana", "Quinn", "Rakan", "Rammus", "RekSai", "Rell", "Renata", "Renekton", "Rengar", "Riven", "Rumble", "Ryze", "Samira", "Sejuani", "Senna", "Seraphine", "Sett", "Shaco", "Shen", "Shyvana", "Singed", "Sion", "Sivir", "Skarner", "Smolder", "Sona", "Soraka", "Swain", "Sylas", "Syndra", "TahmKench", "Taliyah", "Talon", "Taric", "Teemo", "Thresh", "Tristana", "Trundle", "Tryndamere", "TwistedFate", "Twitch", "Udyr", "Urgot", "Varus", "Vayne", "Veigar", "Velkoz", "Vex", "Vi", "Viego", "Viktor", "Vladimir", "Volibear", "Warwick", "Xayah", "Xerath", "XinZhao", "Yasuo", "Yone", "Yorick", "Yuumi", "Zac", "Zed", "Zeri", "Ziggs", "Zilean", "Zoe", "Zyra"];
@@ -272,21 +273,35 @@
     return new Promise((resolve) => {
       const srcs = sourcesFor(champ.id);
       const nHumor = HUMOR_EXTS.length;
-      let i = 0;
+      let i = 0, settled = false, timer = 0;
       const img = new Image();
       img.decoding = 'async';
-      img.onload = () => {
-        const r = { src: srcs[i], humor: i < nHumor };
+      const finish = (r) => {
+        if (settled) return;
+        settled = true; clearTimeout(timer);
+        img.onload = img.onerror = null;
         S.resolved.set(champ.id, r);
-        const done = () => resolve(r);
-        if (img.decode) img.decode().then(done, done); else done();
+        resolve(r);
+      };
+      const tryAt = (k) => {
+        i = k;
+        clearTimeout(timer);
+        // une requête qui ne répond jamais ne doit pas bloquer le chargement
+        timer = setTimeout(() => img.onerror && img.onerror(), PRELOAD_TIMEOUT);
+        img.src = srcs[i];
+      };
+      img.onload = () => {
+        clearTimeout(timer);
+        const r = { src: srcs[i], humor: i < nHumor };
+        if (!img.decode) { finish(r); return; }
+        Promise.race([img.decode(), new Promise((ok) => setTimeout(ok, 800))]).then(() => finish(r), () => finish(r));
       };
       img.onerror = () => {
-        i += 1;
-        if (i < srcs.length) img.src = srcs[i];
-        else { const r = { src: null, humor: false }; S.resolved.set(champ.id, r); resolve(r); }
+        if (settled) return;
+        if (i + 1 < srcs.length) tryAt(i + 1);
+        else finish({ src: null, humor: false });
       };
-      img.src = srcs[0];
+      tryAt(0);
     });
   }
 
