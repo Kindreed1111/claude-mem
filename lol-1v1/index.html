@@ -92,7 +92,16 @@
       <div class="fighter fighter--blue" id="fighter-blue"></div>
       <div class="vs" aria-hidden="true"><span>VS</span></div>
       <div class="fighter fighter--red" id="fighter-red"></div>
+      <div class="predict" id="predict" hidden>
+        <div class="predict-head">
+          <span class="predict-side predict-side--blue"><b id="predict-blue">50%</b> <span id="predict-blue-name"></span></span>
+          <span class="predict-label" title="Estimation calculée sur les stats de base officielles (Data Dragon) au niveau 6 : PV, armure, résistance magique, dégâts, vitesse d'attaque, portée, notes attaque/défense/magie et classe. Ce n'est pas un winrate réel.">Pronostic · stats de base ⓘ</span>
+          <span class="predict-side predict-side--red"><span id="predict-red-name"></span> <b id="predict-red">50%</b></span>
+        </div>
+        <div class="predict-bar" id="predict-bar"><span></span></div>
+      </div>
       <div class="rule" id="rule">
+        <div class="rule-art" id="rule-art" aria-hidden="true"></div>
         <div class="rule-col">
           <span class="rule-label">Objectif</span>
           <span class="rule-objective" id="rule-objective">—</span>
