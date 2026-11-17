@@ -25,6 +25,7 @@
         <span class="brand-text">ROULETTE<small id="patch">Data Dragon —</small></span>
       </div>
       <div class="topbar-actions">
+        <button class="chip" id="btn-history" type="button" aria-controls="history" aria-expanded="false">📜 Historique <b id="history-count">0</b></button>
         <button class="chip" id="btn-export" type="button" title="Télécharger la liste exacte des noms de fichiers (depuis Data Dragon)" disabled>⬇ noms-fichiers.txt</button>
         <button class="chip" id="btn-mute" type="button" aria-pressed="false">🔊 Son : ON</button>
         <button class="chip chip--humor" id="btn-humor" type="button" aria-pressed="false">Mode Humour / BD : OFF</button>
@@ -41,13 +42,24 @@
       </section>
 
       <div class="center">
-        <div class="go-wrap" id="go-wrap">
-          <button class="go" id="go" type="button" disabled>
-            <span class="go-label" id="go-label">CHARGEMENT…</span>
-          </button>
+        <div class="versus-row">
+          <div class="player player--blue">
+            <input class="player-name" id="name-blue" type="text" maxlength="16" placeholder="Joueur Blue" spellcheck="false" autocomplete="off" aria-label="Nom du joueur Blue Side">
+            <span class="player-score" id="score-blue" aria-label="Score Blue">0</span>
+          </div>
+          <div class="go-wrap" id="go-wrap">
+            <button class="go" id="go" type="button" disabled>
+              <span class="go-label" id="go-label">CHARGEMENT…</span>
+            </button>
+          </div>
+          <div class="player player--red">
+            <span class="player-score" id="score-red" aria-label="Score Red">0</span>
+            <input class="player-name" id="name-red" type="text" maxlength="16" placeholder="Joueur Red" spellcheck="false" autocomplete="off" aria-label="Nom du joueur Red Side">
+          </div>
         </div>
         <div class="status" id="status" role="status" aria-live="polite">Chargement du roster…</div>
         <div class="progress" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
+        <div class="filters" id="filters" role="group" aria-label="Filtrer par classe"></div>
       </div>
 
       <section class="rail rail--red" aria-label="Red Side">
@@ -67,6 +79,11 @@
       <div class="fighter fighter--blue" id="fighter-blue"></div>
       <div class="vs" aria-hidden="true"><span>VS</span></div>
       <div class="fighter fighter--red" id="fighter-red"></div>
+      <div class="rule" id="rule">
+        <span class="rule-label">RÈGLE DU DUEL</span>
+        <span class="rule-text" id="rule-text">—</span>
+        <button class="rule-reroll" id="btn-rule" type="button" title="Tirer une autre règle" aria-label="Tirer une autre règle">🎲</button>
+      </div>
       <div class="faceoff-actions">
         <button class="btn btn--primary" id="btn-reroll" type="button">RELANCER UN 1V1</button>
         <button class="btn btn--ghost" id="btn-copy" type="button">COPIER LE DUEL</button>
@@ -74,6 +91,16 @@
       <button class="faceoff-close" id="btn-close" type="button" aria-label="Fermer">✕</button>
     </div>
   </div>
+
+  <aside class="history" id="history" hidden aria-label="Historique des duels">
+    <div class="history-head">
+      <h2>HISTORIQUE</h2>
+      <button class="chip" id="btn-reset" type="button">Remettre à zéro</button>
+      <button class="history-close" id="history-close" type="button" aria-label="Fermer">✕</button>
+    </div>
+    <ol class="history-list" id="history-list"></ol>
+    <p class="history-empty" id="history-empty">Aucun duel pour l'instant. Lance la roulette !</p>
+  </aside>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 

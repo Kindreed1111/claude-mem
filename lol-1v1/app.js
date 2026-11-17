@@ -12,11 +12,35 @@
   const DURATION = { blue: 4300, red: 5100 };
   const SETTLE_MS = 380;
   const TICK_MIN_GAP = 28;
-  const PRELOAD_TIMEOUT = 3000;  // ms max par source d'image au préchargement       // ms mini entre deux ticks d'une même roue
+  const PRELOAD_TIMEOUT = 3000;  // ms max par source d'image au préchargement
 
   // Roster de secours (Data Dragon 16.22.1, fr_FR) si l'API est inaccessible
   const OFFLINE_VERSION = '16.22.1';
-  const OFFLINE_ROSTER = [{"id": "Aatrox", "name": "Aatrox", "title": "Épée des Darkin"}, {"id": "Ahri", "name": "Ahri", "title": "Renarde à neuf queues"}, {"id": "Akali", "name": "Akali", "title": "Assassine rebelle"}, {"id": "Akshan", "name": "Akshan", "title": "Sentinelle rebelle"}, {"id": "Alistar", "name": "Alistar", "title": "Minotaure"}, {"id": "Ambessa", "name": "Ambessa", "title": "Matriarche de guerre"}, {"id": "Amumu", "name": "Amumu", "title": "Momie mélancolique"}, {"id": "Anivia", "name": "Anivia", "title": "Cryophénix"}, {"id": "Annie", "name": "Annie", "title": "Enfant des ténèbres"}, {"id": "Aphelios", "name": "Aphelios", "title": "Arme des Lunaris"}, {"id": "Ashe", "name": "Ashe", "title": "Archère de givre"}, {"id": "AurelionSol", "name": "Aurelion Sol", "title": "Forgeur d'étoiles"}, {"id": "Aurora", "name": "Aurora", "title": "Sorcière d'entre les mondes"}, {"id": "Azir", "name": "Azir", "title": "Empereur des sables"}, {"id": "Bard", "name": "Bard", "title": "Gardien errant"}, {"id": "Belveth", "name": "Bel'Veth", "title": "Impératrice du Néant"}, {"id": "Blitzcrank", "name": "Blitzcrank", "title": "Golem de vapeur"}, {"id": "Brand", "name": "Brand", "title": "Vengeur flamboyant"}, {"id": "Braum", "name": "Braum", "title": "Cœur de Freljord"}, {"id": "Briar", "name": "Briar", "title": "Faim insatiable"}, {"id": "Caitlyn", "name": "Caitlyn", "title": "Shérif de Piltover"}, {"id": "Camille", "name": "Camille", "title": "Ombre d'acier"}, {"id": "Cassiopeia", "name": "Cassiopeia", "title": "Étreinte du serpent"}, {"id": "Chogath", "name": "Cho'Gath", "title": "Terreur noire"}, {"id": "Corki", "name": "Corki", "title": "Artilleur téméraire"}, {"id": "Darius", "name": "Darius", "title": "Main de Noxus"}, {"id": "Diana", "name": "Diana", "title": "Mépris de la lune"}, {"id": "DrMundo", "name": "Dr. Mundo", "title": "Dément de Zaun"}, {"id": "Draven", "name": "Draven", "title": "Glorieux exécuteur"}, {"id": "Ekko", "name": "Ekko", "title": "Fractureur du temps"}, {"id": "Elise", "name": "Elise", "title": "Reine araignée"}, {"id": "Evelynn", "name": "Evelynn", "title": "Démon sadique"}, {"id": "Ezreal", "name": "Ezreal", "title": "Explorateur prodigue"}, {"id": "Fiddlesticks", "name": "Fiddlesticks", "title": "Effroi nocturne"}, {"id": "Fiora", "name": "Fiora", "title": "Sublime bretteuse"}, {"id": "Fizz", "name": "Fizz", "title": "Filou des mers"}, {"id": "Galio", "name": "Galio", "title": "Colosse"}, {"id": "Gangplank", "name": "Gangplank", "title": "Fléau des mers"}, {"id": "Garen", "name": "Garen", "title": "Force de Demacia"}, {"id": "Gnar", "name": "Gnar", "title": "Chaînon manquant"}, {"id": "Gragas", "name": "Gragas", "title": "Agitateur"}, {"id": "Graves", "name": "Graves", "title": "Hors-la-loi"}, {"id": "Gwen", "name": "Gwen", "title": "Couturière sacrée"}, {"id": "Hecarim", "name": "Hecarim", "title": "Ombre de la guerre"}, {"id": "Heimerdinger", "name": "Heimerdinger", "title": "Inventeur réputé"}, {"id": "Hwei", "name": "Hwei", "title": "Visionnaire"}, {"id": "Illaoi", "name": "Illaoi", "title": "Prêtresse du kraken"}, {"id": "Irelia", "name": "Irelia", "title": "Danseuse des lames"}, {"id": "Ivern", "name": "Ivern", "title": "Aîné de la forêt"}, {"id": "Janna", "name": "Janna", "title": "Avatar de l'air"}, {"id": "JarvanIV", "name": "Jarvan IV", "title": "Exemple demacien"}, {"id": "Jax", "name": "Jax", "title": "Maître d'armes"}, {"id": "Jayce", "name": "Jayce", "title": "Protecteur du futur"}, {"id": "Jhin", "name": "Jhin", "title": "Virtuose"}, {"id": "Jinx", "name": "Jinx", "title": "Gâchette folle"}, {"id": "KSante", "name": "K'Santé", "title": "Fierté de Nazumah"}, {"id": "Kaisa", "name": "Kai'Sa", "title": "Fille du Néant"}, {"id": "Kalista", "name": "Kalista", "title": "Lance de la vengeance"}, {"id": "Karma", "name": "Karma", "title": "Sagesse incarnée"}, {"id": "Karthus", "name": "Karthus", "title": "Liche"}, {"id": "Kassadin", "name": "Kassadin", "title": "Chasseur du Néant"}, {"id": "Katarina", "name": "Katarina", "title": "Lame sinistre"}, {"id": "Kayle", "name": "Kayle", "title": "Vertueuse"}, {"id": "Kayn", "name": "Kayn", "title": "Faucheur de l'ombre"}, {"id": "Kennen", "name": "Kennen", "title": "Cœur de la tempête"}, {"id": "Khazix", "name": "Kha'Zix", "title": "Faucheur du Néant"}, {"id": "Kindred", "name": "Kindred", "title": "Chasseurs éternels"}, {"id": "Kled", "name": "Kled", "title": "Cavalier colérique"}, {"id": "KogMaw", "name": "Kog'Maw", "title": "Gueule des abysses"}, {"id": "Leblanc", "name": "LeBlanc", "title": "Manipulatrice"}, {"id": "LeeSin", "name": "Lee Sin", "title": "Moine aveugle"}, {"id": "Leona", "name": "Leona", "title": "Aube radieuse"}, {"id": "Lillia", "name": "Lillia", "title": "Fleur timide"}, {"id": "Lissandra", "name": "Lissandra", "title": "Sorcière de glace"}, {"id": "Locke", "name": "Locke", "title": "Exorciste cendré"}, {"id": "Lucian", "name": "Lucian", "title": "Purificateur"}, {"id": "Lulu", "name": "Lulu", "title": "Sorcière féérique"}, {"id": "Lux", "name": "Lux", "title": "Dame de lumière"}, {"id": "Malphite", "name": "Malphite", "title": "Éclat du monolithe"}, {"id": "Malzahar", "name": "Malzahar", "title": "Prophète du Néant"}, {"id": "Maokai", "name": "Maokai", "title": "Tréant torturé"}, {"id": "MasterYi", "name": "Maître Yi", "title": "Fine lame Wuju"}, {"id": "Mel", "name": "Mel", "title": "Reflet de l'âme"}, {"id": "Milio", "name": "Milio", "title": "Douce flamme"}, {"id": "MissFortune", "name": "Miss Fortune", "title": "Chasseuse de primes"}, {"id": "Mordekaiser", "name": "Mordekaiser", "title": "Revenant de fer"}, {"id": "Morgana", "name": "Morgana", "title": "Déchue"}, {"id": "Naafiri", "name": "Naafiri", "title": "la meute de fer"}, {"id": "Nami", "name": "Nami", "title": "Aquamancienne"}, {"id": "Nasus", "name": "Nasus", "title": "Gardien des sables"}, {"id": "Nautilus", "name": "Nautilus", "title": "Titan des profondeurs"}, {"id": "Neeko", "name": "Neeko", "title": "Caméléon curieux"}, {"id": "Nidalee", "name": "Nidalee", "title": "Chasseresse bestiale"}, {"id": "Nilah", "name": "Nilah", "title": "Joie incarnée"}, {"id": "Nocturne", "name": "Nocturne", "title": "Éternel cauchemar"}, {"id": "Nunu", "name": "Nunu et Willump", "title": "Le Garçon et son yéti"}, {"id": "Olaf", "name": "Olaf", "title": "Berzerker"}, {"id": "Orianna", "name": "Orianna", "title": "Demoiselle mécanique"}, {"id": "Ornn", "name": "Ornn", "title": "Dieu de la forge volcanique"}, {"id": "Pantheon", "name": "Pantheon", "title": "Lance éternelle"}, {"id": "Poppy", "name": "Poppy", "title": "Gardienne du marteau"}, {"id": "Pyke", "name": "Pyke", "title": "Éventreur des abysses"}, {"id": "Qiyana", "name": "Qiyana", "title": "Impératrice des éléments"}, {"id": "Quinn", "name": "Quinn", "title": "Ailes de Demacia"}, {"id": "Rakan", "name": "Rakan", "title": "Charmeur"}, {"id": "Rammus", "name": "Rammus", "title": "Tatou blindé"}, {"id": "RekSai", "name": "Rek'Sai", "title": "Traqueuse du Néant"}, {"id": "Rell", "name": "Rell", "title": "Cavalière de fer"}, {"id": "Renata", "name": "Renata Glasc", "title": "Baronne de la chimie"}, {"id": "Renekton", "name": "Renekton", "title": "Dévoreur des sables"}, {"id": "Rengar", "name": "Rengar", "title": "Fier traqueur"}, {"id": "Riven", "name": "Riven", "title": "Exilée brisée"}, {"id": "Rumble", "name": "Rumble", "title": "Menace mécanisée"}, {"id": "Ryze", "name": "Ryze", "title": "Mage runique"}, {"id": "Samira", "name": "Samira", "title": "Rose du désert"}, {"id": "Sejuani", "name": "Sejuani", "title": "Fureur du nord"}, {"id": "Senna", "name": "Senna", "title": "Rédemptrice"}, {"id": "Sett", "name": "Sett", "title": "Patron"}, {"id": "Shaco", "name": "Shaco", "title": "Bouffon des ténèbres"}, {"id": "Shen", "name": "Shen", "title": "Œil du crépuscule"}, {"id": "Shyvana", "name": "Shyvana", "title": "Demi-dragon"}, {"id": "Singed", "name": "Singed", "title": "Chimiste fou"}, {"id": "Sion", "name": "Sion", "title": "Colosse mort-vivant"}, {"id": "Sivir", "name": "Sivir", "title": "Mercenaire du désert"}, {"id": "Skarner", "name": "Skarner", "title": "Souverain originel"}, {"id": "Smolder", "name": "Smolder", "title": "Dragonnet flamboyant"}, {"id": "Sona", "name": "Sona", "title": "Virtuose de la harpe"}, {"id": "Soraka", "name": "Soraka", "title": "Enfant des étoiles"}, {"id": "Swain", "name": "Swain", "title": "Grand général noxien"}, {"id": "Sylas", "name": "Sylas", "title": "Révolutionnaire déchaîné"}, {"id": "Syndra", "name": "Syndra", "title": "Souveraine obscure"}, {"id": "Seraphine", "name": "Séraphine", "title": "Chanteuse rêveuse"}, {"id": "TahmKench", "name": "Tahm Kench", "title": "Roi des rivières"}, {"id": "Taliyah", "name": "Taliyah", "title": "Tisseuse de pierres"}, {"id": "Talon", "name": "Talon", "title": "Lame des ténèbres"}, {"id": "Taric", "name": "Taric", "title": "Bouclier de Valoran"}, {"id": "Teemo", "name": "Teemo", "title": "Éclaireur de Bandle"}, {"id": "Thresh", "name": "Thresh", "title": "Garde aux chaînes"}, {"id": "Tristana", "name": "Tristana", "title": "Canonnière yordle"}, {"id": "Trundle", "name": "Trundle", "title": "Roi des trolls"}, {"id": "Tryndamere", "name": "Tryndamere", "title": "Roi barbare"}, {"id": "TwistedFate", "name": "Twisted Fate", "title": "Maître des cartes"}, {"id": "Twitch", "name": "Twitch", "title": "Semeur de peste"}, {"id": "Udyr", "name": "Udyr", "title": "Gardien des esprits"}, {"id": "Urgot", "name": "Urgot", "title": "Broyeur"}, {"id": "Varus", "name": "Varus", "title": "Flèche de la vengeance"}, {"id": "Vayne", "name": "Vayne", "title": "Chasseresse nocturne"}, {"id": "Veigar", "name": "Veigar", "title": "Seigneur des maléfices"}, {"id": "Velkoz", "name": "Vel'Koz", "title": "Œil du Néant"}, {"id": "Vex", "name": "Vex", "title": "Ombre du désespoir"}, {"id": "Vi", "name": "Vi", "title": "Pacifieuse de Piltover"}, {"id": "Viego", "name": "Viego", "title": "Roi déchu"}, {"id": "Viktor", "name": "Viktor", "title": "Héraut de l'arcane"}, {"id": "Vladimir", "name": "Vladimir", "title": "Saigneur pourpre"}, {"id": "Volibear", "name": "Volibear", "title": "Tempête impitoyable"}, {"id": "Warwick", "name": "Warwick", "title": "Fureur déchaînée de Zaun"}, {"id": "MonkeyKing", "name": "Wukong", "title": "Roi des singes"}, {"id": "Xayah", "name": "Xayah", "title": "Rebelle"}, {"id": "Xerath", "name": "Xerath", "title": "Mage suprême"}, {"id": "XinZhao", "name": "Xin Zhao", "title": "Sénéchal de Demacia"}, {"id": "Yasuo", "name": "Yasuo", "title": "Disgracié"}, {"id": "Yone", "name": "Yone", "title": "Inoublié"}, {"id": "Yorick", "name": "Yorick", "title": "Berger des âmes"}, {"id": "Yunara", "name": "Yunara", "title": "Foi inébranlable"}, {"id": "Yuumi", "name": "Yuumi", "title": "Gardienne du Grimoire"}, {"id": "Zaahen", "name": "Zaahen", "title": "Incorruptible"}, {"id": "Zac", "name": "Zac", "title": "Arme secrète"}, {"id": "Zed", "name": "Zed", "title": "Maître des ombres"}, {"id": "Zeri", "name": "Zeri", "title": "Étincelle de Zaun"}, {"id": "Ziggs", "name": "Ziggs", "title": "Expert des Hexplosifs"}, {"id": "Zilean", "name": "Zilean", "title": "Gardien du Temps"}, {"id": "Zoe", "name": "Zoé", "title": "Manifestation du Crépuscule"}, {"id": "Zyra", "name": "Zyra", "title": "Dame aux ronces"}];
+  const OFFLINE_ROSTER = [{"id": "Aatrox", "name": "Aatrox", "title": "Épée des Darkin", "tags": ["Fighter"]}, {"id": "Ahri", "name": "Ahri", "title": "Renarde à neuf queues", "tags": ["Mage", "Assassin"]}, {"id": "Akali", "name": "Akali", "title": "Assassine rebelle", "tags": ["Assassin"]}, {"id": "Akshan", "name": "Akshan", "title": "Sentinelle rebelle", "tags": ["Marksman", "Assassin"]}, {"id": "Alistar", "name": "Alistar", "title": "Minotaure", "tags": ["Tank", "Support"]}, {"id": "Ambessa", "name": "Ambessa", "title": "Matriarche de guerre", "tags": ["Fighter", "Assassin"]}, {"id": "Amumu", "name": "Amumu", "title": "Momie mélancolique", "tags": ["Tank", "Support"]}, {"id": "Anivia", "name": "Anivia", "title": "Cryophénix", "tags": ["Mage"]}, {"id": "Annie", "name": "Annie", "title": "Enfant des ténèbres", "tags": ["Mage", "Support"]}, {"id": "Aphelios", "name": "Aphelios", "title": "Arme des Lunaris", "tags": ["Marksman"]}, {"id": "Ashe", "name": "Ashe", "title": "Archère de givre", "tags": ["Marksman", "Support"]}, {"id": "AurelionSol", "name": "Aurelion Sol", "title": "Forgeur d'étoiles", "tags": ["Mage"]}, {"id": "Aurora", "name": "Aurora", "title": "Sorcière d'entre les mondes", "tags": ["Mage", "Assassin"]}, {"id": "Azir", "name": "Azir", "title": "Empereur des sables", "tags": ["Mage", "Marksman"]}, {"id": "Bard", "name": "Bard", "title": "Gardien errant", "tags": ["Support", "Mage"]}, {"id": "Belveth", "name": "Bel'Veth", "title": "Impératrice du Néant", "tags": ["Fighter"]}, {"id": "Blitzcrank", "name": "Blitzcrank", "title": "Golem de vapeur", "tags": ["Tank", "Support"]}, {"id": "Brand", "name": "Brand", "title": "Vengeur flamboyant", "tags": ["Mage", "Support"]}, {"id": "Braum", "name": "Braum", "title": "Cœur de Freljord", "tags": ["Tank", "Support"]}, {"id": "Briar", "name": "Briar", "title": "Faim insatiable", "tags": ["Fighter", "Assassin"]}, {"id": "Caitlyn", "name": "Caitlyn", "title": "Shérif de Piltover", "tags": ["Marksman"]}, {"id": "Camille", "name": "Camille", "title": "Ombre d'acier", "tags": ["Fighter", "Assassin"]}, {"id": "Cassiopeia", "name": "Cassiopeia", "title": "Étreinte du serpent", "tags": ["Mage"]}, {"id": "Chogath", "name": "Cho'Gath", "title": "Terreur noire", "tags": ["Tank", "Mage"]}, {"id": "Corki", "name": "Corki", "title": "Artilleur téméraire", "tags": ["Marksman", "Mage"]}, {"id": "Darius", "name": "Darius", "title": "Main de Noxus", "tags": ["Fighter", "Tank"]}, {"id": "Diana", "name": "Diana", "title": "Mépris de la lune", "tags": ["Fighter", "Assassin"]}, {"id": "DrMundo", "name": "Dr. Mundo", "title": "Dément de Zaun", "tags": ["Tank", "Fighter"]}, {"id": "Draven", "name": "Draven", "title": "Glorieux exécuteur", "tags": ["Marksman"]}, {"id": "Ekko", "name": "Ekko", "title": "Fractureur du temps", "tags": ["Assassin", "Mage"]}, {"id": "Elise", "name": "Elise", "title": "Reine araignée", "tags": ["Assassin", "Mage"]}, {"id": "Evelynn", "name": "Evelynn", "title": "Démon sadique", "tags": ["Assassin", "Mage"]}, {"id": "Ezreal", "name": "Ezreal", "title": "Explorateur prodigue", "tags": ["Marksman", "Mage"]}, {"id": "Fiddlesticks", "name": "Fiddlesticks", "title": "Effroi nocturne", "tags": ["Mage", "Support"]}, {"id": "Fiora", "name": "Fiora", "title": "Sublime bretteuse", "tags": ["Fighter", "Assassin"]}, {"id": "Fizz", "name": "Fizz", "title": "Filou des mers", "tags": ["Assassin", "Fighter"]}, {"id": "Galio", "name": "Galio", "title": "Colosse", "tags": ["Tank", "Mage"]}, {"id": "Gangplank", "name": "Gangplank", "title": "Fléau des mers", "tags": ["Fighter"]}, {"id": "Garen", "name": "Garen", "title": "Force de Demacia", "tags": ["Fighter", "Tank"]}, {"id": "Gnar", "name": "Gnar", "title": "Chaînon manquant", "tags": ["Fighter", "Tank"]}, {"id": "Gragas", "name": "Gragas", "title": "Agitateur", "tags": ["Fighter", "Mage"]}, {"id": "Graves", "name": "Graves", "title": "Hors-la-loi", "tags": ["Marksman"]}, {"id": "Gwen", "name": "Gwen", "title": "Couturière sacrée", "tags": ["Fighter"]}, {"id": "Hecarim", "name": "Hecarim", "title": "Ombre de la guerre", "tags": ["Fighter", "Tank"]}, {"id": "Heimerdinger", "name": "Heimerdinger", "title": "Inventeur réputé", "tags": ["Mage", "Support"]}, {"id": "Hwei", "name": "Hwei", "title": "Visionnaire", "tags": ["Mage", "Support"]}, {"id": "Illaoi", "name": "Illaoi", "title": "Prêtresse du kraken", "tags": ["Fighter", "Tank"]}, {"id": "Irelia", "name": "Irelia", "title": "Danseuse des lames", "tags": ["Fighter", "Assassin"]}, {"id": "Ivern", "name": "Ivern", "title": "Aîné de la forêt", "tags": ["Support", "Mage"]}, {"id": "Janna", "name": "Janna", "title": "Avatar de l'air", "tags": ["Support", "Mage"]}, {"id": "JarvanIV", "name": "Jarvan IV", "title": "Exemple demacien", "tags": ["Fighter", "Tank"]}, {"id": "Jax", "name": "Jax", "title": "Maître d'armes", "tags": ["Fighter"]}, {"id": "Jayce", "name": "Jayce", "title": "Protecteur du futur", "tags": ["Fighter", "Marksman"]}, {"id": "Jhin", "name": "Jhin", "title": "Virtuose", "tags": ["Marksman", "Mage"]}, {"id": "Jinx", "name": "Jinx", "title": "Gâchette folle", "tags": ["Marksman"]}, {"id": "KSante", "name": "K'Santé", "title": "Fierté de Nazumah", "tags": ["Tank", "Fighter"]}, {"id": "Kaisa", "name": "Kai'Sa", "title": "Fille du Néant", "tags": ["Marksman", "Mage"]}, {"id": "Kalista", "name": "Kalista", "title": "Lance de la vengeance", "tags": ["Marksman"]}, {"id": "Karma", "name": "Karma", "title": "Sagesse incarnée", "tags": ["Mage", "Support"]}, {"id": "Karthus", "name": "Karthus", "title": "Liche", "tags": ["Mage"]}, {"id": "Kassadin", "name": "Kassadin", "title": "Chasseur du Néant", "tags": ["Assassin", "Mage"]}, {"id": "Katarina", "name": "Katarina", "title": "Lame sinistre", "tags": ["Assassin", "Mage"]}, {"id": "Kayle", "name": "Kayle", "title": "Vertueuse", "tags": ["Marksman", "Mage"]}, {"id": "Kayn", "name": "Kayn", "title": "Faucheur de l'ombre", "tags": ["Fighter", "Assassin"]}, {"id": "Kennen", "name": "Kennen", "title": "Cœur de la tempête", "tags": ["Mage"]}, {"id": "Khazix", "name": "Kha'Zix", "title": "Faucheur du Néant", "tags": ["Assassin"]}, {"id": "Kindred", "name": "Kindred", "title": "Chasseurs éternels", "tags": ["Marksman"]}, {"id": "Kled", "name": "Kled", "title": "Cavalier colérique", "tags": ["Fighter"]}, {"id": "KogMaw", "name": "Kog'Maw", "title": "Gueule des abysses", "tags": ["Marksman", "Mage"]}, {"id": "Leblanc", "name": "LeBlanc", "title": "Manipulatrice", "tags": ["Assassin", "Mage"]}, {"id": "LeeSin", "name": "Lee Sin", "title": "Moine aveugle", "tags": ["Fighter", "Assassin"]}, {"id": "Leona", "name": "Leona", "title": "Aube radieuse", "tags": ["Tank", "Support"]}, {"id": "Lillia", "name": "Lillia", "title": "Fleur timide", "tags": ["Fighter", "Mage"]}, {"id": "Lissandra", "name": "Lissandra", "title": "Sorcière de glace", "tags": ["Mage"]}, {"id": "Locke", "name": "Locke", "title": "Exorciste cendré", "tags": ["Assassin", "Mage"]}, {"id": "Lucian", "name": "Lucian", "title": "Purificateur", "tags": ["Marksman", "Assassin"]}, {"id": "Lulu", "name": "Lulu", "title": "Sorcière féérique", "tags": ["Support", "Mage"]}, {"id": "Lux", "name": "Lux", "title": "Dame de lumière", "tags": ["Mage", "Support"]}, {"id": "Malphite", "name": "Malphite", "title": "Éclat du monolithe", "tags": ["Tank", "Mage"]}, {"id": "Malzahar", "name": "Malzahar", "title": "Prophète du Néant", "tags": ["Mage"]}, {"id": "Maokai", "name": "Maokai", "title": "Tréant torturé", "tags": ["Tank", "Support"]}, {"id": "MasterYi", "name": "Maître Yi", "title": "Fine lame Wuju", "tags": ["Fighter", "Assassin"]}, {"id": "Mel", "name": "Mel", "title": "Reflet de l'âme", "tags": ["Mage", "Support"]}, {"id": "Milio", "name": "Milio", "title": "Douce flamme", "tags": ["Support", "Mage"]}, {"id": "MissFortune", "name": "Miss Fortune", "title": "Chasseuse de primes", "tags": ["Marksman", "Mage"]}, {"id": "Mordekaiser", "name": "Mordekaiser", "title": "Revenant de fer", "tags": ["Fighter", "Mage"]}, {"id": "Morgana", "name": "Morgana", "title": "Déchue", "tags": ["Support", "Mage"]}, {"id": "Naafiri", "name": "Naafiri", "title": "la meute de fer", "tags": ["Assassin", "Fighter"]}, {"id": "Nami", "name": "Nami", "title": "Aquamancienne", "tags": ["Support", "Mage"]}, {"id": "Nasus", "name": "Nasus", "title": "Gardien des sables", "tags": ["Fighter", "Tank"]}, {"id": "Nautilus", "name": "Nautilus", "title": "Titan des profondeurs", "tags": ["Tank", "Support"]}, {"id": "Neeko", "name": "Neeko", "title": "Caméléon curieux", "tags": ["Mage", "Support"]}, {"id": "Nidalee", "name": "Nidalee", "title": "Chasseresse bestiale", "tags": ["Assassin", "Mage"]}, {"id": "Nilah", "name": "Nilah", "title": "Joie incarnée", "tags": ["Fighter", "Assassin"]}, {"id": "Nocturne", "name": "Nocturne", "title": "Éternel cauchemar", "tags": ["Fighter", "Assassin"]}, {"id": "Nunu", "name": "Nunu et Willump", "title": "Le Garçon et son yéti", "tags": ["Tank", "Mage"]}, {"id": "Olaf", "name": "Olaf", "title": "Berzerker", "tags": ["Fighter", "Tank"]}, {"id": "Orianna", "name": "Orianna", "title": "Demoiselle mécanique", "tags": ["Mage", "Support"]}, {"id": "Ornn", "name": "Ornn", "title": "Dieu de la forge volcanique", "tags": ["Tank"]}, {"id": "Pantheon", "name": "Pantheon", "title": "Lance éternelle", "tags": ["Fighter", "Assassin"]}, {"id": "Poppy", "name": "Poppy", "title": "Gardienne du marteau", "tags": ["Tank", "Fighter"]}, {"id": "Pyke", "name": "Pyke", "title": "Éventreur des abysses", "tags": ["Support", "Assassin"]}, {"id": "Qiyana", "name": "Qiyana", "title": "Impératrice des éléments", "tags": ["Assassin"]}, {"id": "Quinn", "name": "Quinn", "title": "Ailes de Demacia", "tags": ["Marksman", "Assassin"]}, {"id": "Rakan", "name": "Rakan", "title": "Charmeur", "tags": ["Support"]}, {"id": "Rammus", "name": "Rammus", "title": "Tatou blindé", "tags": ["Tank"]}, {"id": "RekSai", "name": "Rek'Sai", "title": "Traqueuse du Néant", "tags": ["Fighter", "Tank"]}, {"id": "Rell", "name": "Rell", "title": "Cavalière de fer", "tags": ["Tank", "Support"]}, {"id": "Renata", "name": "Renata Glasc", "title": "Baronne de la chimie", "tags": ["Support", "Mage"]}, {"id": "Renekton", "name": "Renekton", "title": "Dévoreur des sables", "tags": ["Fighter", "Tank"]}, {"id": "Rengar", "name": "Rengar", "title": "Fier traqueur", "tags": ["Assassin", "Fighter"]}, {"id": "Riven", "name": "Riven", "title": "Exilée brisée", "tags": ["Fighter", "Assassin"]}, {"id": "Rumble", "name": "Rumble", "title": "Menace mécanisée", "tags": ["Fighter", "Mage"]}, {"id": "Ryze", "name": "Ryze", "title": "Mage runique", "tags": ["Mage"]}, {"id": "Samira", "name": "Samira", "title": "Rose du désert", "tags": ["Marksman", "Assassin"]}, {"id": "Sejuani", "name": "Sejuani", "title": "Fureur du nord", "tags": ["Tank"]}, {"id": "Senna", "name": "Senna", "title": "Rédemptrice", "tags": ["Support", "Marksman"]}, {"id": "Sett", "name": "Sett", "title": "Patron", "tags": ["Fighter", "Tank"]}, {"id": "Shaco", "name": "Shaco", "title": "Bouffon des ténèbres", "tags": ["Assassin"]}, {"id": "Shen", "name": "Shen", "title": "Œil du crépuscule", "tags": ["Tank"]}, {"id": "Shyvana", "name": "Shyvana", "title": "Demi-dragon", "tags": ["Fighter", "Tank"]}, {"id": "Singed", "name": "Singed", "title": "Chimiste fou", "tags": ["Tank", "Mage"]}, {"id": "Sion", "name": "Sion", "title": "Colosse mort-vivant", "tags": ["Tank", "Fighter"]}, {"id": "Sivir", "name": "Sivir", "title": "Mercenaire du désert", "tags": ["Marksman"]}, {"id": "Skarner", "name": "Skarner", "title": "Souverain originel", "tags": ["Tank", "Fighter"]}, {"id": "Smolder", "name": "Smolder", "title": "Dragonnet flamboyant", "tags": ["Marksman", "Mage"]}, {"id": "Sona", "name": "Sona", "title": "Virtuose de la harpe", "tags": ["Support", "Mage"]}, {"id": "Soraka", "name": "Soraka", "title": "Enfant des étoiles", "tags": ["Support", "Mage"]}, {"id": "Swain", "name": "Swain", "title": "Grand général noxien", "tags": ["Mage", "Support"]}, {"id": "Sylas", "name": "Sylas", "title": "Révolutionnaire déchaîné", "tags": ["Mage", "Assassin"]}, {"id": "Syndra", "name": "Syndra", "title": "Souveraine obscure", "tags": ["Mage"]}, {"id": "Seraphine", "name": "Séraphine", "title": "Chanteuse rêveuse", "tags": ["Support", "Mage"]}, {"id": "TahmKench", "name": "Tahm Kench", "title": "Roi des rivières", "tags": ["Tank", "Support"]}, {"id": "Taliyah", "name": "Taliyah", "title": "Tisseuse de pierres", "tags": ["Mage", "Support"]}, {"id": "Talon", "name": "Talon", "title": "Lame des ténèbres", "tags": ["Assassin"]}, {"id": "Taric", "name": "Taric", "title": "Bouclier de Valoran", "tags": ["Support", "Tank"]}, {"id": "Teemo", "name": "Teemo", "title": "Éclaireur de Bandle", "tags": ["Marksman", "Mage"]}, {"id": "Thresh", "name": "Thresh", "title": "Garde aux chaînes", "tags": ["Support", "Tank"]}, {"id": "Tristana", "name": "Tristana", "title": "Canonnière yordle", "tags": ["Marksman", "Assassin"]}, {"id": "Trundle", "name": "Trundle", "title": "Roi des trolls", "tags": ["Fighter", "Tank"]}, {"id": "Tryndamere", "name": "Tryndamere", "title": "Roi barbare", "tags": ["Fighter", "Assassin"]}, {"id": "TwistedFate", "name": "Twisted Fate", "title": "Maître des cartes", "tags": ["Mage", "Marksman"]}, {"id": "Twitch", "name": "Twitch", "title": "Semeur de peste", "tags": ["Marksman", "Assassin"]}, {"id": "Udyr", "name": "Udyr", "title": "Gardien des esprits", "tags": ["Fighter", "Tank"]}, {"id": "Urgot", "name": "Urgot", "title": "Broyeur", "tags": ["Fighter", "Tank"]}, {"id": "Varus", "name": "Varus", "title": "Flèche de la vengeance", "tags": ["Marksman", "Mage"]}, {"id": "Vayne", "name": "Vayne", "title": "Chasseresse nocturne", "tags": ["Marksman", "Assassin"]}, {"id": "Veigar", "name": "Veigar", "title": "Seigneur des maléfices", "tags": ["Mage"]}, {"id": "Velkoz", "name": "Vel'Koz", "title": "Œil du Néant", "tags": ["Mage", "Support"]}, {"id": "Vex", "name": "Vex", "title": "Ombre du désespoir", "tags": ["Mage"]}, {"id": "Vi", "name": "Vi", "title": "Pacifieuse de Piltover", "tags": ["Fighter", "Assassin"]}, {"id": "Viego", "name": "Viego", "title": "Roi déchu", "tags": ["Fighter", "Assassin"]}, {"id": "Viktor", "name": "Viktor", "title": "Héraut de l'arcane", "tags": ["Mage"]}, {"id": "Vladimir", "name": "Vladimir", "title": "Saigneur pourpre", "tags": ["Mage", "Fighter"]}, {"id": "Volibear", "name": "Volibear", "title": "Tempête impitoyable", "tags": ["Fighter", "Tank"]}, {"id": "Warwick", "name": "Warwick", "title": "Fureur déchaînée de Zaun", "tags": ["Fighter", "Tank"]}, {"id": "MonkeyKing", "name": "Wukong", "title": "Roi des singes", "tags": ["Fighter", "Tank"]}, {"id": "Xayah", "name": "Xayah", "title": "Rebelle", "tags": ["Marksman"]}, {"id": "Xerath", "name": "Xerath", "title": "Mage suprême", "tags": ["Mage", "Support"]}, {"id": "XinZhao", "name": "Xin Zhao", "title": "Sénéchal de Demacia", "tags": ["Fighter", "Tank"]}, {"id": "Yasuo", "name": "Yasuo", "title": "Disgracié", "tags": ["Fighter", "Assassin"]}, {"id": "Yone", "name": "Yone", "title": "Inoublié", "tags": ["Fighter", "Assassin"]}, {"id": "Yorick", "name": "Yorick", "title": "Berger des âmes", "tags": ["Fighter", "Tank"]}, {"id": "Yunara", "name": "Yunara", "title": "Foi inébranlable", "tags": ["Marksman"]}, {"id": "Yuumi", "name": "Yuumi", "title": "Gardienne du Grimoire", "tags": ["Support", "Mage"]}, {"id": "Zaahen", "name": "Zaahen", "title": "Incorruptible", "tags": ["Fighter"]}, {"id": "Zac", "name": "Zac", "title": "Arme secrète", "tags": ["Tank", "Fighter"]}, {"id": "Zed", "name": "Zed", "title": "Maître des ombres", "tags": ["Assassin"]}, {"id": "Zeri", "name": "Zeri", "title": "Étincelle de Zaun", "tags": ["Marksman"]}, {"id": "Ziggs", "name": "Ziggs", "title": "Expert des Hexplosifs", "tags": ["Mage"]}, {"id": "Zilean", "name": "Zilean", "title": "Gardien du Temps", "tags": ["Support", "Mage"]}, {"id": "Zoe", "name": "Zoé", "title": "Manifestation du Crépuscule", "tags": ["Mage"]}, {"id": "Zyra", "name": "Zyra", "title": "Dame aux ronces", "tags": ["Mage", "Support"]}];
+
+  // Règles du duel (tirées au sort à chaque face-à-face)
+  const RULES = [
+    'Premier sang',
+    'Premier à 2 kills',
+    'Premier à 100 sbires',
+    'Première tour détruite',
+    'Premier sang · Flash interdit',
+    'Premier à 2 kills · retour base interdit',
+    'Premier sang · touche R (ultime) interdite',
+    'Premier sang · Ignite + Ghost obligatoires',
+    'Premier à 2 kills · aucune potion',
+    'Premier sang · aucun achat avant le kill',
+    'Premier sang · bottes interdites',
+    'Le plus de sbires à 10 min',
+    'Premier sang · interdit de quitter la lane',
+    'Premier à 2 kills · le perdant fait /dance sous la tour adverse',
+    'Premier sang · le perdant écrit « gg ez » à lui-même',
+    'Premier à 3 kills · mode chaos, tout est permis',
+  ];
+  const CLASSES = [
+    ['Fighter', 'Combattant'], ['Mage', 'Mage'], ['Assassin', 'Assassin'],
+    ['Tank', 'Tank'], ['Support', 'Support'], ['Marksman', 'Tireur'],
+  ];
 
   const EMOJIS = ['😂', '💀', '🔥', '🤡', '😤', '🧂', '🗿', '😎', '🤯', '🥶', '🐐', '💅', '🫠', '😭', '🍿', '🤓', '👀', '🙃'];
   const PUNCHLINES = [
@@ -63,6 +87,8 @@
     muted: readPref('lol1v1.muted') === '1',
     humor: readPref('lol1v1.humor') === '1',
     lastDuel: null,
+    filter: new Set((readPref('lol1v1.filter') || '').split(',').filter(Boolean)),
+    game: loadGame(),
   };
 
   const $ = (s) => document.querySelector(s);
@@ -71,7 +97,11 @@
     status: $('#status'), progress: $('.progress'), progressBar: $('#progress-bar'),
     patch: $('#patch'), mute: $('#btn-mute'), humor: $('#btn-humor'), exportBtn: $('#btn-export'),
     faceoff: $('#faceoff'), fBlue: $('#fighter-blue'), fRed: $('#fighter-red'),
-    reroll: $('#btn-reroll'), copy: $('#btn-copy'), close: $('#btn-close'), toast: $('#toast'),
+    reroll: $('#btn-reroll'),
+    nameBlue: $('#name-blue'), nameRed: $('#name-red'), scoreBlue: $('#score-blue'), scoreRed: $('#score-red'),
+    filters: $('#filters'), ruleText: $('#rule-text'), ruleBtn: $('#btn-rule'),
+    historyBtn: $('#btn-history'), historyCount: $('#history-count'), history: $('#history'),
+    historyList: $('#history-list'), historyEmpty: $('#history-empty'), historyClose: $('#history-close'), reset: $('#btn-reset'), copy: $('#btn-copy'), close: $('#btn-close'), toast: $('#toast'),
   };
 
   function makeReel(side, selector, reversed) {
@@ -99,6 +129,15 @@
      ========================================================= */
   function readPref(k) { try { return localStorage.getItem(k); } catch (_) { return null; } }
   function writePref(k, v) { try { localStorage.setItem(k, v); } catch (_) { /* ignore */ } }
+  function loadGame() {
+    const empty = { names: { blue: '', red: '' }, score: { blue: 0, red: 0 }, history: [] };
+    try {
+      const g = JSON.parse(readPref('lol1v1.game') || 'null');
+      if (g && g.score && Array.isArray(g.history)) return { ...empty, ...g, names: { ...empty.names, ...(g.names || {}) } };
+    } catch (_) { /* ignore */ }
+    return empty;
+  }
+  function saveGame() { writePref('lol1v1.game', JSON.stringify(S.game)); }
   const rand = (n) => Math.floor(Math.random() * n);
   const pick = (arr) => arr[rand(arr.length)];
   function shuffle(a) {
@@ -419,16 +458,23 @@
 
   // Ruban = 100 % du roster mélangé. Gagnant à l'index totalChampions - 15.
   // Les 25 cartes visibles au repos sont recopiées en tête pour un départ sans saut.
+  function pool() {
+    if (!S.filter.size) return S.champions;
+    return S.champions.filter((c) => (c.tags || []).some((t) => S.filter.has(t)));
+  }
+
   function buildSpinStrip(reel, winner) {
-    const all = S.champions;
-    const N = all.length;
+    const all = pool();
     const head = reel.logical.length
       ? reel.logical.slice(Math.max(0, reel.restLogical - START_AT), reel.restLogical + AFTER_WIN)
       : [];
     const headSet = new Set(head);
     const rest = shuffle(all.filter((c) => !headSet.has(c) && c !== winner));
-    const strip = head.concat(rest);
-    const landIdx = Math.max(head.length, N - AFTER_WIN);
+    let strip = head.concat(rest);
+    // petit pool (filtre) : on répète le pool pour garder un long défilement
+    while (strip.length < head.length + 3 * AFTER_WIN) strip = strip.concat(shuffle(all.filter((c) => c !== winner)));
+    // après insertion, le gagnant est à l'index (longueur totale - 15)
+    const landIdx = Math.max(head.length, strip.length + 1 - AFTER_WIN);
     strip.splice(landIdx, 0, winner);
     const startIdx = head.length ? Math.min(START_AT, reel.restLogical) : START_AT;
     return { strip, landIdx, startIdx };
@@ -519,9 +565,11 @@
     Audio.ensure();
     Audio.whoosh();
 
-    const blue = pick(S.champions);
-    let red = pick(S.champions);
-    while (red === blue) red = pick(S.champions);
+    const P = pool();
+    const blue = pick(P);
+    let red = pick(P);
+    while (red === blue) red = pick(P);
+    els.filters.classList.add('locked');
 
     // préchargement des visuels du face-à-face pendant la rotation
     const artReady = Promise.all([blue, red].map((c) => {
@@ -536,7 +584,15 @@
     ]);
     await Promise.race([artReady, new Promise((r) => setTimeout(r, 600))]);
 
-    S.lastDuel = { blue, red };
+    S.lastDuel = { blue, red, rule: pick(RULES), winner: null };
+    S.game.history.unshift({
+      blue: { id: blue.id, name: blue.name }, red: { id: red.id, name: red.name },
+      rule: S.lastDuel.rule, winner: null, ts: Date.now(),
+    });
+    S.game.history = S.game.history.slice(0, 50);
+    saveGame();
+    renderGame();
+    els.filters.classList.remove('locked');
     els.status.textContent = `${blue.name} vs ${red.name}`;
     showFaceoff(blue, red);
     S.spinning = false;
@@ -560,7 +616,8 @@
       `<span class="fighter-badge" aria-hidden="true">${d.emoji}</span>` +
       `<div class="fighter-name">${escapeHTML(champ.name)}</div>` +
       `<div class="fighter-title">${escapeHTML(champ.title)}</div>` +
-      `<div class="fighter-punch">${escapeHTML(d.punch)}</div>`);
+      `<div class="fighter-punch">${escapeHTML(d.punch)}</div>` +
+      `<button class="btn-win" type="button" data-side="${side}">🏆 VICTOIRE <span class="win-name"></span></button>`);
   }
 
   function showFaceoff(blue, red) {
@@ -570,12 +627,138 @@
     void els.stage.offsetWidth;
     els.stage.classList.add('shake');
     Audio.gong();
+    renderWinState();
+    rollRule(S.lastDuel.rule, 900);
     // relance les animations CSS
     els.faceoff.hidden = false;
-    els.faceoff.querySelectorAll('.faceoff-backdrop, .faceoff-flash, .fighter, .vs, .faceoff-actions').forEach((n) => {
+    els.faceoff.querySelectorAll('.faceoff-backdrop, .faceoff-flash, .fighter, .vs, .rule, .faceoff-actions').forEach((n) => {
       n.style.animation = 'none'; void n.offsetWidth; n.style.animation = '';
     });
     setTimeout(() => els.reroll.focus({ preventScroll: true }), 50);
+  }
+
+  // Défilement « machine à sous » de la règle, qui ralentit puis se fige
+  function rollRule(finalRule, delayMs) {
+    clearTimeout(rollRule.t);
+    const box = els.ruleText.parentElement;
+    box.classList.remove('locked-in');
+    box.classList.add('rolling');
+    els.ruleBtn.disabled = true;
+    let k = 0;
+    const steps = 16;
+    const next = () => {
+      if (k < steps) {
+        els.ruleText.textContent = pick(RULES);
+        if (k % 2 === 0) Audio.tick('red', 0.3);
+        k += 1;
+        rollRule.t = setTimeout(next, 40 + k * k * 1.3);
+      } else {
+        els.ruleText.textContent = finalRule;
+        box.classList.remove('rolling');
+        void box.offsetWidth;
+        box.classList.add('locked-in');
+        els.ruleBtn.disabled = false;
+        Audio.impact('red');
+      }
+    };
+    els.ruleText.textContent = '…';
+    rollRule.t = setTimeout(next, delayMs || 0);
+  }
+
+  function rerollRule() {
+    if (!S.lastDuel) return;
+    let r = pick(RULES);
+    while (RULES.length > 1 && r === S.lastDuel.rule) r = pick(RULES);
+    S.lastDuel.rule = r;
+    if (S.game.history[0]) { S.game.history[0].rule = r; saveGame(); renderHistory(); }
+    rollRule(r, 0);
+  }
+
+  /* ---------- Joueurs, scores, historique ---------- */
+  const playerName = (side) => (S.game.names[side] || '').trim() || (side === 'blue' ? 'Blue' : 'Red');
+
+  function setWinner(side) {
+    const duel = S.game.history[0];
+    if (!duel || !S.lastDuel) return;
+    if (duel.winner === side) return;
+    if (duel.winner) S.game.score[duel.winner] = Math.max(0, S.game.score[duel.winner] - 1);
+    duel.winner = side;
+    S.lastDuel.winner = side;
+    S.game.score[side] += 1;
+    saveGame();
+    renderGame();
+    renderWinState();
+    Audio.impact(side);
+    showToast(`🏆 Point pour ${playerName(side)} (${S.game.score.blue} – ${S.game.score.red})`);
+  }
+
+  function renderWinState() {
+    const w = S.lastDuel && S.lastDuel.winner;
+    [['blue', els.fBlue], ['red', els.fRed]].forEach(([side, host]) => {
+      host.classList.toggle('is-champ', w === side);
+      host.classList.toggle('is-loser', !!w && w !== side);
+      const btn = host.querySelector('.btn-win');
+      if (btn) {
+        btn.querySelector('.win-name').textContent = playerName(side);
+        btn.setAttribute('aria-pressed', String(w === side));
+      }
+    });
+  }
+
+  function renderHistory() {
+    const H = S.game.history;
+    els.historyCount.textContent = String(H.length);
+    els.historyEmpty.hidden = H.length > 0;
+    els.historyList.replaceChildren(...H.map((d) => {
+      const li = document.createElement('li');
+      li.className = `h-item${d.winner ? ` h-item--${d.winner}` : ''}`;
+      const res = d.winner ? `🏆 ${escapeHTML(playerName(d.winner))}` : 'en attente';
+      li.innerHTML =
+        `<div class="h-duel"><span class="h-blue">${escapeHTML(d.blue.name)}</span>` +
+        `<span class="h-vs">vs</span><span class="h-red">${escapeHTML(d.red.name)}</span></div>` +
+        `<div class="h-meta"><span>${escapeHTML(d.rule || '')}</span><span class="h-res">${res}</span></div>`;
+      return li;
+    }));
+  }
+
+  function renderGame() {
+    [['blue', els.scoreBlue], ['red', els.scoreRed]].forEach(([side, el]) => {
+      const v = String(S.game.score[side]);
+      if (el.textContent !== v) { el.textContent = v; el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump'); }
+    });
+    if (document.activeElement !== els.nameBlue) els.nameBlue.value = S.game.names.blue || '';
+    if (document.activeElement !== els.nameRed) els.nameRed.value = S.game.names.red || '';
+    renderHistory();
+  }
+
+  function toggleHistory(open) {
+    const show = open === undefined ? els.history.hidden : open;
+    els.history.hidden = !show;
+    els.historyBtn.setAttribute('aria-expanded', String(show));
+  }
+
+  /* ---------- Filtres par classe ---------- */
+  function renderFilters() {
+    const btn = (key, label, active) =>
+      `<button class="filter${active ? ' is-on' : ''}" type="button" data-tag="${key}" aria-pressed="${active}">${label}</button>`;
+    els.filters.innerHTML = btn('', 'Tous', S.filter.size === 0) +
+      CLASSES.map(([k, l]) => btn(k, l, S.filter.has(k))).join('');
+  }
+
+  function onFilterClick(e) {
+    const b = e.target.closest('.filter');
+    if (!b || S.spinning) return;
+    const tag = b.dataset.tag;
+    if (!tag) S.filter.clear();
+    else if (S.filter.has(tag)) S.filter.delete(tag);
+    else S.filter.add(tag);
+    writePref('lol1v1.filter', [...S.filter].join(','));
+    renderFilters();
+    if (S.ready) {
+      const n = pool().length;
+      const names = CLASSES.filter(([k]) => S.filter.has(k)).map(([, l]) => l).join(' + ');
+      els.status.textContent = S.filter.size ? `${n} champions · ${names}` : `${n} champions · roster complet`;
+    }
   }
 
   function hideFaceoff() {
@@ -588,12 +771,15 @@
     return [
       '⚔️ **DUEL 1V1 — LEAGUE OF LEGENDS** ⚔️',
       '',
-      `🔵 **BLUE SIDE** : **${blue.name}**${blue.title ? ` — *${blue.title}*` : ''}`,
+      `🔵 **${playerName('blue')}** : **${blue.name}**${blue.title ? ` — *${blue.title}*` : ''}`,
       '                 🆚',
-      `🔴 **RED SIDE** : **${red.name}**${red.title ? ` — *${red.title}*` : ''}`,
+      `🔴 **${playerName('red')}** : **${red.name}**${red.title ? ` — *${red.title}*` : ''}`,
       '',
       `> ${db.emoji} ${blue.name} : « ${db.punch} »`,
       `> ${dr.emoji} ${red.name} : « ${dr.punch} »`,
+      '',
+      `📜 **Règle** : ${S.lastDuel.rule}`,
+      `📊 Score : ${playerName('blue')} ${S.game.score.blue} – ${S.game.score.red} ${playerName('red')}`,
       '',
       `🎲 Tiré au sort · Data Dragon ${S.version}`,
       'Qui gagne ? Réagissez 🔵 ou 🔴',
@@ -670,7 +856,7 @@
       els.patch.textContent = `Data Dragon ${S.version}`;
       const data = await fetchJSON(`${DD}/cdn/${S.version}/data/fr_FR/champion.json`);
       S.champions = Object.values(data.data)
-        .map((c) => ({ id: c.id, name: c.name, title: c.title }))
+        .map((c) => ({ id: c.id, name: c.name, title: c.title, tags: c.tags || [] }))
         .sort((a, b) => a.name.localeCompare(b.name, 'fr'));
       if (S.champions.length < 2) throw new Error('Roster vide');
     } catch (err) {
@@ -710,6 +896,31 @@
   els.copy.addEventListener('click', copyDuel);
   els.close.addEventListener('click', hideFaceoff);
   els.exportBtn.addEventListener('click', exportNames);
+  els.ruleBtn.addEventListener('click', rerollRule);
+  els.faceoff.addEventListener('click', (e) => {
+    const b = e.target.closest('.btn-win');
+    if (b) setWinner(b.dataset.side);
+  });
+  els.filters.addEventListener('click', onFilterClick);
+  els.historyBtn.addEventListener('click', () => toggleHistory());
+  els.historyClose.addEventListener('click', () => toggleHistory(false));
+  els.reset.addEventListener('click', () => {
+    if (!window.confirm('Remettre les scores et l\'historique à zéro ?')) return;
+    S.game.score = { blue: 0, red: 0 };
+    S.game.history = [];
+    saveGame();
+    renderGame();
+    showToast('Scores remis à zéro');
+  });
+  [['blue', els.nameBlue], ['red', els.nameRed]].forEach(([side, input]) => {
+    input.addEventListener('input', () => {
+      S.game.names[side] = input.value.slice(0, 16);
+      saveGame();
+      renderHistory();
+      renderWinState();
+    });
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') input.blur(); });
+  });
   els.mute.addEventListener('click', () => {
     S.muted = !S.muted;
     writePref('lol1v1.muted', S.muted ? '1' : '0');
@@ -722,7 +933,9 @@
     renderToggles();
   });
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !els.faceoff.hidden) hideFaceoff();
+    if (e.key !== 'Escape') return;
+    if (!els.history.hidden) toggleHistory(false);
+    else if (!els.faceoff.hidden) hideFaceoff();
   });
   let resizeRaf = 0;
   window.addEventListener('resize', () => {
@@ -734,5 +947,7 @@
   });
 
   renderToggles();
+  renderFilters();
+  renderGame();
   boot();
 })();
