@@ -13,6 +13,9 @@
   const SETTLE_MS = 380;
   const TICK_MIN_GAP = 28;       // ms mini entre deux ticks d'une même roue
 
+  // Roster de secours (écrit hors ligne, non vérifié) si Data Dragon est inaccessible
+  const OFFLINE_IDS = ["Aatrox", "Ahri", "Akali", "Akshan", "Alistar", "Ambessa", "Amumu", "Anivia", "Annie", "Aphelios", "Ashe", "AurelionSol", "Aurora", "Azir", "Bard", "Belveth", "Blitzcrank", "Brand", "Braum", "Briar", "Caitlyn", "Camille", "Cassiopeia", "Chogath", "Corki", "Darius", "Diana", "DrMundo", "Draven", "Ekko", "Elise", "Evelynn", "Ezreal", "Fiddlesticks", "Fiora", "Fizz", "Galio", "Gangplank", "Garen", "Gnar", "Gragas", "Graves", "Gwen", "Hecarim", "Heimerdinger", "Hwei", "Illaoi", "Irelia", "Ivern", "Janna", "JarvanIV", "Jax", "Jayce", "Jhin", "Jinx", "KSante", "Kaisa", "Kalista", "Karma", "Karthus", "Kassadin", "Katarina", "Kayle", "Kayn", "Kennen", "Khazix", "Kindred", "Kled", "KogMaw", "Leblanc", "LeeSin", "Leona", "Lillia", "Lissandra", "Lucian", "Lulu", "Lux", "Malphite", "Malzahar", "Maokai", "MasterYi", "Mel", "Milio", "MissFortune", "MonkeyKing", "Mordekaiser", "Morgana", "Naafiri", "Nami", "Nasus", "Nautilus", "Neeko", "Nidalee", "Nilah", "Nocturne", "Nunu", "Olaf", "Orianna", "Ornn", "Pantheon", "Poppy", "Pyke", "Qiyana", "Quinn", "Rakan", "Rammus", "RekSai", "Rell", "Renata", "Renekton", "Rengar", "Riven", "Rumble", "Ryze", "Samira", "Sejuani", "Senna", "Seraphine", "Sett", "Shaco", "Shen", "Shyvana", "Singed", "Sion", "Sivir", "Skarner", "Smolder", "Sona", "Soraka", "Swain", "Sylas", "Syndra", "TahmKench", "Taliyah", "Talon", "Taric", "Teemo", "Thresh", "Tristana", "Trundle", "Tryndamere", "TwistedFate", "Twitch", "Udyr", "Urgot", "Varus", "Vayne", "Veigar", "Velkoz", "Vex", "Vi", "Viego", "Viktor", "Vladimir", "Volibear", "Warwick", "Xayah", "Xerath", "XinZhao", "Yasuo", "Yone", "Yorick", "Yuumi", "Zac", "Zed", "Zeri", "Ziggs", "Zilean", "Zoe", "Zyra"];
+
   const EMOJIS = ['😂', '💀', '🔥', '🤡', '😤', '🧂', '🗿', '😎', '🤯', '🥶', '🐐', '💅', '🫠', '😭', '🍿', '🤓', '👀', '🙃'];
   const PUNCHLINES = [
     'Flash dans le mur, comme d\'hab',
@@ -321,9 +324,14 @@
     };
     img.onerror = () => {
       if (i < srcs.length - 1) { i += 1; apply(); }
-      else { img.onerror = null; img.style.visibility = 'hidden'; host.classList.add('meme'); }
+      else {
+        img.onerror = null; img.style.visibility = 'hidden'; host.classList.add('meme');
+        const box = img.parentElement;
+        if (box) { box.classList.add('noimg'); box.dataset.initials = champ.name.replace(/[^A-Za-zÀ-ÿ]/g, '').slice(0, 2).toUpperCase(); }
+      }
     };
     apply();
+    host.style.setProperty('--ph', `${[...champ.id].reduce((h, c) => (h * 31 + c.charCodeAt(0)) % 360, 7)}`);
     return img;
   }
 
@@ -563,9 +571,9 @@
     return [
       '⚔️ **DUEL 1V1 — LEAGUE OF LEGENDS** ⚔️',
       '',
-      `🔵 **BLUE SIDE** : **${blue.name}** — *${blue.title}*`,
+      `🔵 **BLUE SIDE** : **${blue.name}**${blue.title ? ` — *${blue.title}*` : ''}`,
       '                 🆚',
-      `🔴 **RED SIDE** : **${red.name}** — *${red.title}*`,
+      `🔴 **RED SIDE** : **${red.name}**${red.title ? ` — *${red.title}*` : ''}`,
       '',
       `> ${db.emoji} ${blue.name} : « ${db.punch} »`,
       `> ${dr.emoji} ${red.name} : « ${dr.punch} »`,
@@ -650,11 +658,10 @@
       if (S.champions.length < 2) throw new Error('Roster vide');
     } catch (err) {
       console.error(err);
-      els.status.classList.add('error');
-      els.status.innerHTML = 'Data Dragon inaccessible (réseau ou API). <button type="button" id="retry">Réessayer</button>';
-      $('#retry').addEventListener('click', boot, { once: true });
-      els.progress.classList.add('done');
-      return;
+      S.offline = true;
+      S.version = S.version || 'hors ligne';
+      els.patch.textContent = 'Roster intégré (hors ligne)';
+      S.champions = OFFLINE_IDS.map((id) => ({ id, name: id, title: '' }));
     }
 
     // Préchargement de toutes les images du roster avant la première animation
@@ -673,7 +680,9 @@
     setGo('ready');
     els.exportBtn.disabled = false;
     els.progress.classList.add('done');
-    els.status.textContent = `${total} champions chargés · ${nHumor} image${nHumor > 1 ? 's' : ''} humor-bank`;
+    els.status.textContent = S.offline
+      ? `Data Dragon inaccessible : roster intégré de ${total} champions (non vérifié)`
+      : `${total} champions chargés · ${nHumor} image${nHumor > 1 ? 's' : ''} humor-bank`;
   }
 
   /* =========================================================
