@@ -37,12 +37,10 @@ Exemples de pièges :
 
 LISTE EXACTE
 ------------
-La liste de référence est générée depuis l'API Data Dragon :
-bouton "⬇ noms-fichiers.txt" en haut à droite de l'application
-(télécharge la liste exacte du patch en cours).
+La liste de référence est dans ../noms-fichiers.txt (vérifiée contre Data Dragon).
 
 Le fichier ../noms-fichiers.txt fourni à la racine a été vérifié contre
-Data Dragon 16.22.1 (173 champions). Régénérez-le avec ce bouton après un
+Data Dragon 16.22.1 (173 champions). À mettre à jour après un
 nouveau patch.
 
 FORMAT CONSEILLÉ
