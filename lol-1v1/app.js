@@ -203,7 +203,7 @@
     reroll: $('#btn-reroll'),
     nameBlue: $('#name-blue'), nameRed: $('#name-red'), scoreBlue: $('#score-blue'), scoreRed: $('#score-red'),
     classBtn: $('#class-btn'), classLabel: $('#class-label'), classMenu: $('#class-menu'), classPicker: $('#class-picker'), ruleText: $('#rule-text'), ruleArt: $('#rule-art'), ruleBox: $('#rule'),
-    faceoffInner: $('.faceoff-inner'), fxVeil: $('#fx-veil'), fxLid: $('#fx-lid'), vs: $('.vs'),
+    faceoffInner: $('.faceoff-inner'), intro: $('#intro'), introText: $('#intro-text'), introBlue: $('#intro-blue'), introRed: $('#intro-red'), fight: $('#fight'), fxVeil: $('#fx-veil'), fxLid: $('#fx-lid'), vs: $('.vs'),
     predict: $('#predict'), predictBar: $('#predict-bar'), predictBlue: $('#predict-blue'), predictRed: $('#predict-red'),
     predictBlueName: $('#predict-blue-name'), predictRedName: $('#predict-red-name'), ruleObjective: $('#rule-objective'), ruleBtn: $('#btn-rule'),
     historyBtn: $('#btn-history'), historyCount: $('#history-count'), history: $('#history'),
@@ -408,7 +408,97 @@
         });
     }
 
-    return { ensure, tick, whoosh, impact, gong, setMuted };
+    // Montée de tension pendant le tirage ; renvoie une fonction d'arrêt
+    function riser(dur) {
+      if (S.muted || !ensure()) return () => {};
+      const t = ctx.currentTime;
+      const bus = ctx.createGain();
+      bus.gain.setValueAtTime(0.0001, t);
+      bus.gain.exponentialRampToValueAtTime(0.3, t + dur);
+      bus.connect(master);
+      const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.Q.value = 7;
+      lp.frequency.setValueAtTime(160, t); lp.frequency.exponentialRampToValueAtTime(2600, t + dur);
+      lp.connect(bus);
+      const oscs = [55, 55.35, 82.4].map((f) => {
+        const o = ctx.createOscillator(); o.type = 'sawtooth';
+        o.frequency.setValueAtTime(f, t); o.frequency.exponentialRampToValueAtTime(f * 2, t + dur);
+        o.connect(lp); o.start(t); return o;
+      });
+      const src = ctx.createBufferSource(); src.buffer = noiseBuf; src.loop = true;
+      const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.Q.value = 1.4;
+      bp.frequency.setValueAtTime(300, t); bp.frequency.exponentialRampToValueAtTime(5200, t + dur);
+      const ng = ctx.createGain(); ng.gain.value = 0.22;
+      src.connect(bp).connect(ng).connect(bus); src.start(t);
+      let stopped = false;
+      return () => {
+        if (stopped) return;
+        stopped = true;
+        const n = ctx.currentTime;
+        bus.gain.cancelScheduledValues(n);
+        bus.gain.setValueAtTime(Math.max(0.0001, bus.gain.value), n);
+        bus.gain.exponentialRampToValueAtTime(0.0001, n + 0.1);
+        oscs.forEach((o) => o.stop(n + 0.14));
+        src.stop(n + 0.14);
+      };
+    }
+
+    function heartbeat(vol) {
+      if (S.muted || !ensure()) return;
+      const t = ctx.currentTime;
+      [[0, 1], [0.17, 0.7]].forEach(([dt, k]) => {
+        const o = ctx.createOscillator(); o.type = 'sine';
+        o.frequency.setValueAtTime(78, t + dt); o.frequency.exponentialRampToValueAtTime(36, t + dt + 0.16);
+        const g = ctx.createGain(); env(g, t + dt, Math.max(0.001, 0.95 * k * vol), 0.008, 0.2);
+        o.connect(g).connect(master); o.start(t + dt); o.stop(t + dt + 0.3);
+        noise(t + dt, 0.08, 'lowpass', 220, 0.7, Math.max(0.001, 0.35 * k * vol), 0.07, master);
+      });
+    }
+
+    // « Braam » de bande-annonce
+    function braam() {
+      if (S.muted || !ensure()) return;
+      const t = ctx.currentTime;
+      const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.Q.value = 2;
+      lp.frequency.setValueAtTime(240, t); lp.frequency.linearRampToValueAtTime(1150, t + 0.35); lp.frequency.exponentialRampToValueAtTime(280, t + 2.6);
+      const g = ctx.createGain(); g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.5, t + 0.07); g.gain.exponentialRampToValueAtTime(0.0001, t + 2.8);
+      lp.connect(g).connect(master);
+      [43.65, 43.95, 87.3, 86.9, 130.8].forEach((f) => {
+        const o = ctx.createOscillator(); o.type = 'sawtooth'; o.frequency.value = f;
+        o.connect(lp); o.start(t); o.stop(t + 2.9);
+      });
+      const sub = ctx.createOscillator(); sub.type = 'sine';
+      sub.frequency.setValueAtTime(50, t); sub.frequency.exponentialRampToValueAtTime(30, t + 2);
+      const sg = ctx.createGain(); env(sg, t, 0.9, 0.02, 2.2);
+      sub.connect(sg).connect(master); sub.start(t); sub.stop(t + 2.4);
+      noise(t, 0.6, 'lowpass', 900, 0.6, 0.5, 0.5, master);
+    }
+
+    function fight() {
+      if (S.muted || !ensure()) return;
+      impact('red');
+      const t = ctx.currentTime;
+      [1320, 1760, 2210].forEach((f, i) => {
+        const o = ctx.createOscillator(); o.type = 'triangle'; o.frequency.value = f;
+        const g = ctx.createGain(); env(g, t, 0.09 / (i + 1), 0.002, 1.2);
+        o.connect(g).connect(master); o.start(t); o.stop(t + 1.3);
+      });
+      noise(t, 0.5, 'highpass', 2000, 0.6, 0.4, 0.35, master);
+    }
+
+    function fanfare() {
+      if (S.muted || !ensure()) return;
+      const t = ctx.currentTime;
+      [[261.6, 0], [329.6, 0.11], [392, 0.22], [523.3, 0.34], [659.3, 0.34]].forEach(([f, d]) => {
+        ['sawtooth', 'triangle'].forEach((type) => {
+          const o = ctx.createOscillator(); o.type = type; o.frequency.value = f;
+          const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 2400;
+          const g = ctx.createGain(); env(g, t + d, type === 'sawtooth' ? 0.07 : 0.1, 0.02, d >= 0.34 ? 1.4 : 0.35);
+          o.connect(lp).connect(g).connect(master); o.start(t + d); o.stop(t + d + 1.7);
+        });
+      });
+    }
+
+    return { ensure, tick, whoosh, impact, gong, setMuted, riser, heartbeat, braam, fight, fanfare };
   })();
 
   /* =========================================================
@@ -491,6 +581,14 @@
           ctx.globalCompositeOperation = 'lighter';
           ctx.strokeStyle = p.color; ctx.lineWidth = p.size * 0.7; ctx.lineCap = 'round';
           ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.x - p.vx * 2.4, p.y - p.vy * 2.4); ctx.stroke();
+        } else if (p.type === 'ember') {
+          ctx.globalCompositeOperation = 'lighter';
+          p.vx += Math.sin((p.life + p.rot * 400) / 260) * 0.02;
+          ctx.fillStyle = p.color;
+          ctx.globalAlpha *= 0.22;
+          ctx.beginPath(); ctx.arc(p.x, p.y, p.size * 2.2, 0, Math.PI * 2); ctx.fill();
+          ctx.globalAlpha = Math.max(0, Math.min(1, k * 1.5));
+          ctx.beginPath(); ctx.arc(p.x, p.y, p.size * 0.7, 0, Math.PI * 2); ctx.fill();
         } else if (p.type === 'ring') {
           ctx.globalCompositeOperation = 'lighter';
           ctx.strokeStyle = p.color; ctx.lineWidth = 3 * k + 0.5;
@@ -510,7 +608,63 @@
       else { raf = 0; ctx.clearRect(0, 0, window.innerWidth, window.innerHeight); }
     }
 
-    return { burst, ring, fromEl };
+    // Braises qui montent du bas de l'écran (ambiance)
+    let emberTimer = 0;
+    function embers(on) {
+      clearInterval(emberTimer);
+      emberTimer = 0;
+      if (!on || REDUCED || !ctx) return;
+      emberTimer = setInterval(() => {
+        burst(Math.random() * window.innerWidth, window.innerHeight + 8, {
+          type: 'ember', count: window.innerWidth < 720 ? 1 : 2, colors: ['#FF7A1A', '#FFD23F', '#FF2A55', '#FF2A55', '#00F0FF'],
+          angle: -Math.PI / 2, spread: 0.6, speed: 2.4, gravity: -0.01, drag: 0.996, life: 4200, size: 2.2,
+        });
+      }, window.innerWidth < 720 ? 170 : 110);
+    }
+
+    return { burst, ring, fromEl, embers };
+  })();
+
+  /* =========================================================
+     SUSPENSE : battement de cœur qui accélère, tension, mode cinéma
+     ========================================================= */
+  const TAGLINES = [
+    'UN SEUL EN SORTIRA VIVANT', 'PAS DE SECONDE CHANCE', 'L\'HONNEUR OU LA MORT', 'CE SOIR, ON JOUE SA VIE',
+    'LA FAILLE NE PARDONNE PAS', 'AUCUNE PITIÉ', 'LE PERDANT PORTERA LA HONTE', 'TOUT SE JOUE MAINTENANT',
+  ];
+
+  function pulseVignette(strength) {
+    const v = document.getElementById('cinema-vignette');
+    if (REDUCED || !v || !v.animate) return;
+    v.animate([{ opacity: Math.min(1, 0.6 + strength) }, { opacity: 0.6 }], { duration: 420, easing: 'ease-out' });
+  }
+
+  const Suspense = (() => {
+    let timer = 0, running = false, stopRiser = () => {}, t0 = 0, end = 1;
+    function beat() {
+      if (!running) return;
+      const k = Math.min(1, Math.max(0, (performance.now() - t0) / (end - t0)));
+      Audio.heartbeat(0.45 + 0.55 * k);
+      pulseVignette(0.15 + 0.4 * k);
+      timer = setTimeout(beat, 950 - 520 * k); // 950 ms → 430 ms : le cœur s'emballe
+    }
+    return {
+      start(totalMs) {
+        running = true;
+        t0 = performance.now(); end = t0 + totalMs;
+        document.body.classList.add('cinema');
+        stopRiser = Audio.riser(totalMs / 1000);
+        FX.embers(true);
+        clearTimeout(timer);
+        timer = setTimeout(beat, 500);
+      },
+      stop() {
+        running = false;
+        clearTimeout(timer);
+        stopRiser(); stopRiser = () => {};
+        document.body.classList.remove('cinema');
+      },
+    };
   })();
 
   /* =========================================================
@@ -808,11 +962,18 @@
       return r && r.humor ? Promise.resolve(true) : preloadUrl(localArtUrl(c.id), 4000);
     }));
 
-    els.status.textContent = 'Tirage en cours…';
+    els.status.textContent = 'Le destin se décide…';
+    Suspense.start(DURATION.red + SETTLE_MS);
     await Promise.all([
-      spinReel(reels.blue, blue, DURATION.blue),
+      spinReel(reels.blue, blue, DURATION.blue).then(() => {
+        // Blue verrouillé : on resserre le cadre sur la roue rouge
+        els.stage.classList.add('focus-red');
+        els.status.textContent = `🔒 ${blue.name} verrouillé · Red Side…`;
+      }),
       spinReel(reels.red, red, DURATION.red),
     ]);
+    Suspense.stop();
+    els.stage.classList.remove('focus-red');
     await Promise.race([artReady, new Promise((r) => setTimeout(r, 600))]);
 
     const R0 = pick(RULES);
@@ -827,9 +988,55 @@
     els.classPicker.classList.remove('locked');
     els.status.textContent = `${blue.name} vs ${red.name}`;
     document.body.classList.remove('is-spinning');
+    await intro(blue, red);
     showFaceoff(blue, red);
     S.spinning = false;
     setGo('ready');
+  }
+
+  // Écran noir, silence, puis la phrase choc
+  function intro(blue, red) {
+    return new Promise((resolve) => {
+      if (REDUCED) { resolve(); return; }
+      els.introText.textContent = pick(TAGLINES);
+      els.introBlue.textContent = blue.name;
+      els.introRed.textContent = red.name;
+      els.intro.classList.remove('play', 'out');
+      els.intro.hidden = false;
+      let done = false;
+      const t1 = setTimeout(() => {
+        els.intro.classList.add('play');
+        Audio.braam();
+        FX.ring(window.innerWidth / 2, window.innerHeight / 2, '#FFFFFF', Math.max(window.innerWidth, window.innerHeight) * 0.6);
+      }, 420);
+      const finish = () => {
+        if (done) return;
+        done = true;
+        clearTimeout(t1); clearTimeout(t2);
+        els.intro.classList.add('out');
+        setTimeout(() => { els.intro.hidden = true; els.intro.classList.remove('play', 'out'); }, 380);
+        resolve();
+      };
+      const t2 = setTimeout(finish, 420 + 1650);
+      els.intro.onclick = finish;
+    });
+  }
+
+  function fightStamp() {
+    if (els.faceoff.hidden || REDUCED) return;
+    els.fight.hidden = false;
+    els.fight.classList.remove('on');
+    void els.fight.offsetWidth;
+    els.fight.classList.add('on');
+    Audio.fight();
+    const r = els.fight.getBoundingClientRect();
+    FX.ring(r.left + r.width / 2, r.top + r.height / 2, '#FFFFFF', 320);
+    FX.burst(r.left + r.width / 2, r.top + r.height / 2, { count: 70, colors: [...COLORS.gold, ...COLORS.red], speed: 13, life: 750, gravity: 0.05, w: r.width * 0.6 });
+    if (els.faceoffInner.animate) {
+      els.faceoffInner.animate([{ transform: 'none' }, { transform: 'scale(1.035)' }, { transform: 'none' }], { duration: 380, easing: 'ease-out' });
+    }
+    clearTimeout(fightStamp.t);
+    fightStamp.t = setTimeout(() => { els.fight.hidden = true; }, 1500);
   }
 
   function fighterInto(host, champ, side) {
@@ -850,6 +1057,7 @@
       `<div class="fighter-name">${escapeHTML(champ.name)}</div>` +
       `<div class="fighter-title">${escapeHTML(champ.title)}</div>` +
       `<div class="fighter-punch">${escapeHTML(d.punch)}</div>` +
+      `<span class="fighter-stamp" aria-hidden="true">ÉLIMINÉ</span>` +
       `<button class="btn-win" type="button" data-side="${side}">🏆 VICTOIRE <span class="win-name"></span></button>`);
   }
 
@@ -863,7 +1071,8 @@
     renderWinState();
     els.ruleObjective.textContent = S.lastDuel.objective;
     renderPrediction();
-    rollRule({ t: S.lastDuel.rule, i: S.lastDuel.icon, fx: S.lastDuel.fx }, 900);
+    FX.embers(true);
+    rollRule({ t: S.lastDuel.rule, i: S.lastDuel.icon, fx: S.lastDuel.fx }, 900, fightStamp);
     setTimeout(() => {
       if (els.faceoff.hidden) return;
       FX.fromEl(els.vs, { count: 80, colors: [...COLORS.blue, ...COLORS.red], speed: 12, life: 800, gravity: 0.05 });
@@ -879,7 +1088,7 @@
   }
 
   // Défilement « machine à sous » de la règle, qui ralentit puis se fige
-  function rollRule(finalRule, delayMs) {
+  function rollRule(finalRule, delayMs, onLock) {
     clearTimeout(rollRule.t);
     clearInterval(scrambleText.iv);
     els.ruleText.classList.remove('wavy');
@@ -907,26 +1116,44 @@
         Audio.impact('red');
         FX.fromEl(els.ruleArt, { count: 26, colors: COLORS.gold, speed: 6, life: 650, gravity: 0.03 });
         setTimeout(() => screenFx(finalRule.fx), 200);
+        if (onLock) setTimeout(onLock, 1350);
       }
     };
     els.ruleText.textContent = '…';
     rollRule.t = setTimeout(next, delayMs || 0);
   }
 
+  function setPredict(v, final) {
+    const b = Math.round(v), r = 100 - b;
+    els.predictBar.style.setProperty('--dur', final ? '1.1s' : '.38s');
+    els.predictBar.style.setProperty('--p', `${v}%`);
+    els.predictBlue.textContent = `${b}%`;
+    els.predictRed.textContent = `${r}%`;
+    els.predict.classList.toggle('fav-blue', final && b > r);
+    els.predict.classList.toggle('fav-red', final && r > b);
+    els.predict.classList.toggle('settled', final);
+  }
+
   function renderPrediction() {
+    (renderPrediction.t || []).forEach(clearTimeout);
+    renderPrediction.t = [];
     const p = S.lastDuel && S.lastDuel.pBlue;
     els.predict.hidden = p == null;
     if (p == null) return;
-    const b = Math.round(p * 100), r = 100 - b;
-    els.predictBlue.textContent = `${b}%`;
-    els.predictRed.textContent = `${r}%`;
+    const b = Math.round(p * 100);
     els.predictBlueName.textContent = S.lastDuel.blue.name;
     els.predictRedName.textContent = S.lastDuel.red.name;
-    els.predictBar.style.setProperty('--p', '50%');
-    void els.predictBar.offsetWidth;
-    setTimeout(() => els.predictBar.style.setProperty('--p', `${b}%`), 650);
-    els.predict.classList.toggle('fav-blue', b > r);
-    els.predict.classList.toggle('fav-red', r > b);
+    setPredict(50, false);
+    // tir à la corde : la barre balance d'un camp à l'autre avant le verdict
+    const s = 9 + rand(9), dir = Math.random() < 0.5 ? 1 : -1;
+    const seq = [50 + dir * s, 50 - dir * s * 0.85, 50 + dir * s * 0.45, b];
+    seq.forEach((v, i) => {
+      renderPrediction.t.push(setTimeout(() => {
+        const last = i === seq.length - 1;
+        setPredict(v, last);
+        if (!last) Audio.tick(v > 50 ? 'blue' : 'red', 0.5);
+      }, 700 + i * 400));
+    });
   }
 
   /* ---------- Effets d'écran propres à chaque défi ---------- */
@@ -1060,6 +1287,7 @@
     renderGame();
     renderWinState();
     Audio.impact(side);
+    Audio.fanfare();
     {
       const host = side === 'blue' ? els.fBlue : els.fRed;
       const fr = host.querySelector('.fighter-frame') || host;
@@ -1148,6 +1376,8 @@
 
   function hideFaceoff() {
     els.faceoff.hidden = true;
+    els.fight.hidden = true;
+    FX.embers(false);
   }
 
   function duelText() {

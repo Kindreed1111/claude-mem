@@ -119,6 +119,7 @@
         <button class="btn btn--primary" id="btn-reroll" type="button">RELANCER UN 1V1</button>
         <button class="btn btn--ghost" id="btn-copy" type="button">COPIER LE DUEL</button>
       </div>
+      <div class="fight" id="fight" hidden aria-hidden="true">FIGHT!</div>
       <button class="faceoff-close" id="btn-close" type="button" aria-label="Fermer">✕</button>
     </div>
   </div>
@@ -134,6 +135,20 @@
   </aside>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="cinema" aria-hidden="true">
+    <div class="cinema-bar cinema-bar--top"></div>
+    <div class="cinema-bar cinema-bar--bot"></div>
+    <div class="cinema-vignette" id="cinema-vignette"></div>
+  </div>
+
+  <div class="intro" id="intro" hidden>
+    <div class="intro-inner">
+      <div class="intro-names"><span class="intro-blue" id="intro-blue"></span><span class="intro-x">✕</span><span class="intro-red" id="intro-red"></span></div>
+      <div class="intro-text" id="intro-text"></div>
+      <div class="intro-line"></div>
+    </div>
+  </div>
+
   <canvas class="fx-canvas" id="fx-canvas" aria-hidden="true"></canvas>
 
   <script src="app.js"></script>
