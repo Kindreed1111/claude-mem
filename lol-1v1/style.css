@@ -177,7 +177,7 @@ button:disabled { cursor: not-allowed; }
   background: #11131b;
 }
 .card-art img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
+  width: 100%; height: 100%; object-fit: cover; object-position: center 22%; display: block;
   transform: scale(1.08);
   user-select: none; -webkit-user-drag: none;
 }
@@ -320,7 +320,7 @@ body.humor .rail-window { mask-image: none; -webkit-mask-image: none; background
 }
 .fighter--blue .fighter-frame { box-shadow: 0 0 0 2px var(--blue), 0 0 60px rgba(0, 240, 255, .55); }
 .fighter--red .fighter-frame { box-shadow: 0 0 0 2px var(--red), 0 0 60px rgba(255, 42, 85, .55); clip-path: polygon(0 0, 100% 0, 100% 100%, 12% 100%, 0 92%); }
-.fighter-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.fighter-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
 .fighter-frame::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(180deg, transparent 55%, rgba(5, 6, 9, .85));

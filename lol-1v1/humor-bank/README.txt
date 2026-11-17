@@ -9,7 +9,8 @@ Chaque carte de champion essaie D'ABORD de charger, dans cet ordre :
     ./humor-bank/<ID>.webp
 
 Si aucun fichier n'existe, la carte bascule automatiquement (événement onerror,
-sans erreur bloquante) sur l'icône officielle Riot avec le style "Carte Meme"
+sans erreur bloquante) sur l'image officielle du dossier ../champions/
+(issue de leagueoflegends.com), puis sur l'icône Data Dragon, avec le style "Carte Meme"
 (cadre BD, filtre pop-art, badge emoji, punchline).
 
 RÈGLES DE NOMMAGE
@@ -40,8 +41,9 @@ La liste de référence est générée depuis l'API Data Dragon :
 bouton "⬇ noms-fichiers.txt" en haut à droite de l'application
 (télécharge la liste exacte du patch en cours).
 
-Le fichier ../noms-fichiers.txt fourni à la racine a été écrit hors ligne :
-régénérez-le avec ce bouton pour être certain qu'il est exact et complet.
+Le fichier ../noms-fichiers.txt fourni à la racine a été vérifié contre
+Data Dragon 16.22.1 (173 champions). Régénérez-le avec ce bouton après un
+nouveau patch.
 
 FORMAT CONSEILLÉ
 ----------------
