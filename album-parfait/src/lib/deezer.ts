@@ -101,6 +101,7 @@ type RawTrack = {
   track_position: number;
   disk_number: number;
   preview: string;
+  rank?: number;
   artist: { id: number; name: string };
 };
 
@@ -135,6 +136,7 @@ export async function fetchTracks(projectId: number, opts?: RequestOptions): Pro
     artistId: t.artist.id,
     artistName: t.artist.name,
     projectId,
+    rank: t.rank ?? 0,
   }));
 }
 

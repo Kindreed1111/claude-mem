@@ -26,6 +26,8 @@ export interface Track {
   artistId: number;
   artistName: string;
   projectId: number;
+  /** Popularité Deezer (plus grand = plus écouté). */
+  rank?: number;
 }
 
 export type ProjectWithTracks = Project & { tracks: Track[] };

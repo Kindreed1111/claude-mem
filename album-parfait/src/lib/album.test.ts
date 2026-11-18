@@ -70,4 +70,23 @@ describe('album', () => {
     s = albumReducer(s, { type: 'reset' });
     expect(s).toEqual(initialAlbum());
   });
+
+  it('échange deux pistes libres, refuse les slots imposés', () => {
+    let s = initialAlbum();
+    for (let i = 0; i < 10; i++) s = albumReducer(s, { type: 'place', track: track() });
+    const three = s.slots[3];
+    const nine = s.slots[9];
+    const swapped = albumReducer(s, { type: 'swap', a: 3, b: 9 });
+    expect(swapped.slots[3]).toBe(nine);
+    expect(swapped.slots[9]).toBe(three);
+    expect(albumReducer(s, { type: 'swap', a: 3, b: 7 })).toBe(s);
+    expect(albumReducer(s, { type: 'swap', a: 1, b: 4 })).toBe(s);
+  });
+
+  it('charge un brouillon et repart du prochain slot vide', () => {
+    const a = track();
+    const s = albumReducer(initialAlbum(), { type: 'load', slots: { 1: a, 10: track() } });
+    expect(s.slots[1]).toBe(a);
+    expect(s.active).toBe(7);
+  });
 });
