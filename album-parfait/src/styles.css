@@ -1106,6 +1106,10 @@ label.chip {
   border-color: var(--cream-dim);
 }
 
+.chip input {
+  accent-color: var(--cream);
+}
+
 .chip img {
   width: 24px;
   height: 24px;
@@ -1784,6 +1788,180 @@ label.chip {
 
   .vs-list .tag {
     display: none;
+  }
+}
+
+
+/* ——— Mobile : barre compacte, zones tactiles 44 px, textes ≥ 12 px ——— */
+.mobile-bar,
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .mobile-bar {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 6;
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) auto auto;
+    gap: 12px;
+    align-items: center;
+    margin: 0 -16px;
+    padding: 10px 16px;
+    background: rgba(51, 51, 0, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mobile-bar img {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+  }
+
+  .mb-text {
+    display: grid;
+    min-width: 0;
+  }
+
+  .mb-artist {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--cream-dim);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mb-slot {
+    font-size: 19px;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mb-count {
+    font-family: var(--mono);
+    font-size: 13px;
+  }
+
+  .builder {
+    padding-top: 12px;
+    gap: 18px;
+  }
+
+  .sheet {
+    display: none;
+  }
+
+  .sheet.open {
+    display: grid;
+    animation: rise 0.35s var(--ease) both;
+  }
+
+  .mobile-only {
+    display: inline-block;
+    margin-top: 16px;
+  }
+
+  /* L'étiquette ne recouvre plus le contenu : elle termine la page. */
+  .advisory {
+    position: static;
+    align-self: flex-end;
+    margin-top: 32px;
+  }
+
+  .reorder {
+    right: 64px;
+  }
+
+  .slot {
+    min-height: 52px;
+    align-items: center;
+  }
+}
+
+@media (pointer: coarse), (max-width: 860px) {
+  .ghost,
+  .seg button,
+  .select select,
+  .chip,
+  label.chip {
+    min-height: 44px;
+  }
+
+  .ghost {
+    padding: 8px 16px;
+  }
+
+  .wordmark {
+    min-height: 44px;
+  }
+
+  .chip input {
+    width: 22px;
+    height: 22px;
+  }
+
+  .play,
+  .reorder button {
+    width: 44px;
+    height: 44px;
+    font-size: 13px;
+  }
+
+  .track {
+    grid-template-columns: 30px 44px minmax(0, 1fr) auto;
+    padding: 4px 6px;
+  }
+
+  .track .pick {
+    min-height: 44px;
+  }
+
+  .recap-list .n {
+    width: 44px;
+    height: 44px;
+  }
+
+  .recap-list li {
+    grid-template-columns: 48px minmax(0, 1fr) auto;
+  }
+
+  .scrub {
+    height: 44px;
+  }
+
+  .reorder {
+    opacity: 1;
+  }
+
+  .kicker,
+  .ghost,
+  .seg button,
+  .select select,
+  .tag,
+  .slot .tag,
+  .slot .n,
+  .hint-line,
+  .group-head .y,
+  .track .pos,
+  .track .who,
+  .votes,
+  .caption .meta,
+  .ko-meta,
+  .result .fans,
+  .recap-list .tag,
+  .vs-list .tag,
+  .vs-list .n,
+  .podium-col .p,
+  .vs-covers figcaption,
+  .now .n,
+  label.chip {
+    font-size: 12px;
   }
 }
 

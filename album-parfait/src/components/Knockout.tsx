@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Preview } from '../hooks/usePreview';
 import { bracketWinner, currentPair, duelsLeft, pickWinner, startBracket } from '../lib/knockout';
 import type { Project, Track } from '../lib/types';
+import { useCoarse } from '../hooks/useCoarse';
 
 /** Mode 1v1 : 8 sons tirés au hasard, on garde le meilleur à chaque duel. */
 export function Knockout({
@@ -24,6 +25,7 @@ export function Knockout({
   const initial = useMemo(() => startBracket(candidates, 8), [candidates]);
   const [bracket, setBracket] = useState(initial);
   const [picked, setPicked] = useState<number | null>(null);
+  const coarse = useCoarse();
   const pair = currentPair(bracket);
   const winner = bracketWinner(bracket);
   // Les callbacks changent à chaque rendu du parent (progression des crédits) : on passe par des refs.
@@ -65,7 +67,7 @@ export function Knockout({
           piste {String(slot).padStart(2, '0')} · mode 1v1 · duel {Math.min(done + 1, bracket.size - 1)} / {bracket.size - 1}
         </p>
         <h3>{title}</h3>
-        <p>garde le meilleur des deux. échap pour quitter.</p>
+        <p>{coarse ? 'touche la pochette du son que tu gardes.' : 'garde le meilleur des deux. échap pour quitter.'}</p>
       </div>
       {winner ? (
         <div className="ko-winner">

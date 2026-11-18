@@ -7,6 +7,7 @@ import { normalizeTitle } from '../lib/classify';
 import { applyFilter, NO_FILTER, sortTracks, type ProjectFilter, type SortMode } from '../lib/explore';
 import type { Artist, Project, ProjectWithTracks, Track } from '../lib/types';
 import { Knockout } from './Knockout';
+import { useCoarse } from '../hooks/useCoarse';
 
 const TAG: Record<SlotKind, string> = { intro: 'intro', outro: 'outro', interlude: 'interlude', feat: 'feat', free: '' };
 
@@ -84,15 +85,19 @@ export function AlbumBuilder(props: Props) {
   const [filter, setFilter] = useState<ProjectFilter>(NO_FILTER);
   const [dragFrom, setDragFrom] = useState<number | null>(null);
   const [dropOn, setDropOn] = useState<number | null>(null);
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const coarse = useCoarse();
   const slot = album.active;
   const kind = slot ? kindForSlot(slot) : null;
   const complete = slot === null;
   const missing = Object.values(album.slots).filter((t) => !t).length;
+  const isMobile = () => window.matchMedia('(max-width: 860px)').matches;
 
-  // Sur mobile, ramener le panneau de choix en vue à chaque changement de slot.
+  // Sur mobile, revenir en haut des choix à chaque changement de piste.
   useEffect(() => {
-    if (slot && window.matchMedia('(max-width: 860px)').matches) {
-      pickerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (slot && isMobile()) {
+      const top = (pickerRef.current?.getBoundingClientRect().top ?? 0) + window.scrollY - 80;
+      if (window.scrollY > top) window.scrollTo({ top, behavior: 'smooth' });
     }
   }, [slot]);
 
@@ -104,7 +109,18 @@ export function AlbumBuilder(props: Props) {
 
   return (
     <section className="builder">
-      <aside className="sheet">
+      <div className="mobile-bar">
+        <img src={cover.cover} alt="" />
+        <div className="mb-text">
+          <span className="mb-artist">{artist.name}</span>
+          <span className="mb-slot">{slot && kind ? `piste ${pad(slot)} · ${TAG[kind] || 'son libre'}` : 'album complet'}</span>
+        </div>
+        <span className="mb-count">{10 - missing}/10</span>
+        <button className="ghost" aria-expanded={sheetOpen} onClick={() => setSheetOpen((v) => !v)}>
+          {sheetOpen ? 'fermer' : 'tracklist'}
+        </button>
+      </div>
+      <aside className={`sheet${sheetOpen ? ' open' : ''}`}>
         <div className="sheet-head">
           <button className="sleeve-btn" onClick={onChangeCover} title="Changer la cover">
             <img src={cover.cover} alt={`Cover choisie : ${cover.title}`} />
@@ -147,7 +163,14 @@ export function AlbumBuilder(props: Props) {
                   setDropOn(null);
                 }}
               >
-                <button className="slot" aria-current={album.active === n} onClick={() => dispatch({ type: 'open', slot: n })}>
+                <button
+                  className="slot"
+                  aria-current={album.active === n}
+                  onClick={() => {
+                    dispatch({ type: 'open', slot: n });
+                    if (isMobile()) setSheetOpen(false);
+                  }}
+                >
                   <span className="n">{pad(n)}</span>
                   <span className={`title flap${t ? '' : ' empty'}`} key={t?.id ?? 'vide'}>
                     {t ? t.title : '—'}
@@ -168,7 +191,9 @@ export function AlbumBuilder(props: Props) {
             );
           })}
         </ol>
-        <p className="hint-line">glisse les pistes libres pour changer leur ordre.</p>
+        <p className="hint-line">
+          {coarse ? 'touche ↑ ↓ pour changer l’ordre des pistes libres.' : 'glisse les pistes libres pour changer leur ordre.'}
+        </p>
         <button className="cta" disabled={!complete} onClick={onDone}>
           {complete ? 'presser le vinyle' : `encore ${missing} piste${missing > 1 ? 's' : ''}`}
         </button>
@@ -183,7 +208,14 @@ export function AlbumBuilder(props: Props) {
             <h3>
               l’album est <em>complet.</em>
             </h3>
-            <p>clique sur une piste pour la changer, glisse les pistes libres pour les réordonner, ou presse le vinyle.</p>
+            <p>
+              {coarse
+                ? 'ouvre la tracklist pour changer une piste ou l’ordre, ou presse le vinyle.'
+                : 'clique sur une piste pour la changer, glisse les pistes libres pour les réordonner, ou presse le vinyle.'}
+            </p>
+            <button className="cta mobile-only" onClick={onDone}>
+              presser le vinyle
+            </button>
           </div>
         )}
       </div>

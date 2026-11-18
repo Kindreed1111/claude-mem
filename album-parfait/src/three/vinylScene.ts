@@ -115,7 +115,9 @@ function loadImage(url: string): Promise<HTMLImageElement> {
 
 export function createVinylScene(canvas: HTMLCanvasElement, opts: VinylSceneOptions): VinylScene {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'low-power' });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  // Moins de pixels sur téléphone : rendu plus léger pour la batterie.
+  const coarse = typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, coarse ? 1.5 : 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   // Neutral garde les couleurs des pochettes fidèles (ACES les délave).
   renderer.toneMapping = THREE.NeutralToneMapping;
