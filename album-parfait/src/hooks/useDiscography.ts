@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { buildPool } from '../lib/classify';
 import { fetchContributorIds, fetchProjects, fetchTracks } from '../lib/deezer';
+import { friendlyError, type FriendlyError } from '../lib/errors';
 import type { Artist, ProjectWithTracks } from '../lib/types';
 
 export interface Discography {
   status: 'idle' | 'loading' | 'ready' | 'error';
-  error: string | null;
+  error: FriendlyError | null;
   projects: ProjectWithTracks[];
   loaded: number;
   total: number;
@@ -14,9 +15,19 @@ export interface Discography {
   creditsTotal: number;
 }
 
-const SERVER_GRACE_MS = 3000;
 /** Au-delà, on charge depuis le navigateur (le serveur continue et remplit le cache pour les suivants). */
 const SERVER_DISCO_TIMEOUT_MS = 60000;
+
+/**
+ * Attente de l'analyse des crédits côté serveur avant de la lancer aussi dans le navigateur.
+ * Non cachée, elle enchaîne (projets + pistes) appels Deezer à 8/s au plus (1 départ / 125 ms) : 14,2 s mesurées
+ * pour Nekfeu (21 projets, 85 pistes). Le navigateur, bridé de la même façon, ne finirait pas plus tôt et doublerait
+ * les appels : on lui laisse ce temps, avec de la marge (3 s + 160 ms par appel ; 20 s pour Nekfeu).
+ * Une erreur du serveur (réponse null) déclenche le repli tout de suite.
+ */
+export function serverGraceMs(projects: number, tracks: number): number {
+  return Math.min(SERVER_DISCO_TIMEOUT_MS, 3000 + (projects + tracks) * 160);
+}
 
 /** Une seule requête, servie par le cache CDN dès le 2ᵉ visiteur. null = repli sur le chargement projet par projet. */
 async function fetchServerDiscography(artistId: number, signal: AbortSignal): Promise<ProjectWithTracks[] | null> {
@@ -76,8 +87,10 @@ const EMPTY: Discography = {
 };
 
 /** Charge projets + tracklists, puis analyse les crédits (featurings) en arrière-plan. */
-export function useDiscography(artist: Artist | null): Discography {
+export function useDiscography(artist: Artist | null): Discography & { retry: () => void } {
   const [state, setState] = useState<Discography>(EMPTY);
+  const [attempt, setAttempt] = useState(0);
+  const retry = useCallback(() => setAttempt((n) => n + 1), []);
 
   useEffect(() => {
     if (!artist) {
@@ -112,7 +125,7 @@ export function useDiscography(artist: Artist | null): Discography {
         clientCtrl.abort();
         set({ contributors: map, creditsDone: toAnalyze.length });
       });
-      await Promise.race([server, new Promise((r) => setTimeout(r, SERVER_GRACE_MS))]);
+      await Promise.race([server, new Promise((r) => setTimeout(r, serverGraceMs(usable.length, toAnalyze.length)))]);
       if (serverDone || !alive) return;
 
       // 2) Sinon, analyse progressive dans le navigateur (le premier des deux qui finit gagne).
@@ -131,13 +144,13 @@ export function useDiscography(artist: Artist | null): Discography {
           }
         }),
       );
-    })().catch((err: unknown) => set({ status: 'error', error: err instanceof Error ? err.message : String(err) }));
+    })().catch((err: unknown) => set({ status: 'error', error: friendlyError(err, 'discography') }));
 
     return () => {
       alive = false;
       ctrl.abort();
     };
-  }, [artist]);
+  }, [artist, attempt]);
 
-  return state;
+  return { ...state, retry };
 }

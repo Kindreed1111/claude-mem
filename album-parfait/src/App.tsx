@@ -186,8 +186,8 @@ export function App() {
     <div className="frame">
       <div className="lamp" ref={lamp} aria-hidden />
       <header className="topbar">
-        <button className="wordmark" onClick={restart} aria-label="Accueil — recommencer">
-          album parfait.
+        <button className="wordmark" onClick={restart}>
+          album parfait.<span className="sr-only"> — accueil, recommencer</span>
         </button>
         <ol className="steps" aria-label="Étapes">
           {STEPS.map(([keys, label]) => (
@@ -226,9 +226,14 @@ export function App() {
 
         {(screen === 'covers' || screen === 'build') && artist && !ready && (
           <div className="loading">
-            <div className="vinyl" aria-hidden />
+            <div className={`vinyl${disco.status === 'error' ? ' stopped' : ''}`} aria-hidden />
             {disco.status === 'error' ? (
-              <p className="muted">Impossible de lire la discographie : {disco.error}</p>
+              <div className="load-error" role="alert">
+                <p className="muted">{disco.error?.message}</p>
+                <button className="cta small" onClick={disco.retry}>
+                  réessayer
+                </button>
+              </div>
             ) : (
               <>
                 <p className="kicker">lecture de la discographie de {artist.name}</p>
@@ -282,11 +287,7 @@ export function App() {
         {screen === 'compare' && ownAlbum && challenge && <Compare mine={ownAlbum} theirs={challenge} onSeeMine={() => go('recap')} />}
       </main>
 
-      <div className="advisory" aria-hidden>
-        <span className="s">PARENTAL</span>
-        <span className="b">ADVISORY</span>
-        <span className="s">EXPLICIT CONTENT</span>
-      </div>
+      <div className="advisory" aria-hidden />
     </div>
   );
 }

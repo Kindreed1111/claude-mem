@@ -65,11 +65,8 @@ export async function renderAlbumPng(opts: {
   const format = opts.format ?? 'portrait';
   const { w: W, h: H } = EXPORT_FORMATS[format];
   const L = layoutFor(format);
-  await Promise.all([
-    document.fonts.load(`300 64px ${SERIF}`),
-    document.fonts.load(`italic 300 64px ${SERIF}`),
-    document.fonts.load(`400 18px ${MONO}`),
-  ]).catch(() => undefined);
+  // Les faces dessinées plus bas (serif et mono en 400) : chargées avant de dessiner, sinon le canvas prend Georgia.
+  await Promise.all([document.fonts.load(`400 34px ${SERIF}`), document.fonts.load(`400 18px ${MONO}`)]).catch(() => undefined);
   const cover = await loadImage(`/api/image?url=${encodeURIComponent(opts.coverUrl)}`);
 
   const canvas = document.createElement('canvas');

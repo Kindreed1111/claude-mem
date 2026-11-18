@@ -27,9 +27,14 @@ export function Vinyl3D({
   useEffect(() => {
     let disposed = false;
     // La 3D démarre une fois la page affichée et le navigateur au repos : le texte et la recherche d'abord.
+    // Les textures de la pochette et du disque sont dessinées une fois : leurs polices doivent être chargées avant.
+    const fonts = () =>
+      Promise.all(
+        ['400 20px "Cormorant Garamond"', 'italic 400 20px "Cormorant Garamond"', '400 20px "IBM Plex Mono"'].map((f) => document.fonts?.load(f)),
+      ).catch(() => undefined);
     const start = () =>
-      import('../three/vinylScene')
-        .then(({ createVinylScene }) => {
+      Promise.all([import('../three/vinylScene'), fonts()])
+        .then(([{ createVinylScene }]) => {
           if (disposed || !canvas.current) return;
           scene.current = createVinylScene(canvas.current, { mode, reducedMotion: reduced() });
           setReady(true);

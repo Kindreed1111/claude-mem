@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { usePlaylist } from '../hooks/usePlaylist';
 import { kindForSlot } from '../lib/album';
 import { EXPORT_FORMATS, renderAlbumPng, type ExportFormat } from '../lib/exportImage';
@@ -32,10 +32,34 @@ export function Recap({ album, mode, podium, onEditTracks, onChangeCover, onMake
   const [error, setError] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
   const [manualLink, setManualLink] = useState<string | null>(null);
+  const [moreOpen, setMoreOpen] = useState(false);
+  const moreId = useId();
+  const moreRef = useRef<HTMLDivElement>(null);
+  const moreBtn = useRef<HTMLButtonElement>(null);
   const player = usePlaylist(album.tracks);
   const current = player.index !== null ? album.tracks[player.index] : null;
 
   useEffect(() => () => player.stop(), []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // « plus » : se ferme sur Échap (le focus revient au bouton) ou au clic en dehors.
+  useEffect(() => {
+    if (!moreOpen) return;
+    moreRef.current?.querySelector<HTMLButtonElement>('.more-panel button')?.focus();
+    const onDown = (e: PointerEvent) => {
+      if (!moreRef.current?.contains(e.target as Node)) setMoreOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return;
+      setMoreOpen(false);
+      moreBtn.current?.focus();
+    };
+    document.addEventListener('pointerdown', onDown);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('pointerdown', onDown);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [moreOpen]);
 
   useEffect(() => {
     if (!toast) return;
@@ -139,36 +163,53 @@ export function Recap({ album, mode, podium, onEditTracks, onChangeCover, onMake
               </button>
             ))}
           </div>
+        </div>
+
+        <div className="actions recap-actions" ref={moreRef}>
           <button className="cta" onClick={download} disabled={busy}>
             {busy ? 'pressage…' : 'télécharger l’image'}
           </button>
-        </div>
-
-        <div className="actions">
-          <button className="ghost" onClick={() => share('album')}>
-            partager le lien
+          <button className="cta outline" onClick={() => share('album')}>
+            partager
           </button>
-          <button className="ghost" onClick={() => share('defi')}>
-            défier un ami
+          <button
+            ref={moreBtn}
+            className={`ghost more-btn${moreOpen ? ' on' : ''}`}
+            aria-expanded={moreOpen}
+            aria-controls={moreId}
+            onClick={() => setMoreOpen((v) => !v)}
+          >
+            plus <span aria-hidden>{moreOpen ? '−' : '+'}</span>
           </button>
-          {onEditTracks && (
-            <button className="ghost" onClick={onEditTracks}>
-              modifier les pistes
+          <div className="more-panel" id={moreId} hidden={!moreOpen}>
+            <button
+              className="ghost"
+              onClick={() => {
+                setMoreOpen(false);
+                void share('defi');
+              }}
+            >
+              défier un ami
             </button>
-          )}
-          {onChangeCover && (
-            <button className="ghost" onClick={onChangeCover}>
-              changer la cover
+            {onEditTracks && (
+              <button className="ghost" onClick={onEditTracks}>
+                modifier les pistes
+              </button>
+            )}
+            {onChangeCover && (
+              <button className="ghost" onClick={onChangeCover}>
+                changer la cover
+              </button>
+            )}
+            {onMakeYours && (
+              <button className="ghost" onClick={onMakeYours}>
+                composer le mien
+              </button>
+            )}
+            <button className="ghost" onClick={onRestart}>
+              recommencer
             </button>
-          )}
-          {onMakeYours && (
-            <button className="ghost" onClick={onMakeYours}>
-              composer le mien
-            </button>
-          )}
-          <button className="ghost" onClick={onRestart}>
-            recommencer
-          </button>
+          </div>
         </div>
         {manualLink && (
           <input className="filter" readOnly value={manualLink} onFocus={(e) => e.currentTarget.select()} aria-label="Lien à copier" />

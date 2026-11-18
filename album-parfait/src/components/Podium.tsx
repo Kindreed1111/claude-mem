@@ -12,6 +12,12 @@ const ROWS: Array<[StatKind, string]> = [
   ['free', 'sons libres'],
 ];
 
+/** En dessous, le classement d'un artiste n'est pas représentatif : il reste masqué. */
+export const PODIUM_MIN_ALBUMS = 10;
+
+export const showPodium = (stats: Pick<Stats, 'enabled' | 'top' | 'albums'>) =>
+  stats.enabled && !!stats.top && stats.albums >= PODIUM_MIN_ALBUMS;
+
 /** Classement des joueurs : top 3 par catégorie, titres résolus depuis la discographie chargée. */
 export function Podium({ stats, projects }: { stats: Stats; projects: ProjectWithTracks[] }) {
   const titles = useMemo(() => {
@@ -21,7 +27,7 @@ export function Podium({ stats, projects }: { stats: Stats; projects: ProjectWit
   }, [projects]);
   const covers = useMemo(() => new Map(projects.map((p) => [p.id, p])), [projects]);
 
-  if (!stats.enabled || !stats.top || stats.albums === 0) return null;
+  if (!showPodium(stats)) return null;
   const pct = (n: number) => `${Math.round((n / stats.albums) * 100)} %`;
 
   return (

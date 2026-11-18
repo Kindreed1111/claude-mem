@@ -29,12 +29,22 @@ const byDateDesc = (a: Project, b: Project) => b.releaseDate.localeCompare(a.rel
 const byPriority = (a: Project, b: Project) =>
   RECORD_PRIORITY[a.recordType] - RECORD_PRIORITY[b.recordType] || a.releaseDate.localeCompare(b.releaseDate);
 
+/**
+ * Une cover par image (md5) et par titre normalisé : une réédition au même titre ne s'affiche pas deux fois.
+ * La version gardée est la prioritaire (album > ep > compile > single, puis la plus ancienne).
+ */
 export function coverChoices(projects: ProjectWithTracks[], artistId: number): Project[] {
-  const kept = new Map<string, ProjectWithTracks>();
+  const kept: ProjectWithTracks[] = [];
+  const md5s = new Set<string>();
+  const titles = new Set<string>();
   for (const p of projects.filter((x) => isOwnProject(x, artistId)).sort(byPriority)) {
-    if (!kept.has(p.md5)) kept.set(p.md5, p);
+    const title = normalizeTitle(p.title);
+    if (md5s.has(p.md5) || (title && titles.has(title))) continue;
+    md5s.add(p.md5);
+    if (title) titles.add(title);
+    kept.push(p);
   }
-  return [...kept.values()].sort(byDateDesc);
+  return kept.sort(byDateDesc);
 }
 
 function fullProjects(projects: ProjectWithTracks[], artistId: number): ProjectWithTracks[] {

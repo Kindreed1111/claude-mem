@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { createLimiter, dz, DeezerQuotaError, fetchContributorIds, fetchProjects } from './deezer';
+import { artistPicture, createLimiter, dz, DeezerQuotaError, fetchContributorIds, fetchProjects, HttpError, searchArtists } from './deezer';
 
 const json = (body: unknown) => new Response(JSON.stringify(body), { headers: { 'content-type': 'application/json' } });
 
@@ -33,6 +33,23 @@ describe('dz', () => {
   it('rejette sur une autre erreur Deezer', async () => {
     const fetchImpl = vi.fn().mockResolvedValue(json({ error: { code: 800, message: 'no data' } }));
     await expect(dz('track/1', {}, fetchImpl as unknown as typeof fetch)).rejects.toThrow('no data');
+  });
+
+  it('traite une réponse 429 comme un quota : réessaie puis DeezerQuotaError', async () => {
+    vi.useFakeTimers();
+    const fetchImpl = vi.fn().mockImplementation(async () => new Response('Too Many Requests', { status: 429 }));
+    const promise = dz('track/1', {}, fetchImpl as unknown as typeof fetch);
+    const assertion = expect(promise).rejects.toBeInstanceOf(DeezerQuotaError);
+    await vi.advanceTimersByTimeAsync(7000);
+    await assertion;
+    expect(fetchImpl).toHaveBeenCalledTimes(4);
+  });
+
+  it('rejette avec HttpError sur une réponse illisible', async () => {
+    const fetchImpl = vi.fn().mockResolvedValue(new Response('<html>502</html>', { status: 502 }));
+    const err = await dz('track/1', {}, fetchImpl as unknown as typeof fetch).catch((e: unknown) => e);
+    expect(err).toBeInstanceOf(HttpError);
+    expect((err as HttpError).status).toBe(502);
   });
 });
 
@@ -88,5 +105,25 @@ describe('fetchProjects', () => {
     expect(projects.map((p) => p.id)).toEqual([1, 2, 3]);
     expect(projects[0]).toEqual({ id: 1, title: 'P1', cover: 'c1', md5: 'm1', releaseDate: '2020-01-01', recordType: 'album' });
     expect(fetchImpl.mock.calls[1][0]).toContain('index=100');
+  });
+});
+
+describe('artistPicture', () => {
+  it('écarte l’URL sans identifiant d’image (artiste sans photo)', () => {
+    expect(artistPicture('https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg')).toBe('');
+    expect(artistPicture('')).toBe('');
+    expect(artistPicture(undefined)).toBe('');
+    expect(artistPicture('pas une url')).toBe('');
+  });
+  it('garde une vraie photo', () => {
+    const url = 'https://cdn-images.dzcdn.net/images/artist/0c093e137a288db8d08133ecf092c213/250x250-000000-80-0-0.jpg';
+    expect(artistPicture(url)).toBe(url);
+  });
+  it('searchArtists renvoie picture vide pour un artiste sans photo', async () => {
+    const fetchImpl = vi.fn().mockResolvedValue(
+      json({ data: [{ id: 5768418, name: 'DJ Ab', picture_medium: 'https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg', nb_fan: 3 }] }),
+    );
+    const [a] = await searchArtists('dj ab', { fetchImpl: fetchImpl as unknown as typeof fetch });
+    expect(a.picture).toBe('');
   });
 });

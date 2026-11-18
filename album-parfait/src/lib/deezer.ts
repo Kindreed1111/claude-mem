@@ -6,6 +6,13 @@ export class DeezerQuotaError extends Error {
   }
 }
 
+/** Réponse HTTP sans corps JSON exploitable (429, 5xx, page d'erreur…). */
+export class HttpError extends Error {
+  constructor(readonly status: number) {
+    super(`HTTP ${status}`);
+  }
+}
+
 const RETRY_DELAYS_MS = [1000, 2000, 4000];
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
@@ -68,9 +75,13 @@ export async function dz<T>(
 
   for (let attempt = 0; ; attempt++) {
     const res = await fetchImpl(url);
-    const body = (await res.json()) as T & DeezerError;
-    if (!body.error) return body;
-    if (body.error.code !== 4) throw new Error(body.error.message ?? `Erreur Deezer ${body.error.code}`);
+    if (res.status !== 429) {
+      const body = (await res.json().catch(() => null)) as (T & DeezerError) | null;
+      if (!body) throw new HttpError(res.status);
+      if (!body.error) return body;
+      if (body.error.code !== 4) throw new Error(body.error.message ?? `Erreur Deezer ${body.error.code}`);
+    }
+    // Quota Deezer (code 4) ou 429 (Deezer ou un intermédiaire) : on patiente puis on réessaie.
     if (attempt >= RETRY_DELAYS_MS.length) throw new DeezerQuotaError();
     await sleep(RETRY_DELAYS_MS[attempt]);
   }
@@ -117,9 +128,19 @@ type RawTrack = {
   artist: { id: number; name: string };
 };
 
+/** Deezer renvoie `images/artist//250x250…` (identifiant vide, donc 404) pour un artiste sans photo : '' à la place. */
+export function artistPicture(url: string | null | undefined): string {
+  if (!url) return '';
+  try {
+    return /\/images\/artist\/[0-9a-f]+\//.test(new URL(url).pathname) ? url : '';
+  } catch {
+    return '';
+  }
+}
+
 export async function searchArtists(q: string, opts?: RequestOptions): Promise<Artist[]> {
   const res = await limited<Page<RawArtist>>('search/artist', { q, limit: 12 }, opts);
-  return res.data.map((a) => ({ id: a.id, name: a.name, picture: a.picture_medium, fans: a.nb_fan }));
+  return res.data.map((a) => ({ id: a.id, name: a.name, picture: artistPicture(a.picture_medium), fans: a.nb_fan }));
 }
 
 const RECORD_TYPES: RecordType[] = ['album', 'ep', 'single', 'compile'];

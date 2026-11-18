@@ -1,9 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
+import heroStill from '../assets/hero-vinyl.webp';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 import { searchArtists } from '../lib/deezer';
+import { friendlyError, type FriendlyError } from '../lib/errors';
 import type { SharedAlbum } from '../lib/share';
 import type { Draft } from '../lib/storage';
 import type { Artist } from '../lib/types';
 import { Vinyl3D } from './Vinyl3D';
+
+/** Même seuil que la mise en page mobile de styles.css (accueil sur une colonne, vinyle en bandeau de 280 px). */
+const NARROW = '(max-width: 860px)';
 
 const fmtFans = (n: number) => new Intl.NumberFormat('fr-FR', { notation: 'compact' }).format(n) + ' fans';
 
@@ -34,9 +40,12 @@ interface Props {
 export function Search({ onPick, draft, onResume, onDiscard, history, onOpenHistory }: Props) {
   const [q, setQ] = useState('');
   const [results, setResults] = useState<Artist[] | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<FriendlyError | null>(null);
+  const [attempt, setAttempt] = useState(0);
   const [cursor, setCursor] = useState(0);
+  const [broken, setBroken] = useState<Set<number>>(() => new Set());
   const input = useRef<HTMLInputElement>(null);
+  const narrow = useMediaQuery(NARROW);
 
   useEffect(() => input.current?.focus(), []);
 
@@ -56,14 +65,14 @@ export function Search({ onPick, draft, onResume, onDiscard, history, onOpenHist
           setCursor(0);
         })
         .catch((e: unknown) => {
-          if (!ctrl.signal.aborted) setError(e instanceof Error ? e.message : String(e));
+          if (!ctrl.signal.aborted) setError(friendlyError(e, 'search'));
         });
     }, 300);
     return () => {
       clearTimeout(timer);
       ctrl.abort();
     };
-  }, [q]);
+  }, [q, attempt]);
 
   const onKey = (e: React.KeyboardEvent) => {
     if (!results?.length) return;
@@ -103,7 +112,14 @@ export function Search({ onPick, draft, onResume, onDiscard, history, onOpenHist
             spellCheck={false}
           />
         </div>
-        {error && <p className="muted">Recherche impossible : {error}</p>}
+        {error && (
+          <div className="load-error" role="alert">
+            <p className="muted">{error.message}</p>
+            <button className="ghost" onClick={() => setAttempt((n) => n + 1)}>
+              réessayer
+            </button>
+          </div>
+        )}
         {results && results.length === 0 && <p className="muted">Aucun artiste trouvé.</p>}
         {results && results.length > 0 && (
           <ul className="results" id="artist-results" role="listbox">
@@ -117,7 +133,11 @@ export function Search({ onPick, draft, onResume, onDiscard, history, onOpenHist
                 onMouseEnter={() => setCursor(i)}
                 onClick={() => onPick(a)}
               >
-                <img src={a.picture} alt="" loading="lazy" />
+                {a.picture && !broken.has(a.id) ? (
+                  <img src={a.picture} alt="" loading="lazy" onError={() => setBroken((b) => new Set(b).add(a.id))} />
+                ) : (
+                  <span className="pic-none" aria-hidden />
+                )}
                 <span className="name">{a.name}</span>
                 <span className="fans">{fmtFans(a.fans)}</span>
               </li>
@@ -161,7 +181,12 @@ export function Search({ onPick, draft, onResume, onDiscard, history, onOpenHist
         )}
       </div>
       <div className="hero-3d" aria-hidden>
-        <Vinyl3D mode="hero" label="Vinyle album parfait" />
+        {narrow ? (
+          // Mobile : la même scène en image fixe (5 Ko) plutôt que three.js (~120 Ko compressés + rendu continu).
+          <img className="hero-still" src={heroStill} alt="" width={193} height={162} decoding="async" />
+        ) : (
+          <Vinyl3D mode="hero" label="Vinyle album parfait" />
+        )}
       </div>
     </section>
   );

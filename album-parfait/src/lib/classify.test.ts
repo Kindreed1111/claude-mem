@@ -91,6 +91,41 @@ describe('coverChoices', () => {
     ];
     expect(coverChoices(projects, ME).map((x) => x.title)).toEqual(['New', 'Mid', 'Old']);
   });
+
+  it('dédoublonne aussi par titre normalisé quand le md5 diffère (garde la plus ancienne)', () => {
+    const projects = [
+      p(11853396, 'Feu (Ré-édition)', 'album', '2015-12-04', [t('a', 1)], 'md5-a'),
+      p(11853454, 'Feu (Ré-Édition)', 'album', '2015-11-27', [t('b', 1)], 'md5-b'),
+    ];
+    expect(coverChoices(projects, ME).map((x) => x.id)).toEqual([11853454]);
+  });
+
+  it('ignore les suffixes d’édition et préfère l’album au single', () => {
+    const projects = [
+      p(1, 'Humanoïde', 'single', '2015-05-01', [t('a', 1)]),
+      p(2, 'Humanoide (Deluxe)', 'album', '2016-01-01', [t('b', 1)]),
+      p(3, 'Humanoïde - Remastered', 'ep', '2015-01-01', [t('c', 1)]),
+    ];
+    expect(coverChoices(projects, ME).map((x) => x.id)).toEqual([2]);
+  });
+
+  it('garde deux covers différentes aux titres différents (cas Nekfeu)', () => {
+    const projects = [
+      p(10565677, 'Feu', 'album', '2015-06-23', [t('a', 1)], 'beb38882'),
+      p(11853396, 'Feu (Ré-édition)', 'album', '2015-12-04', [t('b', 1)], '45f0e973'),
+      p(11853454, 'Feu (Ré-édition)', 'album', '2015-11-27', [t('c', 1)], '45f0e973'),
+      p(320919827, 'Feu', 'album', '2015-12-11', [t('d', 1)], '45f0e973'),
+    ];
+    expect(coverChoices(projects, ME).map((x) => [x.id, x.title])).toEqual([
+      [11853454, 'Feu (Ré-édition)'],
+      [10565677, 'Feu'],
+    ]);
+  });
+
+  it('ne regroupe pas deux projets dont le titre normalisé est vide', () => {
+    const projects = [p(1, '…', 'album', '2020-01-01', [t('a', 1)]), p(2, '?!', 'album', '2021-01-01', [t('b', 1)])];
+    expect(coverChoices(projects, ME).map((x) => x.id)).toEqual([2, 1]);
+  });
 });
 
 const gkmc = p(9416314, 'good kid, m.A.A.d city', 'album', '2013-04-02', [
