@@ -1,4 +1,4 @@
-import { handleImage } from '../server/proxy';
+import { handleImage } from '../server/proxy.js';
 
 export function GET(request: Request): Promise<Response> {
   return handleImage(request);
