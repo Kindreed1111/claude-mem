@@ -1,7 +1,25 @@
-import type { Track } from './types';
+export type ExportFormat = 'portrait' | 'story' | 'carre';
+export const EXPORT_FORMATS: Record<ExportFormat, { label: string; w: number; h: number }> = {
+  portrait: { label: 'post 4:5', w: 1080, h: 1350 },
+  story: { label: 'story 9:16', w: 1080, h: 1920 },
+  carre: { label: 'carré 1:1', w: 1080, h: 1080 },
+};
 
-const W = 1080;
-const H = 1350;
+interface Layout {
+  cover: { x: number; y: number; size: number };
+  list: { x: number; y: number; colW: number; rowH: number; columns: 1 | 2; font: number };
+}
+
+function layoutFor(format: ExportFormat): Layout {
+  switch (format) {
+    case 'story':
+      return { cover: { x: 140, y: 230, size: 800 }, list: { x: 120, y: 1150, colW: 840, rowH: 64, columns: 1, font: 34 } };
+    case 'carre':
+      return { cover: { x: 72, y: 160, size: 540 }, list: { x: 672, y: 200, colW: 336, rowH: 56, columns: 1, font: 26 } };
+    default:
+      return { cover: { x: 240, y: 150, size: 600 }, list: { x: 72, y: 842, colW: 444, rowH: 78, columns: 2, font: 32 } };
+  }
+}
 const OLIVE = '#333300';
 const CREAM = '#d6d5c5';
 const CREAM_DIM = 'rgba(214, 213, 197, 0.6)';
@@ -25,7 +43,7 @@ function fit(ctx: CanvasRenderingContext2D, text: string, max: number): string {
   return `${s.trimEnd()}…`;
 }
 
-function grain(ctx: CanvasRenderingContext2D) {
+function grain(ctx: CanvasRenderingContext2D, W: number, H: number) {
   const img = ctx.getImageData(0, 0, W, H);
   const d = img.data;
   for (let i = 0; i < d.length; i += 4) {
@@ -38,7 +56,15 @@ function grain(ctx: CanvasRenderingContext2D) {
 }
 
 /** Rendu 1080×1350 du récap. La cover passe par /api/image pour garder le canvas exportable. */
-export async function renderAlbumPng(opts: { coverUrl: string; artistName: string; tracks: Array<Track | null> }): Promise<Blob> {
+export async function renderAlbumPng(opts: {
+  coverUrl: string;
+  artistName: string;
+  tracks: Array<{ title: string } | null>;
+  format?: ExportFormat;
+}): Promise<Blob> {
+  const format = opts.format ?? 'portrait';
+  const { w: W, h: H } = EXPORT_FORMATS[format];
+  const L = layoutFor(format);
   await Promise.all([
     document.fonts.load(`300 64px ${SERIF}`),
     document.fonts.load(`italic 300 64px ${SERIF}`),
@@ -69,9 +95,7 @@ export async function renderAlbumPng(opts: { coverUrl: string; artistName: strin
   ctx.fillText(fit(ctx, opts.artistName.toUpperCase(), 520), W - 72, 100);
   ctx.textAlign = 'left';
 
-  const size = 600;
-  const cx = (W - size) / 2;
-  const cy = 150;
+  const { x: cx, y: cy, size } = L.cover;
   ctx.save();
   ctx.shadowColor = 'rgba(0, 0, 0, 0.55)';
   ctx.shadowBlur = 50;
@@ -79,25 +103,25 @@ export async function renderAlbumPng(opts: { coverUrl: string; artistName: strin
   ctx.drawImage(cover, cx, cy, size, size);
   ctx.restore();
 
-  const colW = (W - 72 * 2 - 48) / 2;
-  const top = cy + size + 92;
+  const { x: lx, y: top, colW, rowH, columns, font } = L.list;
+  const perCol = columns === 2 ? 5 : 10;
   opts.tracks.forEach((t, i) => {
-    const col = i < 5 ? 0 : 1;
-    const row = i % 5;
-    const x = 72 + col * (colW + 48);
-    const y = top + row * 78;
+    const col = Math.floor(i / perCol);
+    const row = i % perCol;
+    const x = lx + col * (colW + 48);
+    const y = top + row * rowH;
     ctx.strokeStyle = 'rgba(214, 213, 197, 0.22)';
     ctx.lineWidth = 1;
     ctx.beginPath();
-    ctx.moveTo(x, y + 26);
-    ctx.lineTo(x + colW, y + 26);
+    ctx.moveTo(x, y + Math.round(rowH * 0.34));
+    ctx.lineTo(x + colW, y + Math.round(rowH * 0.34));
     ctx.stroke();
     ctx.fillStyle = CREAM_DIM;
-    ctx.font = `400 16px ${MONO}`;
+    ctx.font = `400 ${Math.round(font * 0.5)}px ${MONO}`;
     ctx.fillText(String(i + 1).padStart(2, '0'), x, y);
     ctx.fillStyle = CREAM;
-    ctx.font = `400 32px ${SERIF}`;
-    ctx.fillText(fit(ctx, t?.title ?? '—', colW - 52), x + 48, y + 2);
+    ctx.font = `400 ${font}px ${SERIF}`;
+    ctx.fillText(fit(ctx, t?.title ?? '—', colW - font * 1.6), x + font * 1.5, y + 2);
   });
 
   // Étiquette Parental Advisory
@@ -118,7 +142,7 @@ export async function renderAlbumPng(opts: { coverUrl: string; artistName: strin
   ctx.font = '900 18px Arial, sans-serif';
   ctx.fillText('ADVISORY', bx + 52, by + 39);
 
-  grain(ctx);
+  grain(ctx, W, H);
 
   return new Promise((resolve, reject) =>
     canvas.toBlob((b) => (b ? resolve(b) : reject(new Error('export impossible'))), 'image/png'),
