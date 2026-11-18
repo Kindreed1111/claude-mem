@@ -1,4 +1,5 @@
-import { defineConfig, type Plugin } from 'vite';
+import type { Plugin } from 'vite';
+import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import { Readable } from 'node:stream';
 import { handleDeezer, handleImage } from './server/proxy';
@@ -34,4 +35,4 @@ function devApi(): Plugin {
 export default defineConfig({
   plugins: [react(), devApi()],
   test: { environment: 'node' },
-} as never);
+});

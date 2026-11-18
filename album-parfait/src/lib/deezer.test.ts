@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { createLimiter, dz, DeezerQuotaError, fetchProjects } from './deezer';
+import { createLimiter, dz, DeezerQuotaError, fetchContributorIds, fetchProjects } from './deezer';
 
 const json = (body: unknown) => new Response(JSON.stringify(body), { headers: { 'content-type': 'application/json' } });
 
@@ -53,6 +53,18 @@ describe('createLimiter', () => {
   });
 });
 
+describe('annulation', () => {
+  it('ne lance pas une requête en file si le signal est annulé', async () => {
+    const fetchImpl = vi.fn();
+    const ctrl = new AbortController();
+    ctrl.abort();
+    await expect(fetchContributorIds(1, { fetchImpl: fetchImpl as unknown as typeof fetch, signal: ctrl.signal })).rejects.toThrow(
+      'Requête annulée',
+    );
+    expect(fetchImpl).not.toHaveBeenCalled();
+  });
+});
+
 describe('fetchProjects', () => {
   it('suit la pagination next', async () => {
     const page = (ids: number[], next?: string) =>
@@ -72,7 +84,7 @@ describe('fetchProjects', () => {
       .fn()
       .mockResolvedValueOnce(page([1, 2], 'https://api.deezer.com/artist/9/albums?limit=100&index=100'))
       .mockResolvedValueOnce(page([3]));
-    const projects = await fetchProjects(9, fetchImpl as unknown as typeof fetch);
+    const projects = await fetchProjects(9, { fetchImpl: fetchImpl as unknown as typeof fetch });
     expect(projects.map((p) => p.id)).toEqual([1, 2, 3]);
     expect(projects[0]).toEqual({ id: 1, title: 'P1', cover: 'c1', md5: 'm1', releaseDate: '2020-01-01', recordType: 'album' });
     expect(fetchImpl.mock.calls[1][0]).toContain('index=100');

@@ -63,4 +63,11 @@ describe('album', () => {
     expect(s.slots[1]).toBeNull();
     expect(s.active).toBe(1);
   });
+
+  it('reset revient à l’état initial', () => {
+    let s = initialAlbum();
+    s = albumReducer(s, { type: 'place', track: track() });
+    s = albumReducer(s, { type: 'reset' });
+    expect(s).toEqual(initialAlbum());
+  });
 });

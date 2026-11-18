@@ -66,16 +66,26 @@ export async function dz<T>(
   }
 }
 
-const limited = <T>(path: string, query: Record<string, string | number> = {}, fetchImpl?: typeof fetch) =>
-  limiter(() => dz<T>(path, query, fetchImpl));
+export interface RequestOptions {
+  fetchImpl?: typeof fetch;
+  /** Annule les requêtes encore en file (ex. l'utilisateur change d'artiste). */
+  signal?: AbortSignal;
+}
+
+const limited = <T>(path: string, query: Record<string, string | number> = {}, opts: RequestOptions = {}) =>
+  limiter(() =>
+    opts.signal?.aborted
+      ? Promise.reject(new DOMException('Requête annulée', 'AbortError'))
+      : dz<T>(path, query, opts.fetchImpl),
+  );
 
 type Page<T> = { data: T[]; next?: string };
 
-async function allPages<T>(path: string, fetchImpl?: typeof fetch): Promise<T[]> {
+async function allPages<T>(path: string, opts?: RequestOptions): Promise<T[]> {
   const out: T[] = [];
   let index = 0;
   for (;;) {
-    const page = await limited<Page<T>>(path, { limit: 100, index }, fetchImpl);
+    const page = await limited<Page<T>>(path, { limit: 100, index }, opts);
     out.push(...page.data);
     if (!page.next || page.data.length === 0) return out;
     index = Number(new URL(page.next).searchParams.get('index') ?? out.length);
@@ -94,15 +104,15 @@ type RawTrack = {
   artist: { id: number; name: string };
 };
 
-export async function searchArtists(q: string, fetchImpl?: typeof fetch): Promise<Artist[]> {
-  const res = await limited<Page<RawArtist>>('search/artist', { q, limit: 12 }, fetchImpl);
+export async function searchArtists(q: string, opts?: RequestOptions): Promise<Artist[]> {
+  const res = await limited<Page<RawArtist>>('search/artist', { q, limit: 12 }, opts);
   return res.data.map((a) => ({ id: a.id, name: a.name, picture: a.picture_medium, fans: a.nb_fan }));
 }
 
 const RECORD_TYPES: RecordType[] = ['album', 'ep', 'single', 'compile'];
 
-export async function fetchProjects(artistId: number, fetchImpl?: typeof fetch): Promise<Project[]> {
-  const raw = await allPages<RawAlbum>(`artist/${artistId}/albums`, fetchImpl);
+export async function fetchProjects(artistId: number, opts?: RequestOptions): Promise<Project[]> {
+  const raw = await allPages<RawAlbum>(`artist/${artistId}/albums`, opts);
   return raw.map((a) => ({
     id: a.id,
     title: a.title,
@@ -113,8 +123,8 @@ export async function fetchProjects(artistId: number, fetchImpl?: typeof fetch):
   }));
 }
 
-export async function fetchTracks(projectId: number, fetchImpl?: typeof fetch): Promise<Track[]> {
-  const raw = await allPages<RawTrack>(`album/${projectId}/tracks`, fetchImpl);
+export async function fetchTracks(projectId: number, opts?: RequestOptions): Promise<Track[]> {
+  const raw = await allPages<RawTrack>(`album/${projectId}/tracks`, opts);
   return raw.map((t) => ({
     id: t.id,
     title: t.title,
@@ -128,7 +138,7 @@ export async function fetchTracks(projectId: number, fetchImpl?: typeof fetch): 
   }));
 }
 
-export async function fetchContributorIds(trackId: number, fetchImpl?: typeof fetch): Promise<number[]> {
-  const t = await limited<{ contributors?: Array<{ id: number }> }>(`track/${trackId}`, {}, fetchImpl);
+export async function fetchContributorIds(trackId: number, opts?: RequestOptions): Promise<number[]> {
+  const t = await limited<{ contributors?: Array<{ id: number }> }>(`track/${trackId}`, {}, opts);
   return (t.contributors ?? []).map((c) => c.id);
 }

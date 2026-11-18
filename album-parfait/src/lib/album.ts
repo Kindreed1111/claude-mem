@@ -18,7 +18,8 @@ export interface AlbumState {
 export type AlbumAction =
   | { type: 'place'; track: Track }
   | { type: 'open'; slot: number }
-  | { type: 'clear'; slot: number };
+  | { type: 'clear'; slot: number }
+  | { type: 'reset' };
 
 export function initialAlbum(): AlbumState {
   const slots: Record<number, Track | null> = {};
@@ -51,6 +52,8 @@ export function albumReducer(state: AlbumState, action: AlbumAction): AlbumState
     }
     case 'open':
       return { ...state, active: action.slot };
+    case 'reset':
+      return initialAlbum();
     case 'clear': {
       const slots = { ...state.slots, [action.slot]: null };
       return { slots, active: action.slot };
