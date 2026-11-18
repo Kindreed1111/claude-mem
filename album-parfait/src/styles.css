@@ -771,9 +771,152 @@ button {
   min-width: 0;
 }
 
-.hero-3d {
-  height: clamp(340px, 64vh, 680px);
+/* Mur de pochettes : 3 colonnes qui défilent (bureau), 2 rangées (mobile). Boucle = 2 copies, translation de -50 %. */
+.home-wall {
+  min-width: 0;
+}
+
+.wall-wrap {
+  display: grid;
+  gap: 12px;
+  animation: rise 0.9s var(--ease) both;
+  animation-delay: 300ms;
+}
+
+.wall {
+  --tile: 168px;
+  --gap: 18px;
+  height: clamp(420px, 76vh, 760px);
+  display: flex;
+  gap: var(--gap);
+  justify-content: center;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+}
+
+.wall-lane {
+  flex: 0 1 var(--tile);
+  min-width: 0;
+}
+
+.wall-track {
+  display: flex;
+  flex-direction: column;
+  animation: wall-y calc(70s + var(--l) * 10s) linear infinite;
+}
+
+.wall-lane:nth-child(2) .wall-track {
+  animation-direction: reverse;
+  animation-duration: 90s;
+}
+
+.wall-lane:hover .wall-track,
+.wall-lane:focus-within .wall-track {
+  animation-play-state: paused;
+}
+
+.wall-copy {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 var(--gap);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.wall-tile {
   position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  background: var(--olive-700);
+  cursor: pointer;
+  box-shadow: 0 18px 30px -16px rgba(0, 0, 0, 0.85);
+  transition:
+    transform 0.4s var(--ease),
+    box-shadow 0.4s var(--ease);
+}
+
+.wall-tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wall-tile:hover,
+.wall-tile:focus-visible {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 26px 40px -18px rgba(0, 0, 0, 0.95);
+  z-index: 1;
+}
+
+.wall-tile:focus-visible {
+  outline: 1px solid var(--cream);
+  outline-offset: 4px;
+}
+
+.wall-cap {
+  position: absolute;
+  inset: auto 0 0;
+  display: grid;
+  gap: 2px;
+  padding: 26px 10px 9px;
+  text-align: left;
+  color: var(--cream);
+  background: linear-gradient(to top, rgba(28, 28, 0, 0.92), transparent);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+
+.wall-cap em,
+.wall-cap small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wall-cap em {
+  font-size: 17px;
+  line-height: 1.1;
+}
+
+.wall-cap small {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--cream-dim);
+}
+
+.wall-tile:hover .wall-cap,
+.wall-tile:focus-visible .wall-cap {
+  opacity: 1;
+}
+
+.wall-note {
+  margin: 0;
+  text-align: center;
+}
+
+@keyframes wall-y {
+  to {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+@keyframes wall-x {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wall-track {
+    animation: none;
+  }
 }
 
 .vinyl3d {
@@ -1740,10 +1883,50 @@ label.chip {
     grid-template-columns: 1fr;
   }
 
-  .hero-3d {
-    order: -1;
-    height: 280px;
-    margin: 0 -16px -20px;
+  .wall-wrap {
+    margin: 22px -16px 0;
+    gap: 10px;
+  }
+
+  .wall {
+    --tile: 104px;
+    --gap: 10px;
+    height: auto;
+    flex-direction: column;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  .wall-lane {
+    flex: none;
+    overflow: hidden;
+  }
+
+  .wall-lane:nth-child(3) {
+    display: none;
+  }
+
+  .wall-track,
+  .wall-copy {
+    flex-direction: row;
+    width: max-content;
+  }
+
+  .wall-track {
+    animation-name: wall-x;
+    animation-duration: 60s;
+  }
+
+  .wall-lane:nth-child(2) .wall-track {
+    animation-duration: 75s;
+  }
+
+  .wall-copy {
+    padding: 0 var(--gap) 0 0;
+  }
+
+  .wall-copy li {
+    width: var(--tile);
   }
 
   .home .search {

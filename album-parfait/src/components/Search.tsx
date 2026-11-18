@@ -2,8 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import { searchArtists } from '../lib/deezer';
 import type { SharedAlbum } from '../lib/share';
 import type { Draft } from '../lib/storage';
-import type { Artist } from '../lib/types';
-import { Vinyl3D } from './Vinyl3D';
+import type { Artist, WallItem } from '../lib/types';
+import { fetchWall } from '../lib/wall';
+import { useMedia } from '../hooks/useMedia';
+import { CoverWall, WALL_MIN } from './CoverWall';
 
 const fmtFans = (n: number) => new Intl.NumberFormat('fr-FR', { notation: 'compact' }).format(n) + ' fans';
 
@@ -37,8 +39,20 @@ export function Search({ onPick, draft, onResume, onDiscard, history, onOpenHist
   const [error, setError] = useState<string | null>(null);
   const [cursor, setCursor] = useState(0);
   const input = useRef<HTMLInputElement>(null);
+  const [wall, setWall] = useState<WallItem[]>([]);
+  const mobile = useMedia('(max-width: 860px)');
 
   useEffect(() => input.current?.focus(), []);
+
+  useEffect(() => {
+    let alive = true;
+    fetchWall().then((items) => alive && setWall(items));
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  const wallEl = wall.length >= WALL_MIN ? <CoverWall items={wall} onPick={onPick} /> : null;
 
   useEffect(() => {
     const term = q.trim();
@@ -103,6 +117,7 @@ export function Search({ onPick, draft, onResume, onDiscard, history, onOpenHist
             spellCheck={false}
           />
         </div>
+        {mobile && !results && wallEl}
         {error && <p className="muted">Recherche impossible : {error}</p>}
         {results && results.length === 0 && <p className="muted">Aucun artiste trouvé.</p>}
         {results && results.length > 0 && (
@@ -160,9 +175,7 @@ export function Search({ onPick, draft, onResume, onDiscard, history, onOpenHist
           </div>
         )}
       </div>
-      <div className="hero-3d" aria-hidden>
-        <Vinyl3D mode="hero" label="Vinyle album parfait" />
-      </div>
+      {!mobile && <div className="home-wall">{wallEl}</div>}
     </section>
   );
 }
