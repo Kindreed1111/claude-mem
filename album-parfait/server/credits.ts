@@ -1,5 +1,9 @@
 import { buildPool } from '../src/lib/classify.js';
-import { DEEZER_DIRECT, fetchContributorIds, fetchProjects, fetchTracks } from '../src/lib/deezer.js';
+import { DEEZER_DIRECT, fetchContributorIds } from '../src/lib/deezer.js';
+import { computeDiscography, LONG_CACHE, SHORT_CACHE } from './discography.js';
+import { json, soleIdParam } from './http.js';
+import { checkLimit, LIMITS, tooMany } from './ratelimit.js';
+import { redisEnv, type RedisEnv } from './redis.js';
 
 export interface CreditsPayload {
   artistId: number;
@@ -10,24 +14,14 @@ export interface CreditsPayload {
 
 /** Calcule, pour chaque piste « propre » de l'artiste, les id des artistes crédités. */
 export async function computeCredits(artistId: number, fetchImpl: typeof fetch = fetch): Promise<CreditsPayload> {
-  const opts = { base: DEEZER_DIRECT, fetchImpl };
-  const projects = await fetchProjects(artistId, opts);
-  let complete = true;
-  const withTracks = await Promise.all(
-    projects.map(async (p) => ({
-      ...p,
-      tracks: await fetchTracks(p.id, opts).catch(() => {
-        complete = false;
-        return [];
-      }),
-    })),
-  );
-  const own = buildPool(withTracks).filter((t) => t.artistId === artistId);
+  const disco = await computeDiscography(artistId, fetchImpl);
+  let complete = disco.complete;
+  const own = buildPool(disco.projects).filter((t) => t.artistId === artistId);
   const contributors: Record<number, number[]> = {};
   await Promise.all(
     own.map(async (t) => {
       try {
-        contributors[t.id] = await fetchContributorIds(t.id, opts);
+        contributors[t.id] = await fetchContributorIds(t.id, { base: DEEZER_DIRECT, fetchImpl });
       } catch {
         complete = false;
       }
@@ -36,22 +30,19 @@ export async function computeCredits(artistId: number, fetchImpl: typeof fetch =
   return { artistId, complete, contributors };
 }
 
-const json = (body: unknown, status: number, cache: string) =>
-  new Response(JSON.stringify(body), {
-    status,
-    headers: { 'content-type': 'application/json', 'cache-control': cache },
-  });
-
-export async function handleCredits(request: Request, fetchImpl: typeof fetch = fetch): Promise<Response> {
-  const raw = new URL(request.url).searchParams.get('artist') ?? '';
-  if (!/^\d{1,12}$/.test(raw)) return json({ error: { message: 'artiste invalide' } }, 400, 'no-store');
+export async function handleCredits(
+  request: Request,
+  fetchImpl: typeof fetch = fetch,
+  env: RedisEnv | null = redisEnv(),
+): Promise<Response> {
+  const artistId = soleIdParam(request, 'artist');
+  if (artistId === null) return json({ error: { message: 'artiste invalide' } }, 400);
+  const verdict = await checkLimit(request, LIMITS.credits, env, fetchImpl);
+  if (!verdict.ok) return tooMany(verdict);
   try {
-    const payload = await computeCredits(Number(raw), fetchImpl);
-    const cache = payload.complete
-      ? 'public, max-age=300, s-maxage=604800, stale-while-revalidate=86400'
-      : 'public, s-maxage=60';
-    return json(payload, 200, cache);
+    const payload = await computeCredits(artistId, fetchImpl);
+    return json(payload, 200, payload.complete ? LONG_CACHE : SHORT_CACHE);
   } catch (err) {
-    return json({ error: { message: err instanceof Error ? err.message : String(err) } }, 502, 'no-store');
+    return json({ error: { message: err instanceof Error ? err.message : String(err) } }, 502);
   }
 }

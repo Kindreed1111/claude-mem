@@ -15,6 +15,42 @@ export interface Discography {
 }
 
 const SERVER_GRACE_MS = 3000;
+/** Au-delà, on charge depuis le navigateur (le serveur continue et remplit le cache pour les suivants). */
+const SERVER_DISCO_TIMEOUT_MS = 60000;
+
+/** Une seule requête, servie par le cache CDN dès le 2ᵉ visiteur. null = repli sur le chargement projet par projet. */
+async function fetchServerDiscography(artistId: number, signal: AbortSignal): Promise<ProjectWithTracks[] | null> {
+  const ctrl = new AbortController();
+  const abort = () => ctrl.abort();
+  signal.addEventListener('abort', abort);
+  const timer = setTimeout(abort, SERVER_DISCO_TIMEOUT_MS);
+  try {
+    const r = await fetch(`/api/discography?artist=${artistId}`, { signal: ctrl.signal });
+    if (!r.ok) return null;
+    const body = (await r.json()) as { projects?: ProjectWithTracks[] };
+    return Array.isArray(body.projects) ? body.projects : null;
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timer);
+    signal.removeEventListener('abort', abort);
+  }
+}
+
+async function loadViaProxy(artistId: number, signal: AbortSignal, onTotal: (n: number) => void, onLoaded: (n: number) => void) {
+  const opts = { signal };
+  const projects = await fetchProjects(artistId, opts);
+  onTotal(projects.length);
+  let loaded = 0;
+  const withTracks = await Promise.all(
+    projects.map(async (p) => {
+      const tracks = await fetchTracks(p.id, opts).catch(() => []);
+      onLoaded(++loaded);
+      return { ...p, tracks };
+    }),
+  );
+  return withTracks.filter((p) => p.tracks.length > 0);
+}
 
 async function fetchServerCredits(artistId: number, signal: AbortSignal): Promise<Map<number, number[]> | null> {
   try {
@@ -50,23 +86,16 @@ export function useDiscography(artist: Artist | null): Discography {
     }
     let alive = true;
     const ctrl = new AbortController();
-    const opts = { signal: ctrl.signal };
     const set = (patch: Partial<Discography>) => alive && setState((s) => ({ ...s, ...patch }));
     setState({ ...EMPTY, status: 'loading' });
 
     (async () => {
-      const projects = await fetchProjects(artist.id, opts);
-      set({ total: projects.length });
-      let loaded = 0;
-      const withTracks = await Promise.all(
-        projects.map(async (p) => {
-          const tracks = await fetchTracks(p.id, opts).catch(() => []);
-          set({ loaded: ++loaded });
-          return { ...p, tracks };
-        }),
-      );
+      const usable =
+        (await fetchServerDiscography(artist.id, ctrl.signal)) ??
+        (alive
+          ? await loadViaProxy(artist.id, ctrl.signal, (total) => set({ total }), (loaded) => set({ loaded }))
+          : []);
       if (!alive) return;
-      const usable = withTracks.filter((p) => p.tracks.length > 0);
       set({ status: 'ready', projects: usable });
 
       // Les pistes dont l'artiste principal est un autre sont déjà des feats : pas besoin de les analyser.

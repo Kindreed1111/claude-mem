@@ -9,7 +9,7 @@ const track = (title = `Song ${id}`): Track => ({
   titleVersion: '',
   position: 1,
   disk: 1,
-  preview: '',
+  hasPreview: false,
   artistId: 1,
   artistName: 'A',
   projectId: 1,

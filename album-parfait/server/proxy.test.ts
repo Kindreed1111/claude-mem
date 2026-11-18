@@ -27,6 +27,12 @@ describe('resolveDeezerTarget', () => {
     expect(resolveDeezerTarget(new URLSearchParams('path=track/1&access_token=x'))).toBe('https://api.deezer.com/track/1');
   });
 
+  it('refuse les valeurs hors bornes', () => {
+    expect(resolveDeezerTarget(new URLSearchParams('path=search/artist&q=' + 'a'.repeat(101)))).toBeNull();
+    expect(resolveDeezerTarget(new URLSearchParams('path=artist/1/albums&limit=1000'))).toBeNull();
+    expect(resolveDeezerTarget(new URLSearchParams('path=artist/1/albums&index=-1'))).toBeNull();
+  });
+
   it('refuse tout autre chemin', () => {
     for (const p of ['path=user/1', 'path=artist/abc/albums', 'path=../x', 'path=track/1/../../user/2', '']) {
       expect(resolveDeezerTarget(new URLSearchParams(p))).toBeNull();
@@ -36,11 +42,16 @@ describe('resolveDeezerTarget', () => {
 
 describe('resolveImageTarget', () => {
   it('autorise le CDN Deezer en https', () => {
-    const u = 'https://cdn-images.dzcdn.net/images/cover/abc/1000x1000-000000-80-0-0.jpg';
+    const u = 'https://cdn-images.dzcdn.net/images/cover/0123456789abcdef0123456789abcdef/1000x1000-000000-80-0-0.jpg';
     expect(resolveImageTarget(u)).toBe(u);
-    expect(resolveImageTarget('https://e-cdns-images.dzcdn.net/images/cover/x.jpg')).toBe(
-      'https://e-cdns-images.dzcdn.net/images/cover/x.jpg',
-    );
+    const e = 'https://e-cdns-images.dzcdn.net/images/cover/0123456789abcdef0123456789abcdef/500x500-000000-80-0-0.jpg';
+    expect(resolveImageTarget(e)).toBe(e);
+  });
+
+  it('refuse ce qui n’est pas une pochette', () => {
+    expect(resolveImageTarget('https://cdn-images.dzcdn.net/images/artist/0123456789abcdef0123456789abcdef/500x500.jpg')).toBeNull();
+    expect(resolveImageTarget('https://cdnt-preview.dzcdn.net/api/1/1/a/b/c.mp3')).toBeNull();
+    expect(resolveImageTarget('https://cdn-images.dzcdn.net/images/cover/x.jpg')).toBeNull();
   });
 
   it('refuse les autres hôtes, http et les entrées invalides', () => {

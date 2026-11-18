@@ -22,7 +22,8 @@ export interface Track {
   titleVersion: string;
   position: number;
   disk: number;
-  preview: string;
+  /** Un extrait de 30 s existe (le lien, qui expire vite, est demandé à /api/audio au moment d'écouter). */
+  hasPreview: boolean;
   artistId: number;
   artistName: string;
   projectId: number;

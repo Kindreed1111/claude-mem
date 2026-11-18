@@ -26,15 +26,21 @@ export function Vinyl3D({
 
   useEffect(() => {
     let disposed = false;
-    import('../three/vinylScene')
-      .then(({ createVinylScene }) => {
-        if (disposed || !canvas.current) return;
-        scene.current = createVinylScene(canvas.current, { mode, reducedMotion: reduced() });
-        setReady(true);
-      })
-      .catch(() => setFailed(true));
+    // La 3D démarre une fois la page affichée et le navigateur au repos : le texte et la recherche d'abord.
+    const start = () =>
+      import('../three/vinylScene')
+        .then(({ createVinylScene }) => {
+          if (disposed || !canvas.current) return;
+          scene.current = createVinylScene(canvas.current, { mode, reducedMotion: reduced() });
+          setReady(true);
+        })
+        .catch(() => setFailed(true));
+    const idle = 'requestIdleCallback' in window;
+    const handle = idle ? window.requestIdleCallback(start, { timeout: 1500 }) : window.setTimeout(start, 400);
     return () => {
       disposed = true;
+      if (idle) window.cancelIdleCallback(handle);
+      else window.clearTimeout(handle);
       scene.current?.dispose();
       scene.current = null;
     };

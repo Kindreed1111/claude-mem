@@ -58,12 +58,25 @@ describe('stats', () => {
     const env = { url: 'https://r', token: 't' };
     const post = () =>
       new Request('https://s/api/stats', { method: 'POST', body: JSON.stringify(sub), headers: { 'x-forwarded-for': '1.2.3.4' } });
-    const first = vi.fn().mockResolvedValueOnce(json([{ result: 'OK' }])).mockResolvedValueOnce(json(Array(12).fill({ result: 1 })));
+    const limitOk = () => json([{ result: 1 }, { result: 1 }]);
+    const first = vi
+      .fn()
+      .mockResolvedValueOnce(limitOk())
+      .mockResolvedValueOnce(json([{ result: 'OK' }]))
+      .mockResolvedValueOnce(json(Array(12).fill({ result: 1 })));
     expect(await (await handleStats(post(), env, first)).json()).toEqual({ enabled: true, recorded: true });
-    expect(JSON.parse(first.mock.calls[1][1].body)).toHaveLength(12);
-    const dup = vi.fn().mockResolvedValueOnce(json([{ result: null }]));
+    expect(JSON.parse(first.mock.calls[2][1].body)).toHaveLength(12);
+    const dup = vi.fn().mockResolvedValueOnce(limitOk()).mockResolvedValueOnce(json([{ result: null }]));
     expect((await (await handleStats(post(), env, dup)).json()).recorded).toBe(false);
-    expect(dup).toHaveBeenCalledTimes(1);
+    expect(dup).toHaveBeenCalledTimes(2);
+  });
+
+  it('POST refuse au-delà de 30 albums par jour et par IP', async () => {
+    const env = { url: 'https://r', token: 't' };
+    const over = vi.fn().mockResolvedValueOnce(json([{ result: 31 }, { result: 1 }]));
+    const res = await handleStats(new Request('https://s/api/stats', { method: 'POST', body: JSON.stringify(sub) }), env, over);
+    expect(res.status).toBe(429);
+    expect(over).toHaveBeenCalledTimes(1);
   });
 
   it('POST refuse un album invalide', async () => {
@@ -97,7 +110,8 @@ describe('credits', () => {
 
   it('met en cache longtemps une réponse complète, refuse un id invalide', async () => {
     const ok = await handleCredits(new Request('https://s/api/credits?artist=1'), fetchImpl as unknown as typeof fetch);
-    expect(ok.headers.get('cache-control')).toContain('s-maxage=604800');
+    expect(ok.headers.get('cache-control')).toContain('s-maxage=86400');
+    expect(ok.headers.get('cache-control')).toContain('stale-while-revalidate=604800');
     const bad = await handleCredits(new Request('https://s/api/credits?artist=abc'));
     expect(bad.status).toBe(400);
   });

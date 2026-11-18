@@ -6,6 +6,9 @@
   "functions": {
     "api/credits.ts": {
       "maxDuration": 300
+    },
+    "api/discography.ts": {
+      "maxDuration": 300
     }
   }
 }

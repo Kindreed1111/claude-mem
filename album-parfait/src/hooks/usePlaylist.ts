@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { fetchPreview } from '../lib/deezer';
+import { previewUrl } from '../lib/deezer';
 
 export interface PlaylistTrack {
   id: number;
   title: string;
 }
 
-/** Écoute de l'album : enchaîne les extraits de 30 s, URL d'extrait rafraîchie avant chaque piste. */
+/** Écoute de l'album : enchaîne les extraits de 30 s (lien à jour fourni par /api/audio). */
 export function usePlaylist(tracks: Array<PlaylistTrack | null>) {
   const audio = useRef<HTMLAudioElement | null>(null);
   const [index, setIndexState] = useState<number | null>(null);
@@ -39,11 +39,14 @@ export function usePlaylist(tracks: Array<PlaylistTrack | null>) {
     setLoading(true);
     setError(null);
     try {
-      const url = await fetchPreview(list[n]!.id);
+      // src posé tout de suite, dans le geste de l'utilisateur : iOS refuse play() après une attente réseau.
+      a.src = previewUrl(list[n]!.id);
+      await a.play().catch((err: unknown) => {
+        if (err instanceof DOMException && err.name === 'AbortError') throw err;
+        if (err instanceof DOMException && err.name === 'NotAllowedError') throw new Error('lecture bloquée par le navigateur : touche « écouter »');
+        throw new Error('pas d’extrait pour ce titre');
+      });
       if (my !== token.current) return;
-      if (!url) throw new Error('pas d’extrait pour ce titre');
-      a.src = url;
-      await a.play();
       setPlaying(true);
     } catch (e) {
       if (my !== token.current) return;

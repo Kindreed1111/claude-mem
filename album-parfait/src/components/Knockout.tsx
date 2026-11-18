@@ -90,7 +90,7 @@ export function Knockout({
                       {p?.title} · {p?.releaseDate.slice(0, 4)}
                     </span>
                   </button>
-                  <button className="play" aria-pressed={playing} disabled={!t.preview} onClick={() => preview.toggle(t)} aria-label={`Écouter ${t.title}`}>
+                  <button className="play" aria-pressed={playing} disabled={!t.hasPreview} onClick={() => preview.toggle(t)} aria-label={`Écouter ${t.title}`}>
                     {playing ? '■' : '▶'}
                   </button>
                 </div>

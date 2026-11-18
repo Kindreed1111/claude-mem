@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { previewUrl } from '../lib/deezer';
 import type { Track } from '../lib/types';
 
 /** Un seul extrait de 30 s joué à la fois. */
@@ -20,13 +21,13 @@ export function usePreview() {
   const toggle = useCallback(
     (track: Track) => {
       const a = audio.current;
-      if (!a || !track.preview) return;
+      if (!a || !track.hasPreview) return;
       if (playing === track.id) {
         a.pause();
         setPlaying(null);
         return;
       }
-      a.src = track.preview;
+      a.src = previewUrl(track.id);
       a.play().then(
         () => setPlaying(track.id),
         () => setPlaying(null),

@@ -3,15 +3,19 @@ import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import { Readable } from 'node:stream';
 import { handleDeezer, handleImage } from './server/proxy';
+import { handleAudio } from './server/audio';
 import { handleCredits } from './server/credits';
+import { handleDiscography } from './server/discography';
 import { handleStats } from './server/stats';
 
-// En dev, sert /api/deezer et /api/image avec le même code que les fonctions Vercel.
+// En dev, sert les routes /api/* avec le même code que les fonctions Vercel.
 function devApi(): Plugin {
   const routes: Record<string, (r: Request) => Promise<Response>> = {
     '/api/deezer': handleDeezer,
     '/api/image': handleImage,
     '/api/credits': (r) => handleCredits(r),
+    '/api/discography': (r) => handleDiscography(r),
+    '/api/audio': (r) => handleAudio(r),
     '/api/stats': (r) => handleStats(r),
   };
   return {

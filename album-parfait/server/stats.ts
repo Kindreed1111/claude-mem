@@ -1,6 +1,12 @@
 // Classements des joueurs, stockés dans Upstash Redis (API REST, sans dépendance).
 // Seuls des identifiants numériques sont stockés : les titres sont résolus côté client.
 
+import { clientIp, json, soleIdParam } from './http.js';
+import { checkLimit, LIMITS } from './ratelimit.js';
+import { pipeline, redisEnv, sha256, type RedisEnv } from './redis.js';
+
+export { redisEnv } from './redis.js';
+
 export type StatKind = 'intro' | 'feat' | 'interlude' | 'outro' | 'free' | 'cover';
 export const STAT_KINDS: StatKind[] = ['intro', 'feat', 'interlude', 'outro', 'free', 'cover'];
 const SLOT_KIND: Record<number, StatKind> = { 1: 'intro', 2: 'feat', 7: 'interlude', 10: 'outro' };
@@ -18,17 +24,6 @@ export interface StatsResponse {
   enabled: boolean;
   albums?: number;
   top?: Record<StatKind, Array<{ id: number; count: number }>>;
-}
-
-export interface RedisEnv {
-  url: string;
-  token: string;
-}
-
-export function redisEnv(env: Record<string, string | undefined> = process.env): RedisEnv | null {
-  const url = env.KV_REST_API_URL ?? env.UPSTASH_REDIS_REST_URL;
-  const token = env.KV_REST_API_TOKEN ?? env.UPSTASH_REDIS_REST_TOKEN;
-  return url && token ? { url: url.replace(/\/$/, ''), token } : null;
 }
 
 const isId = (n: unknown): n is number => typeof n === 'number' && Number.isInteger(n) && n > 0 && n < 1e13;
@@ -50,19 +45,6 @@ export function submissionCommands(s: Submission): string[][] {
   return cmds;
 }
 
-async function pipeline(env: RedisEnv, commands: string[][], fetchImpl: typeof fetch): Promise<unknown[]> {
-  const res = await fetchImpl(`${env.url}/pipeline`, {
-    method: 'POST',
-    headers: { authorization: `Bearer ${env.token}`, 'content-type': 'application/json' },
-    body: JSON.stringify(commands),
-  });
-  if (!res.ok) throw new Error(`Upstash ${res.status}`);
-  const out = (await res.json()) as Array<{ result?: unknown; error?: string }>;
-  const failed = out.find((r) => r.error);
-  if (failed) throw new Error(`Upstash : ${failed.error}`);
-  return out.map((r) => r.result);
-}
-
 function toTop(flat: unknown): Array<{ id: number; count: number }> {
   const arr = Array.isArray(flat) ? flat : [];
   const out: Array<{ id: number; count: number }> = [];
@@ -74,15 +56,8 @@ function toTop(flat: unknown): Array<{ id: number; count: number }> {
   return out;
 }
 
-async function fingerprint(request: Request, s: Submission): Promise<string> {
-  const ip = (request.headers.get('x-forwarded-for') ?? request.headers.get('x-real-ip') ?? '').split(',')[0].trim();
-  const data = new TextEncoder().encode(`${ip}|${JSON.stringify(s)}`);
-  const digest = await crypto.subtle.digest('SHA-256', data);
-  return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, '0')).join('').slice(0, 32);
-}
-
-const json = (body: unknown, status = 200, cache = 'no-store') =>
-  new Response(JSON.stringify(body), { status, headers: { 'content-type': 'application/json', 'cache-control': cache } });
+/** Empreinte « même IP + même album » : un album identique n'est compté qu'une fois par jour. */
+const fingerprint = (request: Request, s: Submission) => sha256(`${clientIp(request)}|${JSON.stringify(s)}`);
 
 export async function handleStats(
   request: Request,
@@ -92,9 +67,8 @@ export async function handleStats(
   if (!env) return json({ enabled: false } satisfies StatsResponse);
 
   if (request.method === 'GET') {
-    const raw = new URL(request.url).searchParams.get('artist') ?? '';
-    if (!/^\d{1,12}$/.test(raw)) return json({ error: { message: 'artiste invalide' } }, 400);
-    const a = Number(raw);
+    const a = soleIdParam(request, 'artist');
+    if (a === null) return json({ error: { message: 'artiste invalide' } }, 400);
     try {
       const results = await pipeline(
         env,
@@ -120,6 +94,8 @@ export async function handleStats(
     }
     const s = parseSubmission(body);
     if (!s) return json({ error: { message: 'album invalide' } }, 400);
+    const verdict = await checkLimit(request, LIMITS.albums, env, fetchImpl);
+    if (!verdict.ok) return json({ enabled: true, recorded: false, reason: 'limite du jour atteinte' }, 429);
     try {
       const fp = await fingerprint(request, s);
       const [fresh] = await pipeline(env, [['SET', `ap:seen:${fp}`, '1', 'NX', 'EX', '86400']], fetchImpl);

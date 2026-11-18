@@ -144,7 +144,7 @@ export async function fetchTracks(projectId: number, opts?: RequestOptions): Pro
     titleVersion: t.title_version ?? '',
     position: t.track_position,
     disk: t.disk_number,
-    preview: t.preview,
+    hasPreview: !!t.preview,
     artistId: t.artist.id,
     artistName: t.artist.name,
     projectId,
@@ -157,8 +157,5 @@ export async function fetchContributorIds(trackId: number, opts?: RequestOptions
   return (t.contributors ?? []).map((c) => c.id);
 }
 
-/** Extrait de 30 s à jour (les URL Deezer expirent au bout de quelques heures). */
-export async function fetchPreview(trackId: number, opts?: RequestOptions): Promise<string> {
-  const t = await limited<{ preview?: string }>(`track/${trackId}`, {}, opts);
-  return t.preview ?? '';
-}
+/** Extrait de 30 s : /api/audio redirige vers un lien Deezer à jour (ils expirent au bout de 15 min). */
+export const previewUrl = (trackId: number) => `/api/audio?track=${trackId}`;

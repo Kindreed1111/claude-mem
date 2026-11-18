@@ -10,7 +10,7 @@ const t = (title: string, position: number, projectId: number, extra: Partial<Tr
   titleVersion: '',
   position,
   disk: 1,
-  preview: '',
+  hasPreview: false,
   artistId: ME,
   artistName: 'Me',
   projectId,

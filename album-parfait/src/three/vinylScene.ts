@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 
 // Vinyle 3D à moitié sorti de sa pochette, dans la DA olive/crème de « untitled unmastered. ».
 
@@ -8,6 +7,10 @@ const OLIVE_DEEP = '#22220a';
 const CREAM = '#d6d5c5';
 const SERIF = '"Cormorant Garamond", Georgia, serif';
 const RPM_33 = (33.333 / 60) * Math.PI * 2;
+// Téléphone : textures 2× plus petites et 30 images/s (l'œil ne voit pas la différence à cette taille).
+const COARSE = typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches;
+const TEX = COARSE ? 512 : 1024;
+const FRAME_MS = COARSE ? 1000 / 30 : 0;
 
 export interface VinylSceneOptions {
   mode: 'hero' | 'player';
@@ -30,6 +33,20 @@ function canvasTexture(size: number, draw: (ctx: CanvasRenderingContext2D, s: nu
   return t;
 }
 
+function noiseTile(): HTMLCanvasElement {
+  const t = document.createElement('canvas');
+  t.width = t.height = 128;
+  const c = t.getContext('2d')!;
+  const img = c.createImageData(128, 128);
+  for (let i = 0; i < img.data.length; i += 4) {
+    const light = Math.random() < 0.5;
+    img.data[i] = img.data[i + 1] = img.data[i + 2] = light ? 255 : 0;
+    img.data[i + 3] = Math.round(Math.random() * 10);
+  }
+  c.putImageData(img, 0, 0);
+  return t;
+}
+
 /** Pochette par défaut : olive, « album parfait. » en haut à gauche, étiquette en bas à droite. */
 function drawSleeve(ctx: CanvasRenderingContext2D, s: number) {
   const g = ctx.createRadialGradient(s * 0.2, s * 0.15, 0, s * 0.5, s * 0.5, s * 0.8);
@@ -37,14 +54,9 @@ function drawSleeve(ctx: CanvasRenderingContext2D, s: number) {
   g.addColorStop(1, OLIVE);
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, s, s);
-  const img = ctx.getImageData(0, 0, s, s);
-  for (let i = 0; i < img.data.length; i += 4) {
-    const n = (Math.random() - 0.5) * 14;
-    img.data[i] += n;
-    img.data[i + 1] += n;
-    img.data[i + 2] += n;
-  }
-  ctx.putImageData(img, 0, 0);
+  // Grain : une tuile de 128 px répétée (16 k pixels calculés au lieu d'un million).
+  ctx.fillStyle = ctx.createPattern(noiseTile(), 'repeat')!;
+  ctx.fillRect(0, 0, s, s);
   ctx.fillStyle = CREAM;
   ctx.font = `400 ${s * 0.045}px ${SERIF}`;
   ctx.fillText('album parfait.', s * 0.06, s * 0.1);
@@ -71,11 +83,12 @@ function drawDisc(ctx: CanvasRenderingContext2D, s: number, label: HTMLImageElem
   ctx.fillStyle = '#0d0d08';
   ctx.fillRect(0, 0, s, s);
   const labelR = c * 0.34;
-  for (let r = c * 0.98; r > labelR + c * 0.03; r -= 1.6) {
+  const step = (1.6 * s) / 1024;
+  ctx.lineWidth = Math.max(0.5, s / 1024);
+  for (let r = c * 0.98; r > labelR + c * 0.03; r -= step) {
     const gap = [0.9, 0.78, 0.66, 0.55].some((g) => Math.abs(r / c - g) < 0.006);
     const shade = gap ? 34 : 14 + Math.round(Math.random() * 9);
     ctx.strokeStyle = `rgb(${shade},${shade},${shade - 4})`;
-    ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.arc(c, c, r, 0, Math.PI * 2);
     ctx.stroke();
@@ -116,24 +129,19 @@ function loadImage(url: string): Promise<HTMLImageElement> {
 export function createVinylScene(canvas: HTMLCanvasElement, opts: VinylSceneOptions): VinylScene {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'low-power' });
   // Moins de pixels sur téléphone : rendu plus léger pour la batterie.
-  const coarse = typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches;
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, coarse ? 1.5 : 2));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, COARSE ? 1.5 : 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   // Neutral garde les couleurs des pochettes fidèles (ACES les délave).
   renderer.toneMapping = THREE.NeutralToneMapping;
   renderer.toneMappingExposure = 1;
 
+  // Pas de carte d'environnement (calcul PMREM coûteux au démarrage) : trois lumières suffisent.
   const scene = new THREE.Scene();
-  const pmrem = new THREE.PMREMGenerator(renderer);
-  const env = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-  scene.environment = env;
-  scene.environmentIntensity = 0.28;
-
   const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 50);
   camera.position.set(0, 0, opts.mode === 'hero' ? 7.2 : 5.6);
 
-  scene.add(new THREE.HemisphereLight(0xf2efd8, 0x1c1c00, 0.75));
-  const key = new THREE.DirectionalLight(0xfff0d0, 1.7);
+  scene.add(new THREE.HemisphereLight(0xf2efd8, 0x1c1c00, 2.8));
+  const key = new THREE.DirectionalLight(0xfff0d0, 2.4);
   key.position.set(-2, 6, 2);
   scene.add(key);
   const rim = new THREE.PointLight(0xd6d5c5, 10, 12);
@@ -143,35 +151,30 @@ export function createVinylScene(canvas: HTMLCanvasElement, opts: VinylSceneOpti
   const rig = new THREE.Group();
   scene.add(rig);
 
-  // Pochette
-  const sleeveTex = canvasTexture(1024, drawSleeve);
-  const paper = (map?: THREE.Texture) => new THREE.MeshStandardMaterial({ color: map ? 0xffffff : OLIVE_DEEP, map, roughness: 0.82, metalness: 0 });
+  // Pochette : papier mat (Lambert, le matériau éclairé le plus léger).
+  const sleeveTex = canvasTexture(TEX, drawSleeve);
+  const paper = (map?: THREE.Texture) => new THREE.MeshLambertMaterial({ color: map ? 0xffffff : OLIVE_DEEP, map });
   const sleeveFront = paper(sleeveTex);
   const sleeve = new THREE.Mesh(new THREE.BoxGeometry(2, 2, 0.035), [
     paper(), paper(), paper(), paper(), sleeveFront, paper(),
   ]);
   rig.add(sleeve);
 
-  // Disque
+  // Disque : vinyle satiné (Phong : reflet des lumières sans le coût du vernis physique).
   const discGroup = new THREE.Group();
   const spinner = new THREE.Group();
-  let discTex = canvasTexture(1024, (ctx, s) => drawDisc(ctx, s, null));
-  const discFace = new THREE.MeshPhysicalMaterial({
-    map: discTex,
-    roughness: 0.55,
-    metalness: 0,
-    clearcoat: 0.45,
-    clearcoatRoughness: 0.38,
-  });
-  const discEdge = new THREE.MeshStandardMaterial({ color: 0x0b0b08, roughness: 0.4 });
-  const disc = new THREE.Mesh(new THREE.CylinderGeometry(0.96, 0.96, 0.012, 128), [discEdge, discFace, discFace]);
+  let discTex = canvasTexture(TEX, (ctx, s) => drawDisc(ctx, s, null));
+  const discFace = new THREE.MeshPhongMaterial({ map: discTex, specular: 0x6e6e6e, shininess: 12, emissive: 0x1e1e1e });
+  const discEdge = new THREE.MeshPhongMaterial({ color: 0x0b0b08, specular: 0x222218, shininess: 60 });
+  const disc = new THREE.Mesh(new THREE.CylinderGeometry(0.96, 0.96, 0.012, 96), [discEdge, discFace, discFace]);
   disc.rotation.x = Math.PI / 2;
   spinner.add(disc);
   discGroup.add(spinner);
   discGroup.position.z = -0.002;
   rig.add(discGroup);
 
-  rig.rotation.set(-0.18, opts.mode === 'hero' ? -0.42 : -0.32, 0.04);
+  const baseY = opts.mode === 'hero' ? -0.42 : -0.32;
+  rig.rotation.set(-0.18, baseY, 0.04);
   rig.position.x = opts.mode === 'hero' ? -0.5 : -0.55;
 
   // État animé
@@ -179,13 +182,18 @@ export function createVinylScene(canvas: HTMLCanvasElement, opts: VinylSceneOpti
   let outTarget = opts.mode === 'hero' ? 0.72 : 0.3;
   let speed = 0;
   let speedTarget = opts.mode === 'hero' ? 0.35 : 0;
+  // Flottement : permanent sur l'accueil ; sur le lecteur, seulement pendant l'écoute.
+  let bob = opts.mode === 'hero' ? 1 : 0;
+  let bobTarget = bob;
+  let dirty = true;
   const pointer = { x: 0, y: 0 };
   const tilt = { x: 0, y: 0 };
   const onPointer = (e: PointerEvent) => {
     pointer.x = (e.clientX / window.innerWidth) * 2 - 1;
     pointer.y = (e.clientY / window.innerHeight) * 2 - 1;
   };
-  if (!opts.reducedMotion) window.addEventListener('pointermove', onPointer, { passive: true });
+  // Au doigt, pas d'inclinaison qui suit le pointeur : chaque glissement relancerait le rendu.
+  if (!opts.reducedMotion && !COARSE) window.addEventListener('pointermove', onPointer, { passive: true });
 
   const resize = () => {
     const w = canvas.clientWidth || 1;
@@ -193,6 +201,7 @@ export function createVinylScene(canvas: HTMLCanvasElement, opts: VinylSceneOpti
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
+    dirty = true;
   };
   const ro = new ResizeObserver(resize);
   ro.observe(canvas);
@@ -204,37 +213,63 @@ export function createVinylScene(canvas: HTMLCanvasElement, opts: VinylSceneOpti
   });
   io.observe(canvas);
 
+  const near = (a: number, b: number) => Math.abs(a - b) < 1e-4;
+  /** Rien ne bouge : inutile de redessiner (le lecteur en pause ne coûte plus rien). */
+  const settled = () =>
+    near(out, outTarget) && speed < 1e-4 && speedTarget === 0 && bob < 1e-4 && bobTarget === 0 &&
+    near(tilt.x, pointer.y * 0.16) && near(tilt.y, pointer.x * 0.28);
+
   const clock = new THREE.Clock();
+  // Horloge propre au flottement : avance seulement quand il est actif, pour repartir sans saut.
+  let phase = 0;
   let raf = 0;
-  const frame = () => {
+  let last = 0;
+  let disposed = false;
+  const frame = (now: number) => {
     raf = requestAnimationFrame(frame);
-    if (!visible || document.hidden) return;
+    if (!visible || document.hidden) {
+      clock.getDelta();
+      return;
+    }
+    if (FRAME_MS && now - last < FRAME_MS - 1) return;
+    last = now;
     const dt = Math.min(clock.getDelta(), 0.05);
-    const t = clock.elapsedTime;
+    if (!dirty && settled()) return;
+    dirty = false;
     out += (outTarget - out) * Math.min(1, dt * 2.2);
     speed += (speedTarget - speed) * Math.min(1, dt * 1.6);
+    bob += (bobTarget - bob) * Math.min(1, dt * 1.2);
+    phase += dt * bob;
     discGroup.position.x = out * 1.15;
     spinner.rotation.z -= speed * dt;
     tilt.x += (pointer.y * 0.16 - tilt.x) * Math.min(1, dt * 3);
     tilt.y += (pointer.x * 0.28 - tilt.y) * Math.min(1, dt * 3);
-    const baseY = opts.mode === 'hero' ? -0.42 : -0.32;
-    rig.rotation.x = -0.18 + tilt.x + Math.sin(t * 0.6) * 0.02;
+    rig.rotation.x = -0.18 + tilt.x + Math.sin(phase * 0.6) * 0.02 * bob;
     rig.rotation.y = baseY + tilt.y;
-    rig.position.y = Math.sin(t * 0.8) * 0.04;
-    rim.position.x = 3 * Math.cos(t * 0.3);
+    rig.position.y = Math.sin(phase * 0.8) * 0.04 * bob;
+    rim.position.x = 3 * Math.cos(phase * 0.3);
     renderer.render(scene, camera);
   };
 
-  if (opts.reducedMotion) {
+  const renderStatic = () => {
     out = outTarget;
     discGroup.position.x = out * 1.15;
     renderer.render(scene, camera);
-  } else {
-    frame();
-  }
+  };
 
-  const rerenderIfStatic = () => {
-    if (opts.reducedMotion) renderer.render(scene, camera);
+  // Compilation des shaders hors du fil principal quand le navigateur le permet, puis premier rendu.
+  renderer
+    .compileAsync(scene, camera)
+    .catch(() => undefined)
+    .then(() => {
+      if (disposed) return;
+      if (opts.reducedMotion) renderStatic();
+      else raf = requestAnimationFrame(frame);
+    });
+
+  const changed = () => {
+    dirty = true;
+    if (opts.reducedMotion) renderStatic();
   };
 
   return {
@@ -242,6 +277,7 @@ export function createVinylScene(canvas: HTMLCanvasElement, opts: VinylSceneOpti
       if (!url) return;
       try {
         const img = await loadImage(url);
+        if (disposed) return;
         const tex = new THREE.Texture(img);
         tex.colorSpace = THREE.SRGBColorSpace;
         tex.anisotropy = 8;
@@ -249,12 +285,12 @@ export function createVinylScene(canvas: HTMLCanvasElement, opts: VinylSceneOpti
         sleeveFront.map?.dispose();
         sleeveFront.map = tex;
         sleeveFront.needsUpdate = true;
-        const next = canvasTexture(1024, (ctx, s) => drawDisc(ctx, s, img));
+        const next = canvasTexture(TEX, (ctx, s) => drawDisc(ctx, s, img));
         discTex.dispose();
         discTex = next;
         discFace.map = next;
         discFace.needsUpdate = true;
-        rerenderIfStatic();
+        changed();
       } catch {
         /* cover indisponible : la pochette par défaut reste */
       }
@@ -263,13 +299,11 @@ export function createVinylScene(canvas: HTMLCanvasElement, opts: VinylSceneOpti
       if (opts.mode === 'hero') return;
       outTarget = on ? 0.7 : 0.3;
       speedTarget = on ? RPM_33 : 0;
-      if (opts.reducedMotion) {
-        out = outTarget;
-        discGroup.position.x = out * 1.15;
-        rerenderIfStatic();
-      }
+      bobTarget = on ? 1 : 0;
+      changed();
     },
     dispose() {
+      disposed = true;
       cancelAnimationFrame(raf);
       window.removeEventListener('pointermove', onPointer);
       ro.disconnect();
@@ -279,12 +313,10 @@ export function createVinylScene(canvas: HTMLCanvasElement, opts: VinylSceneOpti
         m.geometry?.dispose();
         const mats = Array.isArray(m.material) ? m.material : m.material ? [m.material] : [];
         for (const mat of mats) {
-          (mat as THREE.MeshStandardMaterial).map?.dispose();
+          (mat as THREE.MeshLambertMaterial).map?.dispose();
           mat.dispose();
         }
       });
-      env.dispose();
-      pmrem.dispose();
       renderer.dispose();
     },
   };

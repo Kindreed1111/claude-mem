@@ -3,16 +3,21 @@
 
 const DEEZER = 'https://api.deezer.com/';
 const ALLOWED_PATHS = [/^search\/artist$/, /^artist\/\d+\/albums$/, /^album\/\d+\/tracks$/, /^track\/\d+$/];
-const ALLOWED_PARAMS = ['q', 'limit', 'index'] as const;
+// Valeurs bornées : une recherche courte, une pagination raisonnable.
+const ALLOWED_PARAMS: Record<string, RegExp> = { q: /^.{1,100}$/s, limit: /^(?:[1-9]\d?|100)$/, index: /^\d{1,5}$/ };
 const CACHE = 'public, max-age=3600, s-maxage=86400';
+const IMAGE_HOSTS = new Set(['cdn-images.dzcdn.net', 'e-cdns-images.dzcdn.net']);
+const COVER_PATH = /^\/images\/cover\/[0-9a-f]{32}\/[0-9a-z-]+\.(?:jpg|png)$/;
 
 export function resolveDeezerTarget(params: URLSearchParams): string | null {
   const path = params.get('path');
   if (!path || !ALLOWED_PATHS.some((re) => re.test(path))) return null;
   const query = new URLSearchParams();
-  for (const key of ALLOWED_PARAMS) {
+  for (const [key, re] of Object.entries(ALLOWED_PARAMS)) {
     const value = params.get(key);
-    if (value !== null) query.set(key, value);
+    if (value === null) continue;
+    if (!re.test(value)) return null;
+    query.set(key, value);
   }
   const qs = query.toString();
   return DEEZER + path + (qs ? `?${qs}` : '');
@@ -26,8 +31,8 @@ export function resolveImageTarget(raw: string | null): string | null {
   } catch {
     return null;
   }
-  if (url.protocol !== 'https:') return null;
-  if (url.hostname !== 'dzcdn.net' && !url.hostname.endsWith('.dzcdn.net')) return null;
+  // Uniquement des pochettes : le relais ne sert pas n'importe quel fichier du CDN Deezer.
+  if (url.protocol !== 'https:' || !IMAGE_HOSTS.has(url.hostname) || !COVER_PATH.test(url.pathname)) return null;
   return url.toString();
 }
 

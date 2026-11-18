@@ -22,7 +22,7 @@ function t(title: string, position: number, extra: Partial<Track> = {}): Track {
     titleVersion: '',
     position,
     disk: 1,
-    preview: '',
+    hasPreview: false,
     artistId: ME,
     artistName: 'Kendrick Lamar',
     projectId: 0,

@@ -439,7 +439,7 @@ function TrackRow({
         className="play"
         aria-pressed={playing}
         aria-label={playing ? `Arrêter l’extrait de ${track.title}` : `Écouter un extrait de ${track.title}`}
-        disabled={!track.preview}
+        disabled={!track.hasPreview}
         onClick={() => preview.toggle(track)}
       >
         {playing ? '■' : '▶'}

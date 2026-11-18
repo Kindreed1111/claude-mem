@@ -12,7 +12,7 @@ const t = (title: string, projectId: number, extra: Partial<Track> = {}): Track 
   titleVersion: '',
   position: 1,
   disk: 1,
-  preview: '',
+  hasPreview: false,
   artistId: 1,
   artistName: 'A',
   projectId,

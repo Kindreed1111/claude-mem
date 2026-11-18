@@ -92,16 +92,15 @@ export function App() {
     return () => window.removeEventListener('hashchange', onHash);
   }, [go, preview]);
 
-  // Halo de lampe qui suit le curseur.
+  // Halo de lampe qui suit la souris (pas au doigt). Déplacé par transform : ni recalcul de style ni repeinte.
+  const lamp = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (reducedMotion()) return;
-    const root = document.documentElement;
+    if (reducedMotion() || matchMedia('(pointer: coarse)').matches) return;
     let raf = 0;
     const onMove = (e: PointerEvent) => {
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
-        root.style.setProperty('--mx', `${e.clientX}px`);
-        root.style.setProperty('--my', `${e.clientY}px`);
+        if (lamp.current) lamp.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
       });
     };
     window.addEventListener('pointermove', onMove, { passive: true });
@@ -185,7 +184,7 @@ export function App() {
 
   return (
     <div className="frame">
-      <div className="lamp" aria-hidden />
+      <div className="lamp" ref={lamp} aria-hidden />
       <header className="topbar">
         <button className="wordmark" onClick={restart} aria-label="Accueil — recommencer">
           album parfait.
@@ -233,10 +232,10 @@ export function App() {
             ) : (
               <>
                 <p className="kicker">lecture de la discographie de {artist.name}</p>
-                <div className="meter" role="progressbar" aria-valuenow={disco.loaded} aria-valuemax={disco.total || undefined}>
+                <div className={`meter ${disco.total ? '' : 'indeterminate'}`} role="progressbar" aria-valuenow={disco.total ? disco.loaded : undefined} aria-valuemax={disco.total || undefined}>
                   <i style={{ width: disco.total ? `${(disco.loaded / disco.total) * 100}%` : '4%' }} />
                 </div>
-                <p className="muted">{disco.total ? `${disco.loaded} / ${disco.total} projets` : 'recherche des projets…'}</p>
+                <p className="muted">{disco.total ? `${disco.loaded} / ${disco.total} projets` : 'chargement de la discographie…'}</p>
               </>
             )}
           </div>
