@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { computeCredits, handleCredits } from './credits';
-import { handleStats, parseSubmission, redisEnv, submissionCommands } from './stats';
+import { handleStats, parseSubmission, recentCommands, redisEnv, submissionCommands } from './stats';
 
 const json = (body: unknown) => new Response(JSON.stringify(body), { headers: { 'content-type': 'application/json' } });
 
@@ -17,7 +17,7 @@ describe('stats', () => {
   });
 
   it('range chaque piste dans son classement', () => {
-    const cmds = submissionCommands(sub);
+    const cmds = submissionCommands(sub, 'ap:wallip:k');
     expect(cmds[0]).toEqual(['ZINCRBY', 'ap:525046:intro', '1', '1']);
     expect(cmds[1]).toEqual(['ZINCRBY', 'ap:525046:feat', '1', '2']);
     expect(cmds[2]).toEqual(['ZINCRBY', 'ap:525046:free', '1', '3']);
@@ -25,8 +25,13 @@ describe('stats', () => {
     expect(cmds[9]).toEqual(['ZINCRBY', 'ap:525046:outro', '1', '10']);
     expect(cmds[10]).toEqual(['ZINCRBY', 'ap:525046:cover', '1', '9']);
     expect(cmds[11]).toEqual(['INCR', 'ap:525046:albums']);
-    expect(cmds[12]).toEqual(['LPUSH', 'ap:recent', '525046:9']);
-    expect(cmds[13]).toEqual(['LTRIM', 'ap:recent', '0', '99']);
+    // Mur de l'accueil : une seule pochette par IP et par jour.
+    expect(cmds[12]).toEqual(['SET', 'ap:wallip:k', '1', 'NX', 'EX', '86400']);
+    expect(cmds).toHaveLength(13);
+    expect(recentCommands(sub)).toEqual([
+      ['LPUSH', 'ap:recent', '525046:9'],
+      ['LTRIM', 'ap:recent', '0', '99'],
+    ]);
   });
 
   it('lit les variables Vercel KV ou Upstash', () => {
@@ -65,9 +70,19 @@ describe('stats', () => {
       .fn()
       .mockResolvedValueOnce(limitOk())
       .mockResolvedValueOnce(json([{ result: 'OK' }]))
-      .mockResolvedValueOnce(json(Array(12).fill({ result: 1 })));
+      .mockResolvedValueOnce(json([...Array(12).fill({ result: 1 }), { result: 'OK' }]))
+      .mockResolvedValueOnce(json([{ result: 1 }, { result: 'OK' }]));
     expect(await (await handleStats(post(), env, first)).json()).toEqual({ enabled: true, recorded: true });
-    expect(JSON.parse(first.mock.calls[2][1].body)).toHaveLength(14);
+    expect(JSON.parse(first.mock.calls[2][1].body)).toHaveLength(13);
+    expect(JSON.parse(first.mock.calls[3][1].body)).toEqual(recentCommands(sub));
+    // Un autre album de la même IP le même jour : compté, mais n'entre pas au mur.
+    const second = vi
+      .fn()
+      .mockResolvedValueOnce(limitOk())
+      .mockResolvedValueOnce(json([{ result: 'OK' }]))
+      .mockResolvedValueOnce(json([...Array(12).fill({ result: 1 }), { result: null }]));
+    expect(await (await handleStats(post(), env, second)).json()).toEqual({ enabled: true, recorded: true });
+    expect(second).toHaveBeenCalledTimes(3);
     const dup = vi.fn().mockResolvedValueOnce(limitOk()).mockResolvedValueOnce(json([{ result: null }]));
     expect((await (await handleStats(post(), env, dup)).json()).recorded).toBe(false);
     expect(dup).toHaveBeenCalledTimes(2);

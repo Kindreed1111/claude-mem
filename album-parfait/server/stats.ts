@@ -41,14 +41,20 @@ export const RECENT_MAX = 100;
 
 const key = (artistId: number, suffix: string) => `ap:${artistId}:${suffix}`;
 
-export function submissionCommands(s: Submission): string[][] {
+/** `wallKey` : marqueur « cette IP a déjà mis une pochette au mur aujourd'hui » (dernier résultat `'OK'` = première fois). */
+export function submissionCommands(s: Submission, wallKey: string): string[][] {
   const cmds = s.slots.map((trackId, i) => ['ZINCRBY', key(s.artistId, SLOT_KIND[i + 1] ?? 'free'), '1', String(trackId)]);
   cmds.push(['ZINCRBY', key(s.artistId, 'cover'), '1', String(s.coverId)]);
   cmds.push(['INCR', key(s.artistId, 'albums')]);
-  // Albums pressés récents, pour le mur de l'accueil.
-  cmds.push(['LPUSH', RECENT_KEY, `${s.artistId}:${s.coverId}`], ['LTRIM', RECENT_KEY, '0', String(RECENT_MAX - 1)]);
+  cmds.push(['SET', wallKey, '1', 'NX', 'EX', '86400']);
   return cmds;
 }
+
+/** Albums pressés récents, pour le mur de l'accueil. */
+export const recentCommands = (s: Submission): string[][] => [
+  ['LPUSH', RECENT_KEY, `${s.artistId}:${s.coverId}`],
+  ['LTRIM', RECENT_KEY, '0', String(RECENT_MAX - 1)],
+];
 
 function toTop(flat: unknown): Array<{ id: number; count: number }> {
   const arr = Array.isArray(flat) ? flat : [];
@@ -105,7 +111,10 @@ export async function handleStats(
       const fp = await fingerprint(request, s);
       const [fresh] = await pipeline(env, [['SET', `ap:seen:${fp}`, '1', 'NX', 'EX', '86400']], fetchImpl);
       if (fresh !== 'OK') return json({ enabled: true, recorded: false, reason: 'déjà compté' });
-      await pipeline(env, submissionCommands(s), fetchImpl);
+      const wallKey = `ap:wallip:${await sha256(clientIp(request))}`;
+      const results = await pipeline(env, submissionCommands(s, wallKey), fetchImpl);
+      // Une seule pochette par IP et par jour sur le mur : personne ne peut le remplir seul.
+      if (results[results.length - 1] === 'OK') await pipeline(env, recentCommands(s), fetchImpl);
       return json({ enabled: true, recorded: true });
     } catch (err) {
       return json({ enabled: true, error: { message: String(err) } }, 502);
