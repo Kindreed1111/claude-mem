@@ -47,14 +47,24 @@ const limiter = createLimiter({ concurrency: 6, minIntervalMs: 125 });
 
 type DeezerError = { error?: { code?: number; message?: string } };
 
+/** Côté serveur : appeler Deezer directement plutôt que via le proxy /api/deezer. */
+export const DEEZER_DIRECT = 'https://api.deezer.com/';
+
 export async function dz<T>(
   path: string,
   query: Record<string, string | number> = {},
   fetchImpl: typeof fetch = fetch,
+  base?: string,
 ): Promise<T> {
-  const params = new URLSearchParams({ path });
-  for (const [k, v] of Object.entries(query)) params.set(k, String(v));
-  const url = `/api/deezer?${params}`;
+  let url: string;
+  if (base) {
+    const qs = new URLSearchParams(Object.entries(query).map(([k, v]) => [k, String(v)])).toString();
+    url = base + path + (qs ? `?${qs}` : '');
+  } else {
+    const params = new URLSearchParams({ path });
+    for (const [k, v] of Object.entries(query)) params.set(k, String(v));
+    url = `/api/deezer?${params}`;
+  }
 
   for (let attempt = 0; ; attempt++) {
     const res = await fetchImpl(url);
@@ -70,13 +80,15 @@ export interface RequestOptions {
   fetchImpl?: typeof fetch;
   /** Annule les requêtes encore en file (ex. l'utilisateur change d'artiste). */
   signal?: AbortSignal;
+  /** URL de base Deezer (serveur) ; absent = proxy /api/deezer (navigateur). */
+  base?: string;
 }
 
 const limited = <T>(path: string, query: Record<string, string | number> = {}, opts: RequestOptions = {}) =>
   limiter(() =>
     opts.signal?.aborted
       ? Promise.reject(new DOMException('Requête annulée', 'AbortError'))
-      : dz<T>(path, query, opts.fetchImpl),
+      : dz<T>(path, query, opts.fetchImpl, opts.base),
   );
 
 type Page<T> = { data: T[]; next?: string };
@@ -143,4 +155,10 @@ export async function fetchTracks(projectId: number, opts?: RequestOptions): Pro
 export async function fetchContributorIds(trackId: number, opts?: RequestOptions): Promise<number[]> {
   const t = await limited<{ contributors?: Array<{ id: number }> }>(`track/${trackId}`, {}, opts);
   return (t.contributors ?? []).map((c) => c.id);
+}
+
+/** Extrait de 30 s à jour (les URL Deezer expirent au bout de quelques heures). */
+export async function fetchPreview(trackId: number, opts?: RequestOptions): Promise<string> {
+  const t = await limited<{ preview?: string }>(`track/${trackId}`, {}, opts);
+  return t.preview ?? '';
 }
