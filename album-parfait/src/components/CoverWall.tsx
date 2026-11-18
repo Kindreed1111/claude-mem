@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react';
+import type { CSSProperties, FocusEvent } from 'react';
 import type { Artist, WallItem } from '../lib/types';
 
 /** En dessous, pas de mur : l'accueil reste épuré. */
@@ -18,10 +18,18 @@ function fill(lane: WallItem[], n: number): Array<{ item: WallItem; repeat: bool
 export function CoverWall({ items, onPick }: { items: WallItem[]; onPick: (a: Artist) => void }) {
   const lanes = Array.from({ length: LANES }, (_, l) => fill(items.filter((_, i) => i % LANES === l), PER_LANE));
   const pick = (it: WallItem) => onPick({ id: it.artist.id, name: it.artist.name, picture: it.artist.picture, fans: 0 });
+  // Le focus clavier fait défiler le cadre jusqu'à la pochette ; à la sortie, on revient au départ de la boucle.
+  const resetScroll = (e: FocusEvent<HTMLDivElement>) => {
+    if (e.currentTarget.contains(e.relatedTarget as Node | null)) return;
+    for (const el of [e.currentTarget, ...e.currentTarget.querySelectorAll<HTMLElement>('.wall-lane')]) {
+      el.scrollTop = 0;
+      el.scrollLeft = 0;
+    }
+  };
 
   return (
     <div className="wall-wrap">
-      <div className="wall">
+      <div className="wall" onBlur={resetScroll}>
         {lanes.map((lane, l) => (
           <div className="wall-lane" key={l} style={{ '--l': l } as CSSProperties}>
             <div className="wall-track">

@@ -5,14 +5,12 @@ const reduced = () => typeof matchMedia === 'function' && matchMedia('(prefers-r
 
 /** Scène Three.js chargée à la demande ; sans WebGL, affiche `fallback`. */
 export function Vinyl3D({
-  mode,
   coverUrl,
   spinning = false,
   className,
   fallback = null,
   label,
 }: {
-  mode: 'hero' | 'player';
   coverUrl?: string | null;
   spinning?: boolean;
   className?: string;
@@ -31,7 +29,7 @@ export function Vinyl3D({
       import('../three/vinylScene')
         .then(({ createVinylScene }) => {
           if (disposed || !canvas.current) return;
-          scene.current = createVinylScene(canvas.current, { mode, reducedMotion: reduced() });
+          scene.current = createVinylScene(canvas.current, { reducedMotion: reduced() });
           setReady(true);
         })
         .catch(() => setFailed(true));
@@ -44,7 +42,7 @@ export function Vinyl3D({
       scene.current?.dispose();
       scene.current = null;
     };
-  }, [mode]);
+  }, []);
 
   useEffect(() => {
     if (ready && coverUrl) scene.current?.setCover(coverUrl);

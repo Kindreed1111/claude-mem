@@ -13,7 +13,6 @@ const TEX = COARSE ? 512 : 1024;
 const FRAME_MS = COARSE ? 1000 / 30 : 0;
 
 export interface VinylSceneOptions {
-  mode: 'hero' | 'player';
   reducedMotion: boolean;
 }
 
@@ -138,7 +137,7 @@ export function createVinylScene(canvas: HTMLCanvasElement, opts: VinylSceneOpti
   // Pas de carte d'environnement (calcul PMREM coûteux au démarrage) : trois lumières suffisent.
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 50);
-  camera.position.set(0, 0, opts.mode === 'hero' ? 7.2 : 5.6);
+  camera.position.set(0, 0, 5.6);
 
   scene.add(new THREE.HemisphereLight(0xf2efd8, 0x1c1c00, 2.8));
   const key = new THREE.DirectionalLight(0xfff0d0, 2.4);
@@ -173,18 +172,18 @@ export function createVinylScene(canvas: HTMLCanvasElement, opts: VinylSceneOpti
   discGroup.position.z = -0.002;
   rig.add(discGroup);
 
-  const baseY = opts.mode === 'hero' ? -0.42 : -0.32;
+  const baseY = -0.32;
   rig.rotation.set(-0.18, baseY, 0.04);
-  rig.position.x = opts.mode === 'hero' ? -0.5 : -0.55;
+  rig.position.x = -0.55;
 
   // État animé
   let out = 0;
-  let outTarget = opts.mode === 'hero' ? 0.72 : 0.3;
+  let outTarget = 0.3;
   let speed = 0;
-  let speedTarget = opts.mode === 'hero' ? 0.35 : 0;
-  // Flottement : permanent sur l'accueil ; sur le lecteur, seulement pendant l'écoute.
-  let bob = opts.mode === 'hero' ? 1 : 0;
-  let bobTarget = bob;
+  let speedTarget = 0;
+  // Flottement seulement pendant l'écoute.
+  let bob = 0;
+  let bobTarget = 0;
   let dirty = true;
   const pointer = { x: 0, y: 0 };
   const tilt = { x: 0, y: 0 };
@@ -296,7 +295,6 @@ export function createVinylScene(canvas: HTMLCanvasElement, opts: VinylSceneOpti
       }
     },
     setSpinning(on) {
-      if (opts.mode === 'hero') return;
       outTarget = on ? 0.7 : 0.3;
       speedTarget = on ? RPM_33 : 0;
       bobTarget = on ? 1 : 0;

@@ -816,6 +816,12 @@ button {
   animation-play-state: paused;
 }
 
+/* Au clavier, le mur s'arrête au début : le navigateur peut amener la pochette focalisée dans le cadre
+   sans laisser de vide (le décalage est remis à zéro à la sortie, cf. CoverWall). */
+.wall:has(.wall-tile:focus-visible) .wall-track {
+  animation: none;
+}
+
 .wall-copy {
   list-style: none;
   margin: 0;

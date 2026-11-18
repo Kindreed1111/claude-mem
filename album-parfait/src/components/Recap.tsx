@@ -73,7 +73,6 @@ export function Recap({ album, mode, podium, onEditTracks, onChangeCover, onMake
     <section className="recap">
       <div className="recap-stage">
         <Vinyl3D
-          mode="player"
           coverUrl={album.cover.url}
           spinning={player.playing}
           label={`Vinyle : ${album.cover.title}`}
