@@ -11,7 +11,7 @@ import { usePreview } from './hooks/usePreview';
 import { submitAlbum, useStats } from './hooks/useStats';
 import { albumReducer, initialAlbum, isComplete } from './lib/album';
 import { coverChoices } from './lib/classify';
-import { encodeShare, readHash, toShared, type SharedAlbum } from './lib/share';
+import { encodeShare, readHash, readShortPath, toShared, type SharedAlbum, type ShortShare } from './lib/share';
 import { loadDraft, loadHistory, pushHistory, saveDraft, type Draft } from './lib/storage';
 import type { Artist, Project } from './lib/types';
 
@@ -34,8 +34,9 @@ function transition(update: () => void) {
 
 const artistFromShared = (a: SharedAlbum): Artist => ({ id: a.artist.id, name: a.artist.name, picture: a.artist.picture, fans: 0 });
 
-export function App() {
-  const fromHash = useMemo(() => readHash(window.location.hash), []);
+/** `initial` : album d'un lien court /a/<id>. Un ancien lien #album=… / #defi=… reste prioritaire. */
+export function App({ initial = null }: { initial?: ShortShare | null }) {
+  const fromHash = useMemo(() => readHash(window.location.hash) ?? initial, [initial]);
   const [screen, setScreen] = useState<Screen>(fromHash?.kind === 'album' ? 'shared' : fromHash?.kind === 'defi' ? 'covers' : 'search');
   const [shared, setShared] = useState<SharedAlbum | null>(fromHash?.kind === 'album' ? fromHash.album : null);
   const [challenge, setChallenge] = useState<SharedAlbum | null>(fromHash?.kind === 'defi' ? fromHash.album : null);
@@ -55,8 +56,10 @@ export function App() {
 
   const go = useCallback((s: Screen) => transition(() => setScreen(s)), []);
 
+  /** Quitte un lien partagé : retire le hash, et le chemin /a/<id> d'un lien court. */
   const clearHash = () => {
-    if (window.location.hash) history_replace(window.location.pathname + window.location.search);
+    const short = readShortPath(window.location.pathname) !== null;
+    if (window.location.hash || short) history_replace((short ? '/' : window.location.pathname) + window.location.search);
   };
 
   // Brouillon : sauvegardé à chaque changement pendant la composition.

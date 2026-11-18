@@ -1,7 +1,7 @@
 import type { AlbumState } from './album';
 import type { Artist, Project } from './types';
 
-/** Album sérialisé dans l'URL (#album=… ou #defi=…). Rien ne passe par le serveur. */
+/** Album partagé : lien court /a/<id> (stocké côté serveur) ou ancien lien #album=… / #defi=…. */
 export interface SharedAlbum {
   v: 1;
   artist: { id: number; name: string; picture: string };
@@ -68,6 +68,39 @@ export function readHash(hash: string): { kind: ShareKind; album: SharedAlbum } 
   if (!m) return null;
   const album = decodeShare(m[2]);
   return album ? { kind: m[1] as ShareKind, album } : null;
+}
+
+/** Copie aux clés ordonnées, sans champ superflu : même album = même JSON = même identifiant court. */
+export function normalizeShared(a: SharedAlbum): SharedAlbum {
+  return {
+    v: 1,
+    artist: { id: a.artist.id, name: a.artist.name, picture: a.artist.picture },
+    cover: { id: a.cover.id, title: a.cover.title, url: a.cover.url },
+    tracks: a.tracks.map((t) => (t ? { id: t.id, title: t.title } : null)),
+  };
+}
+
+export const isShareKind = (k: unknown): k is ShareKind => k === 'album' || k === 'defi';
+
+/** Identifiant de lien court : 8 caractères base62 (12 en cas de collision). */
+export const SHORT_ID = /^[0-9A-Za-z]{8}(?:[0-9A-Za-z]{4})?$/;
+
+export function readShortPath(pathname: string): string | null {
+  const m = /^\/a\/([0-9A-Za-z]+)\/?$/.exec(pathname);
+  return m && SHORT_ID.test(m[1]) ? m[1] : null;
+}
+
+/** Album lu depuis un lien court, injecté dans la page par le serveur ou relu via /api/share. */
+export interface ShortShare {
+  id: string;
+  kind: ShareKind;
+  album: SharedAlbum;
+}
+
+export function parseShortShare(x: unknown, id?: string): ShortShare | null {
+  const s = x as ShortShare;
+  if (!s || typeof s.id !== 'string' || !SHORT_ID.test(s.id) || (id !== undefined && s.id !== id) || !isShareKind(s.kind)) return null;
+  return isShared(s.album) ? { id: s.id, kind: s.kind, album: normalizeShared(s.album) } : null;
 }
 
 export function toShared(artist: Artist, cover: Project, album: AlbumState): SharedAlbum {

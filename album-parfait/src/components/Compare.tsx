@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { kindForSlot } from '../lib/album';
 import { compareAlbums } from '../lib/compare';
 import type { SharedAlbum } from '../lib/share';
-import { buildShareUrl, shareOrCopy } from '../lib/shareLink';
+import { prefetchShortUrl, resolveShareUrl, shareOrCopy } from '../lib/shareLink';
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
@@ -56,8 +56,11 @@ export function Compare({ mine, theirs, onSeeMine }: { mine: SharedAlbum; theirs
         </button>
         <button
           className="ghost"
+          onPointerEnter={() => void prefetchShortUrl('defi', mine)}
+          onPointerDown={() => void prefetchShortUrl('defi', mine)}
+          onFocus={() => void prefetchShortUrl('defi', mine)}
           onClick={async () => {
-            const res = await shareOrCopy(buildShareUrl('defi', mine), `Défi album parfait : ${mine.artist.name}`);
+            const res = await shareOrCopy(await resolveShareUrl('defi', mine), `Défi album parfait : ${mine.artist.name}`);
             if (res === 'copied') setCopied(true);
           }}
         >

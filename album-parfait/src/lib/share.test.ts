@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { decodeShare, encodeShare, readHash, shareHash, type SharedAlbum } from './share';
+import { decodeShare, encodeShare, normalizeShared, parseShortShare, readHash, readShortPath, shareHash, type SharedAlbum } from './share';
 
 const album: SharedAlbum = {
   v: 1,
@@ -43,6 +43,26 @@ describe('share', () => {
     expect(decodeShare(encodeShare(short))).toBeNull();
     const longTitle = { ...album, tracks: [{ id: 1, title: 'x'.repeat(500) }, ...album.tracks.slice(1)] };
     expect(decodeShare(encodeShare(longTitle))).toBeNull();
+  });
+
+  it('lit le chemin d’un lien court', () => {
+    expect(readShortPath('/a/Ab3dE5gH')).toBe('Ab3dE5gH');
+    expect(readShortPath('/a/Ab3dE5gHijkl/')).toBe('Ab3dE5gHijkl');
+    expect(readShortPath('/a/abc')).toBeNull();
+    expect(readShortPath('/a/Ab3dE5g!')).toBeNull();
+    expect(readShortPath('/')).toBeNull();
+  });
+
+  it('valide un album de lien court', () => {
+    expect(parseShortShare({ id: 'Ab3dE5gH', kind: 'defi', album }, 'Ab3dE5gH')).toEqual({ id: 'Ab3dE5gH', kind: 'defi', album });
+    expect(parseShortShare({ id: 'Ab3dE5gH', kind: 'defi', album }, 'Zb3dE5gH')).toBeNull();
+    expect(parseShortShare({ id: 'Ab3dE5gH', kind: 'x', album })).toBeNull();
+    expect(parseShortShare({ id: 'Ab3dE5gH', kind: 'album', album: { ...album, tracks: [] } })).toBeNull();
+  });
+
+  it('normalise : clés ordonnées, champs superflus retirés', () => {
+    const messy = { extra: 1, tracks: album.tracks, cover: { url: album.cover.url, title: 'GNX', id: 673968231 }, artist: album.artist, v: 1 };
+    expect(JSON.stringify(normalizeShared(messy as unknown as SharedAlbum))).toBe(JSON.stringify(album));
   });
 
   it('accepte une photo d’artiste vide', () => {

@@ -3,12 +3,16 @@
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "rewrites": [{ "source": "/a/:id", "destination": "/api/page?id=:id" }],
   "functions": {
     "api/credits.ts": {
       "maxDuration": 300
     },
     "api/discography.ts": {
       "maxDuration": 300
+    },
+    "api/og.ts": {
+      "includeFiles": "{server/fonts/*.woff,node_modules/@resvg/resvg-wasm/index_bg.wasm}"
     }
   }
 }

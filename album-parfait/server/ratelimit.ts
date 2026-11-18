@@ -17,6 +17,8 @@ export const LIMITS = {
   credits: { bucket: 'credits', max: 30, windowSec: 3600 },
   /** Albums envoyés aux classements. */
   albums: { bucket: 'albums', max: 30, windowSec: 86400 },
+  /** Liens courts créés (POST /api/share). */
+  shares: { bucket: 'share', max: 60, windowSec: 3600 },
 } satisfies Record<string, Limit>;
 
 export interface Verdict {

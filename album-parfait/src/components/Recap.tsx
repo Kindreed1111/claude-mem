@@ -3,7 +3,7 @@ import { usePlaylist } from '../hooks/usePlaylist';
 import { kindForSlot } from '../lib/album';
 import { EXPORT_FORMATS, renderAlbumPng, type ExportFormat } from '../lib/exportImage';
 import type { SharedAlbum } from '../lib/share';
-import { buildShareUrl, shareOrCopy } from '../lib/shareLink';
+import { prefetchShortUrl, resolveShareUrl, shareOrCopy } from '../lib/shareLink';
 import { Vinyl3D } from './Vinyl3D';
 
 const slug = (s: string) =>
@@ -32,6 +32,7 @@ export function Recap({ album, mode, podium, onEditTracks, onChangeCover, onMake
   const [error, setError] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
   const [manualLink, setManualLink] = useState<string | null>(null);
+  const [linking, setLinking] = useState<'album' | 'defi' | null>(null);
   const player = usePlaylist(album.tracks);
   const current = player.index !== null ? album.tracks[player.index] : null;
 
@@ -62,12 +63,25 @@ export function Recap({ album, mode, podium, onEditTracks, onChangeCover, onMake
   };
 
   const share = async (kind: 'album' | 'defi') => {
-    const url = buildShareUrl(kind, album);
-    const title = kind === 'defi' ? `Défi album parfait : ${album.artist.name}` : `L’album parfait de ${album.artist.name}`;
-    const r = await shareOrCopy(url, title);
-    if (r === 'copied') setToast(kind === 'defi' ? 'lien du défi copié' : 'lien copié');
-    if (r === 'manual') setManualLink(url);
+    if (linking) return;
+    setLinking(kind);
+    try {
+      const url = await resolveShareUrl(kind, album);
+      const title = kind === 'defi' ? `Défi album parfait : ${album.artist.name}` : `L’album parfait de ${album.artist.name}`;
+      const r = await shareOrCopy(url, title);
+      if (r === 'copied') setToast(kind === 'defi' ? 'lien du défi copié' : 'lien copié');
+      if (r === 'manual') setManualLink(url);
+    } finally {
+      setLinking(null);
+    }
   };
+
+  /** Le lien court se prépare dès le survol ou l'appui : le clic n'attend presque plus. */
+  const prepare = (kind: 'album' | 'defi') => ({
+    onPointerEnter: () => void prefetchShortUrl(kind, album),
+    onPointerDown: () => void prefetchShortUrl(kind, album),
+    onFocus: () => void prefetchShortUrl(kind, album),
+  });
 
   return (
     <section className="recap">
@@ -145,11 +159,11 @@ export function Recap({ album, mode, podium, onEditTracks, onChangeCover, onMake
         </div>
 
         <div className="actions">
-          <button className="ghost" onClick={() => share('album')}>
-            partager le lien
+          <button className="ghost" onClick={() => share('album')} {...prepare('album')} aria-busy={linking === 'album'}>
+            {linking === 'album' ? 'création du lien…' : 'partager le lien'}
           </button>
-          <button className="ghost" onClick={() => share('defi')}>
-            défier un ami
+          <button className="ghost" onClick={() => share('defi')} {...prepare('defi')} aria-busy={linking === 'defi'}>
+            {linking === 'defi' ? 'création du lien…' : 'défier un ami'}
           </button>
           {onEditTracks && (
             <button className="ghost" onClick={onEditTracks}>
