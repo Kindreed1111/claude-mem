@@ -25,6 +25,8 @@ describe('stats', () => {
     expect(cmds[9]).toEqual(['ZINCRBY', 'ap:525046:outro', '1', '10']);
     expect(cmds[10]).toEqual(['ZINCRBY', 'ap:525046:cover', '1', '9']);
     expect(cmds[11]).toEqual(['INCR', 'ap:525046:albums']);
+    expect(cmds[12]).toEqual(['LPUSH', 'ap:recent', '525046:9']);
+    expect(cmds[13]).toEqual(['LTRIM', 'ap:recent', '0', '99']);
   });
 
   it('lit les variables Vercel KV ou Upstash', () => {
@@ -65,7 +67,7 @@ describe('stats', () => {
       .mockResolvedValueOnce(json([{ result: 'OK' }]))
       .mockResolvedValueOnce(json(Array(12).fill({ result: 1 })));
     expect(await (await handleStats(post(), env, first)).json()).toEqual({ enabled: true, recorded: true });
-    expect(JSON.parse(first.mock.calls[2][1].body)).toHaveLength(12);
+    expect(JSON.parse(first.mock.calls[2][1].body)).toHaveLength(14);
     const dup = vi.fn().mockResolvedValueOnce(limitOk()).mockResolvedValueOnce(json([{ result: null }]));
     expect((await (await handleStats(post(), env, dup)).json()).recorded).toBe(false);
     expect(dup).toHaveBeenCalledTimes(2);

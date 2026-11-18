@@ -36,12 +36,17 @@ export function parseSubmission(body: unknown): Submission | null {
   return { artistId: b.artistId, coverId: b.coverId, slots: [...b.slots] };
 }
 
+export const RECENT_KEY = 'ap:recent';
+export const RECENT_MAX = 100;
+
 const key = (artistId: number, suffix: string) => `ap:${artistId}:${suffix}`;
 
 export function submissionCommands(s: Submission): string[][] {
   const cmds = s.slots.map((trackId, i) => ['ZINCRBY', key(s.artistId, SLOT_KIND[i + 1] ?? 'free'), '1', String(trackId)]);
   cmds.push(['ZINCRBY', key(s.artistId, 'cover'), '1', String(s.coverId)]);
   cmds.push(['INCR', key(s.artistId, 'albums')]);
+  // Albums pressés récents, pour le mur de l'accueil.
+  cmds.push(['LPUSH', RECENT_KEY, `${s.artistId}:${s.coverId}`], ['LTRIM', RECENT_KEY, '0', String(RECENT_MAX - 1)]);
   return cmds;
 }
 

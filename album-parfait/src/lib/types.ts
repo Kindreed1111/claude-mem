@@ -7,6 +7,17 @@ export interface Artist {
   fans: number;
 }
 
+/** Pochette du mur de l'accueil (albums pressés par les visiteurs, puis classement rap Deezer France). */
+export interface WallItem {
+  albumId: number;
+  title: string;
+  /** 250 px */
+  cover: string;
+  /** 500 px */
+  coverBig: string;
+  artist: { id: number; name: string; picture: string };
+}
+
 export interface Project {
   id: number;
   title: string;

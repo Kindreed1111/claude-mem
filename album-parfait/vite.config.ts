@@ -7,6 +7,7 @@ import { handleAudio } from './server/audio';
 import { handleCredits } from './server/credits';
 import { handleDiscography } from './server/discography';
 import { handleStats } from './server/stats';
+import { handleWall } from './server/wall';
 
 // En dev, sert les routes /api/* avec le même code que les fonctions Vercel.
 function devApi(): Plugin {
@@ -17,6 +18,7 @@ function devApi(): Plugin {
     '/api/discography': (r) => handleDiscography(r),
     '/api/audio': (r) => handleAudio(r),
     '/api/stats': (r) => handleStats(r),
+    '/api/wall': (r) => handleWall(r),
   };
   return {
     name: 'album-parfait-dev-api',
